@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab_demo</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstab_demo">qstab_demo</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../examples/qstab_demo.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>QSTAB_DEMO Small examples of quaternion nominal and robust stability.
+  OUT = qstab_demo uses the native MATLAB quaternion class and opens
+  spectral/value-set figures. The scalar examples use ASCENDING
+  coefficient tensors P(:,:,k+1)=P_k; matrices are ordinary quaternion
+  arrays. No custom quaternion or polynomial class is needed.
+
+  OUT = qstab_demo(&#39;Plots&#39;,false) runs without graphics.
+  OUT = qstab_demo(&#39;UseQuaternion&#39;,false,&#39;Plots&#39;,false) uses ordinary
+  a,b,c,d component structs. This path can be used for an auxiliary
+  Octave check; it does not validate MATLAB&#39;s native quaternion class.
+
+  Demonstrations:
+    p(s)=s^2+3*s+2+j: nominal root-free Hurwitz test and algebraic zeros;
+    an upper-triangular quaternion matrix: Lyapunov test and right spectrum;
+    z-(0.4+0.2*j) and 1-(0.4+0.2*j)*z^-1: reciprocal conventions;
+    scalar first-degree quaternion intervals and a three-vertex polytope;
+    optional exact 2-D/3-D similarity-class views and sampled value sets.
+
+  The robustness examples have simple independent analytic explanations:
+  every member is s+a0 with Re(a0)&gt;=1, hence its zero class is Hurwitz.
+  Numerical robustness outputs still carry their ordinary floating-point
+  assurance; the plotted value samples are not a robustness certificate.</code></pre>
+</main></body></html>

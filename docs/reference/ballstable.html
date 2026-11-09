@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.ballstable</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabballstable">qstab.ballstable</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/ballstable.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>BALLSTABLE Strict stability of a scalar weighted coefficient ball.
+  [TF,Info] = qstab.ballstable(P,weights,r,...)
+  TF is a double: 1 strictly stable, 0 demonstrably not strictly stable
+  (including a confirmed boundary member), NaN unresolved or prerequisites
+  not met. Inspect Info.status to distinguish these cases; test isnan(TF)
+  before using TF in a branch. Info retains the complete diagnostic report.
+  Info is the full diagnostic structure returned by earlier releases.
+[~,R] = qstab.ballstable(P,GAMMA,RADIUS,...) uses qstab.ballradius with the same
+options. A radius below the numerical global lower bound is stable; an
+admissible boundary-zero witness strictly inside the requested ball proves
+notStable. A lost required leading coefficient is assumptionFailed, never
+fabricated finite-root instability. A tolerance band/budget is undetermined.
+No general independent-box or correlated family is substituted for a ball.
+
+  Examples (ascending coefficients):
+  [tf,R] = qstab.ballstable([2 1],[1 0],0.5,&#39;AbsTol&#39;,0.05);
+  disp(tf);
+
+  Interpretation:
+  A robust decision is about a complete closed coefficient ball. At the numerical boundary the result can remain undetermined; do not coerce an empty isStable flag to a boolean.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Exponent</code></td>
+<td><code>2</code></td>
+<td>Block norm exponent eta in [1,Inf]. eta=Inf gives independent full
+quaternion balls; zero weights fix coefficients.</td>
+</tr>
+<tr class="even">
+<td><code>Variable</code></td>
+<td><code>'s'</code></td>
+<td>Time convention: s (continuous), z (forward shift) or zinv (delay).
+Reinterprets the supplied coefficients; it does not transform a
+system.</td>
+</tr>
+<tr class="odd">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+<tr class="even">
+<td><code>AbsTol</code></td>
+<td><code>1e-5</code></td>
+<td>Absolute component of the requested global bracket gap. Converged
+does not mean an exact radius.</td>
+</tr>
+<tr class="odd">
+<td><code>RelTol</code></td>
+<td><code>1e-4</code></td>
+<td>Relative component of the requested gap, scaled by the finite upper
+bound.</td>
+</tr>
+<tr class="even">
+<td><code>Tolerance</code></td>
+<td><code>1e-10</code></td>
+<td>Numerical residual/separation or pairing guard as described for this
+routine. It is not a physical uncertainty radius and not a
+directed-rounding proof.</td>
+</tr>
+<tr class="odd">
+<td><code>MaxCells</code></td>
+<td><code>8191</code></td>
+<td>Finite computation budget. Meaning is total constructed/processed
+covering cells in the selected solver; exhausted cells remain
+unresolved.</td>
+</tr>
+<tr class="even">
+<td><code>MaxDepth</code></td>
+<td><code>40</code></td>
+<td>Maximum subdivision depth. It is local to a branch/cell, not a
+promise of full coverage.</td>
+</tr>
+<tr class="odd">
+<td><code>MaxTime</code></td>
+<td><code>30</code></td>
+<td>Time budget in seconds; Inf disables it when accepted. No incomplete
+run is relabelled stable.</td>
+</tr>
+<tr class="even">
+<td><code>StoreCells</code></td>
+<td><code>true</code></td>
+<td>Retain covering cells in diagnostics. Turning storage off does not
+remove the solver's coverage obligations.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

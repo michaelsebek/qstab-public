@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.plotCertificate</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabplotcertificate">qstab.plotCertificate</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/plotCertificate.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>PLOTCERTIFICATE Plot retained coverage descriptors or their separation gaps.
+  [AX,Info] = qstab.plotCertificate(R,...)
+  AX is the target MATLAB axes. Info contains all previous plot handles
+  and the plotted data or diagnostics. Request Info for reuse or inspection.
+  Info is the full graphics-handle structure returned by earlier releases.
+[~,H] = qstab.plotCertificate(R,&#39;View&#39;,&#39;coverage&#39;|&#39;separation&#39;|&#39;auto&#39;)
+accepts a robust-test report or qstab.certificateData output. No solver
+is called. Coverage bars show each ORIGINAL stored record on its own row:
+they are projections onto frequency, NOT proof of parameter coverage.
+Unvisited subfamily descriptors lacking frequency bounds are explicitly
+counted. Missing retained certificates never masquerade as complete data.
+Separation values retain their units and are not robustness margins.
+Options: Parent, Visible, RowIndices=[], MaxRows=200.
+
+  Examples (ascending coefficients):
+  [~,R] = qstab.zeroexclude({[1 1],[2 1]},&#39;StoreCertificates&#39;,true);
+  [ax,H] = qstab.plotCertificate(R);
+
+  Interpretation:
+  Rendering only: unresolved regions and unvisited subfamilies remain visible. Stored evidence, not a fresh optimization, is shown.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>View</code></td>
+<td><code>'auto'</code></td>
+<td>coverage, separation or auto. Covering bars are frequency
+projections, not a new proof of parameter coverage.</td>
+</tr>
+<tr class="even">
+<td><code>Parent</code></td>
+<td><code>[]</code></td>
+<td>Existing axes handle; its current content and hold/NextPlot state
+are preserved by the public plotting routine.</td>
+</tr>
+<tr class="odd">
+<td><code>Visible</code></td>
+<td><code>'on'</code></td>
+<td>on/off for a newly created figure. Does not alter the data or the
+validity of a result.</td>
+</tr>
+<tr class="even">
+<td><code>RowIndices</code></td>
+<td><code>[]</code></td>
+<td>Distinct retained rows to display; empty uses the default subset.
+Omitted rows remain explicit.</td>
+</tr>
+<tr class="odd">
+<td><code>MaxRows</code></td>
+<td><code>200</code></td>
+<td>Maximum number of displayed certificate rows, not an algorithmic
+computation budget.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

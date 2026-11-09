@@ -1,0 +1,149 @@
+{
+  "status": "ALL EXACT MECHANICAL CHECKS OK",
+  "check_count": 47,
+  "checks": [
+    "skew_i",
+    "square_i",
+    "skew_j",
+    "square_j",
+    "skew_k",
+    "square_k",
+    "quaternion_product_ij",
+    "quaternion_product_ji",
+    "Delta1_identity",
+    "Delta2_identity",
+    "Delta3_identity",
+    "Delta4_identity",
+    "affine_dimension_4",
+    "centroid",
+    "c_bounds_vertex_1",
+    "g1_bounds_vertex_1",
+    "correlation_vertex_1",
+    "vertex_determinants_1",
+    "vertex_Hurwitz_1",
+    "c_bounds_vertex_2",
+    "g1_bounds_vertex_2",
+    "correlation_vertex_2",
+    "vertex_determinants_2",
+    "vertex_Hurwitz_2",
+    "c_bounds_vertex_3",
+    "g1_bounds_vertex_3",
+    "correlation_vertex_3",
+    "vertex_determinants_3",
+    "vertex_Hurwitz_3",
+    "c_bounds_vertex_4",
+    "g1_bounds_vertex_4",
+    "correlation_vertex_4",
+    "vertex_determinants_4",
+    "vertex_Hurwitz_4",
+    "c_bounds_vertex_5",
+    "g1_bounds_vertex_5",
+    "correlation_vertex_5",
+    "vertex_determinants_5",
+    "vertex_Hurwitz_5",
+    "left_decreasing",
+    "right_increasing",
+    "piecewise_A_lower_bound",
+    "positive_second_Delta3_term",
+    "uniform_Hurwitz_lower_bounds",
+    "uncontrolled_centroid_unstable",
+    "independent_box_unstable",
+    "box_witness_not_admissible"
+  ],
+  "normalized_parameters": {
+    "mass": 1,
+    "potential_stiffness": 1,
+    "circulatory_h": [
+      "0",
+      "2",
+      "0",
+      "0"
+    ],
+    "PD_position_gain": "1",
+    "PD_velocity_gain": "3/2"
+  },
+  "uncertainty_vertices_c_g1_g2_g3": [
+    [
+      "3/10",
+      "1/2",
+      "0",
+      "0"
+    ],
+    [
+      "1/5",
+      "0",
+      "1/2",
+      "0"
+    ],
+    [
+      "1/5",
+      "0",
+      "0",
+      "1/2"
+    ],
+    [
+      "1/5",
+      "-1/2",
+      "-1/2",
+      "-1/2"
+    ],
+    [
+      "1/10",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "affine_rank_minor": "-1/16",
+  "affine_dimension": 4,
+  "uniform_Hurwitz_lower_bounds": [
+    "16/5",
+    "1574/125",
+    "512/625",
+    "4096/625"
+  ],
+  "vertex_Hurwitz_minors": [
+    [
+      "18/5",
+      "4441/250",
+      "37343/625",
+      "298744/625"
+    ],
+    [
+      "17/5",
+      "4369/250",
+      "16473/625",
+      "131784/625"
+    ],
+    [
+      "17/5",
+      "4369/250",
+      "16473/625",
+      "131784/625"
+    ],
+    [
+      "17/5",
+      "2647/125",
+      "5728/625",
+      "45824/625"
+    ],
+    [
+      "16/5",
+      "1824/125",
+      "7168/625",
+      "57344/625"
+    ]
+  ],
+  "uncontrolled_centroid_Delta3": "-396/625",
+  "independent_box_witness": {
+    "c": "1/10",
+    "g": [
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "closed_loop_Delta3": "-3372/625"
+  },
+  "data_origin": "Explicitly constructed idealized mechanical benchmark; no measured or MATLAB data.",
+  "verification": "Exact sparse polynomial identities and rational determinant/inequality checks; no sampled stability proof."
+}

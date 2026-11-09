@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.randfamily</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabrandfamily">qstab.randfamily</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/randfamily.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>RANDFAMILY Draw a repeatable, well-defined scalar quaternion polynomial family.
+  F = qstab.randfamily                         random interval, degree 1, 2 or 3
+  F = qstab.randfamily(D)                      interval of degree D
+  F = qstab.randfamily(D,KIND)                 choose one of the four family kinds
+  F = qstab.randfamily(D,KIND,N)               N polynomials or affine directions
+  F = qstab.randfamily(KIND)                   choose the kind; draw the degree
+  F = qstab.randfamily(KIND,D,...)             equivalent kind-first spelling
+  F = qstab.randfamily(...,&#39;int&#39;,...,&#39;Seed&#39;,42) small integer coefficients, repeatable
+
+  D is the degree in the forward variable s or z. [] chooses uniformly
+  from 1:3. In delay notation the coefficients are reversed at grade D.
+  D=0 generates nonzero quaternion constants, except for &#39;oneparameter&#39;,
+  which requires a nonzero perturbation of strictly lower forward degree.
+
+  KIND           Family and meaning of N
+  &#39;interval&#39;     Default. Independent bounds on the real,i,j,k parts of
+                 every free coefficient. No N.
+  &#39;oneparameter&#39; One quaternion t shared by all powers. P0+t*P1 (left)
+                 or P0+P1*t (right). No N. The nominal is built to be stable.
+  &#39;polytope&#39;     Real convex hull of N defining polynomials (default 3).
+                 N counts generators, not necessarily extreme points.
+  &#39;affine&#39;       P0+sum(theta_j*G_j) with N shared real parameters
+                 (default 2). One interval per parameter.
+
+  Optional inputs
+  &#39;s&#39;,&#39;z&#39;,&#39;d&#39; or &#39;Variable&#39;,V  Time variable. Aliases: p for s, q for z,
+       zi/z^-1/zinv for delay. Default: s.
+  &#39;Width&#39;,W    Positive coefficient scale (default 1). Scales the interval
+       half-widths, the displacements from the first convex generator, or
+       the perturbation directions. It is not a stability radius.
+  &#39;int&#39;        Integer defining coefficients; W must be a positive integer.
+       This does not discretize the parameters, weights or family members.
+  &#39;Side&#39;,S     &#39;left&#39; (default) or &#39;right&#39;; only for &#39;oneparameter&#39;.
+  &#39;Bounds&#39;,B   &#39;oneparameter&#39;: finite ordered 4-by-2 bounds on real,i,j,k
+       of t, default [-1,1] for each. [] means all of H; use for margins.
+       &#39;affine&#39;: finite ordered N-by-2 bounds; each defaults to [-1,1].
+       Equal endpoints fix that coordinate. Bounds are independent of W.
+  &#39;SamplingPeriod&#39;,H   0 in continuous time; positive in discrete time
+       (discrete default 1, in the same units as your model).
+  &#39;Seed&#39;,K     Integer 0..2^32-1. Repeats the family without advancing
+       the caller&#39;s random stream. Without K the active stream advances.
+  &#39;Degree&#39;,D, &#39;Kind&#39;,KIND (or &#39;Type&#39;,KIND) and &#39;Count&#39;,N are also accepted.
+       Use each argument once. N is a positive integer for polytope/affine.
+
+  F is an ordinary definition struct accepted by qstab.robuststable,
+  qstab.raymargin (oneparameter), and qstab.plotFamilyValues / plotFamilyZeros.
+  Its defining polynomials are component structs with row vectors a,b,c,d.
+  For D&gt;=1 every member is monic in the forward variable. Delay coefficients
+  are reversed at the full grade; the current-sample coefficient is one.
+  The nominal is stable by construction in exact arithmetic. No stability
+  test of a whole random family is implied.
+
+  F=qstab.randfamily(3,&#39;interval&#39;,&#39;Seed&#39;,17);
+  [~,V]=qstab.plotFamilyValues(F,1,9,&#39;Plot&#39;,false);
+  F=qstab.randfamily(2,&#39;polytope&#39;,4,&#39;z&#39;,&#39;Seed&#39;,2);
+  [tf,I]=qstab.robuststable(F,&#39;MaxCells&#39;,16);
+  F=qstab.randfamily(2,&#39;oneparameter&#39;,&#39;Bounds&#39;,[],&#39;Seed&#39;,17);
+  ab=qstab.raymargin(F,1);
+  See also qstab.family, qstab.familycomponents, qstab.plotFamilyZeros.</code></pre>
+</main></body></html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.kharitonovcube</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabkharitonovcube">qstab.kharitonovcube</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/kharitonovcube.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>KHARITONOVCUBE Exact qB02 reduction of a CT quaternion interval polynomial.
+  A qstab.family definition supplies its variable, grade and parameter model.
+[K,INFO]=qstab.kharitonovcube({L,U}) returns an ordinary affine-family
+struct (center,generators,bounds), accepted directly by zeroexclude.
+Coefficients are ascending. Parameters 1:4 are even real,i,j,k and 5:8
+are odd real,i,j,k, all in [0,1]. Some generators can be identically zero.
+K is contained in the original interval family and has EXACTLY its norm
+value sets at each imaginary-axis frequency, in exact arithmetic.
+Stability of 256 cube VERTICES alone is NOT a robustness test.
+No corresponding independent-even/odd claim is made for z or zinv.
+Use zeroexclude(...,&#39;Reduction&#39;,&#39;kharitonov-faces&#39;) for pair-free faces.
+
+  Examples (ascending coefficients):
+  [K,I] = qstab.kharitonovcube({[1 1],[2 1]});
+  [tf,R] = qstab.zeroexclude(K,&#39;Uncertainty&#39;,&#39;affine&#39;);
+  disp(R.status);
+
+  Interpretation:
+  This is the CT eight-parameter continuous cube, not a list of 256 independently sufficient vertex polynomials. Its independent even/odd construction does not apply to a unit-circle boundary.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Variable</code></td>
+<td><code>'s'</code></td>
+<td>Time convention: s (continuous), z (forward shift) or zinv (delay).
+Reinterprets the supplied coefficients; it does not transform a
+system.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Install qstab and check what MATLAB will run</title><link rel="stylesheet" href="style.css"></head><body><main><h1 id="install-qstab-and-check-what-matlab-will-run">Install qstab and
+check what MATLAB will run</h1>
+<p>Extract the complete release into a new, writable folder. The package
+root contains <code>qstab_setup.m</code>, <code>src/+qstab</code> and
+<code>examples</code>. GitHub's “Download ZIP” may give the outer folder
+a different name; select the directory containing
+<code>qstab_setup.m</code>. Do not merge release trees, add
+<code>+qstab</code> directly, or use <code>addpath(genpath(...))</code>:
+old code and same-named functions can then shadow the intended ones.</p>
+<p>In MATLAB select that folder and run:</p>
+<pre class="matlab"><code>qstab_setup(&#39;Examples&#39;,true);
+which qstab.isstable -all
+S = qstab_guide_example(&#39;G01&#39;); assert(S.ok);</code></pre>
+<p>Setup adds the root, <code>src</code> and optionally
+<code>examples</code> for this session. It does not save the path, edit
+startup, install toolbox products, or add global aliases. The guide uses
+ordinary numeric arrays or structs with equally sized real
+<code>a,b,c,d</code> fields, so all its numbered examples can be tried
+without the MathWorks quaternion class.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>What to install or connect</th>
+<th>How to check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Numeric and component-array public APIs; examples G01–G11</td>
+<td>Base MATLAB; no external GitHub functions.</td>
+<td><code>qstab_guide_example('all')</code>.</td>
+</tr>
+<tr class="even">
+<td>Native quaternion input/output and the full native acceptance
+run</td>
+<td>A licensed MathWorks product providing <a
+href="https://www.mathworks.com/help/fusion/ref/quaternion.html">quaternion</a>,
+e.g., Sensor Fusion and Tracking Toolbox. One provider is enough. Use <a
+href="https://www.mathworks.com/help/matlab/matlab_env/get-add-ons.html">MathWorks
+Add-Ons</a> or the MathWorks installer for your release, then restart
+MATLAB if requested.</td>
+<td><code>which quaternion -all</code>; the selected constructor should
+be under <code>matlabroot</code>. Try
+<code>q=quaternion(1,2,3,4); [a,b,c,d]=parts(q);</code></td>
+</tr>
+<tr class="odd">
+<td>Large nominal matrix certificate requiring a Lyapunov/Stein solve
+beyond the configured Kronecker limit</td>
+<td>Optional Control System Toolbox, providing <a
+href="https://www.mathworks.com/help/control/ref/lyap.html">lyap</a> and
+<a
+href="https://www.mathworks.com/help/control/ref/dlyap.html">dlyap</a>.
+Install through MathWorks if you need this branch. Smaller solves are
+included.</td>
+<td><code>which lyap -all</code>, <code>which dlyap -all</code>; inspect
+the diagnostic if the optional solve is unavailable.</td>
+</tr>
+<tr class="even">
+<td>Compare an existing <em>right</em> eigensolver against qstab</td>
+<td>Optional; only for a user-requested comparison. Install the other
+solver following its own README, put only its entry directory on the
+session path, inspect its name with <code>which ... -all</code>, and
+pass an explicit trusted function handle.</td>
+<td>For an installed compatible <code>qeig</code>:
+<code>E=run_qstab_eigen_comparison('LegacyFunction',@qeig,'UseQuaternion',true,'Timing',false);</code>.
+Do this separately from public acceptance. It must accept a native
+matrix and return right eigenvalues, and optionally [V,D].</td>
+</tr>
+<tr class="odd">
+<td>Replay the manuscript's exact arithmetic</td>
+<td>Python 3.8+ standard library; no Python packages or MATLAB
+toolboxes.</td>
+<td><a href="papers.html">Run the two article checks</a>.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://github.com/michaelsebek/qpe-public">qpe-public</a>
+is a separate toolbox for <strong>evaluation zeros</strong>. If you also
+need that mathematical problem, follow its own installation instructions
+in another folder. It is not an implementation of
+<code>qstab.roots</code>. Neither a left-eigenvalue solver nor a
+third-party quaternion matrix multiplication routine is required by
+qstab.</p>
+<p><strong>Full check:</strong> Start a fresh MATLAB session, select the
+qstab folder, and use
+<code>report=run_qstab_public('Figures',false); assert(report.ok &amp;&amp; report.publicAcceptance.ok);</code>.
+This runner temporarily restricts resolution to qstab and MATLAB
+installation paths, checks the source manifest and static dependencies
+and restores the path and current directory on exit. Use a writable
+package root: it writes fresh report files and refreshes the fixed
+<code>qstab_test_results.zip</code>. Back up an earlier report if you
+wish to keep it. Temporary path isolation is not a sandbox for untrusted
+code. No add-ons are installed or downloaded by qstab. See <a
+href="../verification/VALIDATION.html">test evidence</a>.</p>
+<p><a href="../README.html">Home</a> · <a
+href="qstab_manual.pdf">Manual</a> · <a href="api_index.html">All entry
+points</a>.</p>
+</main></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.familycomponents</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabfamilycomponents">qstab.familycomponents</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/familycomponents.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>FAMILYCOMPONENTS Real component description of a scalar polynomial family.
+  F = qstab.familycomponents(definition) accepts a finite qstab.family struct.
+  F = qstab.familycomponents(DATA,&#39;Uncertainty&#39;,KIND) accepts:
+    &#39;polytope&#39;    DATA = {P1,...,Pm}; the real convex hull of the vertices.
+    &#39;interval&#39;    DATA = {L,U}; componentwise bounds, including all four
+                  real components of every quaternion coefficient.
+    &#39;affine&#39;      DATA.center, DATA.generators (a cell array), and
+                  DATA.bounds (number-of-generators by 2, real).
+    &#39;oneparameter&#39; DATA.p0, DATA.p1, DATA.side (&#39;left&#39; or &#39;right&#39;), and
+                  DATA.bounds (4 by 2, for real,i,j,k components of t).
+  An omitted KIND is inferred from a struct, or is &#39;polytope&#39; for a cell.
+
+  All polynomials use ASCENDING coefficients. Each polynomial is accepted
+  by qstab.polycomponents; the preferred public type is MATLAB quaternion.
+  Native structs with real fields a,b,c,d are also accepted. No custom
+  class, quaternion constructor, or external quaternion toolbox is used.
+
+  F is an ordinary struct containing only real double arrays and metadata.
+  F.vertices has size 4-by-(degree+1)-by-m for a polytope. Other kinds use
+      P(theta) = F.base + sum_j theta(j)*F.generators(:,:,j).
+  F.bounds contains the actual real parameters used in this expression.
+  For intervals, these parameters are the varying coefficient components
+  themselves, identified by F.parameterIndex = [component,coefficient].
+  The coefficient index in parameterIndex starts at zero.
+
+  Different vertex/generator lengths are padded with zero HIGH-degree
+  coefficients. The resulting declared degree is retained. This function
+  does not certify a nonzero leading coefficient over the family.
+
+  The oneparameter form is a general affine family, also when p1 changes
+  the leading coefficient. The additional deg(p1)&lt;deg(p0) assumption of a
+  particular stability-radius theorem is not imposed by this converter.
+
+  Examples (ascending coefficients):
+  F = qstab.familycomponents({[1 1],[2 1]},&#39;Uncertainty&#39;,&#39;polytope&#39;);
+  disp(F.kind); disp(F.degree);
+
+  Interpretation:
+  This is an inspection/conversion representation with real arrays, not a new polynomial object. Preserve common weights and parameters. The function does not itself prove robust stability.
+
+  See also qstab.about.</code></pre>
+</main></body></html>

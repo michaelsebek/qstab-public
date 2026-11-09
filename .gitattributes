@@ -1,2 +1,9 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# MATLAB installation verification hashes the distributed source bytes.
+* -text
+*.m text eol=lf
+*.md text eol=lf
+*.tex text eol=lf
+*.py text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.pdf binary

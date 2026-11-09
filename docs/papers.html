@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Companion paper and reproducible code</title><link rel="stylesheet" href="style.css"></head><body><main><h1 id="companion-paper-and-reproducible-code">Companion paper and
+reproducible code</h1>
+<p><strong>Michael Šebek, “A Sharp Face Theorem for Robust Stability of
+Quaternionic Polynomial Polytopes.”</strong> Manuscript prepared for
+<em>Automatica</em>, source version 6 November 2026. No acceptance,
+journal DOI or preprint identifier is claimed. Cite the software version
+separately using <a href="../CITATION.cff">CITATION.cff</a>.</p>
+<p>A shared vector of real nonnegative weights defines every coefficient
+of a polytope member. Testing the generators alone is inadequate. In the
+scalar constant-degree setting covered by the paper the sharp face
+result reduces the tests to whole faces of dimension at most three; a
+four-generator implementation covers complete subfamilies, including
+interiors. The package also offers direct family tests. A successful
+numerical subdivision and a verification in exact rational arithmetic
+are different forms of evidence.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Reproduce</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>G06</td>
+<td><code>qstab_guide_example('G06')</code></td>
+<td>Two-generator teaching model: dividing the segment excludes zero at
+one frequency.</td>
+</tr>
+<tr class="even">
+<td>G07</td>
+<td><code>qstab_guide_example('G07')</code></td>
+<td>Six-generator cubic of the manuscript at zero frequency: a zero of
+the outer hull, but positive values for the selected actual
+members.</td>
+</tr>
+<tr class="odd">
+<td>Mechanical exact check</td>
+<td>See command below</td>
+<td>Quaternion identities, determinants, rational inequalities and the
+independent-box witness for the four-mode mechanical example.</td>
+</tr>
+<tr class="even">
+<td>Cubic exact replay</td>
+<td>Same command</td>
+<td>An independent checker reconstructs the stored rational certificate:
+15 four-generator subfamilies, 1,850 frequency cells, 18,500 Bernstein
+identities. The local lower bound 13730490575/1073741824 is for the
+tested faces on [0,30]; the analytical all-frequency bound 1296/361 has
+a different scope.</td>
+</tr>
+</tbody>
+</table>
+<p>From the repository root, if you want the paper checks in addition to
+MATLAB:</p>
+<pre class="text"><code>python reproducibility/qb03/replay.py</code></pre>
+<p>Use <code>python3</code> on systems where <code>python</code> does
+not select Python 3. The dispatcher verifies the seven article files
+against their source digests, copies them into a temporary directory,
+and runs the two supplied checkers there with assertions enabled. No
+installation, network request or mutation of the distributed certificate
+is needed. The included generator is available for research but is not
+invoked by the replay. The source files reside in <a
+href="../reproducibility/qb03/">reproducibility/qb03</a>. The manuscript
+itself is not redistributed here.</p>
+<p><strong>Other methods.</strong> Interval, one-quaternion,
+coefficient-ball and matrix routines are documented and runnable in the
+same release; the polytope paper does not establish all their claims.
+See the <a href="qstab_manual.pdf">manual</a> for assumptions, budgets
+and what each return value means.</p>
+</main></body></html>

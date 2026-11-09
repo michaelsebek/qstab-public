@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.plotWitness</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabplotwitness">qstab.plotWitness</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/plotWitness.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>PLOTWITNESS Draw a previously reconstructed member&#39;s algebraic zero classes.
+  [AX,Info] = qstab.plotWitness(W,...)
+  AX is the target MATLAB axes. Info contains all previous plot handles
+  and the plotted data or diagnostics. Request Info for reuse or inspection.
+  Info is the full graphics-handle structure returned by earlier releases.
+[~,H] = qstab.plotWitness(W) uses qstab.witnessData output; it does NOT rerun roots
+or any robust test. Representation=&#39;input&#39; (default) or &#39;forward&#39; explicitly
+selects the delay/forward variable. Other options: Dimension=2|3, Parent,
+Visible. A failed membership check is rejected, never plotted as a witness.
+A degree loss is annotated without manufacturing finite unstable roots.
+
+  Examples (ascending coefficients):
+  F = {[-1 1],[-2 1]}; [~,R] = qstab.robuststable(F);
+  [~,W] = qstab.witnessData(F,R);
+  [ax,H] = qstab.plotWitness(W,&#39;Dimension&#39;,2);
+
+  Interpretation:
+  Rendering only: input and forward delay coordinates remain distinct. An unavailable witness is not invented.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Representation</code></td>
+<td><code>'input'</code></td>
+<td>input or forward coordinates for a saved delay witness; coefficients
+and grade are not silently reinterpreted.</td>
+</tr>
+<tr class="even">
+<td><code>Dimension</code></td>
+<td><code>2</code></td>
+<td>2 for canonical complex representatives, 3 for a
+real-part/norm-preserving class slice.</td>
+</tr>
+<tr class="odd">
+<td><code>Parent</code></td>
+<td><code>[]</code></td>
+<td>Existing axes handle; its current content and hold/NextPlot state
+are preserved by the public plotting routine.</td>
+</tr>
+<tr class="even">
+<td><code>Visible</code></td>
+<td><code>'on'</code></td>
+<td>on/off for a newly created figure. Does not alter the data or the
+validity of a result.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

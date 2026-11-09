@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab_setup</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstab_setup">qstab_setup</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../qstab_setup.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>QSTAB_SETUP Connect the public namespace and optional examples for this session.
+  INFO=QSTAB_SETUP() adds this package root, src, and examples to path.
+  INFO=QSTAB_SETUP(&#39;Examples&#39;,false) does not add the examples directory.
+  QSTAB_SETUP without an output also prints the version and fixed report ZIP.
+
+  Public qstab contains no global q-prefixed wrappers. These belong only to
+  the separate private qfiles integration. For compatibility, Wrappers=false
+  is accepted; Wrappers=true raises qstab:setup:PrivateWrappers BEFORE any
+  path changes. No private toolbox is loaded or initialized.
+
+  Only the parent src of +qstab is added. Never add +qstab directly, and do
+  not use genpath on the whole distribution. This function does not modify
+  startup.m, savepath, global variables, existing qfiles, or class definitions.
+  A stale qwrappers path inside THIS installation is disconnected but its
+  files are not deleted; the installation checker reports leftover sources.
+
+  Example:
+      % Start in the extracted qstab_public directory.
+      info=qstab_setup(&#39;Examples&#39;,true); % silent setup
+      [~,R] = qstab.isstable([2 3 1]);
+      disp(R.status);
+
+  Result archive: &lt;this root&gt;/qstab_test_results.zip, independent of pwd.
+  See also run_qstab_public, test_qstab, qstab_check_installation, qstab.about.</code></pre>
+</main></body></html>

@@ -1,0 +1,135 @@
+{
+  "environment": "GNU Octave 8.4.0, x86_64-pc-linux-gnu, isolated temporary working copy",
+  "release": "0.18.0-rc.1",
+  "options": {
+    "RequireQuaternion": false,
+    "Plots": false
+  },
+  "status": "CORE_OK_NATIVE_PENDING",
+  "passed": 613.0,
+  "failed": 0.0,
+  "skipped": 80.0,
+  "elapsedSeconds": 61.06614685058594,
+  "nativeMATLAB": false,
+  "caseCounts": {
+    "resultfirst": {
+      "PASS": 7
+    },
+    "families": {
+      "PASS": 9
+    },
+    "inputerrors": {
+      "PASS": 4
+    },
+    "familyplots": {
+      "PASS": 14
+    },
+    "guide": {
+      "PASS": 1
+    },
+    "nominal": {
+      "PASS": 23
+    },
+    "routhsingular": {
+      "PASS": 10
+    },
+    "robust": {
+      "PASS": 12
+    },
+    "rays": {
+      "PASS": 10
+    },
+    "radius": {
+      "PASS": 11
+    },
+    "values": {
+      "PASS": 6
+    },
+    "zeroexclude": {
+      "PASS": 17
+    },
+    "fourgenerator": {
+      "PASS": 27
+    },
+    "leading": {
+      "PASS": 12
+    },
+    "affinezero": {
+      "PASS": 12
+    },
+    "intervalreductions": {
+      "PASS": 18
+    },
+    "reporting": {
+      "PASS": 5
+    },
+    "benchmarking": {
+      "PASS": 26
+    },
+    "diagnostics": {
+      "PASS": 36
+    },
+    "balls": {
+      "PASS": 48
+    },
+    "ballfix": {
+      "PASS": 12
+    },
+    "discrete": {
+      "PASS": 46
+    },
+    "boxes": {
+      "PASS": 44
+    },
+    "boxfix": {
+      "PASS": 12
+    },
+    "papers": {
+      "PASS": 30
+    },
+    "paperfix": {
+      "PASS": 10
+    },
+    "paperextensions": {
+      "PASS": 34
+    },
+    "eigencomparison": {
+      "PASS": 28
+    },
+    "eigenfix": {
+      "PASS": 8
+    },
+    "rightpairs": {
+      "PASS": 38
+    },
+    "publicacceptance": {
+      "PASS": 24
+    },
+    "manifestfix": {
+      "PASS": 6
+    },
+    "publicartifacts": {
+      "PASS": 4
+    },
+    "provenance": {
+      "PASS": 3
+    },
+    "namespace": {
+      "PASS": 5
+    },
+    "distribution": {
+      "PASS": 1
+    },
+    "native": {
+      "SKIP": 60
+    },
+    "graphics": {
+      "SKIP": 20
+    }
+  },
+  "failedCases": [],
+  "rawReportSHA256": "0dae8479ba7c17ed4d7bbd0c347ec446b5cf6f178a44ee63da15f8eb657dd2fe",
+  "reportArchiveSHA256": "495d9634ad04909335759539c0a4ebafea5b4b868be638689759664290f18b2a",
+  "manifest": "regenerated in the temporary tested snapshot",
+  "executableManifestSHA256": "bcab2f5d30b553c76fc1e2ad0ee7020df383e049d25627812b7f9a1688dbb7af"
+}

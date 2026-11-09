@@ -1,0 +1,37 @@
+# test_qstab
+
+[Function index](../api_index.md) · [Manual](../qstab_manual.pdf) · [MATLAB source](../../test_qstab.m)
+
+## Help and calling sequences
+
+```text
+TEST_QSTAB Run the complete qstab regression and native integration suite.
+  REPORT=test_qstab runs core, MathWorks quaternion, and hidden-figure
+  tests. Results are saved to qstab_test_results/report.mat and report.txt.
+  Always send <package root>/qstab_test_results.zip. Its absolute path
+  is report.archiveFile. The ZIP is recreated and read back on each run.
+  OutputDir changes ONLY the raw report location, never the ZIP name/path.
+  A relative OutputDir is resolved against this package root, not pwd.
+  No personal quaternion or polynomial toolbox is required.
+
+  Options: RequireQuaternion=true, Plots=true, Verbose=true, OutputDir.
+  EigenComparison=false stores a reference-backed right-spectrum study.
+  EigenOptions=struct() can explicitly supply LegacyFunction=@qeig; no
+  private environment is initialized. Differences stay visible and cause
+  EIGEN_COMPARISON_ISSUES, without relabelling regression groups.
+  PaperExtensions=false stores 16 additional finite source checks.
+  PaperFigures=false computes eight figure datasets and exports PDF/PNG/FIG/CSV
+  to <package root>/qstab_paper_figures. Both payloads stay in report.mat.
+  PaperExamples=false, PaperOptions=struct() optionally store selected
+  source-linked qB01/qB02/qB03 cases as report.paperExamples.
+  BoxExamples=false optionally stores component-box radius and gauge examples.
+  DiscreteExamples=false optionally stores z/zinv one-parameter margin examples.
+  DiagnosticExamples=false optionally saves read-only diagnostic example data.
+  Benchmarks=false (default), BenchmarkOptions=struct() optionally run the
+  matched method study AFTER passing tests and BEFORE the same ZIP write.
+  Full data are report.benchmarks inside report.mat, not a third ZIP entry.
+  For auxiliary numeric execution without MATLAB quaternion:
+    test_qstab('RequireQuaternion',false,'Plots',false)
+  Such a run is explicitly labelled CORE_OK_NATIVE_PENDING, not a native
+  MATLAB validation. No clear classes/functions or startup changes occur.
+```

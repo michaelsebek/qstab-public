@@ -1,0 +1,12 @@
+{
+  "source": "Companion reproducibility files, manuscript of 6 November 2026",
+  "sha256": {
+    "local/check_local_certificate.py": "f65a1cfb5745dfb4cbb71297a6c908969ba0920f9d792df91e06da79c70ee680",
+    "local/local_certificate.json": "cda7134c4d544d533cc4036199a8397251407e878408c5ed415149d4bb19feff",
+    "local/local_certificate_replay.json": "e60de3db3c86911cbe311687d2d65002683b666cb3fa30291d1ba2a414e9664e",
+    "local/local_certificate_summary.json": "7c4bdf39d8a2a7102e49164bf1cc7eff4c25c8ea0c36ab87f7e4f9129d9fb8f7",
+    "local/verify_local_certificate.py": "72ab429480bd2121565e51e61037f690bdfb841f993a8adf591fc527ffdbbc62",
+    "mechanical/mechanical_checks.json": "a6bf76bd949b0a7ff1c650bdd9137aaac9d48107c6c15c8cd23a353acc99a064",
+    "mechanical/verify_mechanical.py": "08642fe70ad42268f31e04b6d066a8f90913238ee5932d69621288c54bc591b6"
+  }
+}

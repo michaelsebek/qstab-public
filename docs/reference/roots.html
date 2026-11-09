@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.roots</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabroots">qstab.roots</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/roots.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>ROOTS Algebraic zero classes of a quaternion polynomial or matrix polynomial.
+  [LAMBDA,INFO] = qstab.roots(P) uses an embedded generalized companion
+  pencil. Ascending coefficients are required. Scalar coefficient vectors,
+  square coefficient tensors, coefficient cells and a,b,c,d structs are
+  accepted. LAMBDA is a complex column with nonnegative imaginary parts;
+  multiplicities are retained, including real and infinite classes.
+  This computes algebraic classes, not orientation-specific evaluation
+  zeros. INFO.fullSpectrum contains the complete embedded spectrum.
+  INFO.isValid reports successful conjugate pairing and a numerical
+  regularity witness. Singular polynomial matrices are not solved here.
+  Options: &#39;Grade&#39;,G; &#39;Variable&#39;,&#39;s&#39;|&#39;z&#39;|&#39;zinv&#39; (metadata only);
+  &#39;PairingTolerance&#39;,T (1e-7); &#39;ClassTolerance&#39;,T (1e-7); &#39;Tolerance&#39;,T
+  sets both tolerances. Roots remain in the input variable, also for zinv.
+
+  Examples (ascending coefficients):
+  [lambda,I] = qstab.roots([2 3 1],&#39;Variable&#39;,&#39;s&#39;);
+  disp(lambda); disp(I.isValid);
+
+  Interpretation:
+  These are canonical representatives of algebraic zero classes, with multiplicity. They are not orientation-specific evaluation zeros, not the old qroots contract, and not left eigenvalues. A delay output stays in its input variable.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+<tr class="even">
+<td><code>Variable</code></td>
+<td><code>'s'</code></td>
+<td>Time convention: s (continuous), z (forward shift) or zinv (delay).
+Reinterprets the supplied coefficients; it does not transform a
+system.</td>
+</tr>
+<tr class="odd">
+<td><code>PairingTolerance</code></td>
+<td><code>1e-7</code></td>
+<td>Relative tolerance for conjugate pairing of the complex embedded
+spectrum. Inspect pairing diagnostics and isValid.</td>
+</tr>
+<tr class="even">
+<td><code>ClassTolerance</code></td>
+<td><code>1e-7</code></td>
+<td>Tolerance for diagnostic grouping of nearby classes; entries and
+algebraic multiplicities are not deleted.</td>
+</tr>
+<tr class="odd">
+<td><code>Tolerance</code></td>
+<td><code>sets both; later named options override</code></td>
+<td>Numerical residual/separation or pairing guard as described for this
+routine. It is not a physical uncertainty radius and not a
+directed-rounding proof.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

@@ -1,0 +1,13 @@
+function S = ballsetReport(P,weights,z,r,varargin)
+%BALLSETREPORT Internal implementation returning the full report.
+if ~(isnumeric(r)&&isreal(r)&&isscalar(r)&&isfinite(r)&&r>=0)
+    error('qstab:ballset:Radius','Radius must be a finite nonnegative real scalar.');
+end
+[d,I]=qstab.ballvalue(P,weights,z,varargin{:});
+inside=I.valid & I.upper<double(r);outside=I.valid & I.lower>double(r);
+S=struct('schema','qstab.ballset.1','arguments',z,'classRepresentatives',I.classRepresentatives, ...
+    'radius',double(r),'distance',d,'inside',inside,'outside',outside, ...
+    'unresolved',~(inside|outside),'pointwise',I,'isSampled',true, ...
+    'continuumCertified',false,'validated',false, ...
+    'message','Pointwise algebraic-class membership only; no statement about unsampled regions.');
+end

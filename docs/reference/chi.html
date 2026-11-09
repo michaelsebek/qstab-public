@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.chi</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabchi">qstab.chi</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/chi.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>CHI Complex adjoint of a quaternion matrix.
+  X = qstab.chi(A), for A=Z+W*j with Z=a+i*b and W=c+i*d, returns
+               X = [Z,W;-conj(W),conj(Z)].
+  A is a numeric/native-quaternion matrix or component struct a,b,c,d.
+  This convention preserves products and conjugate transposes. Each
+  right quaternion eigenvalue class is represented by a conjugate pair
+  in the spectrum of X. No change of the uncertainty set is made.
+
+  Examples (ascending coefficients):
+  [X,I] = qstab.chi([-1 0;0 -2]);
+  disp(size(X));
+
+  Interpretation:
+  The output is an ordinary complex representation, not a quaternionic matrix. Its block convention is [a+1i*b,c+1i*d;-c+1i*d,a-1i*b].
+
+  See also qstab.about.</code></pre>
+</main></body></html>

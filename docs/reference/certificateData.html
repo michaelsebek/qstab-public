@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.certificateData</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabcertificatedata">qstab.certificateData</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/certificateData.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>CERTIFICATEDATA Read retained robust-test cells, without solving again.
+  [ROWS,Info] = qstab.certificateData(R)
+  ROWS contains retained cell descriptors. Info contains counts and coverage.
+  Info is the full diagnostic structure returned by earlier releases.
+[~,D] = qstab.certificateData(R) accepts qstab.robuststable / zeroexclude reports.
+All accepted and unresolved records are kept, including compact unvisited
+subfamily descriptors. The reported solver verdict is NEVER recomputed.
+reportedComplete is the solver&#39;s claim; storageComplete concerns retained
+accepted leaves ONLY, not an independent proof of parameter coverage.
+An empty certificates list does not undo a solver&#39;s stable verdict, nor
+does a plotted frequency projection prove joint-parameter coverage.
+Metrics are labelled by their units; Lyapunov slack is NOT a spectral or
+coefficient-space robustness margin. No eig, roots or solvers are called.
+
+  Examples (ascending coefficients):
+  [~,R] = qstab.zeroexclude({[1 1],[2 1]},&#39;StoreCertificates&#39;,true);
+  [rows,D] = qstab.certificateData(R);
+  disp(rows);
+
+  Interpretation:
+  This reads retained evidence and never reruns the robust solver. Absent stored leaves are not fabricated. Lyapunov slack, norm-value separation and parameter radius have different units and meanings.
+
+  See also qstab.about.</code></pre>
+</main></body></html>

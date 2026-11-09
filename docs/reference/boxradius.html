@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.boxradius</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabboxradius">qstab.boxradius</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/boxradius.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>BOXRADIUS Global brackets for nested scalar coefficient-COMPONENT boxes.
+  [BOUNDS,Info] = qstab.boxradius(P,widths,...)
+  BOUNDS = [lower upper] gives the computed global radius bracket;
+  it is not the assertion of a single exact radius. Interpret the values
+  together with Info.status, witnesses and termination diagnostics.
+  Info is the full diagnostic structure returned by earlier releases.
+[~,R] = qstab.boxradius(P,W,&#39;Variable&#39;,&#39;s&#39;|&#39;z&#39;|&#39;zinv&#39;) considers independent REAL
+perturbations abs(delta_knu)&lt;=r*W_knu at the original declared grade.
+W is a real nonnegative 4-by-(grade+1) array, not quaternion-ball weights.
+
+LOWER bounds are obtained ONLY from whole-family robust tests, never from
+a frequency/direction grid. UPPER bounds have reconstructed finite-boundary
+zonotope witnesses, independently checked unstable members, or an explicit
+required-leading-coefficient loss. The latter is a regularity event, not
+a finite unstable zero. A finite sample cannot prove an infinite margin.
+
+qB02 gives the exact fixed-leading CT zonotope variational formula. This
+implementation combines pointwise gauges with existing full-family tests
+and monotonic radius bisection. It does NOT claim an exhaustive direct
+minimization over quaternion directions. It may stop with a nonzero gap.
+
+Options: Variable=&#39;s&#39;, Grade=[], Method=&#39;zeroexclusion&#39;|&#39;lyapunov&#39;,
+AbsTol=1e-4, RelTol=1e-3, Tolerance=1e-10, InitialRadius=1,
+MaxIterations=32, MaxCells=8192 (GLOBAL across all robust tests),
+MaxDepth=30 (per test), MaxTime=30 (global, checked between operations),
+MaxRadius=1e6 (exploration cap, NOT a certified upper bound),
+BoundaryPoints=[] (additional actual quaternion points ON the boundary),
+MaxFacets=4096 per point, StoreCertificates=false.
+Default upper seeds: lambda=0 in CT; +/-1 in z and zinv. No normalization
+of supplied points/directions occurs. Uncertain trials never shrink bounds.
+
+  Examples (ascending coefficients):
+  W = zeros(4,2); W(1,1) = 1;
+  [bounds,R] = qstab.boxradius([2 1],W,&#39;AbsTol&#39;,0.05,&#39;MaxCells&#39;,512);
+  disp(bounds);
+
+  Interpretation:
+  Global lower bounds come only from complete-family tests of nested boxes. Actual-point zonotope witnesses give upper bounds, not a direction-grid completeness proof. MaxRadius is a search budget, never an upper certificate by itself.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Variable</code></td>
+<td><code>'s'</code></td>
+<td>Time convention: s (continuous), z (forward shift) or zinv (delay).
+Reinterprets the supplied coefficients; it does not transform a
+system.</td>
+</tr>
+<tr class="even">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+<tr class="odd">
+<td><code>Method</code></td>
+<td><code>'zeroexclusion'</code></td>
+<td>Algorithm selection, restricted to the values listed in this
+function's help. The robuststable default remains Lyapunov subdivision;
+zeroexclusion is explicit.</td>
+</tr>
+<tr class="even">
+<td><code>AbsTol</code></td>
+<td><code>1e-4</code></td>
+<td>Absolute component of the requested global bracket gap. Converged
+does not mean an exact radius.</td>
+</tr>
+<tr class="odd">
+<td><code>RelTol</code></td>
+<td><code>1e-3</code></td>
+<td>Relative component of the requested gap, scaled by the finite upper
+bound.</td>
+</tr>
+<tr class="even">
+<td><code>Tolerance</code></td>
+<td><code>1e-10</code></td>
+<td>Numerical residual/separation or pairing guard as described for this
+routine. It is not a physical uncertainty radius and not a
+directed-rounding proof.</td>
+</tr>
+<tr class="odd">
+<td><code>InitialRadius</code></td>
+<td><code>1</code></td>
+<td>Initial positive trial radius for the nested-box search; not a
+certified margin.</td>
+</tr>
+<tr class="even">
+<td><code>MaxIterations</code></td>
+<td><code>32</code></td>
+<td>Iteration budget for leading-bound search or nested-box radius
+refinement, as applicable.</td>
+</tr>
+<tr class="odd">
+<td><code>MaxCells</code></td>
+<td><code>8192</code></td>
+<td>Finite computation budget. Meaning is total constructed/processed
+covering cells in the selected solver; exhausted cells remain
+unresolved.</td>
+</tr>
+<tr class="even">
+<td><code>MaxDepth</code></td>
+<td><code>30</code></td>
+<td>Maximum subdivision depth. It is local to a branch/cell, not a
+promise of full coverage.</td>
+</tr>
+<tr class="odd">
+<td><code>MaxTime</code></td>
+<td><code>30</code></td>
+<td>Time budget in seconds; Inf disables it when accepted. No incomplete
+run is relabelled stable.</td>
+</tr>
+<tr class="even">
+<td><code>MaxRadius</code></td>
+<td><code>1e6</code></td>
+<td>Maximum radius to explore, not an upper certificate for the true
+stability radius.</td>
+</tr>
+<tr class="odd">
+<td><code>BoundaryPoints</code></td>
+<td><code>[]</code></td>
+<td>Optional actual quaternion boundary points used to obtain verified
+upper candidates. A finite grid never proves a global lower bound.</td>
+</tr>
+<tr class="even">
+<td><code>MaxFacets</code></td>
+<td><code>4096</code></td>
+<td>Total facet-tuple budget for intrinsic-rank zonotope gauge and
+reconstruction at each point; incomplete gauge data remain
+bounded/unresolved.</td>
+</tr>
+<tr class="odd">
+<td><code>StoreCertificates</code></td>
+<td><code>false</code></td>
+<td>Retain accepted certificates for later read-only inspection. It does
+not strengthen the mathematical assurance level.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

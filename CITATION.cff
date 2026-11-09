@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: Cite qstab with its software version. For the polytope theorem also cite the separately identified
+  manuscript.
+type: software
+title: 'qstab: Quaternion Stability Toolbox'
+authors:
+- family-names: Šebek
+  given-names: Michael
+  orcid: https://orcid.org/0000-0003-0927-2988
+  affiliation: Czech Technical University in Prague, Faculty of Electrical Engineering, Department of Control
+    Engineering
+version: 0.18.0
+license: MIT
+abstract: MATLAB functions for nominal and robust stability of quaternionic polynomials, matrix spectra, margins,
+  and sampled family plots.
+keywords:
+- quaternionic polynomials
+- robust stability
+- polynomial polytopes
+- parametric uncertainty
+- algebraic zeros
+- right eigenvalues
+- control systems
+- MATLAB
+references:
+- type: unpublished
+  authors:
+  - family-names: Šebek
+    given-names: Michael
+    orcid: https://orcid.org/0000-0003-0927-2988
+  title: A Sharp Face Theorem for Robust Stability of Quaternionic Polynomial Polytopes
+  year: 2026
+  notes: Manuscript in preparation for submission to Automatica.

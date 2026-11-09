@@ -1,0 +1,176 @@
+{
+  "schema": "qstab.native-public-acceptance.1",
+  "testedVersion": "0.18.0-rc.1",
+  "date": "2026-11-09",
+  "runId": "20261109T095943_tp961eda27_ea95_4f70_a7d5_22e499011f86",
+  "scope": "User-supplied MATLAB public acceptance run. Counts measure regressions, not a blanket proof of stability.",
+  "runtime": "24.2.0.2773142 (R2024b) Update 2",
+  "platform": "PCWIN64",
+  "nativeQuaternion": true,
+  "regression": {
+    "status": "OVERALL_OK",
+    "passed": 693,
+    "failed": 0,
+    "skipped": 0,
+    "passedByGroup": {
+      "resultfirst": 7,
+      "families": 9,
+      "inputerrors": 4,
+      "familyplots": 14,
+      "guide": 1,
+      "nominal": 23,
+      "routhsingular": 10,
+      "robust": 12,
+      "rays": 10,
+      "radius": 11,
+      "values": 6,
+      "zeroexclude": 17,
+      "fourgenerator": 27,
+      "leading": 12,
+      "affinezero": 12,
+      "intervalreductions": 18,
+      "reporting": 5,
+      "benchmarking": 26,
+      "diagnostics": 36,
+      "balls": 48,
+      "ballfix": 12,
+      "discrete": 46,
+      "boxes": 44,
+      "boxfix": 12,
+      "papers": 30,
+      "paperfix": 10,
+      "paperextensions": 34,
+      "eigencomparison": 28,
+      "eigenfix": 8,
+      "rightpairs": 38,
+      "publicacceptance": 24,
+      "manifestfix": 6,
+      "publicartifacts": 4,
+      "provenance": 3,
+      "namespace": 5,
+      "distribution": 1,
+      "native": 60,
+      "graphics": 20
+    },
+    "guideKeysInSingleRegression": 11
+  },
+  "acceptance": {
+    "status": "PASSED",
+    "isolatedPackageAndMathWorksPaths": true,
+    "restoredPath": true,
+    "restoredFolder": true,
+    "externalSolverRequested": false,
+    "options": {
+      "DependencyScan": true,
+      "Examples": true,
+      "Figures": false,
+      "Verbose": true
+    }
+  },
+  "timingsSecondsAsRecorded": {
+    "regressionSuite": 27.7625005,
+    "testSuiteIncludingOptionalStudies": 29.6183535,
+    "acceptanceRunner": 39.130066
+  },
+  "sourceIntegrity": {
+    "matlabFiles": 193,
+    "sourceSetSHA256": "bcab2f5d30b553c76fc1e2ad0ee7020df383e049d25627812b7f9a1688dbb7af",
+    "sourceSetEncoding": "UTF-8; sorted by slash-separated relative path; one line: SHA-256 in lowercase, two spaces, path, LF. Only .m files.",
+    "sourceInventoriesCompared": [
+      "candidate ZIP bytes",
+      "candidate release manifest",
+      "standalone MAT report source inventory",
+      "before execution",
+      "after execution"
+    ],
+    "byteSizesAlsoMatched": true,
+    "functionsResolvedInPackageBeforeAndAfter": 76,
+    "candidateZipSHA256": "624521980889fdba50c07a55c2f6b734e56949d29e37d7ef85e094c015e4d1ba",
+    "runtimeFilesChanged": 0
+  },
+  "dependencyScan": {
+    "when": "before execution",
+    "status": "COMPLETED",
+    "publicEntryFiles": 40,
+    "detectedFiles": 99,
+    "outsidePackageAndMathWorks": 0,
+    "products": [
+      {
+        "name": "MATLAB",
+        "version": "24.2",
+        "certain": true
+      },
+      {
+        "name": "Aerospace Toolbox",
+        "version": "24.2",
+        "certain": false
+      },
+      {
+        "name": "Sensor Fusion and Tracking Toolbox",
+        "version": "24.2",
+        "certain": false
+      },
+      {
+        "name": "Navigation Toolbox",
+        "version": "24.2",
+        "certain": false
+      },
+      {
+        "name": "Radar Toolbox",
+        "version": "24.2",
+        "certain": false
+      },
+      {
+        "name": "Robotics System Toolbox",
+        "version": "24.2",
+        "certain": false
+      },
+      {
+        "name": "ROS Toolbox",
+        "version": "24.2",
+        "certain": false
+      },
+      {
+        "name": "Satellite Communications Toolbox",
+        "version": "24.2",
+        "certain": false
+      },
+      {
+        "name": "Simscape Multibody",
+        "version": "24.2",
+        "certain": false
+      },
+      {
+        "name": "UAV Toolbox",
+        "version": "24.2",
+        "certain": false
+      },
+      {
+        "name": "Computer Vision Toolbox",
+        "version": "24.2",
+        "certain": false
+      }
+    ],
+    "interpretation": "Results from MATLAB requiredFilesAndProducts for this installation. Products with certain=false are not a requirements list. Static analysis does not exhaust dynamic code paths."
+  },
+  "selectedStudies": {
+    "diagnosticExamples": "COMPLETED",
+    "selectedPaperCasesMatched": 20,
+    "selectedPaperExtensionCasesMatched": 16,
+    "analyticRightSpectraMatched": 14,
+    "rightEigenpairsChecked": true,
+    "fullPaperReproductionClaimed": false,
+    "timingBenchmarkRun": false,
+    "publicationFigureExportRequested": false,
+    "humanFigureReviewPerformed": false,
+    "graphicsRegressionCoverage": "All 20 graphics tests passed, including figure data, rendering/export fixtures and axes preservation."
+  },
+  "evidence": {
+    "source": "Author supplied report.zip (report.mat, report.txt) and MATLAB Command Window transcript; machine-specific paths are omitted.",
+    "matTextConsoleOrderAndLabelsMatch": true,
+    "reportZipSHA256": "07db2d6cb2d6715223339dde2b47c429096d5d6c5acffe33d3374a1b759973d4",
+    "reportMatSHA256": "e06fbccafae9adac543c32c7bdee292e8b9ef8f1f32613b80990568fd0e6a2d7",
+    "reportTextSHA256": "204c07174f6baf9540762650071afec5f5455757aa52f9c558b0fbdf31134c33",
+    "consoleSHA256": "b4683a053b2725bf6bbb86f1c95635380f0e8bde610f0ff3c73d1e8a35cd00bc"
+  }
+}

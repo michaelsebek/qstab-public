@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.ballset</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabballset">qstab.ballset</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/ballset.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>BALLSET Pointwise spectral-set membership for a weighted coefficient ball.
+  [MEMBERSHIP,Info] = qstab.ballset(P,weights,z,r,...)
+  MEMBERSHIP is pointwise: 1 inside, 0 outside, NaN unresolved.
+  It is not a whole-family stability decision.
+  Info is the full diagnostic structure returned by earlier releases.
+[~,S] = qstab.ballset(P,GAMMA,Z,R,&#39;Exponent&#39;,ETA) classifies the requested complex
+points only. Inside means some admissible member has this algebraic class;
+outside means the pointwise distance exceeds R with a numerical guard.
+Values in the tolerance band remain unresolved. No grid certifies the
+continuum between its points or robust stability of the whole family.
+Z refers to the INPUT polynomial variable, including a delay variable.
+Options are passed to qstab.ballvalue. Witness generation is optional.
+
+  Examples (ascending coefficients):
+  [membership,S] = qstab.ballset([2 1],[1 0],[-2 -1 0],0.5);
+  disp(membership);
+
+  Interpretation:
+  Only the supplied query points are classified. A sampled contour or grid never certifies the whole stability region.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Exponent</code></td>
+<td><code>2</code></td>
+<td>Block norm exponent eta in [1,Inf]. eta=Inf gives independent full
+quaternion balls; zero weights fix coefficients.</td>
+</tr>
+<tr class="even">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+<tr class="odd">
+<td><code>Witness</code></td>
+<td><code>false</code></td>
+<td>Retain reconstructed critical members. Availability and validity
+flags must be checked before use.</td>
+</tr>
+<tr class="even">
+<td><code>Tolerance</code></td>
+<td><code>1e-10</code></td>
+<td>Numerical residual/separation or pairing guard as described for this
+routine. It is not a physical uncertainty radius and not a
+directed-rounding proof.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

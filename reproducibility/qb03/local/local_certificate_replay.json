@@ -1,0 +1,22 @@
+{
+  "status": "INDEPENDENT EXACT LOCAL REPLAY OK",
+  "tetrahedral_subfamilies": 15,
+  "positive_vertex_hurwitz_minors": 36,
+  "affine_minor": "-1728",
+  "frequency_cutoff": "30",
+  "global_hull_zero_witness_verified": true,
+  "actual_zero_frequency_norm_lower_bound": "80",
+  "parameter_leaves": 216,
+  "parameter_splits": 201,
+  "frequency_cells": 1850,
+  "maximum_parameter_depth": 6,
+  "maximum_frequency_depth": 6,
+  "bernstein_identities": 18500,
+  "uniform_modulus_lower_bound_on_tested_faces": "13730490575/1073741824",
+  "distinct_frequency_intervals": 13,
+  "minimum_local_zero_frequency_control": "80",
+  "global_zero_frequency_control_range": [
+    "-100",
+    "3141/5"
+  ]
+}

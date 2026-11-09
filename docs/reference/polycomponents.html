@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.polycomponents</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabpolycomponents">qstab.polycomponents</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/polycomponents.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>POLYCOMPONENTS Ascending coefficients of a scalar quaternion polynomial.
+  C = qstab.polycomponents(P) returns a real 4-by-(grade+1) matrix, with
+  columns containing the a,b,c,d parts of coefficients p_0,...,p_grade.
+  P is a numeric/native-quaternion coefficient vector, a 1-by-1-by-(g+1)
+  coefficient tensor, a vector cell array of scalar coefficients, or a
+  component struct a,b,c,d with the same coefficient layout.
+  [C,INFO] = ... also records grade, actualDegree and exact zero padding.
+  ...,&#39;Grade&#39;,G pads to grade G; it never silently removes coefficients.
+  All coefficients are ascending. A raw numeric 4-by-N component matrix
+  is deliberately not inferred; use the explicit component struct.
+
+  Examples (ascending coefficients):
+  [C,I] = qstab.polycomponents([2 3 1]);
+  disp(C); disp(I.grade);
+
+  Interpretation:
+  The returned 4-by-(g+1) array is an explicitly documented real representation. A raw 4-by-N input is NOT interpreted as quaternion polynomial coefficients.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

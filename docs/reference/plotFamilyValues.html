@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.plotFamilyValues</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabplotfamilyvalues">qstab.plotFamilyValues</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/plotFamilyValues.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>PLOTFAMILYVALUES Plot values of sampled family members at one frequency.
+  qstab.plotFamilyValues(F,omega)                100 sampled members
+  qstab.plotFamilyValues(F,omega,N)              N sampled members
+  [ax,D] = qstab.plotFamilyValues(F,omega,N,...) plot and keep the data
+  [~,D] = qstab.plotFamilyValues(F,omega,N,&#39;Plot&#39;,false)  no figure
+
+  For every sampled P(v)=sum a_k v^k (coefficients on the left), compute
+  its RIGHT point evaluation w=sum a_k*xi^k. Choose a pure unit quaternion
+  u with &#39;AxisUnit&#39; (default i). For variable s use xi=u*omega, where
+  omega is in radians per unit time. For z use cos(omega)+u*sin(omega),
+  for delay use cos(omega)-u*sin(omega); omega is in radians PER SAMPLE
+  in both discrete cases. Signed real omega is accepted. To query physical
+  frequency Omega in rad/s at sample period h, pass omega=Omega*h.
+
+  &#39;Projection&#39;   &#39;class&#39; (default): (Re w,norm(Im w)). This preserves
+                 distance to the origin and maps only zero to the origin;
+                 directions in the imaginary 3-space are not preserved.
+                 &#39;slice&#39;: (Re w,Im(w) dot u), colored by the length of
+                 its discarded imaginary component perpendicular to u.
+                 A point at the plotted origin may have w ~= 0.
+                 &#39;normpoly&#39;: planar complex N_P(zeta)=sum_l h_l(zeta)^2
+                 for the FOUR real component polynomials h_l, at central
+                 complex zeta. This tests algebraic zero classes; it is
+                 not the quaternion value w or its squared norm.
+  &#39;AxisUnit&#39;     &#39;i&#39;,&#39;j&#39;,&#39;k&#39;, a real unit 3-vector, or a scalar pure unit
+                 MATLAB quaternion or a,b,c,d component struct. Fixes the evaluation direction;
+                 the norm-polynomial plane is independent of this choice.
+  &#39;AxisUnit&#39;,&#39;sphere&#39; with &#39;Projection&#39;,&#39;class&#39; samples K input directions
+                 per polynomial: +i,+j,+k,-i,-j,-k first (as many as fit),
+                 then a Fibonacci sphere. &#39;DirectionCount&#39;,K defaults to 32.
+                 N counts members; N*K &lt;= 1e6. Values at real arguments
+                 repeat across all directions. No sphere search is needed
+                 in normpoly mode. A signed slice requires one fixed axis.
+  F may be a struct from qstab.family or qstab.randfamily, or any raw
+  input accepted by qstab.familycomponents.
+  By default, a cell {P1,...,Pm} denotes a polytope. To sample independent
+  component bounds {L,U}, pass &#39;Uncertainty&#39;,&#39;interval&#39;. Affine and
+  oneparameter definitions are structs (see qstab.familycomponents).
+  A canonical qstab.familycomponents result is accepted as well.
+  &#39;Variable&#39;      &#39;s&#39; (default), &#39;z&#39; or &#39;zinv&#39;; matching family metadata
+                  are inferred for tagged family structs.
+  &#39;Grade&#39;         For raw inputs, pad to this grade (never discard coefficients).
+  &#39;Uncertainty&#39;   &#39;polytope&#39;, &#39;interval&#39;, &#39;affine&#39; or &#39;oneparameter&#39;.
+
+  &#39;Sampling&#39;     &#39;grid&#39; (default) or &#39;random&#39;; N counts family members.
+  &#39;Seed&#39;         Integer 0..2^32-1 for repeatable random sampling with
+                 no change to the caller&#39;s RNG. Without Seed, random
+                 sampling advances the caller&#39;s RNG.
+  N is at most 1e6, with at most 1e7 coefficient/parameter samples.
+  &#39;ParameterBox&#39; Finite 4-by-2 component limits for a oneparameter model;
+                 required for an unrestricted t; a subbox for bounded t.
+  &#39;Plot&#39;         true (default) or false; false returns ax=[].
+  &#39;Parent&#39;       Existing axes; &#39;Visible&#39;,&#39;off&#39; hides a new figure.
+
+  D.valueComponents has N*K rows (K=1 by default), with columns
+  [real i j k] of w. D.memberIndex and D.directionIndex identify each row.
+  D.valueNorm is the Euclidean norm of each w. D.projected has two
+  columns. D.offSlice records the
+  perpendicular imaginary length. D.normValues is the complex N-by-1
+  array in &#39;normpoly&#39; mode, empty otherwise. D.complexArgument is zeta,
+  D.argumentComponents lists the K query quaternions xi; D.axisUnit lists
+  their K pure unit directions as real 3-vectors.
+  D.sample gives weights/parameters; D.coefficients(:,k+1,n) contains the
+  four real parts of member n at power k. D.isCertificate=false: these
+  are samples, not a certified value enclosure or zero-exclusion test.
+
+  Example (ascending coefficients; no add-ons needed):
+    minusJ = struct(&#39;a&#39;,[0 1],&#39;b&#39;,[0 0],&#39;c&#39;,[-1 0],&#39;d&#39;,[0 0]);
+    F = qstab.family(&#39;polytope&#39;,{[0 1],minusJ});
+    qstab.plotFamilyValues(F,1,41,&#39;AxisUnit&#39;,&#39;j&#39;);          % actual P(j)
+    qstab.plotFamilyValues(F,1,41,&#39;Projection&#39;,&#39;normpoly&#39;); % central N_P(1i)
+  See also qstab.plotFamilyZeros, qstab.valueset, qstab.plotValueSet, qstab.valueenclosure.</code></pre>
+</main></body></html>

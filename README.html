@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab · Quaternion Stability Toolbox for MATLAB</title><link rel="stylesheet" href="docs/style.css"></head><body><main><h1 id="qstab--quaternion-stability-toolbox-for-matlab">qstab ·
+Quaternion Stability Toolbox for MATLAB</h1>
+<p><strong>Version 0.18.0</strong> · <a
+href="docs/qstab_manual.pdf">Read the illustrated guide</a> · <a
+href="docs/api_index.html">Function reference</a> · <a
+href="docs/installation.html">Installation and dependencies</a></p>
+<p>Test nominal and robust strict stability for scalar quaternionic
+polynomials; compute right spectra of quaternion state matrices and
+representatives of algebraic zero classes. Families may be polytopes,
+independent coefficient intervals, real affine families, or one constant
+quaternion acting from a specified side. Coefficient balls and component
+boxes, continuous and discrete tests, radii, witnesses, and sampled
+plots are included in this release. Robust polynomial matrices are
+outside the supported scope; the square polynomial-matrix companion is a
+nominal experimental feature.</p>
+<p><strong>Native MATLAB verification:</strong> all 693 regressions
+passed on R2024b Update 2 (Windows) using the release candidate. The
+final package changes version information and documentation only. <a
+href="verification/VALIDATION.html">What was verified</a>.</p>
+<h3 id="first-minute">First minute</h3>
+<p>Unzip to a new folder. Change the MATLAB current folder to the
+directory containing <code>qstab_setup.m</code>. Run:</p>
+<pre class="matlab"><code>qstab_setup(&#39;Examples&#39;,true);
+F = qstab.family(&#39;polytope&#39;,{[1 1],[2 1]});    % p(s)=s+a, 1 &lt;= a &lt;= 2
+[tf,info] = qstab.robuststable(F);
+tf                                             % 1
+info.status
+R = qstab_guide_example(&#39;G06&#39;);                % one checked, headless example</code></pre>
+<p>Use <code>tf==1</code>, <code>tf==0</code>, and
+<code>isnan(tf)</code>: the three results are strictly stable,
+demonstrably not strictly stable, and undecided or unmet assumptions.
+Open <code>info.status</code> for the distinction. For a robust failure
+also inspect its witness. Coefficients are <strong>ascending</strong>;
+[2 3 1] is 2+3s+s². Scalar roots are algebraic similarity classes: they
+need not vanish under point evaluation at the displayed
+representative.</p>
+<h3 id="from-question-to-runnable-code">From question to runnable
+code</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Where to start</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>How do I enter quaternion coefficients or select continuous,
+forward, or delay time?</td>
+<td>Guide examples G01 and G02</td>
+</tr>
+<tr class="even">
+<td>What are the right eigenvalues of a matrix?</td>
+<td>G03 · <code>qstab.eig</code>, <code>qstab.eigpairs</code></td>
+</tr>
+<tr class="odd">
+<td>How far can one quaternion move in a fixed direction? What if its
+physical range is bounded?</td>
+<td>G04 and G11 · <code>qstab.raymargin</code></td>
+</tr>
+<tr class="even">
+<td>How do independent component intervals differ from shared
+parameters?</td>
+<td>G05 · <code>qstab.family</code></td>
+</tr>
+<tr class="odd">
+<td>How can a local enclosure exclude zero when the global one
+cannot?</td>
+<td>G06 and G07 · <a href="docs/papers.html">polytope article and exact
+checks</a></td>
+</tr>
+<tr class="even">
+<td>How do I inspect a certificate or a destabilising member?</td>
+<td>G08</td>
+</tr>
+<tr class="odd">
+<td>What changes when the perturbation set is a ball instead of a
+box?</td>
+<td>G09</td>
+</tr>
+<tr class="even">
+<td>How do I plot sampled zero classes or the values of a seeded random
+family?</td>
+<td>G10 · <code>qstab.plotFamilyZeros</code>,
+<code>qstab.plotFamilyValues</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>qstab_guide_example()</code> lists the keys;
+<code>qstab_guide_example('all')</code> executes all eleven in local
+function workspaces. The examples do not write files, download software
+or open figures. To make figures, use the explicit plot calls in the
+guide. To validate a full <strong>native</strong> installation
+separately, use <code>report=run_qstab_public('Figures',false)</code>.
+That acceptance run writes <code>qstab_test_results.zip</code> beside
+the runner; it checks basic graphics even when optional figure export is
+disabled. <a href="verification/VALIDATION.html">Read the validation
+record</a>.</p>
+<h3 id="article-citation-and-license">Article, citation and license</h3>
+<p>The initial companion manuscript is M. Šebek, <em>A Sharp Face
+Theorem for Robust Stability of Quaternionic Polynomial Polytopes</em>,
+prepared for Automatica. The public package also includes methods not
+covered by that paper. <a href="docs/papers.html">Research notes and
+reproduction key</a> · <a href="CITATION.cff">Cite this version</a> · <a
+href="LICENSE">MIT license</a> · <a href="RELEASE_NOTES.html">Release
+notes</a>.</p>
+<p>For optional integrations and MathWorks product checks, see <a
+href="docs/installation.html">installation</a>. There is no mandatory
+third-party GitHub download.</p>
+</main></body></html>

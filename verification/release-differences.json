@@ -1,0 +1,28 @@
+{
+  "comparedFrom": "0.18.0-rc.1",
+  "comparedTo": "0.18.0",
+  "matlabTotal": 193,
+  "matlabByteIdentical": 189,
+  "changedFiles": [
+    {
+      "path": "qstab_setup.m",
+      "rc1Sha256": "a48f957f379d8bbc4fd6af323e32b1b499be9276ead67f288d88de499d71ec60",
+      "finalSha256": "a8fbb1b6040f919ed4271a53f44f206e8c4e0636829ae5a18d575d06c37d322e"
+    },
+    {
+      "path": "run_qstab_public.m",
+      "rc1Sha256": "bad2dc16edc5c5b0641b55af75e2ddc1571f53e44492158565ebb90161faee4d",
+      "finalSha256": "25ed321f904c9a0512660e08f6a9573d0bce44acd5550ebbd8bffd85e0645786"
+    },
+    {
+      "path": "src/+qstab/Contents.m",
+      "rc1Sha256": "b4cbce4db5ad15bd525f3b67f855966900c72ea40286f56db839ad2dc2dc66de",
+      "finalSha256": "71d7639631159a38009583960b3947a35fd6ed47337e864a255b0bbf40ca85a6"
+    },
+    {
+      "path": "src/+qstab/about.m",
+      "rc1Sha256": "57b0494e0603a66ebbb76ac816380c909c743d429f412e7a19fda752f57910b6",
+      "finalSha256": "09986c293b6116d7867ad0ebdeaa0df2178f4de46f831168cdfb3d7c70386f5f"
+    }
+  ]
+}

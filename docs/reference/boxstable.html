@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.boxstable</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabboxstable">qstab.boxstable</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/boxstable.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>BOXSTABLE Strict stability of a componentwise box about a scalar polynomial.
+  [TF,Info] = qstab.boxstable(P,widths,r,...)
+  TF is a double: 1 strictly stable, 0 demonstrably not strictly stable
+  (including a confirmed boundary member), NaN unresolved or prerequisites
+  not met. Inspect Info.status to distinguish these cases; test isnan(TF)
+  before using TF in a branch. Info retains the complete diagnostic report.
+  Info is the full diagnostic structure returned by earlier releases.
+[~,R] = qstab.boxstable(P,W,RADIUS,&#39;Variable&#39;,&#39;s&#39;|&#39;z&#39;|&#39;zinv&#39;) tests ALL real
+coefficient components satisfying abs(delta_knu)&lt;=RADIUS*W_knu. W is a
+real nonnegative 4-by-(grade+1) array (or explicit a,b,c,d component struct).
+Zero components of W are fixed, not independent quaternion balls.
+
+The verified whole-family solver supplies stable decisions. Unstable
+witnesses are reconstructed and spectrally rechecked in the original box.
+Two original-box corners are negative-only candidate checks, never a
+vertex-only certificate. Every moved candidate is spectrally rechecked.
+Padding of floating-point endpoints can only make positive tests harder;
+a witness outside the requested box is NOT accepted as its counterexample.
+Required leading-coefficient loss is assumptionFailed, not a finite root.
+
+Options: Variable=&#39;s&#39;, Grade=[], Method=&#39;zeroexclusion&#39;|&#39;lyapunov&#39;,
+MaxCells=2048, MaxDepth=30, MaxTime=20, Tolerance=1e-10,
+StoreCertificates=false. No new class or additional toolbox is required.
+
+  Examples (ascending coefficients):
+  W = zeros(4,2); W(1,1) = 1;
+  [tf,R] = qstab.boxstable([2 1],W,0.5);
+  disp(tf);
+
+  Interpretation:
+  A complete component box is tested. Checked corners can disprove stability but cannot prove a general family stable. Fixed components and original membership must be preserved.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Variable</code></td>
+<td><code>'s'</code></td>
+<td>Time convention: s (continuous), z (forward shift) or zinv (delay).
+Reinterprets the supplied coefficients; it does not transform a
+system.</td>
+</tr>
+<tr class="even">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+<tr class="odd">
+<td><code>Method</code></td>
+<td><code>'zeroexclusion'</code></td>
+<td>Algorithm selection, restricted to the values listed in this
+function's help. The robuststable default remains Lyapunov subdivision;
+zeroexclusion is explicit.</td>
+</tr>
+<tr class="even">
+<td><code>MaxCells</code></td>
+<td><code>2048</code></td>
+<td>Finite computation budget. Meaning is total constructed/processed
+covering cells in the selected solver; exhausted cells remain
+unresolved.</td>
+</tr>
+<tr class="odd">
+<td><code>MaxDepth</code></td>
+<td><code>30</code></td>
+<td>Maximum subdivision depth. It is local to a branch/cell, not a
+promise of full coverage.</td>
+</tr>
+<tr class="even">
+<td><code>MaxTime</code></td>
+<td><code>20</code></td>
+<td>Time budget in seconds; Inf disables it when accepted. No incomplete
+run is relabelled stable.</td>
+</tr>
+<tr class="odd">
+<td><code>Tolerance</code></td>
+<td><code>1e-10</code></td>
+<td>Numerical residual/separation or pairing guard as described for this
+routine. It is not a physical uncertainty radius and not a
+directed-rounding proof.</td>
+</tr>
+<tr class="even">
+<td><code>StoreCertificates</code></td>
+<td><code>false</code></td>
+<td>Retain accepted certificates for later read-only inspection. It does
+not strengthen the mathematical assurance level.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

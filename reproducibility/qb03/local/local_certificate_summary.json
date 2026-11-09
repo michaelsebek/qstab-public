@@ -1,0 +1,15 @@
+{
+  "example": "five-dimensional cubic simplex with a strict global-hull false alarm",
+  "affine_minor": "-1728",
+  "frequency_cutoff": "30",
+  "statistics": {
+    "parameter_leaves": 216,
+    "parameter_splits": 201,
+    "frequency_cells": 1850,
+    "maximum_parameter_depth": 6,
+    "maximum_frequency_depth": 6,
+    "bernstein_identities": 18500
+  },
+  "uniform_modulus_lower_bound_on_tested_faces": "13730490575/1073741824",
+  "status": "CERTIFIED ROBUST HURWITZ WITH PARAMETER SUBDIVISION"
+}

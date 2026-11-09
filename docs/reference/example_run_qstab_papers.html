@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>run_qstab_papers</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="run_qstab_papers">run_qstab_papers</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../examples/run_qstab_papers.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>RUN_QSTAB_PAPERS Reproduce SELECTED source-linked qB01/qB02/qB03 examples.
+E=run_qstab_papers returns ordinary data only: catalogue/reference inputs,
+solver outputs, source checks and execution metadata. No figure, directory,
+path, RNG, archive or third-party files are modified. It is not a benchmark.
+
+Options: Articles={&#39;qB01&#39;,&#39;qB02&#39;,&#39;qB03&#39;}, Cases={} (all selected articles),
+UseQuaternion=true, MaxTime=30 PER SOLVER CALL, MaxCells=8192, Verbose=true.
+Empty article/case selections, duplicate IDs and unknown names are errors;
+selection is validated BEFORE the first solver call. Output order follows
+the catalogue, not the selection list. BOUNDED/UNRESOLVED are kept explicit.
+E.ok means no reference contradictions/errors, NOT complete reproduction.
+E.fullyMatched additionally requires all selected reference checks matched.
+To include E in the ONE standard report archive:
+  report=test_qstab(&#39;PaperExamples&#39;,true);
+All original numbered figures/examples are NOT reproduced by this suite.</code></pre>
+</main></body></html>

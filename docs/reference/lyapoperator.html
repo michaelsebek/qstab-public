@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.lyapoperator</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstablyapoperator">qstab.lyapoperator</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/lyapoperator.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>LYAPOPERATOR Real matrix of X -&gt; A*X + X*A&#39; on quaternion Hermitian X.
+  L = qstab.lyapoperator(A) has size (2*n^2-n)-by-(2*n^2-n).
+  A is a square native quaternion/numeric array, or a component struct
+  with real fields a,b,c,d. This is NOT a quaternion Kronecker sum.
+
+  Coordinates use a Frobenius-orthonormal quaternion Hermitian basis:
+  real diagonal entries first; then sqrt(2)*[a,b,c,d] of each upper
+  triangular entry, in row order. INFO documents this coordinate order.
+  The construction uses the complex adjoint only for multiplication.
+
+  Examples (ascending coefficients):
+  [L,I] = qstab.lyapoperator(-eye(2));
+  disp(L);
+
+  Interpretation:
+  The output is a REAL operator on quaternion Hermitian matrices, not a quaternionic Kronecker sum. Its eigenvalue interpretation is part of the directional test; do not substitute a naive noncommutative Kronecker identity.
+
+  See also qstab.about.</code></pre>
+</main></body></html>

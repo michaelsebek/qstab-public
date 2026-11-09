@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.ballvalue</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabballvalue">qstab.ballvalue</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/ballvalue.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>BALLVALUE Exact-formula pointwise coefficient-ball distance to a zero class.
+[R,INFO]=qstab.ballvalue(P,GAMMA,Z,&#39;Exponent&#39;,ETA) evaluates the smallest
+|| (|delta_k|/gamma_k) ||_eta that permits an algebraic zero in each class
+represented by complex Z. Zero weights fix their coefficients. ETA is in
+[1,Inf] (default 2). Coefficients/weights are ascending at the same grade.
+Z can be a finite numeric array of any shape; R preserves that shape.
+
+This is the qB02 weighted-coefficient-ball spectral-set formula, evaluated
+via the smaller singular value of a 2-by-2 complex polynomial value. It is
+NOT abs(p(i*omega)) on one arbitrarily chosen quaternion slice. Its small
+singular values use SVD, not a subtraction of two nearly equal squares.
+&#39;Witness&#39;,true reconstructs an admissible critical polynomial per query.
+&#39;Grade&#39;,G retains zero padding; weights must include all G+1 coefficients.
+Z is always in the INPUT polynomial variable. No delay reversal occurs.
+INFO.lower/upper are guarded floating-point pointwise estimates, not
+outward-rounded interval proofs. Inspect INFO.valid before using results.
+
+  Examples (ascending coefficients):
+  [r,I] = qstab.ballvalue([2 1],[1 0],0,&#39;Witness&#39;,true);
+  disp(r); disp(I.valid);
+
+  Interpretation:
+  Z describes a complete similarity class. Full quaternion coefficient balls are isotropic. Witness polynomials may have nonreal coefficients even for a real nominal polynomial. Pointwise validity is not a global stability certificate.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Exponent</code></td>
+<td><code>2</code></td>
+<td>Block norm exponent eta in [1,Inf]. eta=Inf gives independent full
+quaternion balls; zero weights fix coefficients.</td>
+</tr>
+<tr class="even">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+<tr class="odd">
+<td><code>Witness</code></td>
+<td><code>false</code></td>
+<td>Retain reconstructed critical members. Availability and validity
+flags must be checked before use.</td>
+</tr>
+<tr class="even">
+<td><code>Tolerance</code></td>
+<td><code>1e-10</code></td>
+<td>Numerical residual/separation or pairing guard as described for this
+routine. It is not a physical uncertainty radius and not a
+directed-rounding proof.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

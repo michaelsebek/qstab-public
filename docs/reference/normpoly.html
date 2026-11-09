@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.normpoly</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabnormpoly">qstab.normpoly</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/normpoly.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>NORMPOLY Real scalar norm polynomial, with ascending coefficients.
+  N = qstab.normpoly(P) forms N(v)=p(v)*conj(p)(v), where conjugation
+  acts on coefficients and v is central. If p=a+b*i+c*j+d*k, then
+  N=a^2+b^2+c^2+d^2, using polynomial multiplication, not pointwise
+  squaring. N has declared grade twice that of P; no zeros are trimmed.
+  [N,INFO] = ... returns degree/grade and input metadata.
+  ...,&#39;Grade&#39;,G has the same meaning as in qstab.polycomponents.
+
+  Examples (ascending coefficients):
+  [n,I] = qstab.normpoly([2 1]);
+  disp(n);  % [4 4 1], ascending, not MATLAB roots order
+
+  Interpretation:
+  Returns a real ascending coefficient vector of declared grade 2*g. Multiplication takes place in the central polynomial ring. N(z) uses complex squares, not absolute squares; N(lambda) is not generally |p(lambda)|^2.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>run_qstab_eigen_comparison</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="run_qstab_eigen_comparison">run_qstab_eigen_comparison</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../examples/run_qstab_eigen_comparison.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>RUN_QSTAB_EIGEN_COMPARISON Reference-backed, read-only right-spectrum study.
+E=run_qstab_eigen_comparison checks qstab.eig on fourteen deterministic
+matrices with analytic reference multisets, preserving algebraic counts.
+E=run_qstab_eigen_comparison(&#39;LegacyFunction&#39;,@qeig,&#39;Timing&#39;,true)
+additionally invokes the EXISTING function explicitly supplied by the user.
+Initialize that function&#39;s own environment before calling this runner.
+No qeig alias, path addition, global initialization or source edit occurs.
+
+Options: Cases (IDs or &#39;all&#39;), UseQuaternion (true), Tolerance (1e-7),
+LegacyFunction ([]), CheckLegacyVectors (true), Timing (false),
+CheckPrimaryVectors (false) explicitly checks qstab.eigpairs as well,
+outside one-output timing. Its assessment is retained in primary.eigenpairs.
+Repetitions (3), WarmupRuns (1), MinSampleTime (.05), MaxBatchCalls (256),
+Verbose (true). With no legacy function, timing comparison is not applicable.
+Existing [V,D]=qeig(A) is checked separately from qstab&#39;s [lambda,info].
+A defective fixture does not require a full eigenvector basis.
+
+E.ok requires the selected checks, including requested legacy checks.
+COMPLETED_WITH_DIFFERENCES is a completed experiment, NOT an endorsement of
+a differing/failed legacy solver. All source data and failures are retained.
+Output is ordinary serializable data. This function itself writes no files.</code></pre>
+</main></body></html>

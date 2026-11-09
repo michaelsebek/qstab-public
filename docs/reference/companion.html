@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.companion</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabcompanion">qstab.companion</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/companion.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>COMPANION Complex companion matrix or generalized companion pencil.
+  [A,B,INFO] = qstab.companion(P) constructs a pencil A-lambda*B for
+  P(v)=P0+P1*v+...+Pg*v^g, using the complex adjoint of each coefficient.
+  P may be a scalar coefficient vector/tensor, a square matrix coefficient
+  tensor, a vector cell array {P0,...,Pg}, or a component struct a,b,c,d.
+  Coefficients are ascending and act from the left. The pencil preserves
+  infinite eigenvalues when the declared leading coefficient is singular.
+  A = qstab.companion(P) instead returns the normalized companion matrix;
+  this one-output form requires a numerically nonsingular leading block.
+  ...,&#39;Grade&#39;,G pads with zero high coefficients without silently trimming.
+  ...,&#39;Variable&#39;,&#39;s&#39;|&#39;z&#39;|&#39;zinv&#39; sets metadata only: no reciprocal transform
+  is performed here. All spectral points are in the actual input variable.
+
+  Examples (ascending coefficients):
+  [A,B,I] = qstab.companion([2 3 1]);
+  e = eig(A,B);  % full complex embedded spectrum, not n quaternion classes
+  disp(e);
+
+  Interpretation:
+  A and B are COMPLEX embedded matrices of order twice the quaternion companion order. They are not quaternion companion matrices and must not be wrapped as such. One output normalizes the leading block; two outputs preserve the generalized pencil.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+<tr class="even">
+<td><code>Variable</code></td>
+<td><code>'s'</code></td>
+<td>Time convention: s (continuous), z (forward shift) or zinv (delay).
+Reinterprets the supplied coefficients; it does not transform a
+system.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

@@ -1,0 +1,10 @@
+qstab_test_results/
+qstab_test_results.zip
+qstab_paper_figures/
+*.asv
+*.m~
+**/__pycache__/
+*.aux
+*.toc
+*.log
+*.out

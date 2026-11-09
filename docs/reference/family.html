@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.family</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabfamily">qstab.family</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/family.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>FAMILY Define a scalar quaternion polynomial family using ordinary MATLAB data.
+  F = qstab.family(&#39;interval&#39;,L,U) uses independent bounds on each real,
+  i, j and k part of each coefficient. L must be &lt;= U componentwise.
+  F = qstab.family(&#39;polytope&#39;,{P1,...,Pm}) uses one real nonnegative weight
+  per generator, summing to one. The weights are common to all powers.
+  F = qstab.family(&#39;affine&#39;,P0,{G1,...,Gm},B) denotes P0+sum(t_j*Gj);
+  each real t_j belongs to [B(j,1),B(j,2)], shared across coefficients.
+  F = qstab.family(&#39;oneparameter&#39;,P0,P1,&#39;Side&#39;,&#39;left&#39;,&#39;Bounds&#39;,B)
+  denotes P0+t*P1, with ONE quaternion t. &#39;right&#39; denotes P0+P1*t.
+  B is a real ordered 4-by-2 box on real(t),i,j,k coordinates. Omit B
+  or use [] for all of H: valid for a ray margin; a bounded-domain test
+  or plot requires an explicit finite domain.
+
+  All input polynomials have ASCENDING coefficients; use MATLAB quaternion,
+  numeric real/complex vectors or component structs a,b,c,d. &#39;Variable&#39;
+  is &#39;s&#39; (default), &#39;z&#39;, or &#39;zinv&#39;. &#39;Grade&#39; pads with high-order zero
+  coefficients; default = maximum supplied grade. &#39;SamplingPeriod&#39; is 0
+  for &#39;s&#39; and positive for discrete variables (default 1). It is metadata;
+  no transformation or frequency scaling is applied.
+  F is a scalar STRUCT, not a toolbox class. Fields include kind, variable,
+  grade, samplingPeriod and lower/upper, vertices, center/generators/bounds,
+  or p0/p1/bounds/side according to kind. No stability test is performed.
+  F = qstab.family(&#39;polytope&#39;,{[1 1],[2 1]}); tf=qstab.robuststable(F);
+  F = qstab.family(&#39;oneparameter&#39;,[2 1],1,&#39;Bounds&#39;,[-1 .5;zeros(3,2)]);
+  [ab,I]=qstab.raymargin(F,-2); I.parameterDomain.admissibleAlpha
+  See also qstab.randfamily, qstab.familycomponents, qstab.robuststable.</code></pre>
+</main></body></html>

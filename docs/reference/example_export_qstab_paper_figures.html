@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>export_qstab_paper_figures</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="export_qstab_paper_figures">export_qstab_paper_figures</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../examples/export_qstab_paper_figures.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>EXPORT_QSTAB_PAPER_FIGURES Export SAVED data without recomputing solvers.
+X=export_qstab_paper_figures(F) writes PDF/PNG/FIG/CSV and a text manifest
+into &lt;package root&gt;/qstab_paper_figures, independently of the current folder.
+Options: OutputDir, Formats={&#39;pdf&#39;,&#39;png&#39;,&#39;fig&#39;,&#39;csv&#39;}, Resolution=180,
+Overwrite=true. Relative OutputDir is resolved against this package root.
+Only the selected figure files and figures_manifest.txt are replaced.
+All figures are generated in a staging folder before committing any target.
+No test reports/ZIPs are read, written or renamed. No figure handles are
+stored in the returned metadata. CSV z-coordinates are zero for 2-D plots.</code></pre>
+</main></body></html>

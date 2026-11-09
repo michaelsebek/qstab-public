@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.isstable</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabisstable">qstab.isstable</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/isstable.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>ISSTABLE  Decide strict nominal stability of a polynomial or state matrix.
+
+  tf = qstab.isstable(P)
+  [tf,Info] = qstab.isstable(P,&#39;Variable&#39;,&#39;z&#39;)
+  [tf,Info] = qstab.isstable(A,&#39;Type&#39;,&#39;matrix&#39;,&#39;Domain&#39;,&#39;discrete&#39;)
+  [tf,Info] = qstab.isstable(Pmat,&#39;Type&#39;,&#39;polynomialMatrix&#39;)
+
+  tf is a scalar double: 1 for strictly stable, 0 for demonstrably not
+  strictly stable (including a confirmed boundary zero), NaN if undecided
+  or required assumptions are not met. Use tf==1, tf==0 and isnan(tf).
+  Info.status distinguishes stable, notStable, undetermined and
+  assumptionFailed; Info.message, Info.method and Info.diagnostics give the
+  reason. To inspect the status, request the SECOND output. Near-boundary
+  floating-point results may remain undecided.
+
+  P: a scalar polynomial in ascending powers with numeric or native
+  quaternion coefficients, or a struct with four real arrays a,b,c,d.
+  A: a square state matrix; specify Type=&#39;matrix&#39; explicitly, even for
+  a scalar matrix. Pmat: a square coefficient tensor whose pages hold
+  ascending powers; the nominal polynomial-matrix branch is experimental
+  and requires a nonsingular leading coefficient in the test variable.
+
+  Options:
+    Type       &#39;polynomial&#39; (default), &#39;matrix&#39;, or &#39;polynomialMatrix&#39;.
+    Variable   &#39;s&#39; (default), &#39;z&#39; (forward shift), &#39;zinv&#39; (delay).
+    Domain     &#39;continuous&#39; or &#39;discrete&#39; for state matrices; by default
+               infer from the variable convention (continuous when omitted).
+    Grade      [] infer; a nonnegative integer pads missing high powers.
+               The delay test reverses coefficients at this declared grade.
+    Method     &#39;auto&#39; (default), &#39;coefficient&#39;, &#39;routh&#39;, &#39;schur&#39;,
+               &#39;lyapunov&#39;, or &#39;spectral&#39;, as appropriate to the input.
+               Scalar auto uses Routh or Schur on the real norm polynomial;
+               matrix auto uses a Lyapunov/Stein test. &#39;spectral&#39; explicitly
+               asks for algebraic zeros or right eigenvalues.
+    Tolerance  1e-10; numerical separation and residual tolerance.
+    MaxKroneckerOrder 24; order limit for the direct matrix equation solve.
+
+  Examples:
+    tf = qstab.isstable([2 3 1]);                % 1: (s+1)(s+2)
+    [tf,I] = qstab.isstable([0 1]);              % 0: root at 0
+    disp(I.status)
+    tf = qstab.isstable([0 -1;1 0],&#39;Type&#39;,&#39;matrix&#39;);
+
+  See also qstab.robuststable, qstab.zeroexclude, qstab.roots, qstab.eig.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>type</code></td>
+<td><code>'polynomial'</code></td>
+<td>Explicit polynomial, matrix or supported nominal polynomialMatrix
+interpretation; robust family methods remain scalar-polynomial
+methods.</td>
+</tr>
+<tr class="even">
+<td><code>variable</code></td>
+<td><code>'s'</code></td>
+<td>Time convention: s (continuous), z (forward shift) or zinv (delay).
+Reinterprets the supplied coefficients; it does not transform a
+system.</td>
+</tr>
+<tr class="odd">
+<td><code>domain</code></td>
+<td><code>''</code></td>
+<td>continuous or discrete for state matrices. Polynomial tests use
+Variable instead.</td>
+</tr>
+<tr class="even">
+<td><code>grade</code></td>
+<td><code>[]</code></td>
+<td>Declared nonnegative integer grade, at least the supplied
+coefficient layout; [] infers it. Pads exact zeros, never discards
+coefficients. qB01 Grade applies only to discrete branches.</td>
+</tr>
+<tr class="odd">
+<td><code>method</code></td>
+<td><code>'auto'</code></td>
+<td>Algorithm selection, restricted to the values listed in this
+function's help. The robuststable default remains Lyapunov subdivision;
+zeroexclusion is explicit.</td>
+</tr>
+<tr class="even">
+<td><code>tolerance</code></td>
+<td><code>1e-10</code></td>
+<td>Numerical residual/separation or pairing guard as described for this
+routine. It is not a physical uncertainty radius and not a
+directed-rounding proof.</td>
+</tr>
+<tr class="odd">
+<td><code>maxKroneckerOrder</code></td>
+<td><code>24</code></td>
+<td>Maximum complex embedding order for the base-MATLAB Kronecker
+Lyapunov solve; above it optional lyap/dlyap is needed for that
+path.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>

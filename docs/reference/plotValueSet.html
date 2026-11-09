@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.plotValueSet</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabplotvalueset">qstab.plotValueSet</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a> · <a
+href="../../src/+qstab/plotValueSet.m">MATLAB source</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>PLOTVALUESET Plot a scalar norm-polynomial sample cloud and mark zero.
+  [AX,Info] = qstab.plotValueSet(S, ...)
+  AX is the target MATLAB axes. Info contains all previous plot handles
+  and the plotted data or diagnostics. Request Info for reuse or inspection.
+  Info is the full graphics-handle structure returned by earlier releases.
+  [~,H] = qstab.plotValueSet(S) plots the output of qstab.valueset. Columns
+  of S.points correspond to S.lambda; rows are parameter samples.
+
+  Options:
+    &#39;Parent&#39;       Existing axes. Their contents and hold state survive.
+    &#39;Visible&#39;      &#39;on&#39; (default) or &#39;off&#39; for a newly created figure.
+    &#39;LambdaIndex&#39;  Column index/indices to display; default: all columns.
+    &#39;Connect&#39;      false (default). true joins samples in their input
+                   order, without interpreting the lines as a boundary.
+
+  No convex hull, enclosure, or robust-stability certificate is inferred
+  from the plotted points. In particular, a cloud missing zero does not
+  prove that the full value set excludes it. H.isCertificate is false.
+  See also qstab.valueset, qstab.plotSpectrum.
+
+  Examples (ascending coefficients):
+  [~,S] = qstab.valueset({[1 1],[2 1]},1i,&#39;Weights&#39;,[1 0;.5 .5;0 1]);
+  [ax,H] = qstab.plotValueSet(S);
+
+  Interpretation:
+  Rendering only: discrete sample clouds do not prove zero exclusion and are not silently convexified.
+
+  See also qstab.about.</code></pre>
+<h2 id="additional-option-notes">Additional option notes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>parent</code></td>
+<td><code>[]</code></td>
+<td>Existing axes handle; its current content and hold/NextPlot state
+are preserved by the public plotting routine.</td>
+</tr>
+<tr class="even">
+<td><code>visible</code></td>
+<td><code>'on'</code></td>
+<td>on/off for a newly created figure. Does not alter the data or the
+validity of a result.</td>
+</tr>
+<tr class="odd">
+<td><code>lambdaindex</code></td>
+<td><code>1:size(S.points,2)</code></td>
+<td>Indices of the stored lambda columns to display; each selected
+column is a separate parameter-value set.</td>
+</tr>
+<tr class="even">
+<td><code>connect</code></td>
+<td><code>false</code></td>
+<td>When true, connect samples in their supplied parameter-row order.
+Joining samples does not certify interpolation or zero exclusion.</td>
+</tr>
+</tbody>
+</table>
+</main></body></html>
