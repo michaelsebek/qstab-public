@@ -41,10 +41,9 @@
 \node[anchor=west,align=left,text width=6.9cm] at (8.1,1.8){\sffamily\color{ink}Each dot represents one zero class.\\[3pt]The rectangle is the analytic image of $p(v)=v+a+b\qj$, where $a$ and $b>0$ vary independently.};
 \end{tikzpicture}
 \vfill
-\lead{Read with MATLAB open} All eleven numbered experiments have an executable key. They use real arrays or ordinary component structures and require no quaternion class. The same interfaces accept native MATLAB quaternion data.\par
-\vspace{6mm}{\sffamily Public release 0.18.0 \enspace / \enspace 9 November 2026}\par
-{\small\color{muted}MATLAB R2024b Update 2: all 693 checks passed on candidate 0.18.0-rc.1.
-The numerical routines and examples are unchanged in this release.}\par
+\lead{Read with MATLAB open} The eleven introductory experiments have executable keys and use ordinary arrays or component structures. The interval article study adds 24 source-linked groups and saved comparison reports. Native MATLAB quaternion input is supported.\par
+\vspace{6mm}{\sffamily Release 0.19.0 \enspace / \enspace 20 November 2026}\par
+{\small\color{muted}The numerical baseline was tested as 0.19.0-rc.1 in MATLAB R2024b Update 2 on 20 November 2026: 731/731 regression checks and 24/24 interval groups (110 comparisons). Final packaging is not a new native run. The optional MATLAB symbolic replay remains separately unvalidated; see the validation ledger.}\par
 \clearpage
 \tableofcontents
 \bigskip
@@ -58,7 +57,7 @@ G04 & First loss and later re-entry & G10 & Explore a random interval\\
 G05 & Line vs. independent box & G11 & Physical window and global radius\\
 G06 & Coarse and localized hulls &&\\\bottomrule
 \end{tabularx}\par
-\vfill\lead{Three routes} For a first run read Sections~\ref{sec:start}--\ref{sec:nominal}. For a polytopic study begin with Sections~\ref{sec:families}, \ref{sec:poly} and~\ref{sec:paper}. For existing project data use the function directory at the end, then consult the named MATLAB help entry for options.
+\vfill\lead{Choose a route} For a first run read Sections~\ref{sec:start}--\ref{sec:nominal}. For a polytopic study begin with Sections~\ref{sec:families}, \ref{sec:poly} and~\ref{sec:paper}. For the interval article use Section~\ref{sec:intervalstudy}. For existing project data use the function directory in Section~\ref{sec:directory}, then consult the named MATLAB help entry for options.
 \topic{Install, run and inspect}{sec:start}
 Unpack the distribution into a writable folder. Open the directory containing \m{qstab\_setup.m}; it is the package root. In a normal public MATLAB session:
 \begin{lstlisting}
@@ -191,7 +190,7 @@ At $s=0$ each $v_r\in\RR^4$; the diagonal controls $v_r^{\mathsf T}v_r$ give the
  \underbrace{620,620,620,620,628.2,620}_{\text{six generators}},\qquad
  \underbrace{80}_{\text{one admissible mixture}}.
 \]
-Meanwhile $B_{11}=620$ and $B_{12}=-100$. The displayed independent convex combination $5B_{11}/36+31B_{12}/36=0$ puts zero in the \emph{outer} hull. Those are weights on the controls, not weights on the original six generators. None of the seven sampled members supplies that zero. These concrete calculations explain the need for localization; they do not certify stability of this whole cubic family. The full argument is in M. Šebek, \emph{A Sharp Face Theorem for Robust Stability of Quaternionic Polynomial Polytopes} (manuscript prepared for \emph{Automatica}). The exact-data companion is separate from this finite MATLAB experiment: run \m{python reproducibility/qb03/replay.py} from the repository root to replay the mechanical and cubic rational checks. No Python installation is needed for the MATLAB guide. For package citations and publication updates see \m{docs/papers.md}.
+Meanwhile $B_{11}=620$ and $B_{12}=-100$. The displayed independent convex combination $5B_{11}/36+31B_{12}/36=0$ puts zero in the \emph{outer} hull. Those are weights on the controls, not weights on the original six generators. None of the seven sampled members supplies that zero. These concrete calculations explain the need for localization; they do not certify stability of this whole cubic family. The full argument is in M. Šebek, \emph{A Sharp Face Theorem for Robust Stability of Quaternionic Polynomial Polytopes}, available as a \href{https://doi.org/10.5281/zenodo.24136448}{version 1.0 preprint}. This is a paper identifier, separate from the software citation. The exact-data companion is separate from this finite MATLAB experiment: run \m{python reproducibility/qb03/replay.py} from the repository root to replay the mechanical and cubic rational checks. No Python installation is needed for the MATLAB guide. For package citations and publication updates see \m{docs/papers.md}.
 \topic{From local evidence to a robust verdict}{sec:cert}
 The zero-exclusion argument uses a connected parameter family, a strictly stable reference member, and a constant effective degree (or the corresponding forward regularity condition). Under these hypotheses a root cannot leave the open stability region without contacting its boundary. The numerical problem is to exclude the origin from the norm-value set \emph{for every boundary frequency and every admissible parameter}. Finite samples at selected frequencies cannot discharge those quantifiers.
 \lead{Choose a computational route} \m{qstab.zeroexclude} subdivides a joint parameter--frequency search. For a polytope one may request \m{'Reduction','four-generator'}: the reduced tests concern whole convex hulls of up to four generators, including their interiors. This is not the classical recipe of checking only exposed edges, or a vertex stability test. It applies with the stated fixed-degree and reference requirements. The scalar \m{qstab.robuststable} also offers a Lyapunov subdivision route. Either numerical method can stop with unresolved regions.
@@ -236,7 +235,7 @@ R = qstab_guide_example('G10');
 Use \m{'Sampling','grid'} for a deterministic design or \m{'Sampling','random','Seed',17} for repeatable draws. The count is the total number of sampled \emph{members}, not the number per coordinate. With a physical input axis $u$, the substitution is $u\omega$ in continuous time, $\cos\theta+u\sin\theta$ for $z$ and $\cos\theta-u\sin\theta$ for delay. Use radians per sample in discrete time. Sampled curves can be persuasive even when an unsampled member lies on the boundary.
 \topic{Function directory}{sec:directory}
 Use qualified names in MATLAB. Type \m{help qstab.raymargin} for its full syntax. A name by itself need not select the intended function. The tables show the mathematical return value first. Detailed argument checking, name/value options, tolerances and method-specific limits are in MATLAB help and the per-function reference pages.
-\par\smallskip\noindent\begin{tabularx}{\linewidth}{@{}p{.30\linewidth}Y@{}}\toprule
+\par\smallskip\noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.30\linewidth}Y@{}}\toprule
 Name after \m{qstab.} & Use and result\\\midrule
 \m{about} & Release, numerical scope and dependencies.\\
 \m{components} & Extract same-shaped real arrays $a,b,c,d$ from quaternion, complex or real data.\\
@@ -258,11 +257,14 @@ Name after \m{qstab.} & Use and result\\\midrule
 \end{tabularx}\par\smallskip
 \clearpage
 {\Large\bfseries Margins, evidence and displays}\par\medskip
-\par\smallskip\noindent\begin{tabularx}{\linewidth}{@{}p{.30\linewidth}Y@{}}\toprule
+\par\smallskip\noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.30\linewidth}Y@{}}\toprule
 Name after \m{qstab.} & Use and result\\\midrule
 \m{raymargin} & First signed endpoints along a fixed quaternion direction. A prescribed parameter window is reported separately.\\
 \m{freqmargin} & Smallest quaternion parameter norm for a class contact at a prescribed frequency.\\
+\m{boxfreqmargin} & Fixed-frequency box multiplier for one uncertain Hamilton component; actual coefficient and right-root witnesses follow.\\
 \m{stabilityradius} & Global all-direction bracket for one shared quaternion perturbing a scalar polynomial.\\
+\m{rootmotion} & Gradient and Hessian of a simple norm zero in the original real parameter units; a local sensitivity result.\\
+\m{intervalfaces} & Complete degree/parity-selected Hurwitz test families, followed by their plan; enumeration alone is not a verdict.\\
 \m{ballvalue}, \m{ballset} & Pointwise class distance and membership in a spectral set for weighted coefficient balls. Membership is not a global stability decision.\\
 \m{ballradius}, \m{ballstable} & First global loss bracket and strict decision at a chosen ball size.\\
 \m{boxvalue}, \m{boxradius}, \m{boxstable} & Actual-point component-box gauge, global scale bracket, and strict decision for a given scale.\\
@@ -276,4 +278,195 @@ Name after \m{qstab.} & Use and result\\\midrule
 \m{plotFamilyZeros}, \m{plotFamilyValues} & Sample actual members. Compute a cloud of algebraic zero representatives or display a class, slice or norm projection at one frequency.\\\bottomrule
 \end{tabularx}\par\smallskip
 \lead{Where the present release stops} Family certification concerns scalar quaternion polynomials with the documented uncertainty models. Nominal matrix and selected fixed-ray matrix routines do not constitute a robust-polynomial-matrix solver. The code uses ordinary floating point with residual, scale and separation checks; a numerical pass is not a directed-rounding interval proof. A sampled zero cloud, an outer enclosure at one frequency, a verified unstable member and a positive global numerical certificate answer four different questions. State which one you obtained when reporting a result.
+\topic{Run the interval article and supplement}{sec:intervalstudy}
+The interval study accompanies \m{IJRCN\_manuscript\_v7} and
+\m{IJRCN\_Zenodo-supplement\_v5}. Its catalogue has 24 groups, I01--I24.
+Each group keeps its source equation or example label, original input,
+computed quantities, independent reference values and comparison checks.
+These are separate from the introductory G01--G11 examples. The public
+\href{https://doi.org/10.5281/zenodo.24389775}{supplement record, version 1.0},
+is a technical note; the precise source revisions used here are identified
+in \m{docs/interval\_article.md}. No journal DOI is claimed for the interval
+manuscript.
+\begin{lstlisting}
+qstab_setup('Examples',true);
+run_qstab_intervals('list');
+R = run_qstab_intervals('all','Plots',true);
+R.archiveFile
+assert(R.ok,'Inspect %s',R.archiveFile)
+\end{lstlisting}
+For one experiment use \m{run\_qstab\_intervals('I19','Plots',true)}.
+For a selected pair use \m{run\_qstab\_intervals(\{'I09','I10'\})}.
+Native MathWorks quaternion input is the default. The explicit option
+\m{'UseQuaternion',false} instead uses ordinary component structures.
+Neither path uses private classes or external quaternion software.
+Use \m{help run\_qstab\_intervals} for all options, including quiet or
+in-memory runs and the destination of raw results.
+
+\lead{Where the results go} The current-run archive is always
+\m{qstab\_interval\_results.zip} in the package root. Each run also has
+its own folder below \m{interval\_results}; \m{R.outputDirectory} gives
+the full path. It contains \m{report.mat}, \m{report.txt} and
+\m{comparison.csv}. With plots enabled, figures are saved as PDF, PNG
+and MATLAB FIG, with CSV data. A calculation error inside a case is
+recorded without discarding the other cases. Invalid options or missing
+requested native quaternion support stop before the calculation starts.
+
+\begin{tabularx}{\linewidth}{@{}lY@{}}\toprule
+Keys & Questions and quantities reproduced\\\midrule
+I01--I04 & Algebraic classes, coefficient coupling, the running square,
+ and loss of declared degree.\\
+I05--I08 & Failure of endpoint tests, an unstable interior with stable
+ boundary, one-component slice, and orientation-dependent gauges.\\
+I09--I14 & Quartic OOO/EOO contact curvature and four quintic
+ counterexamples, retaining coefficients of size $10^{-12}$.\\
+I15--I18 & Rank-drop contact, variable-leading Schur families, and
+ monic Schur quadratic and cubic counterexamples.\\
+I19--I20 & Five-gain and two-gain regulators, contact witnesses,
+ frequency values and state trajectories.\\
+I21--I24 & An edge reserve, endpoint/degree/infinite events,
+ complete interval examples and degree/parity face counts.\\\bottomrule
+\end{tabularx}
+
+\lead{How to read a successful run} \m{R.ok} means that the requested
+calculations matched their independent comparisons. A case may correctly
+contain an unstable polynomial or an undecided floating-point stability
+flag. For example, near a tiny quintic coefficient the default guard may
+return \m{NaN}; the study retains that answer. Sampled roots illustrate
+boundary behaviour, while the separate exact replay below verifies whole
+continuous faces. Numerical matching and an exact proof have separate
+fields in the report.
+
+\lead{Draw saved results} Replot the stored arrays in a new subfolder,
+without rerunning solvers or replacing the original report ZIP:
+\begin{lstlisting}
+saved = load(fullfile(R.outputDirectory,'report.mat'),'report');
+files = plot_qstab_intervals(saved.report, ...
+    'Directory',fullfile(R.outputDirectory,'replotted'));
+\end{lstlisting}
+
+\topic{Frequency reserve and local motion}{sec:intervaltools}
+\lead{One uncertain Hamilton component} Suppose only component $j$ of
+each coefficient varies independently with weights $w_k$. At frequency
+$\omega$, its even and odd contributions fill a complex rectangle with
+half-widths
+\[
+ E(\omega)=\sum_{k\ {\rm even}} w_k|\omega|^k,
+ \qquad O(\omega)=\sum_{k\ {\rm odd}} w_k|\omega|^k.
+\]
+Let $g_j(\ii\omega)$ be the nominal value of that component and let $D$
+be the sum of the squares of the other three component values. The norm
+can vanish only at the two targets $g_j+e=\pm\sqrt{-D}$. Consequently,
+\[
+ r(\omega)=\min_{\sigma\in\{-1,1\}}
+ \max\left\{
+ \frac{|\operatorname{Re}(\sigma\sqrt{-D}-g_j)|}{E(\omega)},
+ \frac{|\operatorname{Im}(\sigma\sqrt{-D}-g_j)|}{O(\omega)}
+ \right\}.
+\]
+A zero denominator means that coordinate cannot move: a nonzero target
+there is infeasible, whereas a zero target contributes no constraint.
+\m{qstab.boxfreqmargin} implements this construction, checks both branches,
+and can reconstruct actual coefficient perturbations and a quaternion
+right zero. For the two-gain regulator:
+\begin{lstlisting}
+P = quaternion([1 1 1],[2 0 0],[0 2 0],[0 2 0]);
+W = zeros(4,3); W(1,1:2) = 0.1;
+u = fzero(@(u) u^3+8*u-4,[4/9,1/2]);
+[r,Info] = qstab.boxfreqmargin(P,W,sqrt(u),'Witness',true);
+r                         % approximately 5.1432053483
+Info.witnesses{1}
+\end{lstlisting}
+The first output is a margin at the specified frequency, minimized over
+quaternion orientations. It is not automatically a global minimum over
+frequency. In I20 the source's stationary equation supplies the frequency;
+the runner checks it and the reconstructed contact independently.
+
+\lead{How a simple algebraic zero moves} For an affine real-parameter
+family, write $N(\lambda(t),t)=0$. If $N_z\ne0$, implicit differentiation
+gives
+\[
+ \lambda_i=-\frac{N_i}{N_z},\qquad
+ \lambda_{ij}=-\frac{N_{ij}+N_{zi}\lambda_j+N_{zj}\lambda_i+
+ N_{zz}\lambda_i\lambda_j}{N_z}.
+\]
+Use \m{[g,H,Info]=qstab.rootmotion(F,lambda,'Parameters',theta)}.
+Derivatives use the original parameter units. The function verifies the
+simple-zero premise and evaluates derivative expressions without finite
+differences. The matrix $-\operatorname{Re}(H)/2$ in I09--I10 measures the
+local quadratic displacement. It does not alone prove stability of a
+finite parameter box. Multiple or unresolved roots retain an unresolved
+result instead of a manufactured derivative.
+
+For a small complete example, take $p(s,t)=s+1+t+\qj$ with
+$-0.1\leq t\leq0.1$. Its norm and upper-half-plane zero are
+\[
+ N_p(s,t)=(s+1+t)^2+1,\qquad \lambda(t)=-1-t+\ii.
+\]
+At the default midpoint $t=0$, the derivative is $-1$ and the Hessian is zero:
+\begin{lstlisting}
+P = quaternion([1 1],[0 0],[1 0],[0 0]);
+F = qstab.family('affine',P,{1},[-0.1 0.1]);
+[g,H,Info] = qstab.rootmotion(F,-1+1i);
+g                         % -1
+H                         % 0
+Info.valid                % true
+\end{lstlisting}
+Here MATLAB's \m{1i} denotes the complex class representative, while the
+native quaternion coefficient of \m{P} contains the Hamilton unit $\qj$.
+
+\topic{Continuous test faces and exact evidence}{sec:intervalproof}
+\lead{The remaining parameters stay continuous} A coefficient interval
+is first reduced to its eight even/odd Hamilton coordinates. The degree
+and available parity directions determine which complete lower-dimensional
+families must be tested. \m{qstab.intervalfaces(F)} constructs these
+families; it does not certify them by checking their vertices.
+For a full eight-coordinate cube the selection is:
+\begin{center}\begin{tabular}{@{}lrr@{}}\toprule
+Polynomial degree & Maximum free dimension & Number of families\\\midrule
+1 & 0 & 256\\
+2 or 3 & 2 & 1536\\
+4 & 3 & 896\\
+5 and above & 3 & 1024\\\bottomrule
+\end{tabular}\end{center}
+The quartic total is 512 three-dimensional families plus 384 uncovered
+two-dimensional families. Inactive coordinates are removed and duplicate
+families are suppressed. The previous named reductions keep their meanings;
+the new selection is explicitly requested:
+\begin{lstlisting}
+F = qstab.family('interval',[1.9 2.9 1],[2.1 3.1 1]);
+[faces,plan] = qstab.intervalfaces(F);
+[tf,Info] = qstab.zeroexclude(F,'Reduction','interval-faces', ...
+    'MaxSubfamilies',1536,'MaxCells',20000,'MaxTime',60);
+\end{lstlisting}
+Every selected family remains a continuum, and the numerical subdivision
+has a finite budget. An exhausted budget is undecided. This Hurwitz
+reduction is not applied to a Schur or delay interval.
+
+\lead{Recompute the concrete rational proofs} The optional exact replay
+uses Symbolic Math Toolbox. The numerical study itself has no Symbolic
+dependency. The native numerical acceptance did not run this optional
+symbolic path; its first native validation is still pending. After the
+standard examples pass, run:
+\begin{lstlisting}
+proof = verify_qstab_interval_certificates('Part','all');
+proof.coverage
+assert(proof.ok)
+% Or include the exact results in the same interval archive:
+R = run_qstab_intervals('all','Plots',true,'Exact',true);
+\end{lstlisting}
+The replay reconstructs the actual rational source polynomials. It checks
+56 quartic inequalities over their complete rectangles, all 24 closed
+two-dimensional boundary faces of the four quintic boxes, 264 positivity
+claims using 370 dyadic Bernstein leaves, and the central Routh columns.
+Every subdivision must cover its full parent, with exact rational bounds.
+Stored certificate flags are not used as proof. An independent Python/SymPy
+replay is included under \m{reproducibility/qb02}.
+
+These certificates verify the explicitly supplied examples. The article's
+general exact fixed-box decision procedure and general global algebraic
+reserve algorithm are not implemented by this release. Standard solver
+results remain ordinary floating-point results with their usual guards.
+For source hashes, all example labels, commands and validation details,
+see \m{docs/interval\_article.md} and \m{verification/VALIDATION.md}.
 \end{document}

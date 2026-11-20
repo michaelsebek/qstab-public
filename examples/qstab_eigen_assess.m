@@ -4,10 +4,14 @@ function R = qstab_eigen_assess(A,reference,eigenvalues,varargin)
 % V and D are checked in their ORIGINAL quaternion orientation. Canonical
 % representatives are used only for class matching, never in A*V=V*D.
 ip=inputParser;
+% Register the exact shorter name first. Octave 10.3 otherwise caches the
+% wrong validator when Diagonal also partially matches Diagonalizable.
+% Payload shape/orientation checks remain in checkVectors below.
+addParameter(ip,'Diagonal',[]);
 addParameter(ip,'Tolerance',1e-7,@positive);
 addParameter(ip,'Info',[],@(x)isempty(x)||(isstruct(x)&&isscalar(x)));
 addParameter(ip,'CheckVectors',false,@(x)islogical(x)&&isscalar(x));
-addParameter(ip,'Vectors',[]);addParameter(ip,'Diagonal',[]);
+addParameter(ip,'Vectors',[]);
 addParameter(ip,'Diagonalizable',true,@(x)islogical(x)&&isscalar(x));
 parse(ip,varargin{:});o=ip.Results;
 [X,xi]=qstab.chi(A);n=xi.quaternionSize(1);

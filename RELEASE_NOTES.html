@@ -1,5 +1,50 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab 0.18.0 · 9 November 2026</title><link rel="stylesheet" href="docs/style.css"></head><body><main><h1 id="qstab-0180--9-november-2026">qstab 0.18.0 · 9 November 2026</h1>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab 0.19.0 · 20 November 2026</title><link rel="stylesheet" href="docs/style.css"></head><body><main><h1 id="qstab-0.19.0-20-november-2026">qstab 0.19.0 · 20 November
+2026</h1>
+<p>Adds a reproducible study of the interval manuscript v7 and
+supplement v5, with 24 source-linked example groups, independent
+comparison values, eight figure exports, and an automatically rebuilt
+result ZIP. New public functions are <code>qstab.intervalfaces</code>,
+<code>qstab.boxfreqmargin</code>, and <code>qstab.rootmotion</code>. The
+opt-in <code>Reduction='interval-faces'</code> uses the new continuous
+degree/parity-aware selection in zero exclusion; existing reduction
+modes retain their previous meaning.</p>
+<p>The optional exact replay reconstructs rational polynomials and
+checks complete quartic inequalities and quintic boundary faces. It is
+not a sample-based proof and does not claim implementation of the
+paper’s general exact fixed-box or global-reserve algorithms. MATLAB
+symbolic replay is an optional layer; standard numerical calls acquire
+no Symbolic dependency. Tiny quintic coefficients are retained, and
+unresolved floating-point stability flags are not overridden by the
+example reference values.</p>
+<p><strong>Native validation passed:</strong> the 0.19.0-rc.1 sources
+ran on MATLAB R2024b Update 2, Windows PCWIN64, on 20 November 2026. All
+<strong>731 regression checks passed</strong>, with zero failures and
+zero skips: 646 core, 62 native-type and 23 graphics checks. All 208
+installed MATLAB source fingerprints and byte sizes matched the
+delivered candidate before and after the run. A separate native
+interval-study run matched <strong>24/24 example groups and 110/110
+comparisons</strong>, and saved all eight figures with their numerical
+plot data.</p>
+<p><strong>From the tested candidate to 0.19.0:</strong> four MATLAB
+files change only version or descriptive text
+(<code>qstab_setup.m</code>, <code>run_qstab_public.m</code>,
+<code>src/+qstab/about.m</code>, and
+<code>src/+qstab/Contents.m</code>). Two labels in
+<code>examples/plot_qstab_intervals.m</code> are corrected for readable
+display; the plotted values are unchanged. Numerical algorithms,
+tolerances, example calculations and regression tests are unchanged.
+Documentation and citation metadata now describe the completed
+validation. These records identify the actual tested candidate; they do
+not claim another native execution after the final text edits.</p>
+<p>The optional native MATLAB Symbolic replay was not requested by the
+numerical acceptance runs. Its complete native execution remains
+unverified; the independent Python/SymPy exact replay has its own
+recorded evidence. See <a href="verification/VALIDATION.html">the
+validation ledger</a> and <a href="docs/interval_article.html">interval
+reproduction instructions</a>.</p>
+<h2 id="qstab-0.18.0-9-november-2026">qstab 0.18.0 · 9 November
+2026</h2>
 <p>Based on the complete public 0.17.0 source. This release makes the
 family constructor, random family generation, directional domain
 reporting and sampled plots available to standalone users. New family

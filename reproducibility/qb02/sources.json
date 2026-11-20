@@ -1,0 +1,31 @@
+{
+  "schema": "qstab.interval-exact-sources.1",
+  "referenceInputs": [
+    {
+      "name": "IJRCN_manuscript_v7.tex",
+      "sha256": "0c95bdc5b8c948b13ca38e4cde762ce74f1b529eaeb96a0fce9d2a8916e18098"
+    }
+  ],
+  "files": [
+    {
+      "path": "verify_exact_examples.py",
+      "sha256": "f5c45b647b4ebee7471c15599ea25390c745fec8adcf55ea96389f1bada3f5b9"
+    },
+    {
+      "path": "verify_quintic_boundaries.py",
+      "sha256": "5eab025c9db85893eba12d11900a889a9af93105c3834eb7cecf7af5d8fd351a"
+    },
+    {
+      "path": "replay.py",
+      "sha256": "45bee4891cfcb2292b988eb66a8e27af920ada2274e1ee2ff59757c43b146bf3"
+    },
+    {
+      "path": "exact_example_certificate.json",
+      "sha256": "d8fc3a2920280653591a7b81ffa04a33dbc179fe363bbf4bbc75a761c670a0db"
+    },
+    {
+      "path": "quintic_boundary_certificate.json",
+      "sha256": "7ca175032df7216ee17980001aa7edd20a2f6a4bf050a228006af005b44e4e66"
+    }
+  ]
+}

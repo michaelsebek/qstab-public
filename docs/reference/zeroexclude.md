@@ -50,6 +50,16 @@ ZEROEXCLUDE Adaptive norm-value zero exclusion for scalar polynomial families.
  boxes and interval boxes in z/zinv use quadratic norm-image enclosures.
  Additional CT interval reductions: kharitonov-cube, kharitonov-faces
  (pair-free faces, at most 1024), and quadratic-faces (monic degree 2).
+ Reduction='interval-faces' opts into the newer degree/parity selection:
+ vertices in degree 1, pair-free two-faces in degrees 2/3, the mixed
+ quartic selection, and pair-free three-faces from degree 5 onward.
+ Full active cubes have respectively 256, 1536, 896 and 1024 families.
+ Required lower-dimensional cases are retained for inactive coordinates.
+ Each selected face is tested throughout its continuous domain. The
+ original interval's uniform degree condition is checked first.
+ For a full degree-2/3 selection, set MaxSubfamilies to at least 1536;
+ the unchanged default 1024 is an honest, possibly incomplete budget.
+ qstab.intervalfaces(F) returns these families for inspection/reuse.
 
  Result STATUS: 'stable' (all frequency/parameter cells excluded zero),
  'notStable' (actual admissible nominal counterexample),
@@ -69,7 +79,8 @@ ZEROEXCLUDE Adaptive norm-value zero exclusion for scalar polynomial families.
           MaxTime (30 s), Tolerance (1e-10), StoreCertificates (false),
           Reduction (default 'none'), MaxSubfamilies (1024).
 
- See also qstab.robuststable, qstab.normpoly, qstab.valueset.
+ See also qstab.robuststable, qstab.intervalfaces, qstab.normpoly,
+          qstab.valueset.
 
   Examples (ascending coefficients):
   [tf,R] = qstab.zeroexclude({[1 1],[2 1]},'StoreCertificates',true);

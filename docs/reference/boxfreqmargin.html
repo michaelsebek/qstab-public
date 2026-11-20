@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.boxfreqmargin</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstab.boxfreqmargin">qstab.boxfreqmargin</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../../src/+qstab/boxfreqmargin.m">MATLAB source</a></p>
+<h2 id="purpose">Purpose</h2>
+<p>Find the smallest multiplier of an independent coefficient box that
+produces an algebraic zero on the imaginary quaternion sphere of a
+specified radius. The uncertainty must affect <strong>one Hamilton
+component</strong>: the real, <code>i</code>, <code>j</code> or
+<code>k</code> row, although any number of coefficients in that row may
+vary independently.</p>
+<p>This function minimizes over the entire root class at a fixed
+frequency. It does not minimize over frequencies. The nominal polynomial
+need not be stable for this calculation; interpreting the result as a
+stability reserve requires a stable nominal polynomial and a separate
+check of degree preservation.</p>
+<h2 id="calling-sequences">Calling sequences</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">radius</span> <span class="op">=</span> <span class="va">qstab</span>.<span class="va">boxfreqmargin</span>(<span class="va">P</span><span class="op">,</span><span class="va">W</span><span class="op">,</span><span class="va">omega</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>[<span class="va">radius</span><span class="op">,</span><span class="va">Info</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">boxfreqmargin</span>(<span class="va">P</span><span class="op">,</span><span class="va">W</span><span class="op">,</span><span class="va">omega</span><span class="op">,</span><span class="ss">&#39;Witness&#39;</span><span class="op">,</span><span class="va">true</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>[<span class="va">radius</span><span class="op">,</span><span class="va">Info</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">boxfreqmargin</span>(<span class="va">P</span><span class="op">,</span><span class="va">W</span><span class="op">,</span><span class="va">omega</span><span class="op">,</span><span class="ss">&#39;Grade&#39;</span><span class="op">,</span><span class="va">g</span>)</span></code></pre></div>
+<p><code>P</code> is a scalar polynomial with ascending coefficients. It
+accepts numeric or native MATLAB <code>quaternion</code> coefficients,
+coefficient cells, and ordinary <code>a,b,c,d</code> component structs
+accepted by <code>qstab.polycomponents</code>.</p>
+<p><code>W</code> is an explicit nonnegative real array with four rows
+and <code>g+1</code> columns, one width for each Hamilton component of
+each coefficient. At most one row may contain positive entries. Width
+zero fixes its coefficient component. All-zero widths are accepted.</p>
+<p>The radius multiplies the widths:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>δ</mi><mrow><mi>k</mi><mi>ν</mi></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>r</mi><msub><mi>W</mi><mrow><mi>ν</mi><mo>,</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+|\delta_{k\nu}|\le rW_{\nu,k+1}.
+</annotation></semantics></math></p>
+<p><code>omega</code> is a nonempty finite nonnegative real scalar or
+vector in the polynomial frequency-variable units (rad/s for a physical
+continuous-time variable). The output retains its row or column
+shape.</p>
+<h2 id="what-is-computed">What is computed</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>μ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_\mu(i\omega)</annotation></semantics></math>
+denote the four ordinary complex component values of the nominal
+polynomial, and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ν</mi><annotation encoding="application/x-tex">\nu</annotation></semantics></math>
+identify the uncertain component. The only possible target values for
+that component are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ζ</mi><mo>±</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>±</mi><msqrt><mrow><mi>−</mi><munder><mo>∑</mo><mrow><mi>μ</mi><mo>≠</mo><mi>ν</mi></mrow></munder><msub><mi>f</mi><mi>μ</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\zeta_\pm(\omega)=\pm\sqrt{-\sum_{\mu\ne\nu}f_\mu(i\omega)^2}.
+</annotation></semantics></math></p>
+<p>These are complex squares, not absolute squares. The original
+independent coefficient intervals fill a rectangle at this frequency,
+with halfwidths</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>W</mi><mi>e</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>k</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> even</mtext></mrow></mrow></munder><msub><mi>W</mi><mrow><mi>ν</mi><mo>,</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><msup><mi>ω</mi><mi>k</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>W</mi><mi>o</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>k</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> odd</mtext></mrow></mrow></munder><msub><mi>W</mi><mrow><mi>ν</mi><mo>,</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><msup><mi>ω</mi><mi>k</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+W^e(\omega)=\sum_{k\text{ even}}W_{\nu,k+1}\omega^k,
+\qquad
+W^o(\omega)=\sum_{k\text{ odd}}W_{\nu,k+1}\omega^k.
+</annotation></semantics></math></p>
+<p>For either target, the smallest box multiplier is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mo>±</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>max</mo><mrow><mo stretchy="true" form="prefix">{</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mo>Re</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ζ</mi><mo>±</mo></msub><mo>−</mo><msub><mi>f</mi><mi>ν</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mrow><msup><mi>W</mi><mi>e</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>,</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mo>Im</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ζ</mi><mo>±</mo></msub><mo>−</mo><msub><mi>f</mi><mi>ν</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mrow><msup><mi>W</mi><mi>o</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo stretchy="true" form="postfix">}</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>min</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>r</mi><mo>+</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><msub><mi>r</mi><mo>−</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+r_\pm(\omega)=\max\left\{
+\frac{|\operatorname{Re}(\zeta_\pm-f_\nu)|}{W^e(\omega)},
+\frac{|\operatorname{Im}(\zeta_\pm-f_\nu)|}{W^o(\omega)}
+\right\},\qquad
+r(\omega)=\min\{r_+(\omega),r_-(\omega)\}.
+</annotation></semantics></math></p>
+<p>When a halfwidth is zero, its displacement must be zero as well. A
+nonzero frozen displacement cannot be made feasible by increasing the
+multiplier. Arithmetic ambiguity in this equality returns an unresolved
+result; the user tolerance is never used to project a nonzero
+displacement to zero.</p>
+<p>The formula is exact in real arithmetic. Its implementation uses
+ordinary floating point and checks reconstructed original coefficients
+and a right-evaluation zero. It does not supply outward-rounded
+enclosures or symbolic algebraic certificates.</p>
+<h2 id="options">Options</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Grade</code></td>
+<td><code>[]</code></td>
+<td>Infer the coefficient grade, or pad exact zero coefficients to the
+supplied nonnegative integer grade. <code>W</code> must have the
+corresponding number of columns.</td>
+</tr>
+<tr class="even">
+<td><code>Tolerance</code></td>
+<td><code>1e-10</code></td>
+<td>Positive number below one used for numerical reconstruction checks.
+It is not a physical radius.</td>
+</tr>
+<tr class="odd">
+<td><code>Witness</code></td>
+<td><code>false</code></td>
+<td>Retain reconstructed original polynomials and actual quaternion
+right zeros. Reconstruction checks run either way.</td>
+</tr>
+<tr class="even">
+<td><code>Variable</code></td>
+<td><code>'s'</code></td>
+<td>Continuous time only. Other variables are rejected.</td>
+</tr>
+</tbody>
+</table>
+<p>There is no <code>Evaluation</code> option: the class calculation is
+convention independent, and retained actual-point witnesses use right
+evaluation. It is also distinct from the multiplication side of a shared
+one-quaternion parameter.</p>
+<h2 id="outputs-and-unresolved-cases">Outputs and unresolved cases</h2>
+<ul>
+<li><code>radius(k)</code> is the minimum of the two numerically
+resolved branches. <code>Inf</code> with
+<code>Info.valid(k)==true</code> means neither target is attainable by
+any finite multiplier at that frequency.</li>
+<li><code>NaN</code> with <code>Info.valid(k)==false</code> preserves an
+unresolved or unrepresentable calculation. Underflow is never
+interpreted as zero width, zero radius or proof of unattainability.</li>
+<li><code>Info.branchRadii(:,k)</code> contains the two target costs.
+<code>Info.selectedBranch(k)</code> identifies the minimizing branch, or
+an available finite upper candidate when the other branch remains
+unresolved.</li>
+<li><code>Info.lower</code> and <code>Info.upper</code> are guarded
+floating-point estimates. If one branch is unresolved, the primary
+radius remains <code>NaN</code>; a retained finite witness can still
+give an upper candidate.</li>
+<li><code>Info.frequencyData{k}</code> retains each branch’s status,
+message, scaled target, even/odd gaps, parity costs, actual boundary
+point and residual. The nominal component values are divided by the
+nominal coefficient scale and by the common power scale. Width values
+are divided by their own coefficient scale and the same power scale.
+This avoids forming overflowing monomials; the final radius includes the
+ratio of the coefficient scales.</li>
+<li>With <code>Witness=true</code>, <code>Info.witnesses{k}</code>
+contains <code>polynomial</code>, <code>coefficientComponents</code>,
+<code>perturbationComponents</code>, <code>boundaryComponents</code>,
+<code>classRepresentative</code>, <code>weightedNorm</code> and
+<code>evaluationResidual</code>. The polynomial is an ordinary component
+struct accepted by other public functions. The boundary point is an
+actual right zero; it generally differs from the ordinary complex class
+representative.</li>
+</ul>
+<p>An all-zero nominal polynomial has zero frequency distance. This is
+not a stability verdict. Uncertain leading coefficients are accepted,
+but a polynomial may lose its declared degree before any
+finite-frequency contact; a global reserve must include that separate
+event.</p>
+<h2 id="example-one-component-slice">Example: one-component slice</h2>
+<p>The polynomial</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>𝐢</mi><mi>s</mi><mo>+</mo><mn>3</mn><mi>𝐣</mi></mrow><annotation encoding="application/x-tex">
+p(s)=(s+1)^2+3\mathbf i s+3\mathbf j
+</annotation></semantics></math></p>
+<p>is perturbed only in the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐢</mi><annotation encoding="application/x-tex">\mathbf i</annotation></semantics></math>-component
+of its linear coefficient. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\omega=1</annotation></semantics></math>,
+the first contact is at multiplier
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>−</mo><msqrt><mn>5</mn></msqrt></mrow><annotation encoding="application/x-tex">3-\sqrt5</annotation></semantics></math>.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">P</span> <span class="op">=</span> <span class="va">struct</span>(<span class="ss">&#39;a&#39;</span><span class="op">,</span>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">1</span>]<span class="op">,</span><span class="ss">&#39;b&#39;</span><span class="op">,</span>[<span class="fl">0</span> <span class="fl">3</span> <span class="fl">0</span>]<span class="op">,</span> <span class="op">...</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>           <span class="ss">&#39;c&#39;</span><span class="op">,</span>[<span class="fl">3</span> <span class="fl">0</span> <span class="fl">0</span>]<span class="op">,</span><span class="ss">&#39;d&#39;</span><span class="op">,</span>[<span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span>])<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">W</span> <span class="op">=</span> <span class="va">zeros</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">W</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span>) <span class="op">=</span> <span class="fl">1</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>[<span class="va">r</span><span class="op">,</span><span class="va">Info</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">boxfreqmargin</span>(<span class="va">P</span><span class="op">,</span><span class="va">W</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="ss">&#39;Witness&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="va">r</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="va">Info</span>.<span class="va">valid</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="va">Info</span>.<span class="va">witnesses</span>{<span class="fl">1</span>}.<span class="va">boundaryComponents</span></span></code></pre></div>
+<p>The selected actual root is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac><mn>2</mn><mn>3</mn></mfrac><mi>𝐣</mi><mo>+</mo><mfrac><msqrt><mn>5</mn></msqrt><mn>3</mn></mfrac><mi>𝐤</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+-\frac23\mathbf j+\frac{\sqrt5}{3}\mathbf k.
+</annotation></semantics></math></p>
+<p>For this particular slice an independent analytic argument excludes
+all other contact frequencies; the function itself makes no such global
+claim.</p>
+<h2 id="example-two-independent-real-feedback-gains">Example: two
+independent real feedback gains</h2>
+<p>Here the constant and linear real components vary independently while
+the nonreal branches are fixed:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>𝐣</mi><mo>+</mo><mn>2</mn><mi>𝐤</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi><mo>+</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>𝐢</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>W</mi><mrow><mn>0</mn><mo>,</mo><mn>0</mn></mrow></msub><mo>=</mo><msub><mi>W</mi><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn><mi>/</mi><mn>10</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+p(s)=s^2+(1+2\mathbf j+2\mathbf k)s+1+2\mathbf i,
+\qquad W_{0,0}=W_{0,1}=1/10.
+</annotation></semantics></math></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">P</span> <span class="op">=</span> <span class="va">struct</span>(<span class="ss">&#39;a&#39;</span><span class="op">,</span>[<span class="fl">1</span> <span class="fl">1</span> <span class="fl">1</span>]<span class="op">,</span><span class="ss">&#39;b&#39;</span><span class="op">,</span>[<span class="fl">2</span> <span class="fl">0</span> <span class="fl">0</span>]<span class="op">,</span> <span class="op">...</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="ss">&#39;c&#39;</span><span class="op">,</span>[<span class="fl">0</span> <span class="fl">2</span> <span class="fl">0</span>]<span class="op">,</span><span class="ss">&#39;d&#39;</span><span class="op">,</span>[<span class="fl">0</span> <span class="fl">2</span> <span class="fl">0</span>])<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="va">W</span> <span class="op">=</span> <span class="va">zeros</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="va">W</span>(<span class="fl">1</span><span class="op">,</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>) <span class="op">=</span> <span class="fl">0.1</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="va">u</span> <span class="op">=</span> <span class="va">roots</span>([<span class="fl">1</span> <span class="fl">0</span> <span class="fl">8</span> <span class="op">-</span><span class="fl">4</span>])<span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="va">u</span> <span class="op">=</span> <span class="va">real</span>(<span class="va">u</span>(<span class="va">abs</span>(<span class="va">imag</span>(<span class="va">u</span>)) <span class="op">&lt;</span> <span class="fl">1e-12</span>))<span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>[<span class="va">r</span><span class="op">,</span><span class="va">Info</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">boxfreqmargin</span>(<span class="va">P</span><span class="op">,</span><span class="va">W</span><span class="op">,</span><span class="va">sqrt</span>(<span class="va">u</span>)<span class="op">,</span><span class="ss">&#39;Witness&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="va">r</span>                              <span class="co">% about 5.14320534829038</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="va">Info</span>.<span class="va">witnesses</span>{<span class="fl">1</span>}.<span class="va">polynomial</span></span></code></pre></div>
+<p>The critical real constant and linear coefficients both equal the
+root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>u</mi><mn>3</mn></msup><mo>+</mo><mn>8</mn><mi>u</mi><mo>−</mo><mn>4</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u^3+8u-4=0</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mi>/</mi><mn>9</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(4/9,1/2)</annotation></semantics></math>.
+The actual right root is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mi>−</mi><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><msup><mi>u</mi><mn>2</mn></msup><mi>𝐢</mi><mo>+</mo><mi>u</mi><mi>𝐣</mi><mo>−</mo><mi>u</mi><mi>𝐤</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\lambda=-\tfrac12u^2\mathbf i+u\mathbf j-u\mathbf k.
+</annotation></semantics></math></p>
+<p>For general boxes involving two or more Hamilton components, use
+<code>qstab.boxvalue</code> at an actual quaternion point or the general
+box stability routines. Applying this one-component formula to multiple
+components would change the uncertainty problem and is rejected.</p>
+</main></body></html>

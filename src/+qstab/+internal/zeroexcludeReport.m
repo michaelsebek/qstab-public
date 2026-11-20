@@ -15,15 +15,15 @@ addParameter(ip,'Tolerance',1e-10,@(x)isnumeric(x)&&isscalar(x)&&isreal(x)&&isfi
 parse(ip,varargin{:}); o=ip.Results;
 v=localVariable(o.Variable);
 reduction=lower(strtrim(char(o.Reduction)));
-if ~ismember(reduction,{'none','four-generator','kharitonov-cube','kharitonov-faces','quadratic-faces'})
+if ~ismember(reduction,{'none','four-generator','kharitonov-cube','kharitonov-faces','quadratic-faces','interval-faces'})
     error('qstab:zeroexclude:Reduction', ...
-        'Reduction must be none, four-generator, kharitonov-cube, kharitonov-faces, or quadratic-faces.');
+        'Reduction must be none, four-generator, kharitonov-cube, kharitonov-faces, quadratic-faces, or interval-faces.');
 end
 F=qstab.familycomponents(data,'Uncertainty',o.Uncertainty);
 if strcmp(reduction,'four-generator')
     R=qstab.internal.fourgenerator(F,o,v);
     return
-elseif ismember(reduction,{'kharitonov-cube','kharitonov-faces','quadratic-faces'})
+elseif ismember(reduction,{'kharitonov-cube','kharitonov-faces','quadratic-faces','interval-faces'})
     R=qstab.internal.intervalreduce(F,o,v,reduction);
     return
 end

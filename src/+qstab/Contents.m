@@ -1,4 +1,4 @@
-% qstab - Quaternion Stability Toolbox, public release 0.18.0.
+% qstab - Quaternion Stability Toolbox, version 0.19.0.
 %
 % Family definitions and exploration (standard MATLAB structs)
 %   family           - Define interval, polytope, affine or one-quaternion uncertainty.
@@ -90,3 +90,10 @@
 % Standalone acceptance (package root, no new numerical methods):
 %   qstab_check_installation - Read-only source integrity and name resolution.
 %   run_qstab_public         - Isolated PUBLIC acceptance; same result ZIP.
+
+% Interval article and supplement (0.19 candidate):
+%   intervalfaces   - Continuous Hurwitz interval faces by degree and parity.
+%   boxfreqmargin   - Frequency class margin for one uncertain Hamilton component.
+%   rootmotion      - First and second derivatives of a simple norm zero.
+%   run_qstab_intervals - All 24 source-linked example groups with saved comparison ZIP.
+%   verify_qstab_interval_certificates - Optional exact Symbolic Math Toolbox replay.

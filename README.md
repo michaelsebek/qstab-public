@@ -1,10 +1,21 @@
 # qstab · Quaternion Stability Toolbox for MATLAB
 
-**Version 0.18.0** · [Read the illustrated guide](docs/qstab_manual.pdf) · [Function reference](docs/api_index.md) · [Installation and dependencies](docs/installation.md)
+**Version 0.19.0** · [Read the illustrated guide](docs/qstab_manual.pdf) · [Function reference](docs/api_index.md) · [Interval article: reproduce all examples](docs/interval_article.md) · [Installation and dependencies](docs/installation.md)
 
 Test nominal and robust strict stability for scalar quaternionic polynomials; compute right spectra of quaternion state matrices and representatives of algebraic zero classes. Families may be polytopes, independent coefficient intervals, real affine families, or one constant quaternion acting from a specified side. Coefficient balls and component boxes, continuous and discrete tests, radii, witnesses, and sampled plots are included in this release. Robust polynomial matrices are outside the supported scope; the square polynomial-matrix companion is a nominal experimental feature.
 
-**Native MATLAB verification:** all 693 regressions passed on R2024b Update 2 (Windows) using the release candidate. The final package changes version information and documentation only. [What was verified](verification/VALIDATION.md).
+**Validation:** the 0.19.0-rc.1 sources passed **731 native MATLAB regression checks**, with no failures or skips, on R2024b Update 2. The separate interval study matched **all 24 example groups and 110 comparisons** and exported eight figures. The final 0.19.0 changes only version/documentation text and two plot labels; numerical routines and tests retain their validated contents. Optional exact-rational replay has a separate scope and evidence record. [What was verified](verification/VALIDATION.md).
+
+### Reproduce the interval article and supplement
+
+```matlab
+qstab_setup('Examples',true);
+R = run_qstab_intervals('all','Plots',true);
+R.archiveFile
+assert(R.ok,'Inspect the saved interval report: %s',R.archiveFile)
+```
+
+This runs the 24 source-linked groups from `IJRCN_manuscript_v7` and `IJRCN_Zenodo-supplement_v5`. Use `run_qstab_intervals('list')` to see the key or `run_qstab_intervals('I19','Plots',true)` for the five-gain regulator. Each run retains actual results, separate reference values, comparison checks and diagnostics. The current-run ZIP is `qstab_interval_results.zip` beside the launcher. Native quaternion is the default; `UseQuaternion=false` explicitly selects ordinary component structs. The optional exact certificate replay is separate from numerical root checks; see [instructions and scope](docs/interval_article.md).
 
 ### First minute
 
@@ -38,6 +49,6 @@ Use `tf==1`, `tf==0`, and `isnan(tf)`: the three results are strictly stable, de
 
 ### Article, citation and license
 
-The initial companion manuscript is M. Šebek, *A Sharp Face Theorem for Robust Stability of Quaternionic Polynomial Polytopes*, prepared for Automatica. The public package also includes methods not covered by that paper. [Research notes and reproduction key](docs/papers.md) · [Cite this version](CITATION.cff) · [MIT license](LICENSE) · [Release notes](RELEASE_NOTES.md).
+The companion texts include M. Šebek's preprint [*A Sharp Face Theorem for Robust Stability of Quaternionic Polynomial Polytopes*](https://doi.org/10.5281/zenodo.24136448), submitted to Automatica, and the manuscript *Kharitonov-Type Face Reductions and Exact Stability Tests for Quaternionic Interval Polynomials*. The published technical note [*Quaternionic Interval Polynomials: Worked Examples and Verification Guide*](https://doi.org/10.5281/zenodo.24389775) supplies worked examples and verification guidance. The software version and the mathematical texts have separate citation records. The package also includes methods outside those texts' scope. [Polytope research notes](docs/papers.md) · [Interval study and references](docs/interval_article.md) · [Cite this version](CITATION.cff) · [MIT license](LICENSE) · [Release notes](RELEASE_NOTES.md).
 
 For optional integrations and MathWorks product checks, see [installation](docs/installation.md). There is no mandatory third-party GitHub download.

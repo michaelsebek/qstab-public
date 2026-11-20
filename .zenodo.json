@@ -7,20 +7,35 @@
       "affiliation": "Czech Technical University in Prague, Faculty of Electrical Engineering, Department of Control Engineering"
     }
   ],
-  "version": "0.18.0",
+  "version": "0.19.0",
   "upload_type": "software",
   "access_right": "open",
   "license": "mit",
   "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.24136448",
+      "relation": "cites",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.24389775",
+      "relation": "cites",
+      "scheme": "doi",
+      "resource_type": "publication-technicalnote"
+    }
+  ],
   "keywords": [
     "quaternionic polynomials",
     "robust stability",
     "polynomial polytopes",
+    "interval polynomials",
     "parametric uncertainty",
     "algebraic zeros",
     "right eigenvalues",
     "control systems",
     "MATLAB"
   ],
-  "description": "<p>qstab is a standalone MATLAB toolbox for nominal and robust stability analysis of scalar quaternionic polynomials and for computing the right spectra of quaternionic state matrices. It supports continuous time, forward shift, and delay conventions. Scalar uncertainty models include polytopes, independent coefficient intervals, real affine families, and a single quaternion parameter acting on either side. The toolbox also provides directional margins, coefficient-ball and component-box tests, sampled plots, and diagnostic witnesses or enclosures. Algebraic zero classes are distinguished from zeros of point evaluation.</p>\n<p>Version 0.18.0 includes a 16-page public guide with eleven executable examples and separate exact rational-arithmetic reproduction scripts for the polytope study. The 0.18.0 release candidate passed all 693 public checks in MATLAB R2024b Update 2 on Windows. The final release preserves its numerical routines and tests. Numerical sampling alone does not certify robust stability.</p>\n<p>The initial companion manuscript by Michael Šebek, “A Sharp Face Theorem for Robust Stability of Quaternionic Polynomial Polytopes”, is in preparation for submission to Automatica. It concerns the polytopic results; no article DOI or publication status is asserted for the other uncertainty models.</p>"
+  "description": "<p>qstab is a MATLAB toolbox for nominal and robust strict stability of scalar quaternionic polynomials, right spectra of quaternion state matrices, stability margins, witnesses and sampled family plots. Version 0.19.0 adds degree/parity Hurwitz face enumeration, single-component interval frequency margins, analytic simple norm-root derivatives, 24 interval-article example groups and optional exact rational certificate replay.</p><p>The 0.19.0-rc.1 sources passed 731 native MATLAB R2024b Update 2 regression checks with no failures or skips. A separate native interval study matched all 24 groups and 110 comparisons. The final release changes version/documentation text and two plot labels; numerical algorithms and tests are unchanged. The numerical checks, independent Python/SymPy proof replay and optional MATLAB Symbolic replay have distinct assurance scopes documented in the validation record.</p>"
 }

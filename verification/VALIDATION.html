@@ -1,5 +1,186 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Validation of qstab 0.18.0</title><link rel="stylesheet" href="../docs/style.css"></head><body><main><h1 id="validation-of-qstab-0180">Validation of qstab 0.18.0</h1>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Validation of qstab 0.19.0</title><link rel="stylesheet" href="../docs/style.css"></head><body><main><h1 id="validation-of-qstab-0.19.0">Validation of qstab 0.19.0</h1>
+<h2 id="native-matlab-validation-of-the-0.19.0-sources">Native MATLAB
+validation of the 0.19.0 sources</h2>
+<p><strong>Public acceptance: PASSED.</strong> The release candidate
+<code>0.19.0-rc.1</code> was run on 20 November 2026 with MATLAB
+<strong>24.2.0.2773142 (R2024b Update 2)</strong> on Windows
+<strong>PCWIN64</strong>. All <strong>731 regression checks
+passed</strong>, with zero failures and zero skips. The MAT report, text
+report and Command Window transcript contain the same cases in the same
+order. A separate native interval-study run matched <strong>all 24
+example groups and 110 comparisons</strong>.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scope</th>
+<th>Actual evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Numerical core</td>
+<td>646 regression checks passed, including the new face reductions,
+frequency margins, analytic root motion and interval-study
+fixtures.</td>
+</tr>
+<tr class="even">
+<td>Native types and graphics</td>
+<td>All 62 native quaternion/MATLAB checks and all 23 graphics checks
+passed. <code>Figures=false</code> disables an additional
+publication-figure review; the ordinary graphics regressions still
+ran.</td>
+</tr>
+<tr class="odd">
+<td>Source identity</td>
+<td>SHA-256 and byte sizes for all 208 installed MATLAB files match the
+delivered <code>0.19.0-rc.1</code> archive. The initial inventory, final
+inventory and report inventory agree.</td>
+</tr>
+<tr class="even">
+<td>Installation and dependencies</td>
+<td>All 84 checked entry points resolved correctly before and after the
+run. The initial static dependency scan checked 43 public entries and
+detected 103 files, with none outside qstab and the MathWorks
+installation. No external eigensolver was requested. Static analysis
+does not prove coverage of every execution branch.</td>
+</tr>
+<tr class="odd">
+<td>Caller state</td>
+<td>The acceptance runner recorded restoration of the caller’s MATLAB
+path and working folder.</td>
+</tr>
+<tr class="even">
+<td>Interval article and supplement</td>
+<td>A separate native quaternion run returned
+<code>NUMERICAL_EXAMPLES_MATCHED</code>: 24/24 groups and 110/110
+comparisons. The saved MAT data, text report and comparison CSV agree.
+Eight figures were exported as PNG, PDF, FIG and CSV; their saved
+numerical coordinates were checked.</td>
+</tr>
+<tr class="odd">
+<td>Existing selected paper cases</td>
+<td>The older catalogues matched 20 selected cases and 16 extension
+cases. All 14 analytic right-spectrum/eigenpair fixtures matched. These
+finite catalogues do not claim full reproduction of every earlier
+paper.</td>
+</tr>
+</tbody>
+</table>
+<p>The regression phase took 80.850 s, the complete acceptance runner
+105.929 s and the separate interval study 23.163 s. These are
+observations of those runs, not performance benchmarks. Successful
+execution is not a stability conclusion for every example: intentional
+counterexamples, degree loss, unresolved near-boundary decisions and
+budget-limited brackets retain their documented meaning.</p>
+<p><strong>From the tested candidate to 0.19.0.</strong> The final
+release changes version/descriptive text in <code>qstab_setup.m</code>,
+<code>run_qstab_public.m</code>, <code>src/+qstab/about.m</code> and
+<code>src/+qstab/Contents.m</code>, and two display labels in
+<code>examples/plot_qstab_intervals.m</code>. Numerical algorithms,
+tolerances, test cases and the plotted values are unchanged.
+Documentation and citation metadata are updated. The evidence is
+attributed to the actual tested candidate; no second native execution
+after the final text edits is claimed.</p>
+<p><a href="native-matlab-0.19.0-rc.1.json">Machine-readable native
+evidence</a> · <a href="release-0.19.0-differences.json">The five final
+MATLAB text changes and their source fingerprints</a> · <a
+href="../docs/interval_article.html">Interval commands and result
+locations</a>. The public evidence summary omits absolute workstation
+paths. The original user-supplied report ZIPs are retained separately
+from the source distribution.</p>
+<p><strong>Exact arithmetic has a separate record.</strong> The native
+numerical runs did not request <code>Exact=true</code>; their
+exact-replay status is <code>NOT_REQUESTED</code>. They therefore do not
+establish native Symbolic execution of the rational certificates. The
+complete independent Python/SymPy replay was executed during
+development, as recorded below. The complete native MATLAB Symbolic
+route remains unverified.</p>
+<h2 id="auxiliary-development-evidence-before-the-native-run">Auxiliary
+development evidence before the native run</h2>
+<p>The following checks were performed on 20 November 2026 before the
+native reports arrived. They remain separate evidence: auxiliary Octave
+runs and Python proof replay are not relabelled as native MATLAB
+runs.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scope</th>
+<th>Actual evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Whole auxiliary core suite</td>
+<td>GNU Octave 10.3.0: <strong>646 passed, 0 failed, 85
+skipped</strong>, status <code>CORE_OK_NATIVE_PENDING</code>. The
+skipped cases require native MATLAB quaternion or the separately
+disabled graphics suite.</td>
+</tr>
+<tr class="even">
+<td>Complete interval numerical study</td>
+<td><strong>24/24 groups, 110/110 comparisons</strong> passed using
+ordinary component structs. The current-run archive includes separately
+recorded calculations and reference values.</td>
+</tr>
+<tr class="odd">
+<td>New graphics</td>
+<td>Three dedicated cases passed separately, checking eight figures and
+32 PNG/PDF/FIG/CSV files, preserved caller state and unchanged saved
+numeric data. PNGs and rendered PDFs were inspected. This is auxiliary
+graphics evidence, not native MATLAB graphics acceptance.</td>
+</tr>
+<tr class="even">
+<td>Full independent exact replay</td>
+<td>Python 3.12 / SymPy 1.14: 28 exact algebraic checks, 56 quartic
+Bernstein inequalities, all 24 quintic faces, 264 polynomial checks and
+370 proof leaves at maximum depth five.</td>
+</tr>
+<tr class="odd">
+<td>MATLAB-language symbolic replay</td>
+<td>Octave symbolic 3.2.2 recomputed all 56 quartic inequalities. A
+separate quintic run verified the OOO centre and two complete OOO faces
+(22 polynomial checks), then was deliberately stopped because this
+bridge is slow. The complete quintic <code>.m</code> route and native
+Symbolic execution are not claimed tested.</td>
+</tr>
+<tr class="even">
+<td>Source integrity</td>
+<td>The distribution manifest is regenerated from the final bytes with
+Python SHA-256. This Octave build has no Java backend, so its embedded
+MATLAB-style hash inventory explicitly reports unavailable hashes.
+Native <code>run_qstab_public</code> still requires its normal source
+and resolution checks.</td>
+</tr>
+</tbody>
+</table>
+<p>The auxiliary run initially exposed an existing Octave 10.3 parser
+issue when <code>Diagonal</code> also partially matched
+<code>Diagonalizable</code>. Registering the exact shorter name first
+fixes only option dispatch in <code>qstab_eigen_assess</code>; all
+numerical eigenpair checks are unchanged. All 74 affected legacy checks
+and the subsequent full suite pass. The baseline distribution itself was
+not edited.</p>
+<p><a href="interval-development.json">Machine-readable interval
+development evidence</a> · <a href="interval-exact-python.json">Full
+exact replay evidence</a> · <a
+href="../docs/interval_article.html">Reproduction commands</a>.</p>
+<p>To reproduce native acceptance, run
+<code>run_qstab_public('Figures',false)</code> and
+<code>run_qstab_intervals('all','Plots',true)</code> in the normal
+public MATLAB environment. The optional <code>Exact=true</code> requests
+Symbolic Math Toolbox and records its result separately. Native tests
+use the actual MathWorks quaternion class.</p>
+<h2 id="historical-validation-of-qstab-0.18.0">Historical validation of
+qstab 0.18.0</h2>
 <p><strong>Native MATLAB public acceptance: PASSED.</strong> The release
 candidate <code>0.18.0-rc.1</code> was run on 9 November 2026 with
 MATLAB 24.2.0.2773142 (R2024b Update 2), Windows PCWIN64. The 693
@@ -10,6 +191,10 @@ run. The regression phase took 27.763 s; the complete public acceptance
 run took 39.130 s. These are measurements of this run, not
 benchmarks.</p>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>What was checked</th>
@@ -20,8 +205,8 @@ benchmarks.</p>
 <tr class="odd">
 <td>Source identity</td>
 <td>All 193 MATLAB source fingerprints and sizes recorded before and
-after the run match the 0.18.0-rc.1 distribution. MATLAB's search path
-and the caller's working folder were restored.</td>
+after the run match the 0.18.0-rc.1 distribution. MATLAB’s search path
+and the caller’s working folder were restored.</td>
 </tr>
 <tr class="even">
 <td>Clean public environment</td>
@@ -73,10 +258,11 @@ part of the public distribution.</p>
 installation</h2>
 <p>From the extracted, writable package directory in a fresh MATLAB
 session:</p>
-<pre class="matlab"><code>report = run_qstab_public(&#39;Figures&#39;,false);
-disp(report.status)
-disp(report.archiveFile)
-assert(report.ok &amp;&amp; report.publicAcceptance.ok, &#39;Read the public acceptance report.&#39;)</code></pre>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">report</span> <span class="op">=</span> <span class="va">run_qstab_public</span>(<span class="ss">&#39;Figures&#39;</span><span class="op">,</span><span class="va">false</span>)<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">disp</span>(<span class="va">report</span>.<span class="va">status</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">disp</span>(<span class="va">report</span>.<span class="va">archiveFile</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">report</span>.<span class="va">ok</span> <span class="op">&amp;&amp;</span> <span class="va">report</span>.<span class="va">publicAcceptance</span>.<span class="va">ok</span><span class="op">,</span> <span class="ss">&#39;Read the public acceptance report.&#39;</span>)</span></code></pre></div>
 <p>The archive, <code>qstab_test_results.zip</code>, contains report.mat
 and report.txt. Use <code>Figures=true</code> only to additionally
 export the publication figures. Report files from your own computer may

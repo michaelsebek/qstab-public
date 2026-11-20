@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.robuststable</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabrobuststable">qstab.robuststable</h1>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.robuststable</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstab.robuststable">qstab.robuststable</h1>
 <p><a href="../api_index.html">Function index</a> · <a
 href="../qstab_manual.pdf">Manual</a> · <a
 href="../../src/+qstab/robuststable.m">MATLAB source</a></p>
@@ -33,6 +33,11 @@ href="../../src/+qstab/robuststable.m">MATLAB source</a></p>
   With Method=&#39;zeroexclusion&#39;, Reduction=&#39;four-generator&#39; tests complete
   qB03 generator subfamilies. CT Cartesian intervals additionally support
   kharitonov-cube, kharitonov-faces, and quadratic-faces (monic degree 2).
+  Reduction=&#39;interval-faces&#39; selects the degree/parity-aware continuous
+  Hurwitz faces described by qstab.intervalfaces. Degrees 2/3 may need
+  1536 families, so set MaxSubfamilies&gt;=1536 for that complete selection.
+  The legacy names retain their previous selections. No Hurwitz cube
+  reduction is applied to a Schur or delay interval.
   MaxCells/MaxTime and MaxSubfamilies are global reduction budgets.
   Reduction=&#39;none&#39; (default) preserves the direct subdivision choice.
 

@@ -1,15 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Public function and code key</title><link rel="stylesheet" href="style.css"></head><body><main><h1 id="public-function-and-code-key">Public function and code key</h1>
 <p><a href="qstab_manual.pdf">Guide (PDF)</a> · <a
 href="../README.html">Quick start</a> · <a
 href="installation.html">Dependency table</a> · <a
 href="papers.html">Companion paper</a></p>
-<p>Use qualified names, e.g. <code>help qstab.raymargin</code>. These
+<p>Use qualified names, e.g. <code>help qstab.raymargin</code>. These
 entries show the source help for this release. The guide keys G01–G11
 execute the actual code printed in the guide.</p>
 <h2 id="input-and-polynomial-representations">Input and polynomial
 representations</h2>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Public call</th>
@@ -47,6 +51,10 @@ representations</h2>
 id="nominal-stability-right-spectra-and-algebraic-zero-classes">Nominal
 stability, right spectra and algebraic zero classes</h2>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Public call</th>
@@ -74,11 +82,20 @@ checks.</td>
 <td>Algebraic zero classes of a quaternion polynomial or matrix
 polynomial.</td>
 </tr>
+<tr class="odd">
+<td><a href="reference/rootmotion.html">qstab.rootmotion</a></td>
+<td>First and second derivatives of a simple norm zero in the original
+real parameter units.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="families-leading-coefficients-and-robust-decisions">Families,
 leading coefficients and robust decisions</h2>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Public call</th>
@@ -110,11 +127,16 @@ href="reference/familycomponents.html">qstab.familycomponents</a></td>
 <td>Exact qB02 reduction of a CT quaternion interval polynomial.</td>
 </tr>
 <tr class="even">
+<td><a href="reference/intervalfaces.html">qstab.intervalfaces</a></td>
+<td>Degree/parity-aware continuous Hurwitz test faces; constructing
+faces is not a stability decision.</td>
+</tr>
+<tr class="odd">
 <td><a href="reference/robuststable.html">qstab.robuststable</a></td>
 <td>Sufficient robust stability test for scalar quaternion
 families.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="reference/zeroexclude.html">qstab.zeroexclude</a></td>
 <td>Adaptive norm-value zero exclusion for scalar polynomial
 families.</td>
@@ -124,6 +146,10 @@ families.</td>
 <h2 id="one-quaternion-margins-and-matrix-operators">One-quaternion
 margins and matrix operators</h2>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Public call</th>
@@ -147,7 +173,7 @@ href="reference/stabilityradius.html">qstab.stabilityradius</a></td>
 </tr>
 <tr class="even">
 <td><a href="reference/lyapoperator.html">qstab.lyapoperator</a></td>
-<td>Real matrix of X -&gt; A<em>X + X</em>A' on quaternion Hermitian
+<td>Real matrix of X -&gt; A<em>X + X</em>A’ on quaternion Hermitian
 X.</td>
 </tr>
 </tbody>
@@ -155,6 +181,10 @@ X.</td>
 <h2 id="coefficient-balls-and-component-boxes">Coefficient balls and
 component boxes</h2>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Public call</th>
@@ -193,11 +223,20 @@ polynomial.</td>
 <td><a href="reference/boxvalue.html">qstab.boxvalue</a></td>
 <td>Component-box distance to a zero at an ACTUAL quaternion point.</td>
 </tr>
+<tr class="even">
+<td><a href="reference/boxfreqmargin.html">qstab.boxfreqmargin</a></td>
+<td>Minimum over quaternion orientations at fixed frequency, when only
+one Hamilton component is uncertain.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="value-sets-evidence-and-plots">Value sets, evidence and
 plots</h2>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Public call</th>
@@ -257,7 +296,7 @@ href="reference/plotCertificate.html">qstab.plotCertificate</a></td>
 </tr>
 <tr class="even">
 <td><a href="reference/plotWitness.html">qstab.plotWitness</a></td>
-<td>Draw a previously reconstructed member's algebraic zero
+<td>Draw a previously reconstructed member’s algebraic zero
 classes.</td>
 </tr>
 </tbody>
@@ -265,6 +304,16 @@ classes.</td>
 <h2 id="setup-checks-and-worked-examples">Setup, checks and worked
 examples</h2>
 <ul>
+<li><a href="interval_article.html">run_qstab_intervals</a>: Compute all
+24 groups of the interval article and supplement, compare references,
+and save a current-run ZIP.</li>
+<li><a
+href="interval_article.html#figures-and-saved-data">plot_qstab_intervals</a>:
+Replot the saved interval data without rerunning solvers.</li>
+<li><a
+href="interval_article.html#recompute-the-exact-continuum-certificates">verify_qstab_interval_certificates</a>:
+Recompute the concrete quartic and quintic certificates with exact
+rational symbolic arithmetic.</li>
 <li><a
 href="reference/support_qstab_check_installation.html">qstab_check_installation</a>:
 Read-only integrity and MATLAB resolution checks.</li>

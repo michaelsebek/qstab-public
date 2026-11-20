@@ -1,0 +1,1256 @@
+{
+  "schema": "qstab.interval-exact-examples.1",
+  "source": "IJRCN_manuscript_v7.tex",
+  "exact_checks": [
+    {
+      "name": "OOO norm factorization",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "OOO cubic norm is Hurwitz",
+      "pass": true,
+      "details": [
+        "1",
+        "1/5",
+        "129/400",
+        "31/1290",
+        "1103/24800",
+        "3/8824",
+        "17/800"
+      ]
+    },
+    {
+      "name": "EOO norm factorization",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "EOO cubic norm is Hurwitz",
+      "pass": true,
+      "details": [
+        "1",
+        "3",
+        "401/64",
+        "2035/1604",
+        "92647/35520",
+        "3223/92647",
+        "1"
+      ]
+    },
+    {
+      "name": "OOO quintic central Routh",
+      "pass": true,
+      "details": {
+        "index": 9,
+        "negative_entry_float": -1.4480961173316589e-06,
+        "bounds": [
+          "-1/500000",
+          "-1/1000000"
+        ],
+        "first_column_float": [
+          1e-24,
+          2e-12,
+          1.0000000000001,
+          0.199997999996355,
+          0.3224976937136871,
+          0.024030182273063392,
+          0.04446978548453002,
+          0.0003373441717656511,
+          0.021075328590617635,
+          -1.4480961173316589e-06,
+          0.021249993750021835
+        ]
+      }
+    },
+    {
+      "name": "EOO quintic central Routh",
+      "pass": true,
+      "details": {
+        "index": 9,
+        "negative_entry_float": -6.500034825503204e-08,
+        "bounds": [
+          "-7/100000000",
+          "-3/50000000"
+        ],
+        "first_column_float": [
+          1e-24,
+          2e-12,
+          1.0000000000015,
+          2.9999999359824687,
+          6.265624920238458,
+          1.2687029592072525,
+          2.608304887701049,
+          0.034787876387545505,
+          0.9999968691633448,
+          -6.500034825503204e-08,
+          0.9999999920000004
+        ]
+      }
+    },
+    {
+      "name": "EEE quintic central Routh",
+      "pass": true,
+      "details": {
+        "index": 7,
+        "negative_entry_float": -1.4480958718918303e-06,
+        "bounds": [
+          "-1/500000",
+          "-1/1000000"
+        ],
+        "first_column_float": [
+          1.0,
+          0.199998,
+          0.3224976937308748,
+          0.02403018227351336,
+          0.04446978547903965,
+          0.0003373441729189928,
+          0.0210753285538625,
+          -1.4480958718918303e-06,
+          0.0212499973511155,
+          2.4999994999879226e-13,
+          1e-24
+        ]
+      }
+    },
+    {
+      "name": "EEO quintic central Routh",
+      "pass": true,
+      "details": {
+        "index": 7,
+        "negative_entry_float": -6.499834827204322e-08,
+        "bounds": [
+          "-7/100000000",
+          "-3/50000000"
+        ],
+        "first_column_float": [
+          1.0,
+          2.999999936,
+          6.265624920250002,
+          1.268702959208439,
+          2.608304887705275,
+          0.03478787639094557,
+          0.9999968690038465,
+          -6.499834827204322e-08,
+          1.00003076175671,
+          1.999999991999e-12,
+          1e-24
+        ]
+      }
+    },
+    {
+      "name": "OOO exact bracket margin 1/5",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "OOO exact bracket margin 3/10",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "OOO exact bracket margin 61/125",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "OOO exact bracket margin 64/125",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "OOO exact bracket margin 9/10",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "OOO exact bracket margin 11/10",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "OOO first HB shift margin",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "OOO second HB shift margin",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "running norm",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "one-component determinants",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "one-component unstable interior determinant",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "Schur cubic L endpoint",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "Schur cubic F endpoints",
+      "pass": true,
+      "details": {
+        "L": "119871/390625 - 169*v/2500",
+        "F": "-393939*v**2/6250000 + 6985104903*v/62500000000 - 525764180529/39062500000000"
+      }
+    },
+    {
+      "name": "application endpoint gaps",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "application isolator",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "application unique reserve isolator",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "one-component reserve isolator",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "one-component u isolator",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "one-component reserve substitution",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "one-component design gap",
+      "pass": true,
+      "details": null
+    }
+  ],
+  "bernstein": [
+    {
+      "name": "OOO D-3/100",
+      "interval": [
+        "9/10",
+        "11/10"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        2,
+        6
+      ],
+      "coefficients": 21,
+      "min_float": 0.0024560025004682264,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "6438263194827427903487930067198720001/2621440000000000000000000000000000000000",
+      "polynomial_sha256": "3fbce2085df5aac8e0d0f22e000a0d4dedb0dc6acfb60005c071918849db8f45"
+    },
+    {
+      "name": "OOO 41/1000-D",
+      "interval": [
+        "997/1000",
+        "1003/1000"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        2,
+        6
+      ],
+      "coefficients": 21,
+      "min_float": 0.000759589375,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "1215343/1600000000",
+      "polynomial_sha256": "03d37483c5da793aedf69daa3320b532cadd0af9c16e319a6198256de54e9774"
+    },
+    {
+      "name": "OOO a2-4D",
+      "interval": [
+        "9/10",
+        "11/10"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        4,
+        8
+      ],
+      "coefficients": 45,
+      "min_float": 0.081775,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "3271/40000",
+      "polynomial_sha256": "1310cd3783a6f1748f9bec2db904d8b9c73a03b437870accd784572368098f85"
+    },
+    {
+      "name": "OOO P lower",
+      "interval": [
+        "9/10",
+        "997/1000"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        3,
+        6
+      ],
+      "coefficients": 28,
+      "min_float": 2.3140550545437083e-09,
+      "claimed_strict_lower_bound": "1/1000000000",
+      "pass": true,
+      "minimum_exact": "18956739006822057446662128857628779/8192000000000000000000000000000000000000000",
+      "polynomial_sha256": "e2ecb5325792a354d06569e4768eb1e906215be25ecd7aacf2e68627a3c8405b"
+    },
+    {
+      "name": "OOO P upper",
+      "interval": [
+        "1003/1000",
+        "11/10"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        3,
+        6
+      ],
+      "coefficients": 28,
+      "min_float": 1.4290505260044176e-09,
+      "claimed_strict_lower_bound": "1/1000000000",
+      "pass": true,
+      "minimum_exact": "11706781909028188636959408742428971/8192000000000000000000000000000000000000000",
+      "polynomial_sha256": "e2ecb5325792a354d06569e4768eb1e906215be25ecd7aacf2e68627a3c8405b"
+    },
+    {
+      "name": "OOO H1,+1",
+      "interval": [
+        "997/1000",
+        "1003/1000"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        9,
+        20
+      ],
+      "coefficients": 210,
+      "min_float": 2.2288504915063403e-10,
+      "claimed_strict_lower_bound": "1/5000000000",
+      "pass": true,
+      "minimum_exact": "313682820094140647852758084495553838716057673783581362501454431304759865935785381551336404282160373040273208048807952980274059/1407374883553280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "68504223c03a84c98820a8f15d58dd922d23dab36e10016d684ef09027804591"
+    },
+    {
+      "name": "OOO H1,-1",
+      "interval": [
+        "997/1000",
+        "1003/1000"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        9,
+        20
+      ],
+      "coefficients": 210,
+      "min_float": 2.0088466562038583e-10,
+      "claimed_strict_lower_bound": "1/5000000000",
+      "pass": true,
+      "minimum_exact": "282720032885130084544574417399759701613764137799182184216499781846119603071536388344012726214365532319395669615388124979847691/1407374883553280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "6a4d85a54ac0122f7dab699db12e21584eaceb90591e5c9f31a28184eb780a61"
+    },
+    {
+      "name": "OOO H2,+1",
+      "interval": [
+        "997/1000",
+        "1003/1000"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        9,
+        20
+      ],
+      "coefficients": 210,
+      "min_float": 3.298730308574041e-11,
+      "claimed_strict_lower_bound": "3/100000000000",
+      "pass": true,
+      "minimum_exact": "46425501839030666470719626787303044386422174176937824814687839248949760555299526447754675637437607324181696762209830540135467/1407374883553280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "c8a91afbf8c897920ac905d88b2e15341821a5e633cf77977b14958b6c5c89e3"
+    },
+    {
+      "name": "OOO H2,-1",
+      "interval": [
+        "997/1000",
+        "1003/1000"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        9,
+        20
+      ],
+      "coefficients": 210,
+      "min_float": 7.163419660020795e-12,
+      "claimed_strict_lower_bound": "7/1000000000000",
+      "pass": true,
+      "minimum_exact": "10081616909865042094116150731007085648241649262849008432157087016293448256019084362174390205126436135552562817352818939922283/1407374883553280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "3e852b0c614b5a747ea289292274efba811af979a1dcad5458cb0db67e54d067"
+    },
+    {
+      "name": "OOO H3,+1",
+      "interval": [
+        "997/1000",
+        "1003/1000"
+      ],
+      "shift_max": "1/4000000",
+      "bidegree": [
+        9,
+        20
+      ],
+      "coefficients": 210,
+      "min_float": 8.775455816640961e-10,
+      "claimed_strict_lower_bound": "1/1250000000",
+      "pass": true,
+      "minimum_exact": "8645249275650418478958295852428244188815252971618456787225130987737607994118332236248534798559254246210643554371724146580095533/9851624184872960000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "cde075871d49a092b4cf33807cf5170f4fcc433040e40686f0269137743ba54f"
+    },
+    {
+      "name": "EOO C-1/20",
+      "interval": [
+        "99/100",
+        "101/100"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        3,
+        6
+      ],
+      "coefficients": 28,
+      "min_float": 0.001803296875,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "115411/64000000",
+      "polynomial_sha256": "7e84d994a4dfd56de01dd838b134d82c9e2b96d13a181e9f298088c97469468d"
+    },
+    {
+      "name": "EOO 3/40-C",
+      "interval": [
+        "99/100",
+        "101/100"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        3,
+        6
+      ],
+      "coefficients": 28,
+      "min_float": 0.0006876543413997827,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "10492772543331645553991289059363623046875000009/15258789062500000000000000000000000000000000000000",
+      "polynomial_sha256": "f8dff78cbf75b513656cc90e27e91c304fedf4e66533fc98287c4aa40966d3f7"
+    },
+    {
+      "name": "EOO 3/40-d2",
+      "interval": [
+        "99/100",
+        "101/100"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        2,
+        4
+      ],
+      "coefficients": 15,
+      "min_float": 0.0014234201399991972,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "22240939687487458437907999997399/15625000000000000000000000000000000",
+      "polynomial_sha256": "2f19ac21908c8f9827b452c2454cee5cc797f617020e75ad35395d8ce0789bcc"
+    },
+    {
+      "name": "EOO P lower",
+      "interval": [
+        "99/100",
+        "4997/5000"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        4,
+        8
+      ],
+      "coefficients": 45,
+      "min_float": 1.6490561016693587e-09,
+      "claimed_strict_lower_bound": "3/2000000000",
+      "pass": true,
+      "minimum_exact": "98291403154692578554404317682303498437624887500374999999/59604644775390625000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "deb4b8bf113a5f71d3a1f2f4c2254c8943584502f1be45d75ef1dbb65a5a0706"
+    },
+    {
+      "name": "EOO P upper",
+      "interval": [
+        "5003/5000",
+        "101/100"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        4,
+        8
+      ],
+      "coefficients": 45,
+      "min_float": 1.6006060663293591e-09,
+      "claimed_strict_lower_bound": "3/2000000000",
+      "pass": true,
+      "minimum_exact": "95403556008896778822959001707877165625125112500374999999/59604644775390625000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "deb4b8bf113a5f71d3a1f2f4c2254c8943584502f1be45d75ef1dbb65a5a0706"
+    },
+    {
+      "name": "EOO face B -1 -1",
+      "interval": [
+        "4997/5000",
+        "5003/5000"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        3,
+        7
+      ],
+      "coefficients": 32,
+      "min_float": 0.00017585366943290463,
+      "claimed_strict_lower_bound": "17/100000",
+      "pass": true,
+      "minimum_exact": "20963390997994497769080183922408935556523144859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "44a70047fac5ae8bfce41ca5d0111e9bb254008aabd2f50805cda7cb527f3456"
+    },
+    {
+      "name": "EOO face B -1 1",
+      "interval": [
+        "4997/5000",
+        "5003/5000"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        3,
+        7
+      ],
+      "coefficients": 32,
+      "min_float": 0.00017585362138970462,
+      "claimed_strict_lower_bound": "17/100000",
+      "pass": true,
+      "minimum_exact": "20963385270798758022986617027877685556523144859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "78dd8f688f4526d5132a9ccda4b0a900437f1ab86d5f7877c79a36b57a280842"
+    },
+    {
+      "name": "EOO H2,-1",
+      "interval": [
+        "4997/5000",
+        "5003/5000"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        12,
+        26
+      ],
+      "coefficients": 351,
+      "min_float": 7.589291041852607e-13,
+      "claimed_strict_lower_bound": "7/10000000000000",
+      "pass": true,
+      "minimum_exact": "2511085765137138047288453349267749922777788908422710813296577895757766422873058636584456129489915041418367310358258152535153544687298578071907594525798274075912237081381144675812264149477567804687419/3308722450212110699485634768279851414263248443603515625000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "8171102c832ea74b0452a538d2eb8ee053ac0c3ddba208160c395eeaad2ae622"
+    },
+    {
+      "name": "EOO face B 1 -1",
+      "interval": [
+        "4997/5000",
+        "5003/5000"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        3,
+        7
+      ],
+      "coefficients": 32,
+      "min_float": 0.000174129676,
+      "claimed_strict_lower_bound": "17/100000",
+      "pass": true,
+      "minimum_exact": "43532419/250000000000",
+      "polynomial_sha256": "077d70cad08a4f65799eb80c83cb15afc64f6c02258ce3590aa587a7ebd6d585"
+    },
+    {
+      "name": "EOO face B 1 1",
+      "interval": [
+        "4997/5000",
+        "5003/5000"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        3,
+        7
+      ],
+      "coefficients": 32,
+      "min_float": 0.000174129676,
+      "claimed_strict_lower_bound": "17/100000",
+      "pass": true,
+      "minimum_exact": "43532419/250000000000",
+      "polynomial_sha256": "ba1d42c61873e381a5a1a6913689779dcddcada8341e75b935b97194260b54a9"
+    },
+    {
+      "name": "EOO H2,+1",
+      "interval": [
+        "4997/5000",
+        "5003/5000"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        12,
+        26
+      ],
+      "coefficients": 351,
+      "min_float": 7.710435200869055e-13,
+      "claimed_strict_lower_bound": "7/10000000000000",
+      "pass": true,
+      "minimum_exact": "28062859055023284526572856826730798606457147462320105793239259124735450254167969353808755321287573382836254722474728096496477008139994284247729376289453939510117250315922114188582915206242308351561609/36395946952333217694341982451078365556895732879638671875000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "d99d213c055b59d10dfca01f0c9750ddb0bcbaaa4e8078e92ac1d1e839ca7de4"
+    },
+    {
+      "name": "EOO H3",
+      "interval": [
+        "4997/5000",
+        "5003/5000"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        7,
+        14
+      ],
+      "coefficients": 120,
+      "min_float": 4.290760898017905e-08,
+      "claimed_strict_lower_bound": "1/25000000",
+      "pass": true,
+      "minimum_exact": "170731063270325960087634069104858437113383446111504630433067909056575639092061552648682778165366525804562259399/3979039320256561040878295898437500000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "fe3d042677bfe7e381fc86f2a983bbacd46a38c95388102a3f8bd2b2675050b1"
+    },
+    {
+      "name": "EOO bracket B 3/8 -1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.003804686543265554,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "453553979786104451656459478376922607363098144859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "79df089b8a50ceb0fc6701dec13430b791d04eb2b9e14660a2f48cc37968cf02"
+    },
+    {
+      "name": "EOO bracket B 3/8 -1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.003804686540265554,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "453553979428476583004115911482391357363098144859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "e308909ab02c13e2044ebb2845980da6d6fb7660ee216db55c77d0f6d5df6db2"
+    },
+    {
+      "name": "EOO bracket B 3/8 1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.005960936479265555,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "710599002750582087993739751814422607363098144859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "65f3457a5e0381adebbfac1c9aab0fd951c444e9227199cb9724db6d1fc5bd4c"
+    },
+    {
+      "name": "EOO bracket B 3/8 1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.005960936476265555,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "710599002392954219341396184919891357363098144859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "13c48883081d014a1929ec0947324e776aa6ed77ea93c27a9eeb628bf83ae9a2"
+    },
+    {
+      "name": "EOO bracket B 2/5 -1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.007024999342600086,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "837445180726061564445280853273498535212292480140625001/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "167ba9919e80ed3405b3883020d053598967c845c1de13becef870f2ced65e0e"
+    },
+    {
+      "name": "EOO bracket B 2/5 -1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.007024999347400086,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "837445181298266154289030670168029785212292480140625001/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "be0ff0bce386f6d50ca4169c18820f923b7c656f14bed68144daf60213345537"
+    },
+    {
+      "name": "EOO bracket B 2/5 1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.004974999406600085,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "593066144776354435920500579835998535212292480140625001/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "ff0d6d64bc0adabaf4f721c1f0085e4648817608940e13a37cb5b31e644b240a"
+    },
+    {
+      "name": "EOO bracket B 2/5 1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.004974999411400085,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "593066145348559025764250396730529785212292480140625001/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "f4053a6b7a5acb7d85f21169dd18d360abc880bb8012399c8113616a5ee980bd"
+    },
+    {
+      "name": "EOO bracket B 17/20 -1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.00156875,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "251/160000",
+      "polynomial_sha256": "9faa4c236d9aefacd552c69144568343c94a756de8401883d5d1af65097a0451"
+    },
+    {
+      "name": "EOO bracket B 17/20 -1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.00156875,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "251/160000",
+      "polynomial_sha256": "e433aba993c6161b461f0db0f16a80e377bc0d90e07277f27bde5a352f3c0637"
+    },
+    {
+      "name": "EOO bracket B 17/20 1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.00143125,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "229/160000",
+      "polynomial_sha256": "b410f493d6b8a09516c9a77970972ecb3604fdf65bc2cb20a47f1ea69899f47a"
+    },
+    {
+      "name": "EOO bracket B 17/20 1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.00143125,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "229/160000",
+      "polynomial_sha256": "259d4679db30cbbb8e36bc9e596cbb5e5d8aaeb6e34f0e6041640cbb53dc550a"
+    },
+    {
+      "name": "EOO bracket B 7/8 -1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.0009609328268907341,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "114552119599668275357941297516937255855285644859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "f2e47fe5c2b49add21d8903dc7f215def5d1c8760805a99ea53d09aff6fc44fb"
+    },
+    {
+      "name": "EOO bracket B 7/8 -1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.0009609327878907341,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "114552114950505982877472730622406005855285644859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "a17c39c568fab1d0de9ca105c52a609236dea41dcdca75c716bcb3d24173e97f"
+    },
+    {
+      "name": "EOO bracket B 7/8 1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.0009921827628907348,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "118277402268735755445221570954437255855285644859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "081d37a782c3720c0a33f88eb32c8b748d4425734d2a5f2932e14f45340a9e5a"
+    },
+    {
+      "name": "EOO bracket B 7/8 1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.000992182723890735,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "118277397619573462964753004059906005855285644859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "7e51a449ee538d05c912f856cd44ad7df2c8a5bbd901c45c7a8bfb56dbd752c7"
+    },
+    {
+      "name": "EOO bracket B 99/100 -1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.0013677350872707932,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "163046728047227033807726921827343750008488769859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "8733232244059edb56889caf87d6adcea633bfb228515fa7fe0ff27a045f6e9f"
+    },
+    {
+      "name": "EOO bracket B 99/100 -1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.0013677350399907931,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "163046722411011823846789604932812500008488769859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "36d50858401c2e082875b3a5e1611f0fd73e8c0d1fd04a1c7c0e773873949d2a"
+    },
+    {
+      "name": "EOO bracket B 99/100 1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.0009102350232707938,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "108508470448350177957507195264843750008488769859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "fdf1939fb1588456e5bf4fccc189ca442d3a5c1277d54465fa46e0ad27616d70"
+    },
+    {
+      "name": "EOO bracket B 99/100 1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.0009102349759907939,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "108508464812134967996569878370312500008488769859374999/119209289550781250000000000000000000000000000000000000000",
+      "polynomial_sha256": "474783f63cfaa1cf87d29f76a001a533a5295d8d0b73003e306d4603f860b487"
+    },
+    {
+      "name": "EOO bracket B 101/100 -1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.00109275,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "4371/4000000",
+      "polynomial_sha256": "4cc432135eb5f7c7209488acd3696c2901084cc45ae86c688c77168462d06fb4"
+    },
+    {
+      "name": "EOO bracket B 101/100 -1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.00109275,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "4371/4000000",
+      "polynomial_sha256": "e3772cbdb5f5fe3f4d6010d4f5c55eafb491417669e99ce67a29409607e47b7a"
+    },
+    {
+      "name": "EOO bracket B 101/100 1/1000 -1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.00163525,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "6541/4000000",
+      "polynomial_sha256": "ec9d06294697048954ee62003f6a9094fdacfe63c500236f7cff657f522e4ef7"
+    },
+    {
+      "name": "EOO bracket B 101/100 1/1000 1/1000",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        0,
+        7
+      ],
+      "coefficients": 8,
+      "min_float": 0.00163525,
+      "claimed_strict_lower_bound": "9/10000",
+      "pass": true,
+      "minimum_exact": "6541/4000000",
+      "polynomial_sha256": "3d93a19b28be571544714f706da240d9f304af33da3ae107deee972681faf6a1"
+    },
+    {
+      "name": "EOO Ab 3/8",
+      "interval": [
+        "3/8",
+        "2/5"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        4,
+        8
+      ],
+      "coefficients": 45,
+      "min_float": 0.0001306095937504044,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "7784938439750933088185310369879245725097656281005859749999999/59604644775390625000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "bfe92d29e254d359e50a003ae1bd63813e36d4cdc82cf16c92d33fd7c92a0c49"
+    },
+    {
+      "name": "EOO u 3/8 -1",
+      "interval": [
+        "3/8",
+        "2/5"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        1,
+        3
+      ],
+      "coefficients": 8,
+      "min_float": 0.2,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "1/5",
+      "polynomial_sha256": "0479e286bf679dc47ab1ec8dc4a4daa9d0f3c0cac644236bda6d489b950aa393"
+    },
+    {
+      "name": "EOO vy 3/8 -1",
+      "interval": [
+        "3/8",
+        "2/5"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        2,
+        2
+      ],
+      "coefficients": 9,
+      "min_float": 0.03999999999999988,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "3124999999999991/78125000000000000",
+      "polynomial_sha256": "2f2691898417c31dca75d3a3d96dde273a4f8d27f6e8d4e0e5885a0f57151bfe"
+    },
+    {
+      "name": "EOO u 3/8 1",
+      "interval": [
+        "3/8",
+        "2/5"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        1,
+        3
+      ],
+      "coefficients": 8,
+      "min_float": 1.7499999958749999,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "27343749935546873000000017/15625000000000000000000000",
+      "polynomial_sha256": "64b41d6a33f9f729b07e364c53827203ec51d18fa1adea643c8e4e90b2d26126"
+    },
+    {
+      "name": "EOO vy 3/8 1",
+      "interval": [
+        "3/8",
+        "2/5"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        2,
+        2
+      ],
+      "coefficients": 9,
+      "min_float": 0.7515625,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "481/640",
+      "polynomial_sha256": "639c81a90fbab3a508443b2b16632822cd47ecca624a62db3cdb0b36bd1988d8"
+    },
+    {
+      "name": "EOO Ab 17/20",
+      "interval": [
+        "17/20",
+        "7/8"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        4,
+        8
+      ],
+      "coefficients": 45,
+      "min_float": 0.007257077656251097,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "432555535808270989916422843922084331606933593500244140250000001/59604644775390625000000000000000000000000000000000000000000000000",
+      "polynomial_sha256": "7abd2be2a14bea09cd77a34ecb4a051a287a04aa055f6dfa0923fc0b53d988fe"
+    },
+    {
+      "name": "EOO u 17/20 -1",
+      "interval": [
+        "17/20",
+        "7/8"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        1,
+        3
+      ],
+      "coefficients": 8,
+      "min_float": 0.25,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "1/4",
+      "polynomial_sha256": "b89bf910e90a6341d4b798360c2d247a19e753f8262751dff4762e72fefe8115"
+    },
+    {
+      "name": "EOO vy 17/20 -1",
+      "interval": [
+        "17/20",
+        "7/8"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        2,
+        2
+      ],
+      "coefficients": 9,
+      "min_float": 0.10874999999999975,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "67968749999999847/625000000000000000",
+      "polynomial_sha256": "e007ca28fb323ee747e754a5c0b16a5cab57e47be9ce3aaeef2b4a54b6f2212a"
+    },
+    {
+      "name": "EOO u 17/20 1",
+      "interval": [
+        "17/20",
+        "7/8"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        1,
+        3
+      ],
+      "coefficients": 8,
+      "min_float": 3.69999997165,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "57812499557031248000000017/15625000000000000000000000",
+      "polynomial_sha256": "82a6b4a06ff0f85e4abec26006ea537353abf6551b791eeadc700e4d0763abec"
+    },
+    {
+      "name": "EOO vy 17/20 1",
+      "interval": [
+        "17/20",
+        "7/8"
+      ],
+      "shift_max": "1/125000000",
+      "bidegree": [
+        2,
+        2
+      ],
+      "coefficients": 9,
+      "min_float": 0.4640625,
+      "claimed_strict_lower_bound": "0",
+      "pass": true,
+      "minimum_exact": "297/640",
+      "polynomial_sha256": "1cfa9f49cd37e3f5ba7a6b539327b54f0a6d46c9e4d35e49747327074a380248"
+    }
+  ],
+  "all_exact_checks_pass": true
+}

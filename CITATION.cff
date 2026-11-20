@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: Cite qstab with its software version. For the polytope theorem also cite the separately identified
-  manuscript.
+message: Cite qstab with its software version. For mathematical results also cite the corresponding
+  paper or technical note listed below.
 type: software
 title: 'qstab: Quaternion Stability Toolbox'
 authors:
@@ -9,7 +9,9 @@ authors:
   orcid: https://orcid.org/0000-0003-0927-2988
   affiliation: Czech Technical University in Prague, Faculty of Electrical Engineering, Department of Control
     Engineering
-version: 0.18.0
+version: 0.19.0
+repository-code: https://github.com/michaelsebek/qstab-public
+url: https://github.com/michaelsebek/qstab-public
 license: MIT
 abstract: MATLAB functions for nominal and robust stability of quaternionic polynomials, matrix spectra, margins,
   and sampled family plots.
@@ -17,6 +19,7 @@ keywords:
 - quaternionic polynomials
 - robust stability
 - polynomial polytopes
+- interval polynomials
 - parametric uncertainty
 - algebraic zeros
 - right eigenvalues
@@ -30,4 +33,26 @@ references:
     orcid: https://orcid.org/0000-0003-0927-2988
   title: A Sharp Face Theorem for Robust Stability of Quaternionic Polynomial Polytopes
   year: 2026
-  notes: Manuscript in preparation for submission to Automatica.
+  doi: 10.5281/zenodo.24136448
+  url: https://doi.org/10.5281/zenodo.24136448
+  notes: Preprint, version 1.0; submitted to Automatica. The DOI identifies the preprint, not a journal article.
+
+- type: unpublished
+  authors:
+  - family-names: Šebek
+    given-names: Michael
+  title: Kharitonov-Type Face Reductions and Exact Stability Tests for Quaternionic Interval Polynomials
+  year: 2026
+  notes: Manuscript v7 and supplement v5 supplied for software verification; cite their publication records separately.
+
+- type: report
+  authors:
+  - family-names: Šebek
+    given-names: Michael
+    orcid: https://orcid.org/0000-0003-0927-2988
+  title: 'Quaternionic Interval Polynomials: Worked Examples and Verification Guide'
+  year: 2026
+  version: '1.0'
+  doi: 10.5281/zenodo.24389775
+  url: https://doi.org/10.5281/zenodo.24389775
+  notes: Published technical note with worked examples and verification guidance.

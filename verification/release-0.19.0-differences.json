@@ -1,0 +1,59 @@
+{
+  "schema": "qstab.release-differences.1",
+  "comparedFrom": "0.19.0-rc.1",
+  "comparedTo": "0.19.0",
+  "candidateZipSHA256": "8cfc9b86fd8b11149cdd4adb382c1e29c0316d870deb438e91a58781648fd9a3",
+  "matlabTotal": 208,
+  "matlabByteIdentical": 203,
+  "matlabAdded": 0,
+  "matlabRemoved": 0,
+  "changedFiles": [
+    {
+      "path": "examples/plot_qstab_intervals.m",
+      "candidateSha256": "7c2a749c57483d8a18261434b166cc28c645c663470aca431e579174b432d5ab",
+      "finalSha256": "54c3fb583c910f132f1d08420dd2d32c538e72d17593f90b254775ba9c52fcfc",
+      "candidateBytes": 17767,
+      "finalBytes": 17766
+    },
+    {
+      "path": "qstab_setup.m",
+      "candidateSha256": "b908c78577c5cb3bd10b599b6112117cebac6178ad9485d27de2bc8031f95616",
+      "finalSha256": "b344e0dbb3f260991376ea965e9502ae951a40d77ddfb1e7c99b5d1fd9880611",
+      "candidateBytes": 2861,
+      "finalBytes": 2851
+    },
+    {
+      "path": "run_qstab_public.m",
+      "candidateSha256": "d724f6c574f113a44a15a8733002f67d2ca4acaa4df3d80a60cce54607e88dca",
+      "finalSha256": "5c6a9b3dd6d6b536c01e516e018bd8af457b506e65289d74c49cbcc523b9bb22",
+      "candidateBytes": 8041,
+      "finalBytes": 8036
+    },
+    {
+      "path": "src/+qstab/Contents.m",
+      "candidateSha256": "b12946c245636a76ef50e4416acc50794e350849e3638a6967528087360edb57",
+      "finalSha256": "1f98dc73b9124c51f286773e5c50d519f75ca483f922ea4ebe8268583ae3db05",
+      "candidateBytes": 5806,
+      "finalBytes": 5787
+    },
+    {
+      "path": "src/+qstab/about.m",
+      "candidateSha256": "fcc043bd642c52852e89321aff5daf0d7c47f7ba298e67418d17398a25fd6325",
+      "finalSha256": "79c50b779db361991d3b48bd9eeb166d0df89c0b8f1ab38f50e12ce0a10b6195",
+      "candidateBytes": 4455,
+      "finalBytes": 4529
+    }
+  ],
+  "classification": {
+    "examples/plot_qstab_intervals.m": "Only two text anchor coordinates: Hurwitz label y=-0.7 (was -0.35); Schur label x=0.85 (was 0.78). No numeric study values changed.",
+    "qstab_setup.m": "Displayed release version only.",
+    "run_qstab_public.m": "Version string in fallback report only.",
+    "src/+qstab/Contents.m": "Help heading and documentation comments only.",
+    "src/+qstab/about.m": "Version and descriptive validation metadata only."
+  },
+  "numericalAlgorithmsChanged": false,
+  "numericalTolerancesChanged": false,
+  "testCasesChanged": false,
+  "nativeRerunAfterFinalEdits": false,
+  "verification": "The actual native regression and interval-study evidence belongs to the candidate. See native-matlab-0.19.0-rc.1.json; final file fingerprints are in MANIFEST.sha256. Documentation/citation metadata and the PDF guide are also updated."
+}

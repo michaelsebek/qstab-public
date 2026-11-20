@@ -14,17 +14,19 @@ K is contained in the original interval family and has EXACTLY its norm
 value sets at each imaginary-axis frequency, in exact arithmetic.
 Stability of 256 cube VERTICES alone is NOT a robustness test.
 No corresponding independent-even/odd claim is made for z or zinv.
-Use zeroexclude(...,&#39;Reduction&#39;,&#39;kharitonov-faces&#39;) for pair-free faces.
+Use zeroexclude(...,&#x27;Reduction&#x27;,&#x27;kharitonov-faces&#x27;) for pair-free faces.
+qstab.intervalfaces returns the newer degree/parity selection as reusable
+continuous affine families; select Reduction=&#x27;interval-faces&#x27; to test it.
 
   Examples (ascending coefficients):
   [K,I] = qstab.kharitonovcube({[1 1],[2 1]});
-  [tf,R] = qstab.zeroexclude(K,&#39;Uncertainty&#39;,&#39;affine&#39;);
+  [tf,R] = qstab.zeroexclude(K,&#x27;Uncertainty&#x27;,&#x27;affine&#x27;);
   disp(R.status);
 
   Interpretation:
   This is the CT eight-parameter continuous cube, not a list of 256 independently sufficient vertex polynomials. Its independent even/odd construction does not apply to a unit-circle boundary.
 
-  See also qstab.about.</code></pre>
+  See also qstab.intervalfaces, qstab.zeroexclude, qstab.about.</code></pre>
 <h2 id="additional-option-notes">Additional option notes</h2>
 <table>
 <thead>

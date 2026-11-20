@@ -23,6 +23,7 @@ Use qualified names, e.g. `help qstab.raymargin`. These entries show the source 
 | [qstab.eig](reference/eig.md) | Canonical representatives of right quaternion eigenvalue classes. |
 | [qstab.eigpairs](reference/eigpairs.md) | Right quaternion eigenvectors, diagonal representatives and checks. |
 | [qstab.roots](reference/roots.md) | Algebraic zero classes of a quaternion polynomial or matrix polynomial. |
+| [qstab.rootmotion](reference/rootmotion.md) | First and second derivatives of a simple norm zero in the original real parameter units. |
 
 ## Families, leading coefficients and robust decisions
 
@@ -33,6 +34,7 @@ Use qualified names, e.g. `help qstab.raymargin`. These entries show the source 
 | [qstab.familycomponents](reference/familycomponents.md) | Real component description of a scalar polynomial family. |
 | [qstab.leadingbound](reference/leadingbound.md) | Nonvanishing of the FULL leading-coefficient uncertainty set. |
 | [qstab.kharitonovcube](reference/kharitonovcube.md) | Exact qB02 reduction of a CT quaternion interval polynomial. |
+| [qstab.intervalfaces](reference/intervalfaces.md) | Degree/parity-aware continuous Hurwitz test faces; constructing faces is not a stability decision. |
 | [qstab.robuststable](reference/robuststable.md) | Sufficient robust stability test for scalar quaternion families. |
 | [qstab.zeroexclude](reference/zeroexclude.md) | Adaptive norm-value zero exclusion for scalar polynomial families. |
 
@@ -56,6 +58,7 @@ Use qualified names, e.g. `help qstab.raymargin`. These entries show the source 
 | [qstab.boxradius](reference/boxradius.md) | Global brackets for nested scalar coefficient-COMPONENT boxes. |
 | [qstab.boxstable](reference/boxstable.md) | Strict stability of a componentwise box about a scalar polynomial. |
 | [qstab.boxvalue](reference/boxvalue.md) | Component-box distance to a zero at an ACTUAL quaternion point. |
+| [qstab.boxfreqmargin](reference/boxfreqmargin.md) | Minimum over quaternion orientations at fixed frequency, when only one Hamilton component is uncertain. |
 
 ## Value sets, evidence and plots
 
@@ -76,6 +79,9 @@ Use qualified names, e.g. `help qstab.raymargin`. These entries show the source 
 
 ## Setup, checks and worked examples
 
+- [run_qstab_intervals](interval_article.md): Compute all 24 groups of the interval article and supplement, compare references, and save a current-run ZIP.
+- [plot_qstab_intervals](interval_article.md#figures-and-saved-data): Replot the saved interval data without rerunning solvers.
+- [verify_qstab_interval_certificates](interval_article.md#recompute-the-exact-continuum-certificates): Recompute the concrete quartic and quintic certificates with exact rational symbolic arithmetic.
 - [qstab_check_installation](reference/support_qstab_check_installation.md): Read-only integrity and MATLAB resolution checks.
 - [qstab_setup](reference/support_qstab_setup.md): Connect the public namespace and optional examples for this session.
 - [run_qstab_public](reference/support_run_qstab_public.md): One standalone acceptance run, without an external qeig.

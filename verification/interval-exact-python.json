@@ -1,0 +1,64 @@
+{
+  "schema": "qstab.interval-exact-replay.1",
+  "ok": true,
+  "computedThisRun": true,
+  "nativeMATLABRun": false,
+  "arithmetic": "exact rational QQ and tensor Bernstein",
+  "timestampUTC": "2026-11-20T02:34:58.319039+00:00",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "elapsedSeconds": 9.339849321999964,
+  "coverage": {
+    "algebraicChecks": 28,
+    "quarticBernsteinInequalities": 56,
+    "completeQuinticFaces": 24,
+    "quinticPolynomialChecks": 264,
+    "quinticProofLeaves": 370,
+    "maximumDyadicDepth": 5
+  },
+  "sourceManifest": {
+    "schema": "qstab.interval-exact-sources.1",
+    "referenceInputs": [
+      {
+        "name": "IJRCN_manuscript_v7.tex",
+        "sha256": "0c95bdc5b8c948b13ca38e4cde762ce74f1b529eaeb96a0fce9d2a8916e18098"
+      }
+    ],
+    "files": [
+      {
+        "path": "verify_exact_examples.py",
+        "sha256": "f5c45b647b4ebee7471c15599ea25390c745fec8adcf55ea96389f1bada3f5b9"
+      },
+      {
+        "path": "verify_quintic_boundaries.py",
+        "sha256": "5eab025c9db85893eba12d11900a889a9af93105c3834eb7cecf7af5d8fd351a"
+      },
+      {
+        "path": "replay.py",
+        "sha256": "45bee4891cfcb2292b988eb66a8e27af920ada2274e1ee2ff59757c43b146bf3"
+      },
+      {
+        "path": "exact_example_certificate.json",
+        "sha256": "d8fc3a2920280653591a7b81ffa04a33dbc179fe363bbf4bbc75a761c670a0db"
+      },
+      {
+        "path": "quintic_boundary_certificate.json",
+        "sha256": "7ca175032df7216ee17980001aa7edd20a2f6a4bf050a228006af005b44e4e66"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "script": "verify_exact_examples.py",
+      "returncode": 0,
+      "stdout": "OOO norm factorization True\nOOO cubic norm is Hurwitz True\nEOO norm factorization True\nEOO cubic norm is Hurwitz True\nOOO quintic central Routh True\nEOO quintic central Routh True\nEEE quintic central Routh True\nEEO quintic central Routh True\nOOO table\nbern OOO D-3/100 0.0024560025004682264 target 0.0 True\nbern OOO 41/1000-D 0.000759589375 target 0.0 True\nbern OOO a2-4D 0.081775 target 0.0 True\nbern OOO P lower 2.3140550545437083e-09 target 1e-09 True\nbern OOO P upper 1.4290505260044176e-09 target 1e-09 True\nbern OOO H1,+1 2.2288504915063403e-10 target 2e-10 True\nbern OOO H1,-1 2.0088466562038583e-10 target 2e-10 True\nbern OOO H2,+1 3.298730308574041e-11 target 3e-11 True\nbern OOO H2,-1 7.163419660020795e-12 target 7e-12 True\nbern OOO H3,+1 8.775455816640961e-10 target 8e-10 True\nOOO exact bracket margin 1/5 True\nOOO exact bracket margin 3/10 True\nOOO exact bracket margin 61/125 True\nOOO exact bracket margin 64/125 True\nOOO exact bracket margin 9/10 True\nOOO exact bracket margin 11/10 True\nOOO first HB shift margin True\nOOO second HB shift margin True\nEOO table\nbern EOO C-1/20 0.001803296875 target 0.0 True\nbern EOO 3/40-C 0.0006876543413997827 target 0.0 True\nbern EOO 3/40-d2 0.0014234201399991972 target 0.0 True\nbern EOO P lower 1.6490561016693587e-09 target 1.5e-09 True\nbern EOO P upper 1.6006060663293591e-09 target 1.5e-09 True\nbern EOO face B -1 -1 0.00017585366943290463 target 0.00017 True\nbern EOO face B -1 1 0.00017585362138970462 target 0.00017 True\nbern EOO H2,-1 7.589291041852607e-13 target 7e-13 True\nbern EOO face B 1 -1 0.000174129676 target 0.00017 True\nbern EOO face B 1 1 0.000174129676 target 0.00017 True\nbern EOO H2,+1 7.710435200869055e-13 target 7e-13 True\nbern EOO H3 4.290760898017905e-08 target 4e-08 True\nbern EOO bracket B 3/8 -1/1000 -1/1000 0.003804686543265554 target 0.0009 True\nbern EOO bracket B 3/8 -1/1000 1/1000 0.003804686540265554 target 0.0009 True\nbern EOO bracket B 3/8 1/1000 -1/1000 0.005960936479265555 target 0.0009 True\nbern EOO bracket B 3/8 1/1000 1/1000 0.005960936476265555 target 0.0009 True\nbern EOO bracket B 2/5 -1/1000 -1/1000 0.007024999342600086 target 0.0009 True\nbern EOO bracket B 2/5 -1/1000 1/1000 0.007024999347400086 target 0.0009 True\nbern EOO bracket B 2/5 1/1000 -1/1000 0.004974999406600085 target 0.0009 True\nbern EOO bracket B 2/5 1/1000 1/1000 0.004974999411400085 target 0.0009 True\nbern EOO bracket B 17/20 -1/1000 -1/1000 0.00156875 target 0.0009 True\nbern EOO bracket B 17/20 -1/1000 1/1000 0.00156875 target 0.0009 True\nbern EOO bracket B 17/20 1/1000 -1/1000 0.00143125 target 0.0009 True\nbern EOO bracket B 17/20 1/1000 1/1000 0.00143125 target 0.0009 True\nbern EOO bracket B 7/8 -1/1000 -1/1000 0.0009609328268907341 target 0.0009 True\nbern EOO bracket B 7/8 -1/1000 1/1000 0.0009609327878907341 target 0.0009 True\nbern EOO bracket B 7/8 1/1000 -1/1000 0.0009921827628907348 target 0.0009 True\nbern EOO bracket B 7/8 1/1000 1/1000 0.000992182723890735 target 0.0009 True\nbern EOO bracket B 99/100 -1/1000 -1/1000 0.0013677350872707932 target 0.0009 True\nbern EOO bracket B 99/100 -1/1000 1/1000 0.0013677350399907931 target 0.0009 True\nbern EOO bracket B 99/100 1/1000 -1/1000 0.0009102350232707938 target 0.0009 True\nbern EOO bracket B 99/100 1/1000 1/1000 0.0009102349759907939 target 0.0009 True\nbern EOO bracket B 101/100 -1/1000 -1/1000 0.00109275 target 0.0009 True\nbern EOO bracket B 101/100 -1/1000 1/1000 0.00109275 target 0.0009 True\nbern EOO bracket B 101/100 1/1000 -1/1000 0.00163525 target 0.0009 True\nbern EOO bracket B 101/100 1/1000 1/1000 0.00163525 target 0.0009 True\nbern EOO Ab 3/8 0.0001306095937504044 target 0.0 True\nbern EOO u 3/8 -1 0.2 target 0.0 True\nbern EOO vy 3/8 -1 0.03999999999999988 target 0.0 True\nbern EOO u 3/8 1 1.7499999958749999 target 0.0 True\nbern EOO vy 3/8 1 0.7515625 target 0.0 True\nbern EOO Ab 17/20 0.007257077656251097 target 0.0 True\nbern EOO u 17/20 -1 0.25 target 0.0 True\nbern EOO vy 17/20 -1 0.10874999999999975 target 0.0 True\nbern EOO u 17/20 1 3.69999997165 target 0.0 True\nbern EOO vy 17/20 1 0.4640625 target 0.0 True\nrunning norm True\none-component determinants True\none-component unstable interior determinant True\nSchur cubic L endpoint True\nSchur cubic F endpoints True\napplication endpoint gaps True\napplication isolator True\napplication unique reserve isolator True\none-component reserve isolator True\none-component u isolator True\none-component reserve substitution True\none-component design gap True\nPASS exact algebraic checks: 28\nPASS exact tensor Bernstein inequalities: 56\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify_quintic_boundaries.py",
+      "returncode": 0,
+      "stdout": "PASS OOO:t1=-1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS OOO:t1=+1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS OOO:t2=-1/1000 | 11 exact polynomial checks | 15 proof leaves\nPASS OOO:t2=+1/1000 | 11 exact polynomial checks | 15 proof leaves\nPASS OOO:t3=-1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS OOO:t3=+1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS EOO:t1=-1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS EOO:t1=+1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS EOO:t2=-1/1000 | 11 exact polynomial checks | 19 proof leaves\nPASS EOO:t2=+1/1000 | 11 exact polynomial checks | 19 proof leaves\nPASS EOO:t3=-1/1000 | 11 exact polynomial checks | 12 proof leaves\nPASS EOO:t3=+1/1000 | 11 exact polynomial checks | 12 proof leaves\nPASS EEE:t1=-1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS EEE:t1=+1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS EEE:t2=-1/1000 | 11 exact polynomial checks | 23 proof leaves\nPASS EEE:t2=+1/1000 | 11 exact polynomial checks | 23 proof leaves\nPASS EEE:t3=-1/1000 | 11 exact polynomial checks | 12 proof leaves\nPASS EEE:t3=+1/1000 | 11 exact polynomial checks | 12 proof leaves\nPASS EEO:t1=-1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS EEO:t1=+1/1000 | 11 exact polynomial checks | 11 proof leaves\nPASS EEO:t2=-1/1000 | 11 exact polynomial checks | 35 proof leaves\nPASS EEO:t2=+1/1000 | 11 exact polynomial checks | 35 proof leaves\nPASS EEO:t3=-1/1000 | 11 exact polynomial checks | 14 proof leaves\nPASS EEO:t3=+1/1000 | 11 exact polynomial checks | 14 proof leaves\n{\n  \"ok\": true,\n  \"families\": 4,\n  \"complete_closed_faces\": 24,\n  \"polynomial_checks\": 264,\n  \"proof_leaves\": 370,\n  \"max_dyadic_depth\": 5,\n  \"method\": \"exact rational Hurwitz determinants with full tensor-Bernstein face coverage\"\n}\nElapsed 6.127 s\n",
+      "stderr": ""
+    }
+  ]
+}

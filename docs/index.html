@@ -1,10 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab documentation</title><link rel="stylesheet" href="style.css"></head><body><main><h1 id="qstab-documentation">qstab documentation</h1>
 <p><a href="qstab_manual.pdf">Read the public guide (PDF)</a> · <a
 href="api_index.html">API reference</a> · <a
 href="installation.html">Installation, dependencies and optional
 integrations</a> · <a href="papers.html">Article and exact replay</a> · <a
 href="../verification/VALIDATION.html">Validation</a></p>
+<p><strong>Interval article and supplement:</strong> <a
+href="interval_article.html">run all 24 source-linked groups, inspect the
+comparisons, and replay optional exact certificates</a>.
+<code>run_qstab_intervals('all','Plots',true)</code> saves numerical
+results and figures in one current-run archive. The numerical baseline
+of 0.19.0 was validated as candidate 0.19.0-rc.1 in MATLAB R2024b Update
+2 on 20 November 2026: 731 regression checks, all 24 interval groups and
+110 comparisons passed. This final packaging is not a fresh native run.
+The optional MATLAB symbolic replay remains separately unvalidated; see
+the <a href="../verification/VALIDATION.html">validation ledger</a>.</p>
 <p>Run <code>qstab_guide_example('list')</code> to see the key and
 <code>qstab_guide_example('G06')</code> for one example. The examples
 are printed from the same executable MATLAB file. Qualified public entry

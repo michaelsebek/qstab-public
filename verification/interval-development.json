@@ -1,0 +1,907 @@
+{
+  "schema": "qstab.interval-development.1",
+  "candidate": "0.19.0-rc.1",
+  "date": "2026-11-20",
+  "nativeMATLABRun": false,
+  "nativeValidationPending": true,
+  "publishedBaseline": {
+    "tag_name": "v0.18.0",
+    "name": "qstab 0.18.0 \u2014 Quaternion Stability Toolbox for MATLAB",
+    "published_at": "2026-11-09T14:56:21Z",
+    "prerelease": false,
+    "draft": false,
+    "target_commitish": "main",
+    "html_url": "https://github.com/michaelsebek/qstab-public/releases/tag/v0.18.0"
+  },
+  "core": {
+    "status": "CORE_OK_NATIVE_PENDING",
+    "passed": 646,
+    "failed": 0,
+    "skipped": 85,
+    "elapsedSeconds": 76.9569959640503
+  },
+  "runtime": {
+    "numerical": "GNU Octave 10.3.0",
+    "symbolicBridge": "Octave symbolic 3.2.2",
+    "independentExact": "Python 3.12.14 / SymPy 1.14.0"
+  },
+  "numericalStudy": {
+    "status": "NUMERICAL_EXAMPLES_MATCHED",
+    "passed": 24,
+    "failed": 0,
+    "checksPassed": 110,
+    "checksFailed": 0,
+    "elapsedSeconds": 14.634618043899536
+  },
+  "graphics": {
+    "dedicatedCasesPassed": 3,
+    "figuresExported": 8,
+    "filesExported": 32,
+    "nativeMATLABGraphics": false
+  },
+  "exactPython": {
+    "algebraicChecks": 28,
+    "quarticBernsteinInequalities": 56,
+    "completeQuinticFaces": 24,
+    "quinticPolynomialChecks": 264,
+    "quinticProofLeaves": 370,
+    "maximumDyadicDepth": 5
+  },
+  "matlabLanguageSymbolic": {
+    "nativeMATLABRun": false,
+    "completeQuarticInequalities": 56,
+    "completeQuinticRun": false,
+    "quinticCentres": 1,
+    "quinticFaces": 2,
+    "quinticPolynomialChecks": 22,
+    "note": "Quintic auxiliary run deliberately stopped. Complete independent Python proof is recorded separately."
+  },
+  "private": {
+    "privateRevision": "0.19.0-private-rc.1",
+    "payloadFiles": 36,
+    "auxiliaryComponentGroupsPassed": 26,
+    "nativeObjectGroups": 12,
+    "nativeObjectExecution": "BLOCKED_NATIVE_ENVIRONMENT: actual MATLAB/qpol/mquaternion unavailable",
+    "installerAuxiliaryChecks": [
+      "reject unknown local source before copying",
+      "CheckOnly leaves target unchanged",
+      "exact predecessor backup and complete owned class copy",
+      "idempotent repeated installation"
+    ]
+  },
+  "codeSHA256": [
+    {
+      "path": "examples/export_qstab_paper_figures.m",
+      "sha256": "8209e39e70e4a2034d2cd8737ce6803aec1131d2473bea0ba727ee5104f8b220"
+    },
+    {
+      "path": "examples/plot_qstab_intervals.m",
+      "sha256": "7c2a749c57483d8a18261434b166cc28c645c663470aca431e579174b432d5ab"
+    },
+    {
+      "path": "examples/plot_qstab_paper_figure.m",
+      "sha256": "111adc6e8e967b15a09c9faaff5a10a7d157ce4fc7fa150700508a9b1529a488"
+    },
+    {
+      "path": "examples/qstab_benchmark_assess.m",
+      "sha256": "6c8576567e7cb5cda6761dbb0e79798fc1b50d97ae9d5b37bd317a0b6249c99d"
+    },
+    {
+      "path": "examples/qstab_benchmark_cases.m",
+      "sha256": "ca24c9fa23545e047a0ef85af5d3de581e84233ea04ba74dc0a9c8c70c13099e"
+    },
+    {
+      "path": "examples/qstab_benchmark_plan.m",
+      "sha256": "87a2c593d78f470bda8c2d16ab82033f76ad077da98fd7414acdc9b547ebb33a"
+    },
+    {
+      "path": "examples/qstab_benchmark_summarize.m",
+      "sha256": "149dcd864848a7239ba706257f5967203e51ae817ddda3153a8767bd428573f4"
+    },
+    {
+      "path": "examples/qstab_demo.m",
+      "sha256": "67c9fec97a1e225e83c6653ba7609fbd62aff6975722008fc5d16f3536796ab6"
+    },
+    {
+      "path": "examples/qstab_demo_plots.m",
+      "sha256": "116342505d0b36b495fc6fd095c71e875eed5110ed7b4bf65c0654909ccdfa37"
+    },
+    {
+      "path": "examples/qstab_eigen_assess.m",
+      "sha256": "69050ed68b7d942a5a36b8c2871cbde9dfd1d2bb75f3db68e5e112358d22e6d7"
+    },
+    {
+      "path": "examples/qstab_eigen_cases.m",
+      "sha256": "8d4198b3c52040629e806a4f8b8ac85bff2a7d60fdf9095629b61c498eae423f"
+    },
+    {
+      "path": "examples/qstab_eigen_match.m",
+      "sha256": "b1b27c5eda97e12b6666545517a83c29dead206e1e1fccf825e171a7439d137a"
+    },
+    {
+      "path": "examples/qstab_eigen_timing.m",
+      "sha256": "84f1b6ff093377960fbf085f6733fd28b378283576dcfa26acebc6e3a17a9579"
+    },
+    {
+      "path": "examples/qstab_guide_example.m",
+      "sha256": "f60f0e02c5d0ad176879b780e5fd02f1e00b834348fe56961f4704eb5abe6c8e"
+    },
+    {
+      "path": "examples/qstab_interval_cases.m",
+      "sha256": "79d2278567729567acb8f4fb1990949ce2e09c9a6b78e82b4949d5da3c411e46"
+    },
+    {
+      "path": "examples/qstab_interval_evaluate.m",
+      "sha256": "d65ca0c66d1153c180ca7c35259090aa6a44037dadc29a64f3b0d02d4db578da"
+    },
+    {
+      "path": "examples/qstab_paper_cases.m",
+      "sha256": "f04262dd8fe1e401fb0446ea8386cd837fbeebbd38a2c7fcc4f43d064d64d44c"
+    },
+    {
+      "path": "examples/qstab_paper_check.m",
+      "sha256": "fad3b223c30a7d8537a57994f8a6b5ef5db8bbeef8a1a4dd948ef340d407c175"
+    },
+    {
+      "path": "examples/qstab_paper_evaluate.m",
+      "sha256": "8c3d3aaa929851e5a8225fc7f952706a65e9361ce6e50e7132fbce954f5583e4"
+    },
+    {
+      "path": "examples/qstab_paper_extension_cases.m",
+      "sha256": "8fc3e11ec2027af3a5da435a6460e5d6a5bec5de7e4e7a4ef86092ad5a000287"
+    },
+    {
+      "path": "examples/qstab_paper_extension_evaluate.m",
+      "sha256": "43fd37aa3c9196b19c382b2502bcffffa058e5d3b422d325cbeb3c8f1888d159"
+    },
+    {
+      "path": "examples/qstab_paper_figures.m",
+      "sha256": "7e1ef4fd442f8c4eaece651973833bd4ae39aab23f7b3f7f3645f8bf007f40d4"
+    },
+    {
+      "path": "examples/qstab_validate_paper_figure.m",
+      "sha256": "4905ff4ee295198f858adb34afd0ed656f89af6205a90bdcca85d8d747911458"
+    },
+    {
+      "path": "examples/run_qb01_discrete.m",
+      "sha256": "53c5d6ddd2e1ad01e88532ddefbf63192223c46bfa17b44ac21f4d2afdcceb43"
+    },
+    {
+      "path": "examples/run_qb01_examples.m",
+      "sha256": "1527b22fbe7b364b4ec46292e1f33bde2a8ea68e45e662aaa7528f3f89333345"
+    },
+    {
+      "path": "examples/run_qb02_balls.m",
+      "sha256": "26698207a0f76d7c2b0ab40aa74f051ca7a0d7350018eef514dbc103c305d7e2"
+    },
+    {
+      "path": "examples/run_qb02_boxes.m",
+      "sha256": "b1bdb406317601e98c815ce9b490180135ab994311dec3dedbf84307ea0f840b"
+    },
+    {
+      "path": "examples/run_qb02_extensions.m",
+      "sha256": "77903b874e92884d86e4043fe963d133938b8893c47ee59f133917ba058c4020"
+    },
+    {
+      "path": "examples/run_qb02_qb03_examples.m",
+      "sha256": "1ce279c1940e4e9517e6d14da07e1136f8bc5fc8618a84f021ac5c5292d388de"
+    },
+    {
+      "path": "examples/run_qb03_four_generator_examples.m",
+      "sha256": "12964fb6f8be6c604c757e2938b64a8267e1ba3a2fce88576b498f3e982865a1"
+    },
+    {
+      "path": "examples/run_qstab_benchmarks.m",
+      "sha256": "8c278657a630599d3a290ae706adf1d677fb4160b7c030e49bc2917b7dc30509"
+    },
+    {
+      "path": "examples/run_qstab_diagnostics.m",
+      "sha256": "ad16bd1c3acd6a204fe67f6e12b9272074970298984ec9de1c4afb868c99f7e7"
+    },
+    {
+      "path": "examples/run_qstab_eigen_comparison.m",
+      "sha256": "b77c18f9034c1f4208fa67ad8a927091f7482bf439261db3c4ea8360a0f557b2"
+    },
+    {
+      "path": "examples/run_qstab_paper_extensions.m",
+      "sha256": "5914a91c945efa35113202354bbec859973cad78b47e4630a3139fc8c7b6e85f"
+    },
+    {
+      "path": "examples/run_qstab_papers.m",
+      "sha256": "06b2cb4c167b4c94b2aa13a0500644848b8d620587361b66f8abbec930ed58b1"
+    },
+    {
+      "path": "examples/verify_qstab_interval_certificates.m",
+      "sha256": "0ecfd4fdcd23bef7b4a7867d0f6579c6834e63732755a16c35e4405917deb4ae"
+    },
+    {
+      "path": "private/qstab_public_figures.m",
+      "sha256": "1dc9f0ee525a55f5b536f871c2c3b0abfae400c2d4d0eaa2bf5c84126e666ee0"
+    },
+    {
+      "path": "private/qstab_public_manifest.m",
+      "sha256": "24ca513ae183877ac36fd2d2a2e331cf0d2c009b7d7f622f81b56faebf749342"
+    },
+    {
+      "path": "private/qstab_public_path_plan.m",
+      "sha256": "167fac6b5ce82cf63cfcd62d11ebfe517ebb0406008fbc1f44b0c895db1eb8e5"
+    },
+    {
+      "path": "private/qstab_public_session.m",
+      "sha256": "112d0771afa4b041bd7ae4672e267b6f9f6d1d694784ce34aaf7cc7c0923cb60"
+    },
+    {
+      "path": "private/qstab_source_manifest.m",
+      "sha256": "b67f348eb7357775f8633caf6fd4a814c34a63e964dafbf821f5fc43d44829a9"
+    },
+    {
+      "path": "private/qstab_wrapper_conflicts.m",
+      "sha256": "434b2df03a88b0fee6d46a0abd38dff75d55cbb2ca46961bac516a9273f45560"
+    },
+    {
+      "path": "private/qstab_write_test_report.m",
+      "sha256": "01fb705ca32cabe7804fae47a455996dbf1b16e1e0a1885f656e922618dd9738"
+    },
+    {
+      "path": "qstab_check_installation.m",
+      "sha256": "b25b19494bc6a8560fa55fd102abfbba24c78e2cabf5b4ced8e91c2cd0b15201"
+    },
+    {
+      "path": "qstab_setup.m",
+      "sha256": "b908c78577c5cb3bd10b599b6112117cebac6178ad9485d27de2bc8031f95616"
+    },
+    {
+      "path": "run_qstab_intervals.m",
+      "sha256": "40f9808052dcbc86058869c7e0999f8a94c42211ff7401d8094cad75c7d7b0e3"
+    },
+    {
+      "path": "run_qstab_public.m",
+      "sha256": "d724f6c574f113a44a15a8733002f67d2ca4acaa4df3d80a60cce54607e88dca"
+    },
+    {
+      "path": "src/+qstab/+internal/affinezeroexclude.m",
+      "sha256": "b5712c19dbd548452b1eb3877f25504bb0fc729c600b8c46b178d76f23ffaf5d"
+    },
+    {
+      "path": "src/+qstab/+internal/ballmodel.m",
+      "sha256": "dea656d17c47f6dc9f4a78ed5b848ebfd8b70cd3208edf104ad8a4b8c790dd9d"
+    },
+    {
+      "path": "src/+qstab/+internal/ballnorm.m",
+      "sha256": "4e643e70222b70182225bf37dcafdbc6896dcdbaaaa04d02f919ec9a5fddbe87"
+    },
+    {
+      "path": "src/+qstab/+internal/ballpoint.m",
+      "sha256": "a883462f9e36da20a7513e942ed682ca49b2a36d8ca482b30dd4dc9f77b221ae"
+    },
+    {
+      "path": "src/+qstab/+internal/ballpositivity.m",
+      "sha256": "c2b71248828457cd3e14248eb7413f049490ea199c19f5254cab786f99857f03"
+    },
+    {
+      "path": "src/+qstab/+internal/ballradiusReport.m",
+      "sha256": "549d0a2161b53eb8deff6752f91a6624408a133d11b53dd4dd9c8071272b9164"
+    },
+    {
+      "path": "src/+qstab/+internal/ballsetReport.m",
+      "sha256": "887390c656c618e0842c55c56dbc1e6ae80633c5f368bf7e94a111a43964510c"
+    },
+    {
+      "path": "src/+qstab/+internal/ballstableReport.m",
+      "sha256": "3ebaf2d8b8cc043f98f9e4e30888da1e45ea0e14e9b9d911f8b1f1ce7b71c490"
+    },
+    {
+      "path": "src/+qstab/+internal/boxcandidate.m",
+      "sha256": "42256a84db67e9bad3dbbb4671e0880c896a5d1c84a5f0c51bac070f6e16703f"
+    },
+    {
+      "path": "src/+qstab/+internal/boxdegree.m",
+      "sha256": "3804e1ef1b28d11bad0fbb6529df9b1d8046495ece23afff0d4c9f88791480df"
+    },
+    {
+      "path": "src/+qstab/+internal/boxmodel.m",
+      "sha256": "aadc1f4637bc19be3c47c19b82b53fc8c90995270367b1521ea9597fdb55aa73"
+    },
+    {
+      "path": "src/+qstab/+internal/boxpoint.m",
+      "sha256": "743adb0be8a5e97a374f6f7e3cf26941271882b12f175f254d0ee93196cdab11"
+    },
+    {
+      "path": "src/+qstab/+internal/boxradiusReport.m",
+      "sha256": "54409ddfba7f5f9c8573bf99be5e7f41b8144b27313be6281cd0e5a094925a5a"
+    },
+    {
+      "path": "src/+qstab/+internal/boxstableReport.m",
+      "sha256": "846ff3b989d2da306c93068d9363e3373213d437109d25bbc8637a4c14c2ac8f"
+    },
+    {
+      "path": "src/+qstab/+internal/boxtrial.m",
+      "sha256": "e7f1bad696a47c93120f968bbff11fe7593fffba2e44379963618e1c5a91c957"
+    },
+    {
+      "path": "src/+qstab/+internal/certificateDataReport.m",
+      "sha256": "42b5aba31c8bbac1916aec12f5a1af96562c83e193dd200638e7a4cfa6ea2c81"
+    },
+    {
+      "path": "src/+qstab/+internal/certificateEnclosureReport.m",
+      "sha256": "0e3194e9ad1258e982d834341f0e1dc013806fb8cec189409ce030cfdf53997f"
+    },
+    {
+      "path": "src/+qstab/+internal/cubefamily.m",
+      "sha256": "b5b634924bb584cf5e19d7867a7b898cdc827696e41acebbf074229221954858"
+    },
+    {
+      "path": "src/+qstab/+internal/diagnosticAxes.m",
+      "sha256": "1956660d04158ad31066e1f23cf38a9a319af382fc2a4e154ac66beaa2c2dc3e"
+    },
+    {
+      "path": "src/+qstab/+internal/diagnosticGeometry.m",
+      "sha256": "d19eb5e7670c4a532e0c056be8fbb63eee4f7151448500ab4db6dbdc8639be4b"
+    },
+    {
+      "path": "src/+qstab/+internal/discretepair.m",
+      "sha256": "f593faa01a18fe45b428261bffe6c512af450ffdbd9a2d0a2eea84756e7e9f8b"
+    },
+    {
+      "path": "src/+qstab/+internal/discreteradius.m",
+      "sha256": "f1e325d0f4a563e1231e44fd72e1feb9d4b170356f69e5ed031f6a2dcf1276fc"
+    },
+    {
+      "path": "src/+qstab/+internal/discreteray.m",
+      "sha256": "e3c46a22c63166cdc0bdd1a2077937738a50457175497d1aad8250deea9497bc"
+    },
+    {
+      "path": "src/+qstab/+internal/drawSampledFamily.m",
+      "sha256": "a9bd64beebd6e7c83053a6f76eee4851c47d4c5271f68c653a8d1f8a88bc10bc"
+    },
+    {
+      "path": "src/+qstab/+internal/exactBoundary.m",
+      "sha256": "9623269eb5576c2ce4a6d183ec02aceb53952fec964c65905e59449e4206d988"
+    },
+    {
+      "path": "src/+qstab/+internal/familyDefinition.m",
+      "sha256": "431a802e29f2f1059a6d172143d0331b343877dcbd6f986e0c26d9aba7c0b055"
+    },
+    {
+      "path": "src/+qstab/+internal/familyMargin.m",
+      "sha256": "a1f973303468357e964b2586ca2f93dabaeb6fac74f485d1aaf09affb60da701"
+    },
+    {
+      "path": "src/+qstab/+internal/familyOptions.m",
+      "sha256": "8b7b57269e266a0b19cf961f67f12cb14041a55b56d9d9669796b8cb12d8d02f"
+    },
+    {
+      "path": "src/+qstab/+internal/familyPlotModel.m",
+      "sha256": "c043e9d3157c49ecb6a9993ee4efa7f0649eabe3cf11ee9fd10040af0830c58a"
+    },
+    {
+      "path": "src/+qstab/+internal/familyPlotOptions.m",
+      "sha256": "bec3f567e83dc074a3d338c8090bb6849f838f15f0162fd579f5aa23cd54907b"
+    },
+    {
+      "path": "src/+qstab/+internal/fourgenerator.m",
+      "sha256": "ce52ed5f96084fcd086acc3fea7e8d16aca9a9259ca6061b119403030a1c024a"
+    },
+    {
+      "path": "src/+qstab/+internal/intervalfaceplan.m",
+      "sha256": "2194001556a5e41f1f9ff93b9a786a0b383644a03f8ef7cbc30f34c9a3ddc00f"
+    },
+    {
+      "path": "src/+qstab/+internal/intervalreduce.m",
+      "sha256": "81a06ba061d8257c7ee20978fd334d81d192fe46427b8a300e2be1044e5ff0e6"
+    },
+    {
+      "path": "src/+qstab/+internal/isFamilyDefinition.m",
+      "sha256": "daa57ba5e12500668ca00b3fec93afd5165a6755d2f6f8fa50da5be798600b2a"
+    },
+    {
+      "path": "src/+qstab/+internal/isUserInputError.m",
+      "sha256": "e4d03d619724ec5d5853e908c3e3fe946cb37d0faaed2a0a28d93f60dd8b21f1"
+    },
+    {
+      "path": "src/+qstab/+internal/isstableReport.m",
+      "sha256": "8eb16d1fb680808d493aaceb142756167d2d9b26accd5ade56a6f2d68833dad8"
+    },
+    {
+      "path": "src/+qstab/+internal/leadbound.m",
+      "sha256": "05adc0fb2c7c2522a803f00a0b5556409895393ee4a57f1c0f12da6aef3abaff"
+    },
+    {
+      "path": "src/+qstab/+internal/leadingboundReport.m",
+      "sha256": "e9b76b2538b4789f938158adf53e95c6dd6c95e27a6b1408f9989acd6f7ccb5f"
+    },
+    {
+      "path": "src/+qstab/+internal/parameterRay.m",
+      "sha256": "540ad56172bae29362fb04878cb823f010d1d6397a732f17e5ef7cfd82185aa6"
+    },
+    {
+      "path": "src/+qstab/+internal/plotCertificateReport.m",
+      "sha256": "dd1f2b7158b7817b0558830271244784d679c8de26089510879812cbc45bc164"
+    },
+    {
+      "path": "src/+qstab/+internal/plotEnclosureReport.m",
+      "sha256": "3d4da17d9969a37906eb24b22f1e44f975aa9e04ce11af5b322ca9e965e82189"
+    },
+    {
+      "path": "src/+qstab/+internal/plotSpectrumReport.m",
+      "sha256": "993d091dcba08827a6e4113ac02f00997348258cb4f69ad92566ecb7419bf343"
+    },
+    {
+      "path": "src/+qstab/+internal/plotValueSetReport.m",
+      "sha256": "04076c04cb1727abc3410b0d3ca106eaf4ce1cfb4e57eaf111b5d5f6cba2579e"
+    },
+    {
+      "path": "src/+qstab/+internal/plotWitnessReport.m",
+      "sha256": "3ad4c7360b02db29e908892c02f04f118de4fe3e14082f657238e8fd7b103860"
+    },
+    {
+      "path": "src/+qstab/+internal/randomFamilyCoefficients.m",
+      "sha256": "f0fa2d677eab3b29eab8033f66526984fe596b96a89f6cf41dc0d6ea43143fc4"
+    },
+    {
+      "path": "src/+qstab/+internal/raymarginReport.m",
+      "sha256": "889f174a5f33177f9ef41f72084834b36a70228dff6b3c67205f87c0c224f090"
+    },
+    {
+      "path": "src/+qstab/+internal/rightpairs.m",
+      "sha256": "db3370dc91c8c306ff7e1e240349950ee26966c317cc5e5cd87319eda446bd55"
+    },
+    {
+      "path": "src/+qstab/+internal/robuststableReport.m",
+      "sha256": "e6fa2d51e147e3a1c912410b0e79fb3d36127be02f2a537738f51e1f16df2f82"
+    },
+    {
+      "path": "src/+qstab/+internal/sampleFamily.m",
+      "sha256": "0be7272fde3050e87ee2838e2e8094ec3040c2d8e057430bcefc133996008547"
+    },
+    {
+      "path": "src/+qstab/+internal/stabilityradiusReport.m",
+      "sha256": "228214f0697ab62d9516a8172cdb057df737377724d5622bcec1dccaaff5460f"
+    },
+    {
+      "path": "src/+qstab/+internal/steinpencil.m",
+      "sha256": "cfe2d3c080d4c73fdd5f90570258d1b888497075ed9ed1cec144eccbad0ddd2e"
+    },
+    {
+      "path": "src/+qstab/+internal/strictStabilityDecision.m",
+      "sha256": "8bb51114e395c218663e78373b82d02811a0ffade81e3e02cebe88a8b46bae02"
+    },
+    {
+      "path": "src/+qstab/+internal/unitfrequency.m",
+      "sha256": "a80c6bbefc37022c038c43c774fcb86d969a3c410acadb59ccbc06db7e5cda48"
+    },
+    {
+      "path": "src/+qstab/+internal/unitpositivity.m",
+      "sha256": "592ba3ea3e02a3953afdac1de7c180dc75f84f9bde76865461c2ef687f77fe98"
+    },
+    {
+      "path": "src/+qstab/+internal/unitquotient.m",
+      "sha256": "a989509e3dcb81c46146156debda3b1735d6f1a33b1c4fbf143c83912b6c5e19"
+    },
+    {
+      "path": "src/+qstab/+internal/valueenclosureReport.m",
+      "sha256": "b81cde2bbea21edb45548c18007eb3bb1c39caeae739c9779ac545e3999421b0"
+    },
+    {
+      "path": "src/+qstab/+internal/valuesetReport.m",
+      "sha256": "95ef36e674a3406f3905a0bbb7762e0585f0c78e3bd4e1e169ff0b309636e6c0"
+    },
+    {
+      "path": "src/+qstab/+internal/witnessDataReport.m",
+      "sha256": "11e00ab7f8a1c3fd6d0521d26f37f4783a371e5142a2b95f4a30d0e8e9432dd2"
+    },
+    {
+      "path": "src/+qstab/+internal/zeroexcludeReport.m",
+      "sha256": "db45f1d6fef9e2713738d4d0b73e932262b440e9837525a71a7951576d78e3e6"
+    },
+    {
+      "path": "src/+qstab/+internal/zonotopegauge.m",
+      "sha256": "afe8ead45a787708932c4001e637ca8c4b24fd4cb9ede2448857444b280ff189"
+    },
+    {
+      "path": "src/+qstab/Contents.m",
+      "sha256": "b12946c245636a76ef50e4416acc50794e350849e3638a6967528087360edb57"
+    },
+    {
+      "path": "src/+qstab/about.m",
+      "sha256": "fcc043bd642c52852e89321aff5daf0d7c47f7ba298e67418d17398a25fd6325"
+    },
+    {
+      "path": "src/+qstab/ballradius.m",
+      "sha256": "71e74ddbb34fb0273a4c6ece95909115de682afd3c0b6c9f444d06a663003374"
+    },
+    {
+      "path": "src/+qstab/ballset.m",
+      "sha256": "4de16d5a35e10f718b64341e00d2664aaa102de4812fc4efa5a4da6424c40184"
+    },
+    {
+      "path": "src/+qstab/ballstable.m",
+      "sha256": "9b633543f402891a3358fc8e0909a99302c3cb5f47ca103a175d983073eac4cf"
+    },
+    {
+      "path": "src/+qstab/ballvalue.m",
+      "sha256": "574f4e7b5f7d4323c003896aca70eda2b5d92c731f3e24fe55513479164ffa92"
+    },
+    {
+      "path": "src/+qstab/boxfreqmargin.m",
+      "sha256": "1304e6b8a29d3cacce81ca5ee501e4c5bea235f5b762c044d05493dc49ace6d6"
+    },
+    {
+      "path": "src/+qstab/boxradius.m",
+      "sha256": "0b9771db5352eaa3eee3d966a085e570dd5022c2ff63a513b00cac956c879a24"
+    },
+    {
+      "path": "src/+qstab/boxstable.m",
+      "sha256": "4075e99000a2002f11f564008ba831d503c3b7d39bc6a242bcdec3d3e5882578"
+    },
+    {
+      "path": "src/+qstab/boxvalue.m",
+      "sha256": "bacb299e79562f5ee4175b59e399b24db0dc534e2983bd33c74270ab3869299d"
+    },
+    {
+      "path": "src/+qstab/certificateData.m",
+      "sha256": "a2e9a5231384213d9ec594e3d2bfac500b0217e5554340ae348541d1f69cd4a6"
+    },
+    {
+      "path": "src/+qstab/certificateEnclosure.m",
+      "sha256": "69de9cabac806ef7457d62c570af77dff004740ac6a5be5fa4429384557524ee"
+    },
+    {
+      "path": "src/+qstab/chi.m",
+      "sha256": "365f427f3be9454532cf245b4e6d60307cd4626ee41e7a5bbbacc73ab23a9709"
+    },
+    {
+      "path": "src/+qstab/companion.m",
+      "sha256": "4fcb2100cdae566b5cdb9d9a25959cdeace032874cd17ac59cef1e2ea0148678"
+    },
+    {
+      "path": "src/+qstab/components.m",
+      "sha256": "8505d0b3a28064eede26c8745903e3628098708eba4d39fbe4a939a00daf4506"
+    },
+    {
+      "path": "src/+qstab/eig.m",
+      "sha256": "8843946e1ae27600dfd9ea4f430b2dc66150e0112a51278b47db012564a80c0d"
+    },
+    {
+      "path": "src/+qstab/eigpairs.m",
+      "sha256": "efc9c0ef8282b2ff3c57821ca1b1704f06a323581f806dcfa513eab371f78120"
+    },
+    {
+      "path": "src/+qstab/family.m",
+      "sha256": "60b2ce67eaaf29dfb49557c8bf42bdee57a38fe875e5c9c723cb5edc42937d50"
+    },
+    {
+      "path": "src/+qstab/familycomponents.m",
+      "sha256": "628ecf7ce0caf1fd0da60133a6a15f3961900882b4f95f65f79ee2eb1c93a727"
+    },
+    {
+      "path": "src/+qstab/freqmargin.m",
+      "sha256": "9f31b27a7b5735f71c7750efa83d7741ae7d25b53fd494171595cf64598fc640"
+    },
+    {
+      "path": "src/+qstab/intervalfaces.m",
+      "sha256": "4c85d5cdbdd5eceab49d708866c286cff87a5a5ad70c1ef1dfb389ed647d878d"
+    },
+    {
+      "path": "src/+qstab/isstable.m",
+      "sha256": "5989430dc63aadf4d4f840d982d22253660b3eba13d67f61b5d1e8f49cb94515"
+    },
+    {
+      "path": "src/+qstab/kharitonovcube.m",
+      "sha256": "9691629bafad5e97eee9da3d838ed8d521cd0d08e6b65e31b3b9f8fc4a137b91"
+    },
+    {
+      "path": "src/+qstab/leadingbound.m",
+      "sha256": "ff55716723b284d59366a16e2461b33db77285f5f09f5b8373fe67b3a08357b6"
+    },
+    {
+      "path": "src/+qstab/lyapoperator.m",
+      "sha256": "75861a509f266faaa912b016113074b348b8d811df47f2b86958a6ab499303c8"
+    },
+    {
+      "path": "src/+qstab/normpoly.m",
+      "sha256": "64b6d0e1d7b6ec3db46fda451b032d7583cf136d2e75be6d139d3d3b8541ed91"
+    },
+    {
+      "path": "src/+qstab/plotCertificate.m",
+      "sha256": "59574b412bcc79d870d9ead4c828928aeda0407e339a985f03bea8fdf7e2d36f"
+    },
+    {
+      "path": "src/+qstab/plotEnclosure.m",
+      "sha256": "eb536291458448407c7a43734bd8daadf4769adbb2be9bc1d8b01d8874e3d387"
+    },
+    {
+      "path": "src/+qstab/plotFamilyValues.m",
+      "sha256": "c537c0a28e4e9219d43e349555fd79d2001162621139d64fb5010e19dfca8ef5"
+    },
+    {
+      "path": "src/+qstab/plotFamilyZeros.m",
+      "sha256": "bf15ef5a84bd8532154cdfbc6b60ddc5f3c686a520094825e9bff0f76d9f903c"
+    },
+    {
+      "path": "src/+qstab/plotSpectrum.m",
+      "sha256": "33e42f83b5f453442833e88c3469b6492f1df7aafe95c7101acbe4f31445b303"
+    },
+    {
+      "path": "src/+qstab/plotValueSet.m",
+      "sha256": "f8e89f4722673e7877a41f7d0b2b26fa773b0361aab59e997d323e3c1cc58a07"
+    },
+    {
+      "path": "src/+qstab/plotWitness.m",
+      "sha256": "bdaf71513168024a8e8f684cf9f84cc0780771dea1abcd6ba282c76bf05da0e1"
+    },
+    {
+      "path": "src/+qstab/polycomponents.m",
+      "sha256": "b464f67463aac30546ffbab1c395c00b85ea36282b0b37e08b40c3cc45daa6e1"
+    },
+    {
+      "path": "src/+qstab/randfamily.m",
+      "sha256": "e34b0ec6f27c8fccbddc9eb4fdb2e9bd1d7a5504b333fdf1b01072bfe2a2c9a2"
+    },
+    {
+      "path": "src/+qstab/raymargin.m",
+      "sha256": "12d4a67b3eaac0fad04cea31c4740dbdecb326cbe7f2a4e40ee0a0c19a60ae02"
+    },
+    {
+      "path": "src/+qstab/robuststable.m",
+      "sha256": "b0dddda0561c17daf7354038cb4ed01b645a689c3816e0d4df09d8b94e3b88c7"
+    },
+    {
+      "path": "src/+qstab/rootmotion.m",
+      "sha256": "605bac27ffadceadcb005f267deff4d200dc3e4f35768ad0150bf360e655f6b7"
+    },
+    {
+      "path": "src/+qstab/roots.m",
+      "sha256": "c0a6c2364a4b30c9539c663ffb18879553a97557bf7dc9bf63ab2a3b5950dac0"
+    },
+    {
+      "path": "src/+qstab/stabilityradius.m",
+      "sha256": "d067924786ca9950e7fbda69268a12094ad9e16977bce240a9cd988899523806"
+    },
+    {
+      "path": "src/+qstab/valueenclosure.m",
+      "sha256": "106493323a5677c394c5492339db7cae061320ba08f613c377375dfaf4028fff"
+    },
+    {
+      "path": "src/+qstab/valueset.m",
+      "sha256": "637e1519690bce86d593cd79fc17e8cf6be5461f8c03b690c46eea1f5417f10c"
+    },
+    {
+      "path": "src/+qstab/witnessData.m",
+      "sha256": "453e20b251edbe8a3b8b5a83f81b4e65ccd3419977cc0160623b91031639bc83"
+    },
+    {
+      "path": "src/+qstab/zeroexclude.m",
+      "sha256": "93ab3aea2b969e6e2adfba138ad586f10bd2d2135d1578b0cb2e4830c84f83a3"
+    },
+    {
+      "path": "test_qstab.m",
+      "sha256": "78e386c7d9bf7dcd3698d99902e8024880a7d337c141e006705dab47836ec768"
+    },
+    {
+      "path": "tests/qstab_cases_affinezero.m",
+      "sha256": "f966f95fff63a15f3de38a18919780c99b81d7f7d0f2fa5c6798c6d39c3570d2"
+    },
+    {
+      "path": "tests/qstab_cases_ballfix.m",
+      "sha256": "9c26f0ddba34935230f3e9a3e12f13990805fd4229036699d66a0a8d4d2af347"
+    },
+    {
+      "path": "tests/qstab_cases_ballfix_native.m",
+      "sha256": "dbc90cfc423ca5d26baff88d6953f29afc4f870b0f95d994f9a1f4f104cb5e5d"
+    },
+    {
+      "path": "tests/qstab_cases_balls.m",
+      "sha256": "cfb9eeea64a720ec2bba4dfb46be57d8ff5a707149fa0d645e9a95d42662d5c7"
+    },
+    {
+      "path": "tests/qstab_cases_balls_native.m",
+      "sha256": "a2aae068f3069510e759a6a4e9fc537dc4ceef40d4c93cadc7e82a503d0bf09d"
+    },
+    {
+      "path": "tests/qstab_cases_benchmarks.m",
+      "sha256": "0e92add28076a85ed84434ec4479a929ca58675cf6dc038bc75b57bbb4eecca3"
+    },
+    {
+      "path": "tests/qstab_cases_boxes.m",
+      "sha256": "2c2cecace7c627fa98e3baa9574c1c3ca887cedfb6303cac3348f7541d206642"
+    },
+    {
+      "path": "tests/qstab_cases_boxes_native.m",
+      "sha256": "b94b42d34a8b3b5c89b783eb8d5f20d62be12d3b493f876ebd4abef151f77836"
+    },
+    {
+      "path": "tests/qstab_cases_boxfix.m",
+      "sha256": "24b5c87574d819864c38531091b2eb20c152ef45c311a219e87f00cd9cbd2381"
+    },
+    {
+      "path": "tests/qstab_cases_boxfix_native.m",
+      "sha256": "fd65dfa4b25b7ad8eae0ce16583fd3788c07079c2e7a0a6949efea1c0d2e354c"
+    },
+    {
+      "path": "tests/qstab_cases_boxfreqmargin.m",
+      "sha256": "2d61f5ada9b51c82954708eec6d648f4052bd0927c693e6ea44d2a6b922500af"
+    },
+    {
+      "path": "tests/qstab_cases_diagnostic_graphics.m",
+      "sha256": "75bd7d16dd329d0340e5f849709e8fce57196bd3615a60827d51aee8f13b8069"
+    },
+    {
+      "path": "tests/qstab_cases_diagnostics.m",
+      "sha256": "d2c7de5468dfc7f2ff614266a1ba8d5bec74d25955123eed61c7c4717cf9d674"
+    },
+    {
+      "path": "tests/qstab_cases_diagnostics_native.m",
+      "sha256": "1ae2c2151a20f8836243079817eef7ef5f064ae8270bd206f9292ec117b138ef"
+    },
+    {
+      "path": "tests/qstab_cases_discrete.m",
+      "sha256": "0c9cd96284b0c61c94bce4b5a7d22f7fafbbd8763ab56c52c00c18c7b7168af7"
+    },
+    {
+      "path": "tests/qstab_cases_discrete_native.m",
+      "sha256": "e1756e17d862955ed38631d0300bb706ee74a49621fbe6d16967e33305dc3d2f"
+    },
+    {
+      "path": "tests/qstab_cases_eigencomparison.m",
+      "sha256": "d4c7c285443d8549ff4e04fec9b27cfcc0bc9254186cad81be4a0f5590753051"
+    },
+    {
+      "path": "tests/qstab_cases_eigencomparison_native.m",
+      "sha256": "a900087797c86173ed6eba13037cba10bbcdea00072285c04ce02a0504a22ac1"
+    },
+    {
+      "path": "tests/qstab_cases_eigenfix.m",
+      "sha256": "4c73b96f825c0a9f9f55183d17173568da6bc13350911119a77f75444a0d9b19"
+    },
+    {
+      "path": "tests/qstab_cases_eigenfix_native.m",
+      "sha256": "8f0d8d7e4aa9c97da2618f4d28ae39f3f02359d655ce4a8971852bdba9fcbd9c"
+    },
+    {
+      "path": "tests/qstab_cases_fourgenerator.m",
+      "sha256": "9e545784bd62903fcf091d4b10d8cf26e292dc71e11941b67f05e17b07cc6e8e"
+    },
+    {
+      "path": "tests/qstab_cases_friendly.m",
+      "sha256": "763b781471455d1cf8892b764b27323abd0763f4c1b736104ba3fe10cb197e05"
+    },
+    {
+      "path": "tests/qstab_cases_graphics.m",
+      "sha256": "441ba4778ef0508096304deeecec88587a4ed237e55af9598780e1867c6549ca"
+    },
+    {
+      "path": "tests/qstab_cases_intervalgraphics.m",
+      "sha256": "5e2e5626951d15d24e0e4b6ead1c7b4e5734ec9b316514982ed55e5821348dbc"
+    },
+    {
+      "path": "tests/qstab_cases_intervalnew.m",
+      "sha256": "417a45e4b72e58c048701cc50ee10b7c05a06af822f8e6bcfdeb4f0ba0391aa3"
+    },
+    {
+      "path": "tests/qstab_cases_intervalreductions.m",
+      "sha256": "289a0df0ada167e8535d11c28b4733f88229133e310a5904408769a1b6df06e6"
+    },
+    {
+      "path": "tests/qstab_cases_intervals_native.m",
+      "sha256": "26fa55cbc35b68d5cafdf1304250763e9f5718134ab5dfb3ecd5a27feb2ad7b9"
+    },
+    {
+      "path": "tests/qstab_cases_intervalstudy.m",
+      "sha256": "b184ce0fb22a4c6517c5624c436bf6ef0abe3e9f3d8dd7f1287f9f6e7c2c9326"
+    },
+    {
+      "path": "tests/qstab_cases_leading.m",
+      "sha256": "2d880b6b5a09f0ad0752e5372bcfc8e2de03a0ca9cb409a0a9e28b3e217080dd"
+    },
+    {
+      "path": "tests/qstab_cases_manifestfix.m",
+      "sha256": "b55e414ad8ca089c7e3c69714d96969e8a9aee1bdf0bab612e96bcdd3f7dd347"
+    },
+    {
+      "path": "tests/qstab_cases_namespace.m",
+      "sha256": "7449826567c693e38242f8ef10ee4104a76eb01d2a04474c5cfa189cd69d078f"
+    },
+    {
+      "path": "tests/qstab_cases_native.m",
+      "sha256": "db5c6f2a6786c67c713649a3166a57026f88f487f363cf0accc5f0d5242ad737"
+    },
+    {
+      "path": "tests/qstab_cases_nominal.m",
+      "sha256": "06295e301c9900cb3f068f6a844f117160454d6ef6abeaf171d5dafb328d3381"
+    },
+    {
+      "path": "tests/qstab_cases_paperextensions.m",
+      "sha256": "c7298f866ac5e84982238d8eae456215bd783211c0dc709300d28606d69a5a92"
+    },
+    {
+      "path": "tests/qstab_cases_paperextensions_native.m",
+      "sha256": "b4d7fd93031d0ee5dcdbdc39a380a2b6b633f0cfbd954ae2888e43e0ab387af4"
+    },
+    {
+      "path": "tests/qstab_cases_paperfigure_graphics.m",
+      "sha256": "1f5bf50e76eeaca1ea67d4e1963c1ad68f96245e1f8b18937bea78d3fdc32163"
+    },
+    {
+      "path": "tests/qstab_cases_paperfix.m",
+      "sha256": "6f8c8f95efd473b7e42ae7d5279498b1bccdc21df1f2c25a8b0050c52bd5d884"
+    },
+    {
+      "path": "tests/qstab_cases_paperfix_native.m",
+      "sha256": "c4e5767ed35d2b08b8b6e13eff9513ea0c4655e06ae32114ec6de14c43e5a255"
+    },
+    {
+      "path": "tests/qstab_cases_papers.m",
+      "sha256": "add08adfd16ea01b1f86693ce5d91c9b7201c086711b506ff136f0cdc99c4498"
+    },
+    {
+      "path": "tests/qstab_cases_papers_native.m",
+      "sha256": "29ae360aa3f789c06b991651948ff454c4dcffdc0e734a66bc2d934a96d6accb"
+    },
+    {
+      "path": "tests/qstab_cases_provenance.m",
+      "sha256": "e57aaf51ac86176d7eabc051452fe69305a6d72970ced4943131f1c7a6226d8b"
+    },
+    {
+      "path": "tests/qstab_cases_public.m",
+      "sha256": "20b72e418c7afa6090e2c405aa24ef9cb073b94b8306eaaea652d7c20ae0ef4b"
+    },
+    {
+      "path": "tests/qstab_cases_public_artifacts.m",
+      "sha256": "205e158a50f9d33289a58a244bb3c9c8b93aa95f627a0e524e287a88335e9714"
+    },
+    {
+      "path": "tests/qstab_cases_radius.m",
+      "sha256": "b172768413ed80c8a5cf9fdb785a2e6ccdfe60ccebf714930f85e32704a5e470"
+    },
+    {
+      "path": "tests/qstab_cases_rays.m",
+      "sha256": "f9c967c8285dbc96eb888a9452ba9a426cb66629b98f695fc8b7cba12f6fd405"
+    },
+    {
+      "path": "tests/qstab_cases_reporting.m",
+      "sha256": "8ab879ce780b70998c6fdc053ce24b7092d884dbdff2fb9d9503ed6716a2f834"
+    },
+    {
+      "path": "tests/qstab_cases_resultfirst.m",
+      "sha256": "64fe191aa3a128fde762c440441d1c4d6470a6febfdfde7e699ce714ba92e22c"
+    },
+    {
+      "path": "tests/qstab_cases_rightpairs.m",
+      "sha256": "4e120baf6f73e5b6c5eaad92b41c06cb9e88265615714ceda37e4770064f28d0"
+    },
+    {
+      "path": "tests/qstab_cases_rightpairs_native.m",
+      "sha256": "ef02420c94e19fbba6fb8ee5255c2a49a207304e99b74a51199d54fb35d823a1"
+    },
+    {
+      "path": "tests/qstab_cases_robust.m",
+      "sha256": "313abcf9ab3e86585a58d7a7927be1289dc55b70f59db349b0f3339f11f67dab"
+    },
+    {
+      "path": "tests/qstab_cases_rootmotion.m",
+      "sha256": "f5aa6ca8bf75858560251a217db464dcfe604ce8f350ece3882dabe6a6f6621b"
+    },
+    {
+      "path": "tests/qstab_cases_routhsingular.m",
+      "sha256": "b775842f2f349f030f0d8b41dd353610d21061fd60ad3ee9bf085b894fea6137"
+    },
+    {
+      "path": "tests/qstab_cases_values.m",
+      "sha256": "b5c1b273f83fad8fb4a901928347f6039b77c6335fb5ad9f2add9c829c36d960"
+    },
+    {
+      "path": "tests/qstab_cases_zeroexclude.m",
+      "sha256": "ef20beca85ced41fad5368807da7e27eea0e0824f964131b0cbf99c289dc8fe0"
+    },
+    {
+      "path": "tests/test_qstab_exploration_public.m",
+      "sha256": "4bca462f8c51c9710545a51c808c6ea9974c12e0271a33d8ee0f415b20b9dfd0"
+    },
+    {
+      "path": "tests/test_qstab_families_public.m",
+      "sha256": "ee38e3dc672e10a25f39725d78669a062d716d09128ac7838dafb3dd0b613d05"
+    }
+  ],
+  "sourceFingerprintNote": "Final distribution bytes hashed independently with Python. Core regression skipped graphics; a final I03 axis-label-only edit was separately exported and visually checked."
+}

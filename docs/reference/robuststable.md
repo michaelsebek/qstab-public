@@ -34,6 +34,11 @@ ROBUSTSTABLE Sufficient robust stability test for scalar quaternion families.
   With Method='zeroexclusion', Reduction='four-generator' tests complete
   qB03 generator subfamilies. CT Cartesian intervals additionally support
   kharitonov-cube, kharitonov-faces, and quadratic-faces (monic degree 2).
+  Reduction='interval-faces' selects the degree/parity-aware continuous
+  Hurwitz faces described by qstab.intervalfaces. Degrees 2/3 may need
+  1536 families, so set MaxSubfamilies>=1536 for that complete selection.
+  The legacy names retain their previous selections. No Hurwitz cube
+  reduction is applied to a Schur or delay interval.
   MaxCells/MaxTime and MaxSubfamilies are global reduction budgets.
   Reduction='none' (default) preserves the direct subdivision choice.
 

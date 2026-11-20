@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.intervalfaces</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstab.intervalfaces">qstab.intervalfaces</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../../src/+qstab/intervalfaces.m">MATLAB source</a> · <a
+href="zeroexclude.html">Combined stability test</a></p>
+<h2 id="purpose">Purpose</h2>
+<p>Construct the complete list of continuous Hurwitz interval test
+families selected by the degree and parity results of the interval
+article. This function helps inspect the theorem and reuse its families.
+It does not test stability.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">F</span> <span class="op">=</span> <span class="va">qstab</span>.<span class="va">family</span>(<span class="ss">&#39;interval&#39;</span><span class="op">,</span><span class="va">L</span><span class="op">,</span><span class="va">U</span>)<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>[<span class="va">families</span><span class="op">,</span><span class="va">Info</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">intervalfaces</span>(<span class="va">F</span>)<span class="op">;</span></span></code></pre></div>
+<p><code>L</code> and <code>U</code> are ascending scalar polynomial
+coefficients. Each real, i, j and k component of every coefficient
+varies independently between its bounds. Coefficients may be native
+MATLAB <code>quaternion</code> arrays, ordinary real/complex arrays, or
+structs with real fields <code>a,b,c,d</code>. As an alternative to the
+family definition, use:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">families</span><span class="op">,</span><span class="va">Info</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">intervalfaces</span>({<span class="va">L</span><span class="op">,</span><span class="va">U</span>}<span class="op">,</span><span class="ss">&#39;Variable&#39;</span><span class="op">,</span><span class="ss">&#39;s&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<h2 id="outputs">Outputs</h2>
+<p><code>families</code> is a column cell array. Each
+<code>families{k}</code> is an ordinary affine definition produced in
+the format of <code>qstab.family</code>. It contains
+<code>center</code>, eight <code>generators</code>, and an 8-by-2
+<code>bounds</code> array. All eight cube coordinate names retain their
+meaning even when a generator is zero. An active free coordinate has
+bounds <code>[0 1]</code>; a fixed coordinate has <code>[0 0]</code> or
+<code>[1 1]</code>. Inactive coordinates are fixed at zero to avoid
+duplicate descriptions.</p>
+<p>Each element is directly usable:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">tf</span><span class="op">,</span><span class="va">Detail</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">zeroexclude</span>(<span class="va">families</span>{<span class="fl">1</span>})<span class="op">;</span></span></code></pre></div>
+<p>This call tests the first selected continuous family. It does not
+decide the other families. To decide the original interval, use the
+combined call below.</p>
+<p>The second output records the construction:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>totalSubfamilies</code></td>
+<td>Number of selected continuous families.</td>
+</tr>
+<tr class="even">
+<td><code>parameterDimensionBound</code></td>
+<td>Largest number of free coordinates among those families.</td>
+</tr>
+<tr class="odd">
+<td><code>faceCountsByDimension</code></td>
+<td>Counts indexed by dimension plus one; entry 1 counts vertices.</td>
+</tr>
+<tr class="even">
+<td><code>descriptors{k}</code></td>
+<td>Bounds, free and fixed coordinate indices, dimension, parity type
+and face index for <code>families{k}</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>selection</code></td>
+<td>The degree-specific rule that selected the families.</td>
+</tr>
+<tr class="even">
+<td><code>cube</code></td>
+<td>Kharitonov endpoint pieces, active coordinates and the original
+leading-coefficient condition.</td>
+</tr>
+<tr class="odd">
+<td><code>stabilityTestPerformed</code></td>
+<td>Always false: enumeration alone makes no stability decision.</td>
+</tr>
+</tbody>
+</table>
+<p>Coordinates 1 through 4 are the even real/i/j/k parts; coordinates 5
+through 8 are the corresponding odd parts. A face is
+<strong>pair-free</strong> when it frees at most one of the even and odd
+coordinates belonging to the same component.
+<code>parityType='EOO'</code>, for example, means one even and two odd
+free directions in three distinct components.</p>
+<h2 id="which-families-are-selected">Which families are selected?</h2>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 30%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Temporal degree</th>
+<th>Rule</th>
+<th style="text-align: right;">Number when all eight cube coordinates
+are active</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Vertices</td>
+<td style="text-align: right;">256</td>
+</tr>
+<tr class="even">
+<td>2 or 3</td>
+<td>Pair-free two-faces</td>
+<td style="text-align: right;">1536</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>EOO/OOO three-faces and uncovered two-faces</td>
+<td style="text-align: right;">896</td>
+</tr>
+<tr class="even">
+<td>At least 5</td>
+<td>Pair-free three-faces</td>
+<td style="text-align: right;">1024</td>
+</tr>
+</tbody>
+</table>
+<p>The full quartic count consists of 512 three-faces and 384 EE
+two-faces. When some coordinates are inactive, the function keeps any
+lower-dimensional families that are no longer contained in those
+three-faces. An EO or OO two-face can then be necessary and is not
+silently dropped. A constant interval is returned as one complete affine
+family.</p>
+<p>These counts refer to continuous families, not to a finite sample of
+parameter values. A two-face has two continuously varying parameters.
+Its four corners alone are generally insufficient.</p>
+<p>The reduced coordinates describe correlated endpoint interpolations
+of several original coefficients of the same parity and component. The
+cube has the same fixed-frequency norm value sets as the original
+independent coefficient interval. It is not a replacement of
+independence by arbitrary coefficient correlations.</p>
+<h2 id="testing-the-original-interval">Testing the original
+interval</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">tf</span><span class="op">,</span><span class="va">Report</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">zeroexclude</span>(<span class="va">F</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ss">&#39;Reduction&#39;</span><span class="op">,</span><span class="ss">&#39;interval-faces&#39;</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ss">&#39;MaxSubfamilies&#39;</span><span class="op">,</span><span class="fl">1536</span>)<span class="op">;</span></span></code></pre></div>
+<p>or equivalently:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">tf</span><span class="op">,</span><span class="va">Report</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">robuststable</span>(<span class="va">F</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ss">&#39;Method&#39;</span><span class="op">,</span><span class="ss">&#39;zeroexclusion&#39;</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ss">&#39;Reduction&#39;</span><span class="op">,</span><span class="ss">&#39;interval-faces&#39;</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="ss">&#39;MaxSubfamilies&#39;</span><span class="op">,</span><span class="fl">1536</span>)<span class="op">;</span></span></code></pre></div>
+<p>The combined test first verifies the degree condition over the
+original coefficient box. It then tests the selected families with
+global cell, time and family budgets. <code>tf</code> is 1 for a
+complete numerical sufficient certificate, 0 for a checked admissible
+counterexample, and NaN for an unresolved result or unmet assumptions.
+<code>Report</code> retains the distinction.</p>
+<p>The unchanged default <code>MaxSubfamilies=1024</code> is smaller
+than a full degree-two/three selection. Explicitly raise it to 1536 when
+complete traversal of that selection is intended. A larger budget
+permits more work; it does not guarantee that floating-point separation
+will resolve every family. Unvisited families remain in
+<code>Report.unresolvedRegions</code>.</p>
+<p>The legacy reduction names retain their earlier behavior. In
+particular, <code>kharitonov-faces</code> uses the general pair-free
+three-face selection. The specialized monic Hurwitz
+<code>quadratic-faces</code> construction can be more economical, with
+at most 192 selected families, and remains available.</p>
+<h2 id="time-convention-and-assumptions">Time convention and
+assumptions</h2>
+<p><code>Variable</code> is <code>'s'</code> by default. This function
+applies only to continuous-time Hurwitz intervals. A family declared
+with <code>'z'</code> or <code>'zinv'</code> is rejected. The
+independent even/odd rectangle construction must not be transferred to
+the unit circle; the original coefficient correlations there are
+different.</p>
+<p>Enumeration is permitted even when
+<code>Info.cube.degreeInvariant</code> is false, so that the proposed
+faces can be inspected. Such an enumeration is not a certificate. The
+combined stability test rejects a witnessed loss of the original
+uniform-degree assumption before reporting any face-based verdict.</p>
+<p>The degree/parity selection follows the prepublication interval
+manuscript’s sharp-dimension and quartic-parity results. The numerical
+tests use the established qstab floating-point enclosures and residual
+checks. This addition is not an implementation of exact rational
+quantifier elimination or of the manuscript’s exact algebraic decision
+algorithm.</p>
+<h2 id="a-small-example">A small example</h2>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">F</span> <span class="op">=</span> <span class="va">qstab</span>.<span class="va">family</span>(<span class="ss">&#39;interval&#39;</span><span class="op">,</span>[<span class="fl">1.9</span> <span class="fl">2.9</span> <span class="fl">1</span>]<span class="op">,</span>[<span class="fl">2.1</span> <span class="fl">3.1</span> <span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>[<span class="va">families</span><span class="op">,</span><span class="va">I</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">intervalfaces</span>(<span class="va">F</span>)<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="va">I</span>.<span class="va">totalSubfamilies</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="va">I</span>.<span class="va">descriptors</span>{<span class="fl">1</span>}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>[<span class="va">tf</span><span class="op">,</span><span class="va">Report</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">zeroexclude</span>(<span class="va">F</span><span class="op">,</span><span class="ss">&#39;Reduction&#39;</span><span class="op">,</span><span class="ss">&#39;interval-faces&#39;</span>)<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="va">tf</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="va">Report</span>.<span class="va">status</span></span></code></pre></div>
+<p>Only the real component is uncertain in this example, so the deciding
+set consists of the four continuous edges of its even/odd rectangle. The
+polynomial coefficients remain in ascending order.</p>
+<p>See also <a href="kharitonovcube.html">qstab.kharitonovcube</a>, <a
+href="zeroexclude.html">qstab.zeroexclude</a>, <a
+href="robuststable.html">qstab.robuststable</a>, and <a
+href="family.html">qstab.family</a>.</p>
+</main></body></html>

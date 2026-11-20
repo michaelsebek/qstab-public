@@ -1,5 +1,5 @@
 function R = intervalreduce(F,o,variable,mode)
-%INTERVALREDUCE qB02 cube, pair-free faces and monic-quadratic two-faces.
+%INTERVALREDUCE qB02 cube, legacy and degree/parity-aware continuous faces.
 % MaxCells/MaxTime/MaxSubfamilies are GLOBAL budgets. Every face is a whole
 % continuous parameter family, never just a collection of endpoints.
 started=tic;
@@ -45,6 +45,19 @@ if strcmp(mode,'quadratic-faces')
     A=F;A.kind='affine';tasks=localQuadraticTasks(F);
     R.reduction.parameterDimensionBound=min(2,sum(F.parameterIndex(:,2)==1));
     R.reduction.theorem='qB02 monic quadratic interval theorem: two-faces in a and minimal-real vertices in b';
+elseif strcmp(mode,'interval-faces')
+    [A,tasks,plan]=qstab.internal.intervalfaceplan(F);
+    R.reduction.cube=plan.cube;
+    if ~plan.cube.representable
+        R.message='Kharitonov endpoint differences exceed the representable range.';
+        R.unresolvedRegions={struct('kind','unrepresentableCube','reason',R.message)};
+        R=localFinish(R,started,1);return
+    end
+    R.reduction.parameterDimensionBound=plan.parameterDimensionBound;
+    R.reduction.theorem=plan.theorem;
+    R.reduction.selection=plan.selection;
+    R.reduction.faceCountsByDimension=plan.faceCountsByDimension;
+    R.reduction.vertexOnlyTest=plan.vertexOnlyTest;
 else
     [A,cubeInfo]=qstab.internal.cubefamily(F);R.reduction.cube=cubeInfo;
     if ~cubeInfo.representable
@@ -89,6 +102,9 @@ while next<=numel(tasks)
         'status',child.status,'certificateComplete',child.certificateComplete, ...
         'processedCells',child.processedCells,'certifiedCells',child.certifiedCells, ...
         'unresolvedCells',child.unresolvedCells,'message',child.message);
+    if strcmp(mode,'interval-faces')
+        entry.dimension=T.dimension;entry.parityType=T.parityType;
+    end
     R.reduction.subfamilies{end+1,1}=entry;
     for j=1:numel(child.certificates)
         c=child.certificates{j};c.faceIndex=next;c.reduction=mode;
@@ -190,7 +206,7 @@ if k==0,C=zeros(1,0);else,C=nchoosek(v,k);end
 end
 function R=localPending(R,tasks,next,reason)
 if next>numel(tasks),return;end
-% At most 1024 descriptors; retain exact remaining bounds, not sampled faces.
+% Retain every exact remaining face bound (up to 1536), not sampled faces.
 R.unresolvedRegions{end+1,1}=struct('kind','unvisitedIntervalFaces', ...
     'nextFaceIndex',next,'count',numel(tasks)-next+1, ...
     'faces',{tasks(next:end)},'reason',reason);

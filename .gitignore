@@ -8,3 +8,6 @@ qstab_paper_figures/
 *.toc
 *.log
 *.out
+interval_results/
+qstab_interval_results.zip
+/docs/manual/qstab_manual.pdf

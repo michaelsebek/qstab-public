@@ -46,7 +46,7 @@ A=struct('schema','qstab.installation-check.1','packageRoot',root,'ok',false, ..
     'matlabRoot',matlabroot,'computer',computer,'note', ...
     'Finite installation/dependency checks, not proof of every possible execution branch.');
 if o.CheckResolution
-    names={'qstab_setup','test_qstab','run_qstab_public','qstab_check_installation'};
+    names={'qstab_setup','test_qstab','run_qstab_public','qstab_check_installation','run_qstab_intervals'};
     expected=cellfun(@(n)fullfile(root,[n '.m']),names,'UniformOutput',false);
     for k=1:numel(I.expected)
         rel=I.expected(k).path;t=regexp(rel,'^src/\+qstab/([^/]+)\.m$','tokens','once');
