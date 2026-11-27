@@ -3,10 +3,13 @@ function R = stabilityradiusReport(P0, P1, varargin)
 
     o=struct('Side','left','AbsTol',1e-6,'RelTol',1e-5,...
         'Tolerance',1e-10,'MaxCells',4096,'MaxTime',30,'Variable','s', ...
-        'Grade',[],'MaxDepth',40,'StoreCells',true);
+        'Grade',[],'MaxDepth',40,'StoreCells',true,'FrequencyScale','auto');
     o=parseopts(o,varargin{:}); side=lower(char(o.Side));
     if ~any(strcmp(side,{'left','right'})), error('qstab:stabilityradius:Side','Invalid Side.'); end
     if any(strcmpi(o.Variable,{'z','zinv'}))
+        if ~isAuto(o.FrequencyScale)
+            error('qstab:stabilityradius:FrequencyScale','FrequencyScale is available only for Variable=''s''.');
+        end
         R=qstab.internal.discreteradius(P0,P1,o); return
     elseif ~strcmpi(o.Variable,'s')
         error('qstab:stabilityradius:Variable','Variable must be s, z or zinv.');
@@ -36,6 +39,26 @@ function R = stabilityradiusReport(P0, P1, varargin)
     if isempty(n0)||n0<2||(~isempty(n1)&&n1>=n0)
         R.message='Require degree(P0)>=1 and degree(P1)<degree(P0).'; return
     end
+    C0=C0(:,1:n0);
+    if isempty(n1),C1=zeros(4,1);else,C1=C1(:,1:n1);end
+    [C0,C1,scaling]=qstab.internal.oneParameterScaling(C0,C1,o.FrequencyScale);
+    if scaling.applied
+        o.FrequencyScale=1;args=optionpairs(o);
+        R=qstab.internal.stabilityradiusReport(aspoly(C0),aspoly(C1),args{:});
+        R.scaling=scaling;tau=scaling.frequencyScale;
+        R.workingFrequency=R.frequency;R.frequency=tau*R.frequency;
+        R.boundaryComponents=tau*R.boundaryComponents;
+        if isfield(R.diagnostics,'frequencyCutoff')
+            R.diagnostics.workingFrequencyCutoff=R.diagnostics.frequencyCutoff;
+            R.diagnostics.frequencyCutoff=tau*R.diagnostics.frequencyCutoff;
+        end
+        if isfield(R.diagnostics,'cells')
+            R.diagnostics.workingCells=R.diagnostics.cells;
+            R.diagnostics.cells(:,1:2)=tau*R.diagnostics.cells(:,1:2);
+        end
+        return
+    end
+    R.scaling=scaling;
     nominal=qstab.internal.isstableReport(P0,'Variable','s','Tolerance',o.Tolerance); R.nominal=nominal;
     if ~strcmp(nominal.status,'stable')
         if strcmp(nominal.status,'undetermined'), R.status='undetermined'; end
@@ -52,7 +75,7 @@ function R = stabilityradiusReport(P0, P1, varargin)
     tstart=tic; count=0; upperBound=Inf; bestW=NaN; bestI=[];
     initial=unique([0,1,0:degree]);
     [initialR,initialInfo]=qstab.freqmargin(P0,P1,initial,'Side',side,...
-        'CheckNominal',false,'Tolerance',o.Tolerance);
+        'CheckNominal',false,'Tolerance',o.Tolerance,'FrequencyScale',1);
     count=count+numel(initial);
     for k=1:numel(initial)
         if initialInfo.valid(k)&&isfinite(initialR(k))&&initialR(k)<upperBound
@@ -125,7 +148,7 @@ function R = stabilityradiusReport(P0, P1, varargin)
 
     function [row,rv,iv]=makecell(l,r)
         m=l+(r-l)/2; h=(r-l)/2;
-        [rv,iv]=qstab.freqmargin(P0,P1,m,'Side',side,'CheckNominal',false,'Tolerance',o.Tolerance);
+        [rv,iv]=qstab.freqmargin(P0,P1,m,'Side',side,'CheckNominal',false,'Tolerance',o.Tolerance,'FrequencyScale',1);
         count=count+1; lb=0;
         if iv.valid
             mn=iv.minNominalModulus*(1-100*o.Tolerance);
@@ -259,6 +282,16 @@ end
 function I=pickinfo(info,k)
     I=struct('parameter',info.parameterComponents(:,k),...
         'boundary',info.boundaryComponents(:,k),'residual',info.evaluationResidual(k));
+end
+function P=aspoly(C)
+P=struct('a',C(1,:),'b',C(2,:),'c',C(3,:),'d',C(4,:));
+end
+function tf=isAuto(x)
+tf=(ischar(x)||(isstring(x)&&isscalar(x)))&&strcmpi(char(x),'auto');
+end
+function a=optionpairs(o)
+k=fieldnames(o);a=cell(1,2*numel(k));
+for j=1:numel(k),a{2*j-1}=k{j};a{2*j}=o.(k{j});end
 end
 function o=parseopts(o,varargin)
     if mod(numel(varargin),2)~=0, error('qstab:stabilityradius:Options','Use name/value pairs.'); end

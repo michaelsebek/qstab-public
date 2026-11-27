@@ -9,7 +9,7 @@ authors:
   orcid: https://orcid.org/0000-0003-0927-2988
   affiliation: Czech Technical University in Prague, Faculty of Electrical Engineering, Department of Control
     Engineering
-version: 0.19.0
+version: 0.20.0
 repository-code: https://github.com/michaelsebek/qstab-public
 url: https://github.com/michaelsebek/qstab-public
 license: MIT
@@ -18,6 +18,9 @@ abstract: MATLAB functions for nominal and robust stability of quaternionic poly
 keywords:
 - quaternionic polynomials
 - robust stability
+- stability radius
+- quaternion parameter
+- exact certificates
 - polynomial polytopes
 - interval polynomials
 - parametric uncertainty
@@ -56,3 +59,11 @@ references:
   doi: 10.5281/zenodo.24389775
   url: https://doi.org/10.5281/zenodo.24389775
   notes: Published technical note with worked examples and verification guidance.
+
+- type: unpublished
+  authors:
+  - family-names: Šebek
+    given-names: Michael
+  title: Stability Radii of Quaternionic Polynomial Families With One Constant Quaternion Parameter
+  year: 2026
+  notes: Manuscript revision 7 supplied for software verification on 26 November 2026; planned for Systems & Control Letters. No acceptance or DOI is implied.

@@ -30,3 +30,10 @@ The companion technical note **“Quaternionic Interval Polynomials: Worked Exam
 Run `run_qstab_intervals('all','Plots',true)` after `qstab_setup('Examples',true)` to compute all 24 source-linked groups, retain their 110 result comparisons and export eight figures with their numerical data. See [the interval reproduction chapter](interval_article.md) for individual example keys, output locations, dependencies and the separate optional exact-rational replay. Ordinary MATLAB numerical decisions and exact certificate replay provide distinct forms of evidence; their executed scopes are recorded in [the validation ledger](../verification/VALIDATION.md).
 
 **Other methods.** One-quaternion, coefficient-ball and matrix routines are documented and runnable in the same release. Each method retains its own assumptions and references. See the [manual](qstab_manual.pdf) for assumptions, budgets and what each return value means.
+
+
+## Scalar one-parameter manuscript
+
+Michael Šebek, **“Stability Radii of Quaternionic Polynomial Families With One Constant Quaternion Parameter”**, supplied manuscript revision 7 (26 November 2026), is the source for the new study. The author plans submission to *Systems & Control Letters*; no journal acceptance, publication or new DOI is asserted here.
+
+The [scalar one-parameter chapter](oneparameter_article.md) maps E1–E7, tangency variants and directional diagnostics to executable keys. `run_qstab_oneparameter` retains source rational data, actual results and independent comparisons. The original thirteen-ray/376-check replay, nine global radius certificates and 42 additional identities are preserved separately from the reusable new solvers. The manuscript PDF and private toolbox source are not redistributed in public.

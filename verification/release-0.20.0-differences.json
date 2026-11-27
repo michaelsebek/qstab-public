@@ -1,0 +1,49 @@
+{
+  "schema": "qstab.release-differences.1",
+  "releaseVersion": "0.20.0",
+  "preparedDate": "2026-11-27",
+  "testedBaseline": "0.20.0-rc.2",
+  "baselineArchiveSha256": "e0c375886120a2dd7165da73cc09f5aefa39d95483e92bab38737ed1ea071ff8",
+  "matlabFileCount": 221,
+  "byteIdenticalMatlabFiles": 217,
+  "changedMatlabFiles": [
+    {
+      "path": "qstab_setup.m",
+      "beforeSha256": "3a121461bffb53ab1db8bf7a38b583fe22d114e0dfb2ac25df757f482a21970a",
+      "afterSha256": "c25cd13c63ed96e1d88fb51adcd60bbbd6bc13d37973345acbba581971830710",
+      "scope": "version/descriptive strings only"
+    },
+    {
+      "path": "run_qstab_public.m",
+      "beforeSha256": "e5ffbb72c81fa293a71f7291322df44c0038dfbda4a6fc042332dca2864e56be",
+      "afterSha256": "462e6c167e7d2079974b356b96e4b88c2a338f1bf0e06c447e3be18f74ca6bf2",
+      "scope": "version/descriptive strings only"
+    },
+    {
+      "path": "src/+qstab/Contents.m",
+      "beforeSha256": "a3cb83d09074bf33a7f1cdf363cfcc01d1a182215ad33d2a0ebd36bb6e57a37d",
+      "afterSha256": "e0a906c524e7bec64cb3c0841b4e5012354858c64fae9fe453b422ae6b58ea2c",
+      "scope": "version/descriptive strings only"
+    },
+    {
+      "path": "src/+qstab/about.m",
+      "beforeSha256": "e7c51de3016e0c91b1bccb5bd9d35715c876c6921661b02944c66ef5654b08c7",
+      "afterSha256": "085d9adde4b934f2f3b3528c9123982e1d4077c8569b27e528987503fc51b11a",
+      "scope": "version/descriptive strings only"
+    }
+  ],
+  "algorithmsExamplesAndTestsUnchanged": true,
+  "newNativeFinalRun": false,
+  "nativeRc2Evidence": "native-matlab-0.20.0-rc.2.json",
+  "finalSourceDiffCheck": "All other .m files are byte-identical; exact reverse substitutions restore the four baseline text files.",
+  "manual": {
+    "pages": 23,
+    "changedPages": [
+      1
+    ],
+    "remainingPagesPixelIdenticalAtDpi": 108,
+    "sha256": "65e2136ca6447576da923961a5e3efc2dbc794d8ac173f659b5aa8c25c0c94ec"
+  },
+  "historicalJsonEvidenceUnchanged": true,
+  "notes": "Publication metadata and documentation are updated. No new MATLAB, Octave, symbolic or numerical run was executed during final packaging."
+}

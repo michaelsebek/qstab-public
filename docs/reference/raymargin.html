@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.raymargin</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabraymargin">qstab.raymargin</h1>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.raymargin</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstab.raymargin">qstab.raymargin</h1>
 <p><a href="../api_index.html">Function index</a> · <a
-href="../qstab_manual.pdf">Manual</a> · <a
-href="../../src/+qstab/raymargin.m">MATLAB source</a></p>
+href="../qstab_manual.pdf">Manual</a></p>
 <h2 id="help-and-calling-sequences">Help and calling sequences</h2>
 <pre class="text"><code>RAYMARGIN  First loss of strict stability along one quaternion direction.
 
@@ -49,6 +48,11 @@ href="../../src/+qstab/raymargin.m">MATLAB source</a></p>
     Grade         [] infers the grade; discrete polynomials only.
     Tolerance     1e-9; numerical accuracy/conditioning guard, 0&lt;Tol&lt;1.
     VerifyBoundary true; check computed boundary contacts numerically.
+    FrequencyScale &#39;auto&#39; (default) or a positive tau, continuous scalar
+                  polynomials only. Internally s=tau*sigma balances units.
+                  The returned alpha endpoints, u and t=alpha*u NEVER
+                  change units. Info.scaling records the transformation.
+                  Auto leaves well-scaled polynomial coefficients alone.
     MaxGuardCells 2047; discrete verification cell budget.
     MaxGuardDepth 50; discrete verification subdivision depth limit.
     MaxGuardTime  5 seconds; discrete verification time budget.
@@ -64,5 +68,7 @@ href="../../src/+qstab/raymargin.m">MATLAB source</a></p>
   Numerical details. Pole/zero classes are tested in ordinary floating
   point. Ambiguous earlier contacts are not skipped in favour of a later
   loss. The discrete dense ray method supports orders/grades up to 16.
+  A multiple or tangential contact can remain undetermined; for rational
+  data use qstab.raycertificate for a separate exact decision.
   See also qstab.freqmargin, qstab.stabilityradius, qstab.isstable.</code></pre>
 </main></body></html>

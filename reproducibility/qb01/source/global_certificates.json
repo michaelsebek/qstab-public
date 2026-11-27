@@ -1,0 +1,287 @@
+{
+  "method": "Exact rational Sturm root count for det(P0*P0-r^2 P1*P1), or the right-order Gram pair, on x=(omega/tau)^2 >=0. Positive definiteness anchored at x=0. Upper endpoint rejected at one exact rational x.",
+  "statement": "Every reported interval contains the global all-direction radius. The decimal reference only proposes endpoints; exact inequalities determine acceptance.",
+  "sympy": "1.14.0",
+  "count": 9,
+  "certificates": [
+    {
+      "case": "S",
+      "side": "L",
+      "radius_lower": "1414213562373/1000000000000",
+      "radius_upper": "707106781187/500000000000",
+      "width": "1/1000000000000",
+      "lower_decimal": "1.414213562373000",
+      "upper_decimal": "1.414213562374000",
+      "normalized_squared_frequency_witness": "0",
+      "lower_determinant_coefficients": [
+        "1000000000000000000000000000000000000000000000000",
+        "537677217742000000000000000000000000",
+        "537677217742072274197619694519894641",
+        "-144548395239389039789282",
+        "72274197619694519894641"
+      ],
+      "lower_nonnegative_root_count": 0,
+      "lower_trace_at_zero": "268838608871/4000000000000000000000000",
+      "lower_det_at_zero": "72274197619694519894641/16000000000000000000000000000000000000000000000000",
+      "upper_determinant_sign": 1,
+      "upper_half_trace_sign": -1,
+      "frequency_scale": "1",
+      "common_polynomial_scale": "2",
+      "nominal_hurwitz_minors": [
+        "1",
+        "5/4",
+        "3/4",
+        "3/8"
+      ],
+      "status": "EXACT CERTIFIED"
+    },
+    {
+      "case": "S",
+      "side": "R",
+      "radius_lower": "378937381963/1000000000000",
+      "radius_upper": "94734345491/250000000000",
+      "width": "1/1000000000000",
+      "lower_decimal": "0.3789373819630000",
+      "upper_decimal": "0.3789373819640000",
+      "normalized_squared_frequency_witness": "535898384862245412945107/1000000000000000000000000",
+      "lower_determinant_coefficients": [
+        "1000000000000000000000000000000000000000000000000",
+        "3712812921102054884533262000000000000000000000000",
+        "7159057867877648291758994903803425359846896090161",
+        "-11487483155918308661919273807606850719693792180322",
+        "3446244946775593407225732903803425359846896090161"
+      ],
+      "lower_nonnegative_root_count": 0,
+      "lower_trace_at_zero": "1856406460551027442266631/4000000000000000000000000",
+      "lower_det_at_zero": "3446244946775593407225732903803425359846896090161/16000000000000000000000000000000000000000000000000",
+      "upper_determinant_sign": -1,
+      "upper_half_trace_sign": 1,
+      "frequency_scale": "1",
+      "common_polynomial_scale": "2",
+      "nominal_hurwitz_minors": [
+        "1",
+        "5/4",
+        "3/4",
+        "3/8"
+      ],
+      "status": "EXACT CERTIFIED"
+    },
+    {
+      "case": "R",
+      "side": "L",
+      "radius_lower": "395284707521/500000000000",
+      "radius_upper": "790569415043/1000000000000",
+      "width": "1/1000000000000",
+      "lower_decimal": "0.7905694150420000",
+      "upper_decimal": "0.7905694150430000",
+      "normalized_squared_frequency_witness": "1",
+      "lower_determinant_coefficients": [
+        "62500000000000000000000000000000000000000000000",
+        "-171874999999981256982720500000000000000000000000",
+        "321289062499992971368520188905202786958542324481",
+        "-376953124999948456702481377810405573917084648962",
+        "165039062500030457403079188905202786958542324481"
+      ],
+      "lower_nonnegative_root_count": 0,
+      "lower_trace_at_zero": "406250000000037486034559/562500000000000000000000",
+      "lower_det_at_zero": "165039062500030457403079188905202786958542324481/316406250000000000000000000000000000000000000000",
+      "upper_determinant_sign": -1,
+      "upper_half_trace_sign": 1,
+      "frequency_scale": "1",
+      "common_polynomial_scale": "3/2",
+      "nominal_hurwitz_minors": [
+        "4/3",
+        "20/9",
+        "8/3",
+        "8/3"
+      ],
+      "status": "EXACT CERTIFIED"
+    },
+    {
+      "case": "D",
+      "side": "L",
+      "radius_lower": "108253175473/125000000000",
+      "radius_upper": "173205080757/200000000000",
+      "width": "1/1000000000000",
+      "lower_decimal": "0.8660254037840000",
+      "upper_decimal": "0.8660254037850000",
+      "normalized_squared_frequency_witness": "499999999999999999999999/1000000000000000000000000",
+      "lower_determinant_coefficients": [
+        "244140625000000000000000000000000000000000000",
+        "-488281250000000000000000000000000000000000000",
+        "366210937500370975820968750000000000000000000",
+        "-122070312500370975820968750000000000000000000",
+        "15258789062592743955242328426013177280565441"
+      ],
+      "lower_nonnegative_root_count": 0,
+      "lower_trace_at_zero": "3906250000011871226271/15625000000000000000000",
+      "lower_det_at_zero": "15258789062592743955242328426013177280565441/244140625000000000000000000000000000000000000",
+      "upper_determinant_sign": 1,
+      "upper_half_trace_sign": -1,
+      "frequency_scale": "1",
+      "common_polynomial_scale": "1",
+      "nominal_hurwitz_minors": [
+        "2",
+        "4",
+        "4",
+        "4"
+      ],
+      "status": "EXACT CERTIFIED"
+    },
+    {
+      "case": "N",
+      "side": "L",
+      "radius_lower": "433012701851/500000000000",
+      "radius_upper": "866025403703/1000000000000",
+      "width": "1/1000000000000",
+      "lower_decimal": "0.8660254037020000",
+      "upper_decimal": "0.8660254037030000",
+      "normalized_squared_frequency_witness": "250000000035355339056827/500000000000000000000000",
+      "lower_determinant_coefficients": [
+        "62500000000000000000000000000000000000000000000",
+        "-125000000000000000000000000000000000000000000000",
+        "93750000017848490588149500000000000000000000000",
+        "-31250000017848490590649500000000000000000000000",
+        "3906250004462122648311649465101045137719337401"
+      ],
+      "lower_nonnegative_root_count": 0,
+      "lower_trace_at_zero": "62500000035696981176299/250000000000000000000000",
+      "lower_det_at_zero": "3906250004462122648311649465101045137719337401/62500000000000000000000000000000000000000000000",
+      "upper_determinant_sign": -1,
+      "upper_half_trace_sign": 1,
+      "frequency_scale": "1",
+      "common_polynomial_scale": "1",
+      "nominal_hurwitz_minors": [
+        "2",
+        "4",
+        "99999999999999999999/25000000000000000000",
+        "9999999999999999999999999999999999999999/2500000000000000000000000000000000000000"
+      ],
+      "status": "EXACT CERTIFIED"
+    },
+    {
+      "case": "F",
+      "side": "L",
+      "radius_lower": "2000000009999/1000000000000",
+      "radius_upper": "200000001/100000000",
+      "width": "1/1000000000000",
+      "lower_decimal": "2.000000009999000",
+      "upper_decimal": "2.000000010000000",
+      "normalized_squared_frequency_witness": "1/100000000",
+      "lower_determinant_coefficients": [
+        "1000000000000000000000000000000000000000000000000",
+        "-40000000000000000000000000000000000000000",
+        "8000400039998000000000000000000000000",
+        "-160000000799960000000000000000",
+        "16000000159992000399960001"
+      ],
+      "lower_nonnegative_root_count": 0,
+      "lower_trace_at_zero": "4000000019999/4000000040000000100000000",
+      "lower_det_at_zero": "16000000159992000399960001/16000000320000002400000008000000010000000000000000",
+      "upper_determinant_sign": 1,
+      "upper_half_trace_sign": -1,
+      "frequency_scale": "1",
+      "common_polynomial_scale": "200000001/100000000",
+      "nominal_hurwitz_minors": [
+        "40000000000000000/40000000400000001",
+        "2400000004000000000000000000000000/1600000032000000240000000800000001",
+        "640000000000000000000000000000000000000000/320000008000000080000000400000001000000001",
+        "640000000000000000000000000000000000000000/320000008000000080000000400000001000000001"
+      ],
+      "status": "EXACT CERTIFIED"
+    },
+    {
+      "case": "T",
+      "side": "L",
+      "radius_lower": "46789327849/125000000000",
+      "radius_upper": "374314622793/1000000000000",
+      "width": "1/1000000000000",
+      "lower_decimal": "0.3743146227920000",
+      "upper_decimal": "0.3743146227930000",
+      "normalized_squared_frequency_witness": "52294785291849843534849/100000000000000000000000",
+      "lower_determinant_coefficients": [
+        "61035156250000000000000000000000000000000000",
+        "209933731241231141143734375000000000000000000",
+        "390453345757928098258413641061985978716173601",
+        "-615523270966606085770641467876028042567652798",
+        "180519614516696957114679266061985978716173601"
+      ],
+      "lower_nonnegative_root_count": 0,
+      "lower_trace_at_zero": "13435758799438793033199/31250000000000000000000",
+      "lower_det_at_zero": "180519614516696957114679266061985978716173601/976562500000000000000000000000000000000000000",
+      "upper_determinant_sign": -1,
+      "upper_half_trace_sign": 1,
+      "frequency_scale": "1",
+      "common_polynomial_scale": "2",
+      "nominal_hurwitz_minors": [
+        "1",
+        "5/4",
+        "3/4",
+        "3/8"
+      ],
+      "status": "EXACT CERTIFIED"
+    },
+    {
+      "case": "K",
+      "side": "L",
+      "radius_lower": "1414213562373/1000000000000",
+      "radius_upper": "707106781187/500000000000",
+      "width": "1/1000000000000",
+      "lower_decimal": "1.414213562373000",
+      "upper_decimal": "1.414213562374000",
+      "normalized_squared_frequency_witness": "0",
+      "lower_determinant_coefficients": [
+        "1000000000000000000000000000000000000000000000000",
+        "537677217742000000000000000000000000",
+        "537677217742072274197619694519894641",
+        "-144548395239389039789282",
+        "72274197619694519894641"
+      ],
+      "lower_nonnegative_root_count": 0,
+      "lower_trace_at_zero": "268838608871/4000000000000000000000000",
+      "lower_det_at_zero": "72274197619694519894641/16000000000000000000000000000000000000000000000000",
+      "upper_determinant_sign": 1,
+      "upper_half_trace_sign": -1,
+      "frequency_scale": "1000000",
+      "common_polynomial_scale": "200000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nominal_hurwitz_minors": [
+        "1",
+        "5/4",
+        "3/4",
+        "3/8"
+      ],
+      "status": "EXACT CERTIFIED"
+    },
+    {
+      "case": "K",
+      "side": "R",
+      "radius_lower": "378937381963/1000000000000",
+      "radius_upper": "94734345491/250000000000",
+      "width": "1/1000000000000",
+      "lower_decimal": "0.3789373819630000",
+      "upper_decimal": "0.3789373819640000",
+      "normalized_squared_frequency_witness": "535898384862245412945107/1000000000000000000000000",
+      "lower_determinant_coefficients": [
+        "1000000000000000000000000000000000000000000000000",
+        "3712812921102054884533262000000000000000000000000",
+        "7159057867877648291758994903803425359846896090161",
+        "-11487483155918308661919273807606850719693792180322",
+        "3446244946775593407225732903803425359846896090161"
+      ],
+      "lower_nonnegative_root_count": 0,
+      "lower_trace_at_zero": "1856406460551027442266631/4000000000000000000000000",
+      "lower_det_at_zero": "3446244946775593407225732903803425359846896090161/16000000000000000000000000000000000000000000000000",
+      "upper_determinant_sign": -1,
+      "upper_half_trace_sign": 1,
+      "frequency_scale": "1000000",
+      "common_polynomial_scale": "200000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nominal_hurwitz_minors": [
+        "1",
+        "5/4",
+        "3/4",
+        "3/8"
+      ],
+      "status": "EXACT CERTIFIED"
+    }
+  ]
+}

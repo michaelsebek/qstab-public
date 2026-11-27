@@ -1,0 +1,262 @@
+% Included by qstab_manual.tex. Public inputs only; no private classes.
+\topic{Reproduce the scalar one-parameter article}{sec:oneparameterstudy}
+One quaternion parameter has four real coordinates, but it is shared by
+every coefficient of the perturbation polynomial. The order of multiplication
+is part of the model:
+\[
+ p_L(s,t)=p_0(s)+t\,p_1(s),\qquad
+ p_R(s,t)=p_0(s)+p_1(s)\,t,\qquad t\in\HH.
+\]
+Throughout this chapter, $p_0$ is Hurwitz and
+$\deg p_1<\deg p_0$. The lower degree keeps the leading coefficient fixed,
+so a continuous change of $t$ cannot send a zero through infinity.
+These are continuous-time scalar-polynomial statements. The ordered
+two-by-two transfer formula does not automatically give an exact radius
+for a general uncertain quaternion state matrix.
+
+\subsection{One example, selected examples, or the whole study}
+The runner uses the source data of the scalar article, revision~7.
+The keys are stable commands, not page numbers. From the public package root:
+\begin{lstlisting}
+qstab_setup('Examples',true);
+run_qstab_oneparameter('list');
+R = run_qstab_oneparameter('E1','Plots',true);
+R.status
+R.archiveFile
+\end{lstlisting}
+The default inputs use the native MATLAB \m{quaternion} class. To use only
+ordinary component structures, add \m{'UseQuaternion',false}. The arithmetic
+and mathematical input data are the same.
+
+\begin{tabularx}{\linewidth}{@{}p{.15\linewidth}Y@{}}\toprule
+Key & What the experiment distinguishes\\\midrule
+E1 & Sensor versus actuator calibration; left and right quaternion gains.\\
+E2 & A singular, nonzero perturbation frequency matrix.\\
+E3, E4 & A sphere of nearest gains versus a poorly conditioned unique gain.\\
+E5, E5V & A tangential first contact, with and without a common complex slice.\\
+E5C & Multiplicity inflation when a real cubic is replaced by its norm.\\
+E6, E7 & A nearly flat optimum, and large amplitude/frequency rescaling.\\
+D11--D13 & Infinite ray margin, a later nonimaginary guardian candidate,
+and a spherical contact.\\
+A01 & Zero perturbation, nonmonic coefficients and nonunit directions.\\\bottomrule
+\end{tabularx}
+
+Select several keys with \m{'Cases',\{'E1','E3','E5V'\}}. Use
+\m{'ExactCertificates',false} for the numerical study alone; no symbolic
+toolbox is then needed. The default setting, \m{auto}, executes fresh exact
+proofs when Symbolic Math Toolbox is usable and records their absence
+otherwise. To verify the corrected symbolic path, first run its
+focused tests, then require the complete article study:
+\begin{lstlisting}
+T = test_qstab_oneparameter('ExactCertificates',true);
+T.archiveFile
+assert(T.ok && T.complete, ...
+    'Inspect the exact tests: %s',T.archiveFile)
+
+R = run_qstab_oneparameter('all', ...
+    'ExactCertificates',true,'Plots',true);
+R.archiveFile
+assert(R.ok && R.articleComplete, ...
+    'Article checks are incomplete: %s',R.archiveFile)
+\end{lstlisting}
+These follow-up calls do not repeat the main public regression. They write
+separate ZIPs, identified by \m{T.archiveFile} and \m{R.archiveFile}.
+Retain both reports, including failed runs.
+
+\m{R.ok} says that the checks actually executed passed.
+\m{R.articleComplete} additionally requires every example and the required
+fresh exact proofs. A numerical ray can correctly remain unresolved while
+an independent exact calculation establishes its first contact. This
+difference is retained in the report; a printed reference value is never
+substituted for a computed answer.
+
+\lead{Results and printed output}
+The Command Window prints the selected keys, their status and the absolute
+result paths. \m{R.outputDirectory} is a unique run directory below
+\m{oneparameter\_results}. It contains \m{report.mat}, \m{report.txt},
+\m{comparison.csv} and the requested figures. The runner writes a new
+\m{qstab\_oneparameter\_results.zip} at the package root, replacing the
+previous ZIP while retaining the unique run directories. Use
+\m{R.archiveFile} to find the exact file to send. An error within an example
+is recorded and does not prevent the final archive; invalid options or
+unavailable explicitly requested input facilities fail during preflight.
+\m{'Save',false,'Plots',false} gives an in-memory run without these files.
+
+\subsection{Frequency, direction and global radius answer different questions}
+At a fixed frequency $\omega$, \m{freqmargin} minimizes the gain norm over
+the entire imaginary quaternion sphere of radius $\omega$. The global
+radius then also minimizes over frequency:
+\[
+ \rho_S(\omega)=\min\{|t|:p_S(\cdot,t)
+     \text{ has a zero class at }\pm\ii\omega\},
+ \qquad r_S=\inf_{\omega\ge0}\rho_S(\omega).
+\]
+A ray calculation instead fixes a nonzero quaternion $u$ and varies only
+the real number $\alpha$ in $t=\alpha u$. It returns the connected stable
+interval containing zero; stable intervals can reappear farther away.
+
+For E1 the data are $p_0=s^2+2s+1+\qj$ and $p_1=\unit s+\qk$.
+The following public representation needs no polynomial class:
+\begin{lstlisting}
+P0 = struct('a',[1 2 1],'b',[0 0 0], ...
+            'c',[1 0 0],'d',[0 0 0]);
+P1 = struct('a',[0 0],'b',[0 1], ...
+            'c',[0 0],'d',[1 0]);
+F = qstab.family('oneparameter',P0,P1,'Side','right');
+[rho,I] = qstab.freqmargin(F,sqrt(3)-1);
+rho                  % approximately 0.378937381963012
+I.parameterComponents
+
+u = struct('a',0,'b',1,'c',0,'d',1);  % i+k, not a unit direction
+[ab,J] = qstab.raymargin(F,u);
+ab                   % [-Inf, 2-sqrt(3)]
+[bounds,K] = qstab.stabilityradius(F);
+bounds               % numerical lower/upper global radius bounds
+K.status
+\end{lstlisting}
+The first two outputs have different meanings: \m{ab} contains signed
+ray endpoints, whereas \m{bounds} encloses one nonnegative global radius.
+For E1 the positive ray parameter is $2-\sqrt3$, while the corresponding
+gain norm is $\sqrt2(2-\sqrt3)$ because $|u|=\sqrt2$.
+If a family has finite parameter bounds, an unrestricted frequency or
+global-radius query requires \m{'ExtendParameter',true}. A ray query keeps
+the full-law stable interval and reports its intersection with the specified
+parameter domain separately; a box edge is not a stability contact.
+
+\subsection{Inspect the gain set and the evaluation zeros}
+Different gains can have the same minimum norm. In E3,
+$p_0=s^2+s+1$ and $p_1=1$, the minimum at $\omega=1/\sqrt2$ is attained on
+\[
+ t=-\tfrac12-v/\sqrt2,\qquad
+ v\in\operatorname{Im}\HH,\quad |v|=1.
+\]
+Thus the answer is a two-sphere in four-dimensional gain space. It is not
+the similarity class of an algebraic zero and should not be plotted as one.
+\begin{lstlisting}
+[rho,I] = qstab.freqmargin([1 1 1],1,1/sqrt(2));
+G = I.geometry{1};
+G.kind               % 'sphere'
+G.centerComponents   % [-1/2;0;0;0]
+G.sphereRadius       % 1/sqrt(2)
+v = [0;1;0];
+t = G.centerComponents + G.sphereRadius*G.basisComponents*v;
+Z = I.zeroWitnesses{1};
+Z.status
+Z.rightEvaluationComponents
+Z.leftEvaluationComponents
+\end{lstlisting}
+The three columns of \m{G.basisComponents} form an orthonormal basis of the
+sphere's affine subspace; its rows are real, $\unit,\qj,\qk$ components.
+The report returns one selected critical gain as well as this geometry.
+\m{point} means a single reported nearest gain, \m{empty} means no attainable
+contact at that frequency, and \m{undetermined} means the geometry was not
+resolved reliably. A small singular-value gap does not establish exact
+multiplicity. In particular, E4's small nonreal coefficient collapses E3's
+sphere to a unique, sensitive gain. Inspect the gap, conditioning and
+residual fields before comparing witness directions.
+
+The two evaluation zeros may have different quaternion orientations while
+representing the same algebraic class. They are reconstructed and checked
+on the original critical polynomial. Use them only when \m{Z.status} is
+\m{computed}. A \m{sphericalCandidate} reports a numerically vanishing
+central quadratic remainder and requires an exact divisibility check for
+a proof. The independent ordered complex-adjoint comparison in
+\m{I.svdRadius} and \m{I.svdParameterComponents} can expose a sensitive gain
+even when both radius calculations agree.
+
+\subsection{Exact certificates are a separate, optional computation}
+The ordinary numerical routines use floating point. In particular,
+\m{K.status='converged'} means that its numerical bracket meets the requested
+width tolerance; it does not certify every displayed digit.
+With Symbolic Math Toolbox, proposed rational bounds can instead be proved
+over the whole frequency half-line:
+\begin{lstlisting}
+[b,C] = qstab.radiuscertificate([1 1 1],1, ...
+    {'0.8660','0.8661'});
+assert(C.certified)
+b
+C.exactBounds
+\end{lstlisting}
+Decimal, fraction and exponent text denotes exact rational values:
+\m{'0.8660'} is $433/500$, and \m{'1e-3'} is $1/1000$. The verifier checks
+polynomial signs and exact real-root counts, including repeated roots and
+flat extrema.
+If a proposed interval fails, the returned status is a failed certificate,
+not a claim of instability. This function verifies supplied bounds; it does
+not silently replace them by the result of a numerical search.
+
+For a tangency, a sign-change search can miss an isolated loss of strict
+stability. E5 supplies a simple demonstration:
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}
+P0 = struct('a',[1 2 1],'b',[0 0 0], ...
+            'c',[1 0 0],'d',[0 0 0]);
+P1 = struct('a',[-1 -1],'b',[0 0], ...
+            'c',[-1 -1],'d',[0 0]);
+[ab,N] = qstab.raymargin(P0,P1,1);  % may remain unresolved
+[gammaBounds,E] = qstab.raycertificate(P0,P1,1);
+assert(E.certified)
+gammaBounds          % encloses the first positive contact gamma=1
+E.lifting.status
+\end{lstlisting}
+\end{minipage}
+
+Here \m{gammaBounds} encloses the first \emph{positive} ray endpoint.
+It is not the signed interval \m{ab}; use direction $-u$ to certify the
+opposite side. The exact method forms the norm-Hurwitz determinant and
+isolates the first positive root of its square-free part. Even-multiplicity
+contacts are retained. Verification of the original polynomial is reported
+separately in \m{E.lifting}; the exact first-root proof is not confused with
+a numerical evaluation residual.
+
+\lead{What is exact input?}
+A supplied double is interpreted as its exact stored binary rational.
+Consequently the double \m{0.1} is not silently changed into $1/10$.
+When the source specifies exact fractions or decimal text, supply
+\m{'RationalData',D}, where \m{D.P0}, \m{D.P1}, and optionally
+\m{D.Direction} are four-row rational component tables, with entries such
+as \m{'1/10'} or \m{'0.1'} in cells. The explicit tables must round to
+the numerical input. Symbolic inputs must already be exact rational numbers;
+variable-precision values created by \m{vpa} are rejected. Increasing
+\m{digits} cannot turn an approximate input into a rational proof.
+Reports retain rational strings and ordinary MATLAB arrays, so they can
+be saved without symbolic objects.
+
+\subsection{Change frequency units without changing the gain}
+E7 scales E1 by a large common amplitude and changes the frequency unit:
+\[
+ p_{j,K}(s)=10^{80}p_{j,E1}(s/10^6),\qquad
+ \sigma=s/10^6.
+\]
+Both gain radii and critical gains are unchanged; physical contact
+frequencies are multiplied by $10^6$. Dividing every coefficient by one
+common amplitude alone does not fix the badly balanced powers of $s$.
+The continuous numerical margin functions therefore accept
+\m{'FrequencyScale','auto'} by default, or an explicit positive scale:
+\begin{lstlisting}
+K0 = struct('a',[1e80 2e74 1e68],'b',[0 0 0], ...
+            'c',[1e80 0 0],'d',[0 0 0]);
+K1 = struct('a',[0 0],'b',[0 1e74], ...
+            'c',[0 0],'d',[1e80 0]);
+[rho,I] = qstab.freqmargin(K0,K1,1e6*(sqrt(3)-1), ...
+    'Side','right','FrequencyScale',1e6);
+I.scaling
+I.frequency          % original frequency units
+I.workingFrequency   % divided by 1e6
+\end{lstlisting}
+Automatic scaling leaves ordinary well-balanced inputs alone. It records
+every applied variable and common coefficient scale and preserves nonzero
+coefficients. Ray directions are not normalized, and original frequency
+units are restored in the returned diagnostics. These options apply to
+continuous scalar polynomials, not to state-matrix or discrete-time calls.
+Use the recorded scaling rather than disabling the nominal stability check
+to get past an unresolved calculation.
+
+\lead{Independent reproduction and provenance}
+\m{reproducibility/qb01} contains source-linked rational inputs, historical
+reference certificates and an explicitly invoked Python/SymPy replay.
+MATLAB never launches Python automatically. A saved historical certificate
+is a reference until a fresh verification is recorded. Likewise an auxiliary
+Octave or Python execution is not a native MATLAB validation; the validation
+ledger and each report identify the actual runtime and proof path.

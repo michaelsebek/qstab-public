@@ -1,6 +1,6 @@
 # qstab.raymargin
 
-[Function index](../api_index.md) · [Manual](../qstab_manual.pdf) · [MATLAB source](../../src/+qstab/raymargin.m)
+[Function index](../api_index.md) · [Manual](../qstab_manual.pdf)
 
 ## Help and calling sequences
 
@@ -50,6 +50,11 @@ RAYMARGIN  First loss of strict stability along one quaternion direction.
     Grade         [] infers the grade; discrete polynomials only.
     Tolerance     1e-9; numerical accuracy/conditioning guard, 0<Tol<1.
     VerifyBoundary true; check computed boundary contacts numerically.
+    FrequencyScale 'auto' (default) or a positive tau, continuous scalar
+                  polynomials only. Internally s=tau*sigma balances units.
+                  The returned alpha endpoints, u and t=alpha*u NEVER
+                  change units. Info.scaling records the transformation.
+                  Auto leaves well-scaled polynomial coefficients alone.
     MaxGuardCells 2047; discrete verification cell budget.
     MaxGuardDepth 50; discrete verification subdivision depth limit.
     MaxGuardTime  5 seconds; discrete verification time budget.
@@ -65,5 +70,7 @@ RAYMARGIN  First loss of strict stability along one quaternion direction.
   Numerical details. Pole/zero classes are tested in ordinary floating
   point. Ambiguous earlier contacts are not skipped in favour of a later
   loss. The discrete dense ray method supports orders/grades up to 16.
+  A multiple or tangential contact can remain undetermined; for rational
+  data use qstab.raycertificate for a separate exact decision.
   See also qstab.freqmargin, qstab.stabilityradius, qstab.isstable.
 ```

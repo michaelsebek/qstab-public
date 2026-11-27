@@ -1,6 +1,6 @@
-# qstab_check_installation
+# support_qstab_check_installation
 
-[Function index](../api_index.md) · [Manual](../qstab_manual.pdf) · [MATLAB source](../../qstab_check_installation.m)
+[Function index](../api_index.md) · [Manual](../qstab_manual.pdf)
 
 ## Help and calling sequences
 

@@ -3,7 +3,7 @@ function R = raymarginReport(X0, X1, u, varargin)
 
     o=struct('Type','polynomial','Side','left','Variable','s',...
         'Domain','continuous','Tolerance',1e-9,'VerifyBoundary',true,'Grade',[], ...
-        'MaxGuardCells',2047,'MaxGuardDepth',50,'MaxGuardTime',5);
+        'MaxGuardCells',2047,'MaxGuardDepth',50,'MaxGuardTime',5,'FrequencyScale','auto');
     o=parseopts(o,varargin{:});
     typ=lower(char(o.Type)); side=lower(char(o.Side));
     if ~any(strcmp(typ,{'polynomial','matrix'})) || ...
@@ -12,6 +12,9 @@ function R = raymarginReport(X0, X1, u, varargin)
     end
     if (strcmp(typ,'polynomial') && any(strcmpi(o.Variable,{'z','zinv'}))) || ...
             (strcmp(typ,'matrix') && strcmpi(o.Domain,'discrete'))
+        if ~isAuto(o.FrequencyScale)
+            error('qstab:raymargin:FrequencyScale','FrequencyScale is available only for continuous scalar polynomials.');
+        end
         R=qstab.internal.discreteray(X0,X1,u,o); return
     end
     if ~isempty(o.Grade)
@@ -19,6 +22,9 @@ function R = raymarginReport(X0, X1, u, varargin)
     end
     if ~strcmpi(o.Variable,'s') || ~strcmpi(o.Domain,'continuous')
         error('qstab:raymargin:Domain','raymargin currently implements continuous-time first exit.');
+    end
+    if strcmp(typ,'matrix')&&~isAuto(o.FrequencyScale)
+        error('qstab:raymargin:FrequencyScale','FrequencyScale is available only for continuous scalar polynomials.');
     end
     if ~(isnumeric(o.Tolerance)&&isreal(o.Tolerance)&&isscalar(o.Tolerance)&&...
             isfinite(o.Tolerance)&&o.Tolerance>0&&o.Tolerance<1)
@@ -50,6 +56,16 @@ function R = raymarginReport(X0, X1, u, varargin)
             R.message='Require degree(P0)>=1 and degree(P1)<degree(P0).'; return
         end
         C0=C0(:,1:last0); n=last0-1;
+        if isempty(last1),C1=zeros(4,1);else,C1=C1(:,1:last1);end
+        [C0,C1,scaling]=qstab.internal.oneParameterScaling(C0,C1,o.FrequencyScale);
+        if scaling.applied
+            o.FrequencyScale=1;args=optionpairs(o);
+            R=qstab.internal.raymarginReport(aspoly(C0),aspoly(C1),u,args{:});
+            R.scaling=scaling;
+            R.diagnostics.boundaryVerificationVariable='sigma=s/frequencyScale';
+            return
+        end
+        R.scaling=scaling;
         Cp=zeros(4,n); if ~isempty(last1), Cp(:,1:last1)=C1(:,1:last1); end
         A=zeros(n,n,4); B=A;
         if n>1, A(:,:,1)=diag(ones(n-1,1),1); end
@@ -267,6 +283,16 @@ function z=conjq(x)
 end
 function S=asstruct(A)
     S=struct('a',A(:,:,1),'b',A(:,:,2),'c',A(:,:,3),'d',A(:,:,4));
+end
+function P=aspoly(C)
+P=struct('a',C(1,:),'b',C(2,:),'c',C(3,:),'d',C(4,:));
+end
+function tf=isAuto(x)
+tf=(ischar(x)||(isstring(x)&&isscalar(x)))&&strcmpi(char(x),'auto');
+end
+function a=optionpairs(o)
+k=fieldnames(o);a=cell(1,2*numel(k));
+for j=1:numel(k),a{2*j-1}=k{j};a{2*j}=o.(k{j});end
 end
 function o=parseopts(o,varargin)
     if mod(numel(varargin),2)~=0, error('qstab:raymargin:Options','Use name/value pairs.'); end

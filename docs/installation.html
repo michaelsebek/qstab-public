@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Install qstab and check what MATLAB will run</title><link rel="stylesheet" href="style.css"></head><body><main><h1 id="install-qstab-and-check-what-matlab-will-run">Install qstab and
+<h1 id="install-qstab-and-check-what-matlab-will-run">Install qstab and
 check what MATLAB will run</h1>
 <p>Extract the complete release into a new, writable folder. The package
 root contains <code>qstab_setup.m</code>, <code>src/+qstab</code> and
@@ -78,7 +77,7 @@ matrix and return right eigenvalues, and optionally [V,D].</td>
 <td>Replay the polytope manuscript’s exact arithmetic</td>
 <td>Python 3.8+ standard library; no Python packages or MATLAB
 toolboxes.</td>
-<td><a href="papers.html">Run the two polytope checks</a>.</td>
+<td><a href="papers.md">Run the two polytope checks</a>.</td>
 </tr>
 <tr class="even">
 <td>Replay the interval examples’ rational proofs in MATLAB</td>
@@ -91,7 +90,7 @@ unvalidated in native MATLAB.</td>
 <td>Optional Python and SymPy, as documented in
 <code>reproducibility/qb02</code>.</td>
 <td><a
-href="interval_article.html#recompute-the-exact-continuum-certificates">Interval
+href="interval_article.md#recompute-the-exact-continuum-certificates">Interval
 proof replay</a>.</td>
 </tr>
 </tbody>
@@ -113,9 +112,9 @@ package root: it writes fresh report files and refreshes the fixed
 <code>qstab_test_results.zip</code>. Back up an earlier report if you
 wish to keep it. Temporary path isolation is not a sandbox for untrusted
 code. No add-ons are installed or downloaded by qstab. See <a
-href="../verification/VALIDATION.html">test evidence</a>.</p>
-<p><a href="../README.html">Home</a> · <a
-href="qstab_manual.pdf">Manual</a> · <a href="api_index.html">All entry
+href="../verification/VALIDATION.md">test evidence</a>.</p>
+<p><a href="../README.md">Home</a> · <a
+href="qstab_manual.pdf">Manual</a> · <a href="api_index.md">All entry
 points</a>. ## Optional interval-article proof replay</p>
 <p>The numerical interval study and the three 0.19.0 numerical functions
 add no mandatory product or external package dependency. Native inputs
@@ -124,6 +123,24 @@ use the same MathWorks <code>quaternion</code> class as before.
 replay requiring Symbolic Math Toolbox; it is not run by ordinary
 numerical calls or mandatory public acceptance. An independent
 Python/SymPy replay is also supplied, with separate instructions under
-<code>reproducibility/qb02</code>. See <a href="interval_article.html">all
+<code>reproducibility/qb02</code>. See <a href="interval_article.md">all
 interval-study commands and output locations</a>.</p>
-</main></body></html>
+<h2 id="optional-scalar-one-parameter-proofs-0.20.0">Optional scalar
+one-parameter proofs (0.20.0)</h2>
+<p>The numerical geometry, scaling and article examples add no mandatory
+dependency. Exact <code>qstab.raycertificate</code>,
+<code>qstab.radiuscertificate</code> and the MATLAB identity replay
+require <strong>Symbolic Math Toolbox</strong>.
+<code>ExactCertificates='auto'</code> records skipped exact work when
+the product is unavailable; <code>true</code> makes its execution a
+requirement. Exact routines interpret stored doubles as exact binary
+rationals; explicit <code>RationalData</code> preserves intended source
+decimal fractions. No installation or external process is started by a
+solver.</p>
+<p>Use <code>test_qstab_oneparameter</code> for targeted checks and
+<code>run_qstab_oneparameter('all','Plots',true)</code> for source
+examples and figures. Their fixed ZIPs differ from
+<code>qstab_test_results.zip</code>. An independent Python/SymPy replay
+is supplied under <code>reproducibility/qb01</code>, with its own
+README. It is optional and separate from the MATLAB installation and
+native acceptance.</p>

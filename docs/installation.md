@@ -31,3 +31,10 @@ Setup adds the root, `src` and optionally `examples` for this session. It does n
 
 The numerical interval study and the three 0.19.0 numerical functions add no mandatory product or external package dependency. Native inputs use the same MathWorks `quaternion` class as before. `verify_qstab_interval_certificates` is an optional exact replay requiring Symbolic Math Toolbox; it is not run by ordinary numerical calls or mandatory public acceptance. An independent Python/SymPy replay is also supplied, with separate instructions under `reproducibility/qb02`. See [all interval-study commands and output locations](interval_article.md).
 
+
+
+## Optional scalar one-parameter proofs (0.20.0)
+
+The numerical geometry, scaling and article examples add no mandatory dependency. Exact `qstab.raycertificate`, `qstab.radiuscertificate` and the MATLAB identity replay require **Symbolic Math Toolbox**. `ExactCertificates='auto'` records skipped exact work when the product is unavailable; `true` makes its execution a requirement. Exact routines interpret stored doubles as exact binary rationals; explicit `RationalData` preserves intended source decimal fractions. No installation or external process is started by a solver.
+
+Use `test_qstab_oneparameter` for targeted checks and `run_qstab_oneparameter('all','Plots',true)` for source examples and figures. Their fixed ZIPs differ from `qstab_test_results.zip`. An independent Python/SymPy replay is supplied under `reproducibility/qb01`, with its own README. It is optional and separate from the MATLAB installation and native acceptance.

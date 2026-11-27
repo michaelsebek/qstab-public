@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.stabilityradius</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstabstabilityradius">qstab.stabilityradius</h1>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.stabilityradius</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstab.stabilityradius">qstab.stabilityradius</h1>
 <p><a href="../api_index.html">Function index</a> · <a
-href="../qstab_manual.pdf">Manual</a> · <a
-href="../../src/+qstab/stabilityradius.m">MATLAB source</a></p>
+href="../qstab_manual.pdf">Manual</a></p>
 <h2 id="help-and-calling-sequences">Help and calling sequences</h2>
 <pre class="text"><code>STABILITYRADIUS  Bound the first loss over all directions of one quaternion t.
   [bounds,I]=qstab.stabilityradius(F,...) accepts a oneparameter qstab.family.
@@ -34,6 +33,12 @@ href="../../src/+qstab/stabilityradius.m">MATLAB source</a></p>
     AbsTol      1e-6; absolute contribution to the target bracket width.
     RelTol      1e-5; relative contribution (target AbsTol+RelTol*upper).
     Tolerance   1e-10; internal numerical checks.
+    FrequencyScale &#39;auto&#39; (default), or a positive tau for Variable=&#39;s&#39;.
+                The working variable is sigma=s/tau. Both polynomials
+                receive the same positive coefficient scale; the radius
+                and critical quaternion parameter keep their units.
+                Info.frequency and boundaryComponents are returned in
+                ORIGINAL s units; Info.scaling records the transformation.
     MaxCells    4096; search/subdivision budget.
     MaxTime     30 seconds; computational time budget.
     MaxDepth    40; discrete subdivision depth limit.
@@ -44,5 +49,6 @@ href="../../src/+qstab/stabilityradius.m">MATLAB source</a></p>
     disp(bounds); disp(I.status);  % the bracket contains 2
 
   These are floating-point bounds, not outward-rounded proof intervals.
+  Use qstab.radiuscertificate for separate exact rational certificates.
   See also qstab.freqmargin, qstab.raymargin, qstab.ballradius.</code></pre>
 </main></body></html>

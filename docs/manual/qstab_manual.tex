@@ -9,6 +9,7 @@
 \hypersetup{colorlinks=true,linkcolor=teal,urlcolor=teal,pdftitle={qstab: A public guide to quaternionic stability},pdfauthor={qstab project}}
 \pagestyle{fancy}\fancyhf{}\fancyhead[L]{\sffamily\small\color{muted}qstab\enspace |\enspace Public guide}\fancyhead[R]{\sffamily\small\color{muted}Scalar polynomials and right spectra}\fancyfoot[R]{\sffamily\small\thepage}
 \setlength{\headheight}{14pt}\setlength{\parindent}{0pt}\setlength{\parskip}{4pt plus 1pt}\renewcommand{\arraystretch}{1.18}
+\setcounter{tocdepth}{1} % Keep the compact guide contents at section level.
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \lstset{upquote=true,language=Matlab,basicstyle=\ttfamily\small,keywordstyle=\color{teal}\bfseries,commentstyle=\color{muted},backgroundcolor=\color{soft},frame=single,rulecolor=\color{soft},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false,xleftmargin=4pt,xrightmargin=4pt,aboveskip=7pt,belowskip=4pt}
 \ExplSyntaxOn
@@ -42,10 +43,10 @@
 \end{tikzpicture}
 \vfill
 \lead{Read with MATLAB open} The eleven introductory experiments have executable keys and use ordinary arrays or component structures. The interval article study adds 24 source-linked groups and saved comparison reports. Native MATLAB quaternion input is supported.\par
-\vspace{6mm}{\sffamily Release 0.19.0 \enspace / \enspace 20 November 2026}\par
-{\small\color{muted}The numerical baseline was tested as 0.19.0-rc.1 in MATLAB R2024b Update 2 on 20 November 2026: 731/731 regression checks and 24/24 interval groups (110 comparisons). Final packaging is not a new native run. The optional MATLAB symbolic replay remains separately unvalidated; see the validation ledger.}\par
+\vspace{6mm}{\sffamily Version 0.20.0 \enspace / \enspace 27 November 2026}\par
+{\small\color{muted}Native MATLAB R2024b Update 2 validation records 748/748 public regression checks for 0.20.0-rc.1. The corrected 0.20.0-rc.2 passed 32/32 targeted checks and all 13 article groups with 139 comparisons and fresh exact proofs; all 221 recorded MATLAB source hashes match that candidate. Version 0.20.0 changes version text, documentation and metadata only. It has not been rerun in MATLAB after final packaging. See the validation ledger for the separate interval evidence.}\par
 \clearpage
-\tableofcontents
+{\setlength{\parskip}{0pt}\tableofcontents}
 \bigskip
 \lead{Example key} In the Command Window enter \m{qstab\_guide\_example('G04')}, replacing \m{G04} with the question you want to explore.
 \par\smallskip\begin{tabularx}{\linewidth}{@{}lYlY@{}}\toprule
@@ -57,7 +58,7 @@ G04 & First loss and later re-entry & G10 & Explore a random interval\\
 G05 & Line vs. independent box & G11 & Physical window and global radius\\
 G06 & Coarse and localized hulls &&\\\bottomrule
 \end{tabularx}\par
-\vfill\lead{Choose a route} For a first run read Sections~\ref{sec:start}--\ref{sec:nominal}. For a polytopic study begin with Sections~\ref{sec:families}, \ref{sec:poly} and~\ref{sec:paper}. For the interval article use Section~\ref{sec:intervalstudy}. For existing project data use the function directory in Section~\ref{sec:directory}, then consult the named MATLAB help entry for options.
+\vfill\lead{Choose a route} For a first run read Sections~\ref{sec:start}--\ref{sec:nominal}. For a polytopic study begin with Sections~\ref{sec:families}, \ref{sec:poly} and~\ref{sec:paper}. For the interval article use Section~\ref{sec:intervalstudy}; for the scalar one-parameter article use Section~\ref{sec:oneparameterstudy}. For existing project data use the function directory in Section~\ref{sec:directory}, then consult the named MATLAB help entry for options.
 \topic{Install, run and inspect}{sec:start}
 Unpack the distribution into a writable folder. Open the directory containing \m{qstab\_setup.m}; it is the package root. In a normal public MATLAB session:
 \begin{lstlisting}
@@ -277,7 +278,9 @@ Name after \m{qstab.} & Use and result\\\midrule
 \m{plotCertificate}, \m{plotWitness} & Display saved evidence: coverage records or a reconstructed member's classes.\\
 \m{plotFamilyZeros}, \m{plotFamilyValues} & Sample actual members. Compute a cloud of algebraic zero representatives or display a class, slice or norm projection at one frequency.\\\bottomrule
 \end{tabularx}\par\smallskip
-\lead{Where the present release stops} Family certification concerns scalar quaternion polynomials with the documented uncertainty models. Nominal matrix and selected fixed-ray matrix routines do not constitute a robust-polynomial-matrix solver. The code uses ordinary floating point with residual, scale and separation checks; a numerical pass is not a directed-rounding interval proof. A sampled zero cloud, an outer enclosure at one frequency, a verified unstable member and a positive global numerical certificate answer four different questions. State which one you obtained when reporting a result.
+\lead{Optional exact operations} \m{raycertificate} encloses a first positive scalar CT ray contact; \m{radiuscertificate} verifies proposed rational global radius bounds. Both require Symbolic Math Toolbox. See Section~\ref{sec:oneparameterstudy} for inputs and proof scope.
+
+\lead{Where the present release stops} Family certification concerns scalar quaternion polynomials with the documented uncertainty models. Nominal matrix and selected fixed-ray matrix routines do not constitute a robust-polynomial-matrix solver. Ordinary numerical routines use floating point with residual, scale and separation checks; a numerical pass is not a directed-rounding interval proof. The optional exact routines have the separate rational-data proof scope described later. A sampled zero cloud, an outer enclosure at one frequency, a verified unstable member and a positive global numerical certificate answer four different questions. State the kind of evidence.
 \topic{Run the interval article and supplement}{sec:intervalstudy}
 The interval study accompanies \m{IJRCN\_manuscript\_v7} and
 \m{IJRCN\_Zenodo-supplement\_v5}. Its catalogue has 24 groups, I01--I24.
@@ -469,4 +472,5 @@ reserve algorithm are not implemented by this release. Standard solver
 results remain ordinary floating-point results with their usual guards.
 For source hashes, all example labels, commands and validation details,
 see \m{docs/interval\_article.md} and \m{verification/VALIDATION.md}.
+\input{oneparameter_update}
 \end{document}

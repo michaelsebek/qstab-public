@@ -1,4 +1,101 @@
-# Validation of qstab 0.19.0
+# Validation of qstab 0.20.0
+
+## Native MATLAB evidence and final source provenance
+
+The evidence below preserves the version actually executed. Native means MATLAB
+24.2.0.2773142 (R2024b Update 2), Windows PCWIN64. Historical and auxiliary records
+are not combined into a synthetic rerun of the final distribution.
+
+| Recorded source and run | Outcome |
+|---|---|
+| 0.20.0-rc.1 ordinary public acceptance, supplied Command Window transcript | 748 passed, 0 failed, 0 skipped; public acceptance PASSED. Original MAT/ZIP was not supplied with that transcript, so its source fingerprints were not independently reconciled. |
+| 0.20.0-rc.1 separate targeted run | 27 passed, 1 failed, 0 skipped. The exact-radius failure and symbolic warnings remain recorded as a failed run. |
+| 0.20.0-rc.2 targeted suite, original MAT and TXT | 32 passed, 0 failed, 0 skipped; complete=true, exact proofs requested and executed. Elapsed 23.9549443 s. |
+| 0.20.0-rc.2 article study, original MAT, TXT and comparison CSV | 13/13 groups, 139/139 comparisons; ARTICLE_CHECKS_AND_EXACT_PROOFS_PASSED, articleComplete=true. Elapsed 44.4885097 s. |
+| Source reconciliation for the rc.2 article report | All 221 MATLAB source files, their byte sizes and SHA-256 hashes agree with the supplied rc.2 package; both recorded fixture/provenance JSON files agree as well. |
+
+Fresh exact article computations include **9** global-radius certificates,
+**14** ray certificates (13 finite contacts and one unbounded ray), **13** finite original-polynomial liftings and
+**42** additional exact identities. These categories overlap with the article
+comparisons and are not additional independent test totals. The report retains
+unresolved numerical ray results for E5, E6, E5V and E5C while their independent
+exact certificates succeed. `numericalAllResolved=false` is therefore compatible
+with complete exact article validation. The selected E1 and E3 figures and plot
+data were exported by the native article run.
+
+The source archives were read and cross-checked during release preparation; no
+MATLAB, Octave, symbolic solver or numerical study was rerun for final packaging.
+The elapsed times describe these particular user runs, not software benchmarks.
+
+[Sanitized native rc.2 evidence](native-matlab-0.20.0-rc.2.json) contains the original
+archive digests and recorded scope. Original reports contain local installation
+paths and remain separate from the public distribution.
+
+## Changes from the tested rc.2 to final 0.20.0
+
+Four MATLAB files change only version/descriptive strings: `qstab_setup.m`,
+`run_qstab_public.m`, `src/+qstab/about.m` and `src/+qstab/Contents.m`.
+The other **217 of 221 MATLAB files** are byte-identical. All numerical and symbolic
+algorithms, examples and test implementations retain their tested contents.
+Documentation, the public manual, citation metadata and the distribution manifest
+are updated. The separate installation helper changes its version/help text only.
+
+The full 748-check ordinary public suite was not rerun on rc.2, and the renamed
+final 0.20.0 was not newly executed in MATLAB. The current native evidence is the
+combination of the identified rc.1 transcript and the identified corrected rc.2
+targeted/article reports. [Final source differences](release-0.20.0-differences.json)
+records exact hashes and the permitted text-only changes.
+
+## Earlier exact failure and its correction
+
+The failed rc.1 fixture has `p0=s^2+s+1`, `p1=1`, and radius `sqrt(3)/2`.
+Decimal input text could enter symbolic floating-point arithmetic before GCD and
+Sturm calculations. Rc.2 instead constructs decimal, scientific and fractional
+text from exact integers and powers of ten, requires exact symbolic rationals,
+and decides polynomial-zero identities by exact normalized numerators.
+No small-remainder tolerance replaces an exact zero test.
+
+For this fixture, `0.8660` is exactly `433/500` and `0.8661` is exactly
+`8661/10000`. The lower bound gives zero nonnegative roots of the relevant
+square-free factor and the upper bound gives two. The corrected native targeted
+suite passes this fixture and the added input/identity regression groups.
+
+[The rc.1 transcript summary](native-transcript-0.20.0-rc.1.json) retains its
+original failure. [The rc.2 development record](symbolic-fix-0.20.0-rc.2.json)
+describes the auxiliary Octave/SymPy work completed before the native reports
+arrived; its then-pending native flag is historical and is superseded by the
+separate native evidence above. Its Java-dependent source-hash assertion failure
+remains recorded. [The initial candidate evidence](oneparameter-0.20.0-candidate.json)
+also remains unchanged. Those historical auxiliary computations are not MATLAB
+execution and are not counted as native passes.
+
+## Reproduce the current public distribution
+
+From the extracted public package root in a fresh MATLAB session:
+
+```matlab
+qstab_setup('Examples',true);
+R = run_qstab_public('Figures',false);
+assert(R.ok && R.publicAcceptance.ok,'Read the public report: %s',R.archiveFile)
+
+T = test_qstab_oneparameter('ExactCertificates',true);
+assert(T.ok && T.complete,'Read the exact report: %s',T.archiveFile)
+
+A = run_qstab_oneparameter('all','Plots',true,'ExactCertificates',true);
+assert(A.ok && A.articleComplete,'Read the article report: %s',A.archiveFile)
+```
+
+The last two calls require Symbolic Math Toolbox. Ordinary numerical calls do
+not acquire that dependency. Exact scope is continuous-time scalar rational
+component polynomials with fixed leading coefficient; the radius routine checks
+supplied bounds. This is not a general exact uncertain-matrix radius result.
+The earlier interval-article Symbolic replay is a separate path and its historical
+native-validation status is unchanged. See [the article guide](../docs/oneparameter_article.md)
+and [installation/dependencies](../docs/installation.md).
+
+---
+
+# Historical validation of qstab 0.19.0
 
 ## Native MATLAB validation of the 0.19.0 sources
 

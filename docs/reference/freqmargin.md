@@ -1,6 +1,6 @@
 # qstab.freqmargin
 
-[Function index](../api_index.md) · [Manual](../qstab_manual.pdf) · [MATLAB source](../../src/+qstab/freqmargin.m)
+[Function index](../api_index.md) · [Manual](../qstab_manual.pdf)
 
 ## Help and calling sequences
 
@@ -35,8 +35,24 @@ FREQMARGIN  Smallest |t| producing a boundary zero at a specified frequency.
     Variable     's' (default), 'z' (forward), 'zinv' (delay).
     Grade        [] infers the declared grade; discrete polynomials only.
     Tolerance    1e-10, positive and less than one; numerical checks.
+    FrequencyScale 'auto' (default), or a positive real tau. For s only,
+                 compute with s=tau*sigma and a common positive coefficient
+                 scale. omega and every returned boundary point remain in
+                 the ORIGINAL s units; t and rho are unchanged. Auto uses
+                 a power-of-two tau when coefficient units are unbalanced.
     CheckNominal true; false skips the nominal stability check when its
                  result is already known.
+  Info.scaling records this change of units. Info.geometry{k} describes
+  the nearest gains at one frequency: 'point', 'sphere', 'undetermined',
+  or 'empty'. A sphere has centerComponents (4-by-1), basisComponents
+  (4-by-3, orthonormal) and sphereRadius, so its gains are center+r*basis*v
+  for real norm(v)=1. A small numerical gap alone NEVER establishes a
+  sphere: that label requires the structural common-orientation test.
+  Info.svdRadius and Info.svdParameterComponents provide an independent
+  ordered 2-by-2 complex-adjoint comparison, using base MATLAB only.
+  Info.zeroWitnesses{k} gives both evaluation-side zeros when the central
+  quadratic remainder permits reliable recovery. These numerical details
+  are not exact multiplicity or whole-frequency certificates.
 
   Example:
     [rho,I] = qstab.freqmargin([2 1],1,[0 1 2]);

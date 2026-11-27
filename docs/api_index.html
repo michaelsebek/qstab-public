@@ -172,6 +172,17 @@ href="reference/stabilityradius.html">qstab.stabilityradius</a></td>
 <td>Bound the first loss over all directions of one quaternion t.</td>
 </tr>
 <tr class="even">
+<td><a href="reference/raycertificate.html">qstab.raycertificate</a></td>
+<td>Prove the first positive scalar CT ray contact, including tangencies
+(optional symbolic arithmetic).</td>
+</tr>
+<tr class="odd">
+<td><a
+href="reference/radiuscertificate.html">qstab.radiuscertificate</a></td>
+<td>Verify rational lower and upper bounds of the scalar CT
+all-direction radius.</td>
+</tr>
+<tr class="even">
 <td><a href="reference/lyapoperator.html">qstab.lyapoperator</a></td>
 <td>Real matrix of X -&gt; A<em>X + X</em>A’ on quaternion Hermitian
 X.</td>
@@ -304,118 +315,134 @@ classes.</td>
 <h2 id="setup-checks-and-worked-examples">Setup, checks and worked
 examples</h2>
 <ul>
-<li><a href="interval_article.html">run_qstab_intervals</a>: Compute all
-24 groups of the interval article and supplement, compare references,
-and save a current-run ZIP.</li>
-<li><a
+<li><p><a href="oneparameter_article.html">run_qstab_oneparameter</a>:
+Recompute scalar one-parameter article examples and optional exact
+proofs, with a fresh result ZIP.</p></li>
+<li><p><a
+href="reference/support_test_qstab_oneparameter.html">test_qstab_oneparameter</a>:
+Run numerical, article integration and optional exact regression
+groups.</p></li>
+<li><p><a
+href="reference/example_plot_qstab_oneparameter.html">plot_qstab_oneparameter</a>:
+Plot saved one-parameter results without rerunning their
+solvers.</p></li>
+<li><p><a
+href="reference/example_verify_qstab_oneparameter_identities.html">verify_qstab_oneparameter_identities</a>:
+Recompute the 42 exact manuscript identities in MATLAB.</p></li>
+<li><p><a href="interval_article.html">run_qstab_intervals</a>: Compute
+all 24 groups of the interval article and supplement, compare
+references, and save a current-run ZIP.</p></li>
+<li><p><a
 href="interval_article.html#figures-and-saved-data">plot_qstab_intervals</a>:
-Replot the saved interval data without rerunning solvers.</li>
-<li><a
+Replot the saved interval data without rerunning solvers.</p></li>
+<li><p><a
 href="interval_article.html#recompute-the-exact-continuum-certificates">verify_qstab_interval_certificates</a>:
 Recompute the concrete quartic and quintic certificates with exact
-rational symbolic arithmetic.</li>
-<li><a
+rational symbolic arithmetic.</p></li>
+<li><p><a
 href="reference/support_qstab_check_installation.html">qstab_check_installation</a>:
-Read-only integrity and MATLAB resolution checks.</li>
-<li><a href="reference/support_qstab_setup.html">qstab_setup</a>: Connect
-the public namespace and optional examples for this session.</li>
-<li><a
+Read-only integrity and MATLAB resolution checks.</p></li>
+<li><p><a href="reference/support_qstab_setup.html">qstab_setup</a>:
+Connect the public namespace and optional examples for this
+session.</p></li>
+<li><p><a
 href="reference/support_run_qstab_public.html">run_qstab_public</a>: One
-standalone acceptance run, without an external qeig.</li>
-<li><a href="reference/support_test_qstab.html">test_qstab</a>: Run the
-complete qstab regression and native integration suite.</li>
-<li><a
+standalone acceptance run, without an external qeig.</p></li>
+<li><p><a href="reference/support_test_qstab.html">test_qstab</a>: Run the
+complete qstab regression and native integration suite.</p></li>
+<li><p><a
 href="reference/example_export_qstab_paper_figures.html">export_qstab_paper_figures</a>:
-Export SAVED data without recomputing solvers.</li>
-<li><a
+Export SAVED data without recomputing solvers.</p></li>
+<li><p><a
 href="reference/example_plot_qstab_paper_figure.html">plot_qstab_paper_figure</a>:
-Plot one SAVED item; never calls a numerical solver.</li>
-<li><a
+Plot one SAVED item; never calls a numerical solver.</p></li>
+<li><p><a
 href="reference/example_qstab_benchmark_assess.html">qstab_benchmark_assess</a>:
-Check semantics and reconstruct a returned witness.</li>
-<li><a
+Check semantics and reconstruct a returned witness.</p></li>
+<li><p><a
 href="reference/example_qstab_benchmark_cases.html">qstab_benchmark_cases</a>:
-Deterministic scalar families, not new stability methods.</li>
-<li><a
+Deterministic scalar families, not new stability methods.</p></li>
+<li><p><a
 href="reference/example_qstab_benchmark_plan.html">qstab_benchmark_plan</a>:
-Explicit applicable/nonapplicable comparison rows.</li>
-<li><a
+Explicit applicable/nonapplicable comparison rows.</p></li>
+<li><p><a
 href="reference/example_qstab_benchmark_summarize.html">qstab_benchmark_summarize</a>:
-Preserve unresolved and failed observations.</li>
-<li><a href="reference/example_qstab_demo.html">qstab_demo</a>: Small
-examples of quaternion nominal and robust stability.</li>
-<li><a
+Preserve unresolved and failed observations.</p></li>
+<li><p><a href="reference/example_qstab_demo.html">qstab_demo</a>: Small
+examples of quaternion nominal and robust stability.</p></li>
+<li><p><a
 href="reference/example_qstab_demo_plots.html">qstab_demo_plots</a>:
-Similarity-class plots and sampled norm-polynomial values.</li>
-<li><a
+Similarity-class plots and sampled norm-polynomial values.</p></li>
+<li><p><a
 href="reference/example_qstab_eigen_assess.html">qstab_eigen_assess</a>:
-Independent reference/multiplicity and eigenpair checks.</li>
-<li><a
+Independent reference/multiplicity and eigenpair checks.</p></li>
+<li><p><a
 href="reference/example_qstab_eigen_cases.html">qstab_eigen_cases</a>:
-Deterministic matrices with known right-class multisets.</li>
-<li><a
+Deterministic matrices with known right-class multisets.</p></li>
+<li><p><a
 href="reference/example_qstab_eigen_match.html">qstab_eigen_match</a>:
-Bottleneck bijection of canonical complex multisets.</li>
-<li><a
+Bottleneck bijection of canonical complex multisets.</p></li>
+<li><p><a
 href="reference/example_qstab_eigen_timing.html">qstab_eigen_timing</a>:
-Matched ONE-output batches, with retained call results.</li>
-<li><a
+Matched ONE-output batches, with retained call results.</p></li>
+<li><p><a
 href="reference/example_qstab_guide_example.html">qstab_guide_example</a>:
-Run the small, checked examples printed in the public guide.</li>
-<li><a
+Run the small, checked examples printed in the public guide.</p></li>
+<li><p><a
 href="reference/example_qstab_paper_cases.html">qstab_paper_cases</a>:
-Selected source-linked examples; no solver calls or files.</li>
-<li><a
+Selected source-linked examples; no solver calls or files.</p></li>
+<li><p><a
 href="reference/example_qstab_paper_check.html">qstab_paper_check</a>:
-Assess a source reference without turning unknown into true.</li>
-<li><a
+Assess a source reference without turning unknown into true.</p></li>
+<li><p><a
 href="reference/example_qstab_paper_evaluate.html">qstab_paper_evaluate</a>:
-Execute one catalogue item without writes or plotting.</li>
-<li><a
+Execute one catalogue item without writes or plotting.</p></li>
+<li><p><a
 href="reference/example_qstab_paper_extension_cases.html">qstab_paper_extension_cases</a>:
-Sixteen additional source-linked finite checks.</li>
-<li><a
+Sixteen additional source-linked finite checks.</p></li>
+<li><p><a
 href="reference/example_qstab_paper_extension_evaluate.html">qstab_paper_extension_evaluate</a>:
-Additional finite identities and witnesses.</li>
-<li><a
+Additional finite identities and witnesses.</p></li>
+<li><p><a
 href="reference/example_qstab_paper_figures.html">qstab_paper_figures</a>:
-Ordinary data for eight selected article illustrations.</li>
-<li><a
+Ordinary data for eight selected article illustrations.</p></li>
+<li><p><a
 href="reference/example_qstab_validate_paper_figure.html">qstab_validate_paper_figure</a>:
-Validate ordinary plotting data before side effects.</li>
-<li><a
+Validate ordinary plotting data before side effects.</p></li>
+<li><p><a
 href="reference/example_run_qb01_discrete.html">run_qb01_discrete</a>:
-Selected analytic discrete one-quaternion margin examples.</li>
-<li><a
+Selected analytic discrete one-quaternion margin examples.</p></li>
+<li><p><a
 href="reference/example_run_qb01_examples.html">run_qb01_examples</a>:
-Selected exact examples from the corrected qB01 notes.</li>
-<li><a href="reference/example_run_qb02_balls.html">run_qb02_balls</a>:
-Selected weighted-coefficient-ball examples, ordinary data only.</li>
-<li><a href="reference/example_run_qb02_boxes.html">run_qb02_boxes</a>:
-Component boxes, not coefficient balls or vertex-only tests.</li>
-<li><a
+Selected exact examples from the corrected qB01 notes.</p></li>
+<li><p><a href="reference/example_run_qb02_balls.html">run_qb02_balls</a>:
+Selected weighted-coefficient-ball examples, ordinary data
+only.</p></li>
+<li><p><a href="reference/example_run_qb02_boxes.html">run_qb02_boxes</a>:
+Component boxes, not coefficient balls or vertex-only tests.</p></li>
+<li><p><a
 href="reference/example_run_qb02_extensions.html">run_qb02_extensions</a>:
-qB02 reductions and correlated CT/DT zero-exclusion.</li>
-<li><a
+qB02 reductions and correlated CT/DT zero-exclusion.</p></li>
+<li><p><a
 href="reference/example_run_qb02_qb03_examples.html">run_qb02_qb03_examples</a>:
-Compact reproducible cases for qB02/qB03 methods.</li>
-<li><a
+Compact reproducible cases for qB02/qB03 methods.</p></li>
+<li><p><a
 href="reference/example_run_qb03_four_generator_examples.html">run_qb03_four_generator_examples</a>:
-Separate article-oriented qB03 demo.</li>
-<li><a
+Separate article-oriented qB03 demo.</p></li>
+<li><p><a
 href="reference/example_run_qstab_benchmarks.html">run_qstab_benchmarks</a>:
-Matched, bounded scalar robustness comparison.</li>
-<li><a
+Matched, bounded scalar robustness comparison.</p></li>
+<li><p><a
 href="reference/example_run_qstab_diagnostics.html">run_qstab_diagnostics</a>:
-Reproducible enclosure, coverage and witness examples.</li>
-<li><a
+Reproducible enclosure, coverage and witness examples.</p></li>
+<li><p><a
 href="reference/example_run_qstab_eigen_comparison.html">run_qstab_eigen_comparison</a>:
-Reference-backed, read-only right-spectrum study.</li>
-<li><a
+Reference-backed, read-only right-spectrum study.</p></li>
+<li><p><a
 href="reference/example_run_qstab_paper_extensions.html">run_qstab_paper_extensions</a>:
-Reproduce SELECTED source-linked qB01/qB02/qB03 examples.</li>
-<li><a
+Reproduce SELECTED source-linked qB01/qB02/qB03 examples.</p></li>
+<li><p><a
 href="reference/example_run_qstab_papers.html">run_qstab_papers</a>:
-Reproduce SELECTED source-linked qB01/qB02/qB03 examples.</li>
+Reproduce SELECTED source-linked qB01/qB02/qB03 examples.</p></li>
 </ul>
 </main></body></html>

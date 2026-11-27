@@ -1,0 +1,60 @@
+{
+  "schema": "qstab.oneparameter.candidate-validation.1",
+  "candidate": "0.20.0-rc.1",
+  "date": "2026-11-26",
+  "nativeMATLABAcceptance": "PENDING",
+  "privateNativeObjectAcceptance": "PENDING",
+  "auxiliaryRuntime": "Octave 10.3.0; exact branch Symbolic 3.2.2 / SymPy 1.14.0 with non-distributed quorem shim",
+  "targetedNumerical": {
+    "passed": 33,
+    "failed": 0,
+    "newGroups": 12,
+    "existingRayGroups": 10,
+    "existingRadiusGroups": 11
+  },
+  "targetedExact": {
+    "passed": 11,
+    "failed": 0,
+    "finalOptimizationFocusedChecks": 2
+  },
+  "article": {
+    "groupsPassed": 13,
+    "groupsFailed": 0,
+    "initialComparisonChecksPassed": 126,
+    "radiusProofs": 9,
+    "rayProofs": 14,
+    "finiteRayLiftings": 13,
+    "additionalIdentities": 42,
+    "finalGateRecheckedFromSavedEvidence": true,
+    "finalWriterFreshE2Checks": 14
+  },
+  "independentReplay": {
+    "historicalRays": 13,
+    "exactChecks": 376,
+    "globalCertificates": 9,
+    "additionalIdentities": 42,
+    "passed": true
+  },
+  "manuals": {
+    "publicPages": 23,
+    "privatePages": 138,
+    "preservedPrivateScripts": 88,
+    "privateSourceChecks": 277
+  },
+  "note": "Auxiliary checks and historical native validation have distinct source and execution scope. No new native pass is claimed.",
+  "fullAuxiliaryAttempt": {
+    "aggregateStatus": "FAILED",
+    "numericalPassed": 663,
+    "numericalFailed": 0,
+    "graphicsPassed": 11,
+    "graphicsFailed": 12,
+    "nativeSkipped": 62,
+    "graphicsFailureScope": "Ten absent gobjects, one absent MATLAB exportgraphics, one unchanged interval graphics-state mismatch; native MATLAB acceptance pending."
+  },
+  "installerFixtures": {
+    "passed": 10,
+    "failed": 0,
+    "nativeWindows": false,
+    "fullPayload": false
+  }
+}

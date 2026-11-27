@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "scope": "new exact checks, no new floating-point benchmark or MATLAB/qstab run",
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "number_checks": 42,
+  "checks": [
+    "plant + controller equals E1 nominal polynomial",
+    "nominal plant Hurwitz",
+    "nominal closed loop Hurwitz",
+    "real calibration error = L(t)",
+    "induced norm identity",
+    "mechanical skew coupling 0",
+    "mechanical skew coupling 1",
+    "L hypercomplex feedback identity",
+    "L real feedback matrix identity",
+    "R hypercomplex feedback identity",
+    "R real feedback matrix identity",
+    "L frequency formula determinant",
+    "L frequency formula PSD trace",
+    "L positive radius expression",
+    "L global minimum certificate",
+    "R frequency formula determinant",
+    "R frequency formula PSD trace",
+    "R positive radius expression",
+    "R exact nonnegative factor certificate",
+    "R minimum attained",
+    "L guardian factorization",
+    "L first positive guardian root",
+    "L original polynomial contact",
+    "L at 1/3 correct stability classification",
+    "R guardian factorization",
+    "R first positive guardian root",
+    "R original polynomial contact",
+    "R at 1/3 correct stability classification",
+    "chosen witness inside half-unit ball",
+    "actuator radius above half-unit ball",
+    "sensor radius below half-unit ball",
+    "right third minor exact",
+    "real gain norm exact",
+    "real scale reduced Hurwitz determinant constant",
+    "E5 variant guardian",
+    "E5 variant cubic increasing",
+    "E5 variant next root > 1",
+    "E5 variant next root rational bracket",
+    "E5 variant exact stable after contact",
+    "E5 variant contact factor",
+    "E5 variant zero on original polynomial",
+    "E5 variant coefficients have no common slice"
+  ],
+  "E1": {
+    "L": {
+      "ray_guardian": "8*(gamma - 3)*(gamma - 1)*(gamma**2 - 2*gamma + 2)",
+      "first_gamma": "1",
+      "norm_radius_squared": "2",
+      "at_gamma_1_3_hurwitz_minors": [
+        "10/3",
+        "308/27",
+        "1664/81",
+        "13312/729"
+      ],
+      "original_contact": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "R": {
+      "ray_guardian": "24*(gamma**2 - 4*gamma + 1)*(gamma**2 - 2*gamma + 2)",
+      "first_gamma": "2 - sqrt(3)",
+      "norm_radius_squared": "14 - 8*sqrt(3)",
+      "at_gamma_1_3_hurwitz_minors": [
+        "10/3",
+        "344/27",
+        "-208/27",
+        "-4160/243"
+      ],
+      "original_contact": [
+        "0",
+        "0",
+        "1 - sqrt(3)",
+        "0"
+      ]
+    },
+    "real_scale_error": {
+      "guardian": "48",
+      "radius": "infinity",
+      "norm": "gamma**2*s**2 + gamma**2 + s**4 + 4*s**3 + 6*s**2 + 4*s + 2"
+    }
+  },
+  "E5_variant": {
+    "p1_components": [
+      "-s - 1",
+      "s",
+      "-s - 1",
+      "0"
+    ],
+    "guardian": "-8*(gamma - 1)**2*(3*gamma**3 - 9*gamma**2 + 10*gamma - 6)",
+    "first_gamma": "1",
+    "multiplicity": 2,
+    "next_root_interval": [
+      "1747/1000",
+      "1748/1000"
+    ],
+    "stable_at_gamma_3_2": true,
+    "original_zero": "0"
+  }
+}

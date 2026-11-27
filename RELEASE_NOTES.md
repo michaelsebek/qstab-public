@@ -1,3 +1,15 @@
+# qstab 0.20.0
+
+Adds the scalar one-quaternion study, exact first-positive-ray certificates (`qstab.raycertificate`) and verification of supplied global-radius bounds (`qstab.radiuscertificate`). Extends fixed-frequency gain geometry, ordered SVD diagnostics, original-polynomial evaluation witnesses and frequency scaling. Decimal/scientific text and polynomial zero identities now remain exact throughout the symbolic branch. See [the one-parameter guide](docs/oneparameter_article.md).
+
+Native MATLAB R2024b Update 2 evidence is attributed to the actual versions: the rc.1 transcript reports 748/748 ordinary public checks; rc.2 passed 32/32 targeted checks and 13/13 article groups with 139/139 comparisons, including 9 radius certificates, 14 ray certificates (13 finite contacts and one unbounded ray), 13 finite original-polynomial liftings and 42 exact identities. The 221 installed MATLAB source hashes in the article report match the delivered rc.2. Numerical tangencies can remain unresolved while exact first-contact proofs succeed; the report retains both outcomes.
+
+Relative to the tested rc.2, finalization changes four MATLAB files only in version/descriptive strings, plus documentation and publication metadata. The other 217 MATLAB files, all numerical and symbolic algorithms, all examples and all test implementations are byte-identical. The complete 748-check suite was not rerun on rc.2; no new native execution of the renamed final distribution is claimed. [Validation](verification/VALIDATION.md) records the earlier failed exact rc.1 run and the successful rc.2 replacement separately.
+
+Exact proofs require optional Symbolic Math Toolbox and apply to continuous-time scalar polynomial families with rational component data and fixed leading coefficient. The global-radius API verifies user-supplied bounds. It does not claim a general exact radius algorithm for uncertain quaternion matrices.
+
+---
+
 # qstab 0.19.0 · 20 November 2026
 
 Adds a reproducible study of the interval manuscript v7 and supplement v5, with 24 source-linked example groups, independent comparison values, eight figure exports, and an automatically rebuilt result ZIP. New public functions are `qstab.intervalfaces`, `qstab.boxfreqmargin`, and `qstab.rootmotion`. The opt-in `Reduction='interval-faces'` uses the new continuous degree/parity-aware selection in zero exclusion; existing reduction modes retain their previous meaning.

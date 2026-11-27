@@ -1,0 +1,292 @@
+<h1
+id="scalar-one-parameter-article-calculations-certificates-and-saved-results">Scalar
+one-parameter article: calculations, certificates and saved results</h1>
+<p>Version 0.20.0 accompanies Michael Šebek’s <em>Stability Radii of
+Quaternionic Polynomial Families With One Constant Quaternion
+Parameter</em>, supplied revision 7 of 26 November 2026. Submission to
+<em>Systems &amp; Control Letters</em> is planned. This description does
+not assert journal acceptance or a newly assigned DOI. The manuscript
+itself is not redistributed.</p>
+<h2 id="run-one-example-or-the-whole-article">Run one example or the
+whole article</h2>
+<p>From the installed public root:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">qstab_setup</span>(<span class="ss">&#39;Examples&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">run_qstab_oneparameter</span>(<span class="ss">&#39;list&#39;</span>)<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> <span class="va">run_qstab_oneparameter</span>(<span class="ss">&#39;E1&#39;</span><span class="op">,</span><span class="ss">&#39;Plots&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">A</span>.<span class="va">status</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="va">A</span>.<span class="va">archiveFile</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> <span class="va">run_qstab_oneparameter</span>(<span class="ss">&#39;all&#39;</span><span class="op">,</span><span class="ss">&#39;Plots&#39;</span><span class="op">,</span><span class="va">true</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="ss">&#39;ExactCertificates&#39;</span><span class="op">,</span><span class="ss">&#39;auto&#39;</span>)<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="va">A</span>.<span class="va">status</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="va">A</span>.<span class="va">articleComplete</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="va">A</span>.<span class="va">archiveFile</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">A</span>.<span class="va">ok</span><span class="op">,</span><span class="ss">&#39;Inspect the article report: %s&#39;</span><span class="op">,</span><span class="va">A</span>.<span class="va">archiveFile</span>)</span></code></pre></div>
+<p>The first two calls use the same catalogue as the full run.
+<code>Cases={'E1','E5','E5V'}</code> selects several keys. Defaults use
+MATLAB’s native <code>quaternion</code> inputs.
+<code>UseQuaternion=false</code> explicitly selects ordinary real
+component structures. MATLAB never starts Python or installs a product
+during these calls.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Source question</th>
+<th>What is actually checked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E1</td>
+<td>Left versus right calibration</td>
+<td>Both fixed-frequency formulas, ordered critical gains, nonunit rays
+and all-frequency radius bounds.</td>
+</tr>
+<tr class="even">
+<td>E2</td>
+<td>Singular perturbation frequency matrix</td>
+<td>A rank-one perturbation, a finite contact, its original-polynomial
+witness and ray.</td>
+</tr>
+<tr class="odd">
+<td>E3</td>
+<td>Multiple nearest gains</td>
+<td>A sphere with center −1/2 and radius 1/√2; every shown critical
+parameter has norm √3/2.</td>
+</tr>
+<tr class="even">
+<td>E4</td>
+<td>Near-degenerate gain geometry</td>
+<td>A unique or unresolved sensitive gain; a tiny singular-value gap is
+not a proof of a sphere.</td>
+</tr>
+<tr class="odd">
+<td>E5</td>
+<td>Tangential first loss</td>
+<td>The first contact at one, even if the numerical ray remains
+unresolved and stability later returns.</td>
+</tr>
+<tr class="even">
+<td>E5V</td>
+<td>No common complex slice</td>
+<td>The additional noncommuting tangency at one.</td>
+</tr>
+<tr class="odd">
+<td>E5C</td>
+<td>Norm-induced multiplicity</td>
+<td>The real cubic’s first contact at one, without skipping an
+even-multiplicity determinant zero.</td>
+</tr>
+<tr class="even">
+<td>E6</td>
+<td>A flat optimum</td>
+<td>The small critical frequency and distinction between a numerical
+bracket and an exact certificate.</td>
+</tr>
+<tr class="odd">
+<td>E7</td>
+<td>Physical scaling</td>
+<td>E1 with amplitude 10^80 and frequency scale 10^6; parameter radii
+are unchanged.</td>
+</tr>
+<tr class="even">
+<td>D11–D13</td>
+<td>Directional diagnostics</td>
+<td>No finite contact, rejection of a later nonimaginary guardian
+candidate, and spherical contact.</td>
+</tr>
+<tr class="odd">
+<td>A01</td>
+<td>Assumptions and conventions</td>
+<td>Zero perturbation, nonmonic coefficients and an unnormalized
+direction.</td>
+</tr>
+</tbody>
+</table>
+<p>The catalogue includes nine case-side global radius problems and
+fourteen rays, including the new nonslice tangency. It preserves the
+article’s rational source data and reference values separately from
+actual function outputs. Machine-dependent runtimes and SVD witness
+errors remain diagnostics rather than portable pass constants.</p>
+<h2 id="outputs-and-evidence-levels">Outputs and evidence levels</h2>
+<p><code>A.outputDirectory</code> is a unique run folder under
+<code>&lt;public root&gt;/oneparameter_results</code>. It contains the
+MAT report, readable text, comparison CSV and requested figures.
+<code>A.archiveFile</code> is always
+<code>&lt;public root&gt;/qstab_oneparameter_results.zip</code>. The ZIP
+is staged, unpacked and compared with the current files before
+replacement. Earlier raw run folders remain available; the fixed ZIP
+contains the most recent invocation, including a single-example
+invocation.</p>
+<ul>
+<li><code>A.ok</code> means that the executed comparisons passed and
+explicit requirements were met.</li>
+<li><code>A.articleComplete</code> additionally requires the complete
+catalogue, all required fresh exact certificates and the 42 additional
+identities.</li>
+<li><code>A.numericalAllResolved</code> tracks the numerical ray results
+independently. A difficult tangency can correctly remain unresolved in
+the numerical branch while an exact first-root proof succeeds.</li>
+<li><code>A.exact</code> states whether exact arithmetic was actually
+executed. An archived source certificate is never silently counted as a
+fresh proof.</li>
+<li>Input hashes, source provenance, resolved function paths and current
+source inventory remain in the report. The unsigned manifest detects
+consistency, not publisher identity.</li>
+</ul>
+<p>Errors inside individual examples are recorded before the final
+archive is made. Invalid options or an unavailable explicitly requested
+native input facility fail at preflight. Use a writable package root.
+The runner restores its temporary MATLAB path additions and does not
+overwrite caller variables or initialized symbols.</p>
+<h2 id="numerical-margins-and-gain-geometry">Numerical margins and gain
+geometry</h2>
+<p>For the scalar CT model</p>
+<p><span class="math display">\[
+p_L(s,t)=p_0(s)+t p_1(s),\qquad p_R(s,t)=p_0(s)+p_1(s)t,
+\]</span></p>
+<p>one quaternion is shared by every coefficient. The multiplication
+side belongs to the model. The nominal polynomial must be Hurwitz and
+the perturbation must have lower degree for these CT radius methods.</p>
+<p><code>qstab.freqmargin</code> minimizes the norm of the parameter
+over the imaginary quaternion sphere at a prescribed frequency.
+<code>qstab.stabilityradius</code> additionally covers all frequencies
+and returns a numerical lower/upper bracket.
+<code>qstab.raymargin</code> instead fixes a direction and returns the
+negative and positive endpoints of the connected stable interval around
+zero. With <code>t=alpha*u</code>, endpoint <code>alpha</code> has
+parameter norm <code>abs(alpha)*abs(u)</code>; <code>u</code> is not
+normalized.</p>
+<p>The new <code>Info.geometry{k}</code> describes a nearest-gain point
+or sphere, or explicitly unresolved/empty geometry. For a sphere, its
+ordinary real description is</p>
+<p><span class="math display">\[
+t=c+r_s Bv,\quad B\in\mathbb R^{4\times3},\quad B^TB=I,\quad \|v\|_2=1.
+\]</span></p>
+<p>Rows are the real, i, j and k coordinates. <code>r_s</code> is the
+sphere’s radius about its center, not the norm radius returned by the
+first output. <code>Info.zeroWitnesses{k}</code> records right- and
+left-evaluation zeros on the original critical polynomial, their status
+and residuals. A <code>sphericalCandidate</code> needs exact
+confirmation; a complex class representative need not be an evaluation
+zero at that orientation.</p>
+<p>An independent ordered 2×2 complex SVD comparison is reported without
+a new Control System Toolbox dependency. It is a floating-point
+diagnostic, not a proof of exact singular-value multiplicity or a
+generic quaternion-matrix stability-radius formula.</p>
+<p>CT scalar margins accept <code>FrequencyScale='auto'</code> or a
+positive scalar. They may work with <code>s=tau*sigma</code> and a
+common positive coefficient scaling. Parameter radii, multiplication
+order and ray coordinates are unchanged; frequencies and boundary points
+are returned in the original units. <code>Info.scaling</code> records
+the transformation. The nominal <code>isstable</code> decision rule is
+not weakened.</p>
+<h2 id="optional-exact-methods">Optional exact methods</h2>
+<p>These calls require <strong>Symbolic Math Toolbox</strong>. Ordinary
+numerical functions do not.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">provedBox</span><span class="op">,</span><span class="va">I</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">radiuscertificate</span>([<span class="fl">1</span> <span class="fl">1</span> <span class="fl">1</span>]<span class="op">,</span><span class="fl">1</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    {<span class="ss">&#39;0.8660&#39;</span><span class="op">,</span><span class="ss">&#39;0.8661&#39;</span>})<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">I</span>.<span class="va">certified</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">provedBox</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="va">I</span>.<span class="va">exactBounds</span></span></code></pre></div>
+<p><code>radiuscertificate</code> verifies supplied rational bounds over
+the whole frequency half-line. It does not automatically optimize a new
+bracket. Both the lower and upper proof must succeed. Failure to verify
+proposed bounds is not an instability decision.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">P0</span> <span class="op">=</span> <span class="va">struct</span>(<span class="ss">&#39;a&#39;</span><span class="op">,</span>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">1</span>]<span class="op">,</span><span class="ss">&#39;b&#39;</span><span class="op">,</span>[<span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span>]<span class="op">,</span> <span class="op">...</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            <span class="ss">&#39;c&#39;</span><span class="op">,</span>[<span class="fl">1</span> <span class="fl">0</span> <span class="fl">0</span>]<span class="op">,</span><span class="ss">&#39;d&#39;</span><span class="op">,</span>[<span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span>])<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="va">P1</span> <span class="op">=</span> <span class="va">struct</span>(<span class="ss">&#39;a&#39;</span><span class="op">,</span>[<span class="op">-</span><span class="fl">1</span> <span class="op">-</span><span class="fl">1</span>]<span class="op">,</span><span class="ss">&#39;b&#39;</span><span class="op">,</span>[<span class="fl">0</span> <span class="fl">0</span>]<span class="op">,</span><span class="ss">&#39;c&#39;</span><span class="op">,</span>[<span class="op">-</span><span class="fl">1</span> <span class="op">-</span><span class="fl">1</span>]<span class="op">,</span><span class="ss">&#39;d&#39;</span><span class="op">,</span>[<span class="fl">0</span> <span class="fl">0</span>])<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="va">F</span> <span class="op">=</span> <span class="va">qstab</span>.<span class="va">family</span>(<span class="ss">&#39;oneparameter&#39;</span><span class="op">,</span><span class="va">P0</span><span class="op">,</span><span class="va">P1</span>)<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>[<span class="va">gBox</span><span class="op">,</span><span class="va">I</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">raycertificate</span>(<span class="va">F</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="va">gBox</span>                 <span class="co">% first positive contact: [1 1]</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="va">I</span>.<span class="va">certified</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="va">I</span>.<span class="va">lifting</span></span></code></pre></div>
+<p><code>raycertificate</code> isolates the first
+<strong>positive</strong> ray contact using an exact square-free Hurwitz
+determinant and Sturm counts. Multiple roots and tangencies are
+retained. This output is an enclosure of one nonnegative number, not the
+signed interval from <code>raymargin</code>. Call with the opposite
+direction for the negative side. <code>[Inf Inf]</code> proves no
+positive contact; unresolved isolation returns NaNs. <code>AbsTol</code>
+and <code>MaxBisections</code> control refinement; a proof can be valid
+even if its requested width was not reached, which is reported by
+<code>widthTargetMet</code>.</p>
+<p><code>Info.certified</code> records the first-contact proof.
+<code>Info.lifting.exact</code> separately records an exact verification
+on the original quaternion polynomial. The default
+<code>VerifyLifting=true</code> requests it; numerical residuals are not
+a replacement for that proof. Implicit algebraic descriptions may be
+retained rather than untrustworthy decimal roots.</p>
+<p>Stored doubles denote their exact binary rationals. Decimal text such
+as <code>'0.1'</code>, scientific text such as <code>'1e-1'</code>, and
+fraction text such as <code>'1/10'</code> denote the same exact rational
+number. Candidate rc.2 constructs these values from integer digits and
+powers of ten; it does not rely on a symbolic floating-point text
+conversion. A symbolic input must itself be an exact integer/rational
+object; <code>vpa</code> approximations are rejected. To certify
+intended decimal polynomial coefficients such as precisely 1/10, provide
+<code>RationalData</code> with 4-by-N ascending component arrays of
+rational strings. They must round to the supplied coefficients and
+preserve exact zeros; no rational approximation is guessed. Exact
+endpoint strings are authoritative; double output endpoints are rounded
+outwards. Reports contain ordinary serializable MATLAB data, not
+symbolic objects.</p>
+<p>For a bounded family, exact functions require
+<code>ExtendParameter=true</code> and state that their result concerns
+the unrestricted model. They are scalar continuous-time methods, with
+<code>Variable='s'</code> and no declared extra grade. General uncertain
+quaternion state matrices and discrete exact certificates are outside
+this new scope.</p>
+<h2 id="regression-checks-and-independent-replay">Regression checks and
+independent replay</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">R</span> <span class="op">=</span> <span class="va">run_qstab_public</span>(<span class="ss">&#39;Figures&#39;</span><span class="op">,</span><span class="va">false</span>)<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">R</span>.<span class="va">ok</span> <span class="op">&amp;&amp;</span> <span class="va">R</span>.<span class="va">publicAcceptance</span>.<span class="va">ok</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">T</span> <span class="op">=</span> <span class="va">test_qstab_oneparameter</span>(<span class="ss">&#39;ExactCertificates&#39;</span><span class="op">,</span><span class="ss">&#39;auto&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="va">T</span>.<span class="va">status</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="va">T</span>.<span class="va">complete</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="va">T</span>.<span class="va">archiveFile</span></span></code></pre></div>
+<p>The main acceptance checks native quaternion, graphics, source
+resolution and numerical regressions. The targeted suite additionally
+exercises the reusable exact methods when available. Their archives are
+<code>qstab_test_results.zip</code> and
+<code>qstab_oneparameter_test_results.zip</code>. Missing optional exact
+work is not labelled complete.</p>
+<p>To require every article proof:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> <span class="va">run_qstab_oneparameter</span>(<span class="ss">&#39;all&#39;</span><span class="op">,</span><span class="ss">&#39;Plots&#39;</span><span class="op">,</span><span class="va">true</span><span class="op">,</span><span class="ss">&#39;ExactCertificates&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">A</span>.<span class="va">articleComplete</span><span class="op">,</span><span class="ss">&#39;Incomplete proofs: %s&#39;</span><span class="op">,</span><span class="va">A</span>.<span class="va">archiveFile</span>)</span></code></pre></div>
+<p>An independent Python/SymPy replay is available as an explicit
+command from the package root:</p>
+<pre class="text"><code>python reproducibility/qb01/replay_exact.py</code></pre>
+<p>See <a href="../reproducibility/qb01/README.md">its README</a> for
+dependencies and outputs. This replays the preserved original
+thirteen-ray/376-check calculations, nine all-frequency certificates and
+42 additional identities. It is separate evidence from executing the new
+MATLAB APIs. The supplied article and replay source hashes are in <a
+href="../reproducibility/qb01/source_provenance.json">source_provenance.json</a>.</p>
+<p>Native MATLAB R2024b Update 2 reports for rc.2 record 32/32 targeted
+checks and the complete 13-group article study with 139/139 comparisons.
+Fresh exact work includes 9 global-radius certificates, 14 ray
+certificates (13 finite contacts and one unbounded ray), 13 finite
+original-polynomial liftings and 42 identities. All 221 MATLAB source
+hashes recorded in the article report match the supplied rc.2. The
+ordinary numerical ray results for E5, E6, E5V and E5C remain
+unresolved; their separate exact certificates succeed. This is retained
+as an intended distinction in the report.</p>
+<p>The final 0.20.0 preserves those numerical, symbolic, example and
+test implementations and updates version/descriptive text, documentation
+and metadata. The earlier 748/748 ordinary public result belongs to
+rc.1; its separate 27/28 exact result remains a failed historical run.
+No new full public or final-version native execution is claimed. See <a
+href="../verification/VALIDATION.md">the validation ledger</a> and <a
+href="TESTING_CZ.txt">public verification commands</a>.</p>

@@ -1,0 +1,1814 @@
+{
+  "schema": "qstab.native-matlab-summary.1",
+  "softwareVersion": "0.20.0-rc.2",
+  "evidenceType": "sanitized-summary-of-user-supplied-native-MATLAB-public-report-archives",
+  "summaryDate": "2026-11-27",
+  "runtime": "24.2.0.2773142 (R2024b) Update 2",
+  "computer": "PCWIN64",
+  "runtimeAgreesAcrossReports": true,
+  "scope": "Selected public scalar one-parameter tests and article checks; historical full-public validation remains a separate rc.1 record.",
+  "numericalComputationsRerunForThisSummary": false,
+  "sourceFilesModifiedForThisSummary": false,
+  "targeted": {
+    "archive": {
+      "name": "qstab_oneparameter_test_results.zip",
+      "bytes": 7193,
+      "sha256": "3f0dd951bb6afab6a37c36c3069a766c58f93a06686790d6c9273f8bb2cea9ba",
+      "entries": [
+        {
+          "name": "report.mat",
+          "bytes": 5444,
+          "sha256": "c53df498564779c0e17ce4571b1f3f19048ed4c569768e93c5ccd90fae82d1be"
+        },
+        {
+          "name": "report.txt",
+          "bytes": 3121,
+          "sha256": "110c0997f26e70c28b0ebb4151ffae9cd0558754c47b101bd06fb0499755b4d8"
+        }
+      ]
+    },
+    "reportSchema": "qstab.oneparameter.tests.1",
+    "runId": "20261127T093302_tp5f05c39c_cbcc_4546_82ec_0e9bcd494cac",
+    "status": "ALL_EXECUTED_CHECKS_PASSED",
+    "nativeMATLABRun": true,
+    "passed": 32,
+    "failed": 0,
+    "skipped": 0,
+    "completeExactScope": true,
+    "exactRequested": true,
+    "exactAvailable": true,
+    "exactExecuted": true,
+    "groupCounts": {
+      "numeric": 12,
+      "examples": 5,
+      "exact": 15
+    },
+    "elapsedSeconds": 23.9549443,
+    "matAndTextAgree": true,
+    "sourceManifestInThisReport": false,
+    "sourceLinkageNote": "This targeted report identifies rc.2 by its toolbox metadata but does not contain an installed-source hash manifest. The separate article report supplies the verified source manifest."
+  },
+  "article": {
+    "archive": {
+      "name": "qstab_oneparameter_results.zip",
+      "bytes": 470946,
+      "sha256": "6b14e114a15f5fb4140b22d156df9cd511159c43d04b8b64e915ec71806ffe44",
+      "entries": [
+        {
+          "name": "report.mat",
+          "bytes": 217939,
+          "sha256": "29d3f83439ff7f2319bddc2d93c4f81af2b2bbd377c26e2981c18dd3d9753237"
+        },
+        {
+          "name": "report.txt",
+          "bytes": 37842,
+          "sha256": "4772d3547e3799ea541faeda231e6d93a8601276adf5e44fbd70f57fc2e48dcf"
+        },
+        {
+          "name": "comparison.csv",
+          "bytes": 27911,
+          "sha256": "71dc09c3787f6fce1f8e7da9f3467ea85ddf88e5f6407fcf2161af15b12bc059"
+        },
+        {
+          "name": "radius_results.csv",
+          "bytes": 1862,
+          "sha256": "bbb8e385cb153f0abe2bef3c55cd9bfa10ccc0f806ce29f95359fe84ef964c93"
+        },
+        {
+          "name": "ray_results.csv",
+          "bytes": 1555,
+          "sha256": "9e6c3834eacbb9cce5109839c873dd1fa3fbcaaf2edfd82a46452240143efcde"
+        },
+        {
+          "name": "E1_calibration_margins.png",
+          "bytes": 47597,
+          "sha256": "2a4374a19be48f031765dc4d2f2f58e289074726375aa7299a12f2b405c82b58"
+        },
+        {
+          "name": "E1_calibration_margins.pdf",
+          "bytes": 10102,
+          "sha256": "d0c0e439ed520d12fd2727c1ce5b7891d82e95cd88c7b38840977ad824a90bf4"
+        },
+        {
+          "name": "E1_calibration_margins.fig",
+          "bytes": 16882,
+          "sha256": "51d1143992c2c4848b5cf7dfaf1c994e50d76d39cb67bbab3fc4a128b97ad34d"
+        },
+        {
+          "name": "E1_calibration_margins.csv",
+          "bytes": 10914,
+          "sha256": "5f3bc41b771628cba29efc267a0181d80c67c80c1da9aacd18ef0f00365684cf"
+        },
+        {
+          "name": "E3_nearest_gain_sphere.png",
+          "bytes": 89833,
+          "sha256": "8ef355c4c9ceb9cf18cc76374ebb1e7833e71208905da3e4de328ae57e4665fa"
+        },
+        {
+          "name": "E3_nearest_gain_sphere.pdf",
+          "bytes": 68188,
+          "sha256": "c6056b5df283cf8982e6da726cd15b2c274d1ec03149c2e926ede2d4f325eef1"
+        },
+        {
+          "name": "E3_nearest_gain_sphere.fig",
+          "bytes": 15337,
+          "sha256": "40ded9259787578013c75429e207469ebdffcf8481c5f71f6338917207bfc159"
+        },
+        {
+          "name": "E3_nearest_gain_sphere.csv",
+          "bytes": 429,
+          "sha256": "259587412b4197a2bf06c874141e1b8c4e5bde24b98f860e92de0412610c0e6c"
+        }
+      ]
+    },
+    "reportSchema": "qstab.oneparameter.study.1",
+    "runId": "20261127T093342_tp80b94222_8c07_4c39_a98a_6e9b983fc64d",
+    "status": "ARTICLE_CHECKS_AND_EXACT_PROOFS_PASSED",
+    "isOctave": false,
+    "nativeQuaternionInputs": true,
+    "passedGroups": 13,
+    "failedGroups": 0,
+    "checksPassed": 139,
+    "checksFailed": 0,
+    "checkKinds": {
+      "numerical": 21,
+      "pointwise": 21,
+      "residual": 13,
+      "global-bracket": 10,
+      "exact": 37,
+      "ray": 14,
+      "exact-lifting": 13,
+      "identity": 6,
+      "diagnostic": 4
+    },
+    "articleComplete": true,
+    "numericalAllResolved": false,
+    "elapsedSeconds": 44.4885097,
+    "matTextAndCsvAgree": true,
+    "exact": {
+      "requested": true,
+      "executed": true,
+      "status": "EXECUTED_PASSED",
+      "radiusCertificates": 9,
+      "rayCertificates": 14,
+      "finiteRayContactsCertified": 13,
+      "unboundedRayProofs": 1,
+      "originalPolynomialRayContactProofs": 13,
+      "identityChecks": 42,
+      "identityFailures": 0,
+      "certificateCountsVerifiedFromStoredCaseRecords": true,
+      "identitiesComputedInReportedMATLABRun": true,
+      "radiusProofs": [
+        {
+          "case": "E1",
+          "side": "left",
+          "status": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1414213562373/1000000000000",
+            "707106781187/500000000000"
+          ]
+        },
+        {
+          "case": "E1",
+          "side": "right",
+          "status": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "378937381963/1000000000000",
+            "94734345491/250000000000"
+          ]
+        },
+        {
+          "case": "E2",
+          "side": "left",
+          "status": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "395284707521/500000000000",
+            "790569415043/1000000000000"
+          ]
+        },
+        {
+          "case": "E3",
+          "side": "left",
+          "status": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "108253175473/125000000000",
+            "173205080757/200000000000"
+          ]
+        },
+        {
+          "case": "E4",
+          "side": "left",
+          "status": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "433012701851/500000000000",
+            "866025403703/1000000000000"
+          ]
+        },
+        {
+          "case": "E5",
+          "side": "left",
+          "status": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "46789327849/125000000000",
+            "374314622793/1000000000000"
+          ]
+        },
+        {
+          "case": "E6",
+          "side": "left",
+          "status": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "2000000009999/1000000000000",
+            "200000001/100000000"
+          ]
+        },
+        {
+          "case": "E7",
+          "side": "left",
+          "status": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1414213562373/1000000000000",
+            "707106781187/500000000000"
+          ]
+        },
+        {
+          "case": "E7",
+          "side": "right",
+          "status": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "378937381963/1000000000000",
+            "94734345491/250000000000"
+          ]
+        }
+      ],
+      "rayProofs": [
+        {
+          "case": "E1",
+          "ray": "D01",
+          "side": "left",
+          "numericalStatus": "computed",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1",
+            "1"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E1",
+          "ray": "D02",
+          "side": "right",
+          "numericalStatus": "computed",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "294613252731/1099511627776",
+            "73653313183/274877906944"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E2",
+          "ray": "D03",
+          "side": "left",
+          "numericalStatus": "computed",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1/4",
+            "1/4"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E3",
+          "ray": "D04",
+          "side": "left",
+          "numericalStatus": "computed",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "679535556991/1099511627776",
+            "5308871539/8589934592"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E4",
+          "ray": "D05",
+          "side": "left",
+          "numericalStatus": "computed",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1099511627775/1099511627776",
+            "1"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E5",
+          "ray": "D07",
+          "side": "left",
+          "numericalStatus": "undetermined",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1",
+            "1"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E6",
+          "ray": "D06",
+          "side": "left",
+          "numericalStatus": "undetermined",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1",
+            "1"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E7",
+          "ray": "D08",
+          "side": "left",
+          "numericalStatus": "computed",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1",
+            "1"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E7",
+          "ray": "D09",
+          "side": "right",
+          "numericalStatus": "computed",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "294613252731/1099511627776",
+            "73653313183/274877906944"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E5V",
+          "ray": "D14",
+          "side": "left",
+          "numericalStatus": "undetermined",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1",
+            "1"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "E5C",
+          "ray": "D10",
+          "side": "left",
+          "numericalStatus": "undetermined",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1",
+            "1"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "D11",
+          "ray": "D11",
+          "side": "left",
+          "numericalStatus": "computed",
+          "exactStatus": "unbounded",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "Inf",
+            "Inf"
+          ],
+          "originalPolynomialLiftingStatus": "notRequested"
+        },
+        {
+          "case": "D12",
+          "ray": "D12",
+          "side": "left",
+          "numericalStatus": "computed",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "2",
+            "2"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        },
+        {
+          "case": "D13",
+          "ray": "D13",
+          "side": "left",
+          "numericalStatus": "computed",
+          "exactStatus": "certified",
+          "computedInReportedMATLABRun": true,
+          "assurance": "exact-rational",
+          "exactBounds": [
+            "1",
+            "1"
+          ],
+          "originalPolynomialLiftingStatus": "verified"
+        }
+      ]
+    },
+    "unresolvedNumericalRays": [
+      {
+        "case": "E5",
+        "ray": "D07",
+        "numericalStatus": "undetermined",
+        "exactStatus": "certified"
+      },
+      {
+        "case": "E6",
+        "ray": "D06",
+        "numericalStatus": "undetermined",
+        "exactStatus": "certified"
+      },
+      {
+        "case": "E5V",
+        "ray": "D14",
+        "numericalStatus": "undetermined",
+        "exactStatus": "certified"
+      },
+      {
+        "case": "E5C",
+        "ray": "D10",
+        "numericalStatus": "undetermined",
+        "exactStatus": "certified"
+      }
+    ],
+    "unresolvedInterpretation": "Four numerical ray calculations remain explicitly undetermined. This is the expected diagnostic behavior for these cases; their first positive contacts are established by the separately executed exact certificates.",
+    "cases": [
+      {
+        "id": "E1",
+        "title": "Sensor and actuator calibration",
+        "status": "MATCHED",
+        "checksPassed": 27,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 2,
+        "exactRayCertificates": 2,
+        "exactOriginalPolynomialContactProofs": 2,
+        "unresolvedNumericalRays": 0
+      },
+      {
+        "id": "E2",
+        "title": "Rank-one perturbation frequency matrix",
+        "status": "MATCHED",
+        "checksPassed": 14,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 1,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 1,
+        "unresolvedNumericalRays": 0
+      },
+      {
+        "id": "E3",
+        "title": "Sphere of nearest gains",
+        "status": "MATCHED",
+        "checksPassed": 13,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 1,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 1,
+        "unresolvedNumericalRays": 0
+      },
+      {
+        "id": "E4",
+        "title": "Nearly repeated singular values",
+        "status": "MATCHED",
+        "checksPassed": 12,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 1,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 1,
+        "unresolvedNumericalRays": 0
+      },
+      {
+        "id": "E5",
+        "title": "Tangential first contact",
+        "status": "MATCHED_WITH_UNRESOLVED_RAY",
+        "checksPassed": 13,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 1,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 1,
+        "unresolvedNumericalRays": 1
+      },
+      {
+        "id": "E6",
+        "title": "Nearly flat frequency optimum",
+        "status": "MATCHED_WITH_UNRESOLVED_RAY",
+        "checksPassed": 11,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 1,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 1,
+        "unresolvedNumericalRays": 1
+      },
+      {
+        "id": "E7",
+        "title": "Amplitude and frequency rescaling",
+        "status": "MATCHED",
+        "checksPassed": 23,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 2,
+        "exactRayCertificates": 2,
+        "exactOriginalPolynomialContactProofs": 2,
+        "unresolvedNumericalRays": 0
+      },
+      {
+        "id": "E5V",
+        "title": "Tangency without a common complex slice",
+        "status": "MATCHED_WITH_UNRESOLVED_RAY",
+        "checksPassed": 7,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 0,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 1,
+        "unresolvedNumericalRays": 1
+      },
+      {
+        "id": "E5C",
+        "title": "Real cubic and inflated multiplicity",
+        "status": "MATCHED_WITH_UNRESOLVED_RAY",
+        "checksPassed": 4,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 0,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 1,
+        "unresolvedNumericalRays": 1
+      },
+      {
+        "id": "D11",
+        "title": "Infinite directional margin",
+        "status": "MATCHED",
+        "checksPassed": 3,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 0,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 0,
+        "unresolvedNumericalRays": 0
+      },
+      {
+        "id": "D12",
+        "title": "Later guardian candidate without imaginary contact",
+        "status": "MATCHED",
+        "checksPassed": 4,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 0,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 1,
+        "unresolvedNumericalRays": 0
+      },
+      {
+        "id": "D13",
+        "title": "Spherical contact with zero odd part",
+        "status": "MATCHED",
+        "checksPassed": 4,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 0,
+        "exactRayCertificates": 1,
+        "exactOriginalPolynomialContactProofs": 1,
+        "unresolvedNumericalRays": 0
+      },
+      {
+        "id": "A01",
+        "title": "Zero, nonmonic and nonunit-direction checks",
+        "status": "MATCHED",
+        "checksPassed": 4,
+        "checksFailed": 0,
+        "exactRadiusCertificates": 0,
+        "exactRayCertificates": 0,
+        "exactOriginalPolynomialContactProofs": 0,
+        "unresolvedNumericalRays": 0
+      }
+    ],
+    "assurance": "Numerical comparisons, fresh exact proofs and archived reference certificates are separate. No native MATLAB validation is inferred from an auxiliary execution."
+  },
+  "sourceProvenance": {
+    "sourceArchive": {
+      "name": "qstab_public_0_20_0_rc2.zip",
+      "bytes": 2246753,
+      "sha256": "e0c375886120a2dd7165da73cc09f5aefa39d95483e92bab38737ed1ea071ff8"
+    },
+    "matchedPackageFilesAgainstOriginalArchive": 464,
+    "unexpectedFilesInComparedPackage": 0,
+    "manifestReport": "qstab_oneparameter_results.zip/report.mat",
+    "manifestAlgorithm": "SHA-256",
+    "recordedMatlabSourceCount": 221,
+    "actualMatlabSourceCount": 221,
+    "matchedMatlabSourceCount": 221,
+    "missingMatlabSources": [],
+    "mismatchingMatlabSources": [],
+    "unrecordedMatlabSources": [],
+    "recordedInstallationIntegrity": {
+      "ok": true,
+      "manifestValid": true,
+      "inventoryComplete": true,
+      "expectedCount": 221,
+      "observedCount": 221
+    },
+    "fixtureFiles": [
+      {
+        "path": "reproducibility/qb01/inputs.json",
+        "sha256": "6a859e81dfd1e3b59cdec9352b5048a15f325a3b96b4cc3356d5653c88baa478",
+        "matched": true
+      },
+      {
+        "path": "reproducibility/qb01/source_provenance.json",
+        "sha256": "54afb2b26634864f9116788cbc9b6c1ee84d66d5a48e1af217dcbd1558a7be34",
+        "matched": true
+      }
+    ],
+    "sourceFiles": [
+      {
+        "path": "examples/export_qstab_paper_figures.m",
+        "sha256": "8209e39e70e4a2034d2cd8737ce6803aec1131d2473bea0ba727ee5104f8b220",
+        "bytes": 7739
+      },
+      {
+        "path": "examples/plot_qstab_intervals.m",
+        "sha256": "54c3fb583c910f132f1d08420dd2d32c538e72d17593f90b254775ba9c52fcfc",
+        "bytes": 17766
+      },
+      {
+        "path": "examples/plot_qstab_oneparameter.m",
+        "sha256": "403bcfb915417d0bea0db8cd6e2d68593a64f6bde445049f47df315ccd9bc80c",
+        "bytes": 4796
+      },
+      {
+        "path": "examples/plot_qstab_paper_figure.m",
+        "sha256": "111adc6e8e967b15a09c9faaff5a10a7d157ce4fc7fa150700508a9b1529a488",
+        "bytes": 2739
+      },
+      {
+        "path": "examples/qstab_benchmark_assess.m",
+        "sha256": "6c8576567e7cb5cda6761dbb0e79798fc1b50d97ae9d5b37bd317a0b6249c99d",
+        "bytes": 5379
+      },
+      {
+        "path": "examples/qstab_benchmark_cases.m",
+        "sha256": "ca24c9fa23545e047a0ef85af5d3de581e84233ea04ba74dc0a9c8c70c13099e",
+        "bytes": 5145
+      },
+      {
+        "path": "examples/qstab_benchmark_plan.m",
+        "sha256": "87a2c593d78f470bda8c2d16ab82033f76ad077da98fd7414acdc9b547ebb33a",
+        "bytes": 2303
+      },
+      {
+        "path": "examples/qstab_benchmark_summarize.m",
+        "sha256": "149dcd864848a7239ba706257f5967203e51ae817ddda3153a8767bd428573f4",
+        "bytes": 4023
+      },
+      {
+        "path": "examples/qstab_demo.m",
+        "sha256": "67c9fec97a1e225e83c6653ba7609fbd62aff6975722008fc5d16f3536796ab6",
+        "bytes": 5632
+      },
+      {
+        "path": "examples/qstab_demo_plots.m",
+        "sha256": "116342505d0b36b495fc6fd095c71e875eed5110ed7b4bf65c0654909ccdfa37",
+        "bytes": 2324
+      },
+      {
+        "path": "examples/qstab_eigen_assess.m",
+        "sha256": "69050ed68b7d942a5a36b8c2871cbde9dfd1d2bb75f3db68e5e112358d22e6d7",
+        "bytes": 5720
+      },
+      {
+        "path": "examples/qstab_eigen_cases.m",
+        "sha256": "8d4198b3c52040629e806a4f8b8ac85bff2a7d60fdf9095629b61c498eae423f",
+        "bytes": 3581
+      },
+      {
+        "path": "examples/qstab_eigen_match.m",
+        "sha256": "b1b27c5eda97e12b6666545517a83c29dead206e1e1fccf825e171a7439d137a",
+        "bytes": 2670
+      },
+      {
+        "path": "examples/qstab_eigen_timing.m",
+        "sha256": "84f1b6ff093377960fbf085f6733fd28b378283576dcfa26acebc6e3a17a9579",
+        "bytes": 4610
+      },
+      {
+        "path": "examples/qstab_guide_example.m",
+        "sha256": "f60f0e02c5d0ad176879b780e5fd02f1e00b834348fe56961f4704eb5abe6c8e",
+        "bytes": 7224
+      },
+      {
+        "path": "examples/qstab_interval_cases.m",
+        "sha256": "79d2278567729567acb8f4fb1990949ce2e09c9a6b78e82b4949d5da3c411e46",
+        "bytes": 3171
+      },
+      {
+        "path": "examples/qstab_interval_evaluate.m",
+        "sha256": "d65ca0c66d1153c180ca7c35259090aa6a44037dadc29a64f3b0d02d4db578da",
+        "bytes": 20887
+      },
+      {
+        "path": "examples/qstab_oneparameter_cases.m",
+        "sha256": "655156c7406e1b2a83cd484122cbab24753e6113ed338fcfae2ddb2dfc69a9f2",
+        "bytes": 2169
+      },
+      {
+        "path": "examples/qstab_paper_cases.m",
+        "sha256": "f04262dd8fe1e401fb0446ea8386cd837fbeebbd38a2c7fcc4f43d064d64d44c",
+        "bytes": 7615
+      },
+      {
+        "path": "examples/qstab_paper_check.m",
+        "sha256": "fad3b223c30a7d8537a57994f8a6b5ef5db8bbeef8a1a4dd948ef340d407c175",
+        "bytes": 3115
+      },
+      {
+        "path": "examples/qstab_paper_evaluate.m",
+        "sha256": "8c3d3aaa929851e5a8225fc7f952706a65e9361ce6e50e7132fbce954f5583e4",
+        "bytes": 10475
+      },
+      {
+        "path": "examples/qstab_paper_extension_cases.m",
+        "sha256": "8fc3e11ec2027af3a5da435a6460e5d6a5bec5de7e4e7a4ef86092ad5a000287",
+        "bytes": 5412
+      },
+      {
+        "path": "examples/qstab_paper_extension_evaluate.m",
+        "sha256": "43fd37aa3c9196b19c382b2502bcffffa058e5d3b422d325cbeb3c8f1888d159",
+        "bytes": 10234
+      },
+      {
+        "path": "examples/qstab_paper_figures.m",
+        "sha256": "7e1ef4fd442f8c4eaece651973833bd4ae39aab23f7b3f7f3645f8bf007f40d4",
+        "bytes": 10090
+      },
+      {
+        "path": "examples/qstab_validate_paper_figure.m",
+        "sha256": "4905ff4ee295198f858adb34afd0ed656f89af6205a90bdcca85d8d747911458",
+        "bytes": 2302
+      },
+      {
+        "path": "examples/run_qb01_discrete.m",
+        "sha256": "53c5d6ddd2e1ad01e88532ddefbf63192223c46bfa17b44ac21f4d2afdcceb43",
+        "bytes": 3211
+      },
+      {
+        "path": "examples/run_qb01_examples.m",
+        "sha256": "1527b22fbe7b364b4ec46292e1f33bde2a8ea68e45e662aaa7528f3f89333345",
+        "bytes": 4105
+      },
+      {
+        "path": "examples/run_qb02_balls.m",
+        "sha256": "26698207a0f76d7c2b0ab40aa74f051ca7a0d7350018eef514dbc103c305d7e2",
+        "bytes": 2740
+      },
+      {
+        "path": "examples/run_qb02_boxes.m",
+        "sha256": "b1bdb406317601e98c815ce9b490180135ab994311dec3dedbf84307ea0f840b",
+        "bytes": 2066
+      },
+      {
+        "path": "examples/run_qb02_extensions.m",
+        "sha256": "77903b874e92884d86e4043fe963d133938b8893c47ee59f133917ba058c4020",
+        "bytes": 3750
+      },
+      {
+        "path": "examples/run_qb02_qb03_examples.m",
+        "sha256": "1ce279c1940e4e9517e6d14da07e1136f8bc5fc8618a84f021ac5c5292d388de",
+        "bytes": 2437
+      },
+      {
+        "path": "examples/run_qb03_four_generator_examples.m",
+        "sha256": "12964fb6f8be6c604c757e2938b64a8267e1ba3a2fce88576b498f3e982865a1",
+        "bytes": 1784
+      },
+      {
+        "path": "examples/run_qstab_benchmarks.m",
+        "sha256": "8c278657a630599d3a290ae706adf1d677fb4160b7c030e49bc2917b7dc30509",
+        "bytes": 8011
+      },
+      {
+        "path": "examples/run_qstab_diagnostics.m",
+        "sha256": "ad16bd1c3acd6a204fe67f6e12b9272074970298984ec9de1c4afb868c99f7e7",
+        "bytes": 5730
+      },
+      {
+        "path": "examples/run_qstab_eigen_comparison.m",
+        "sha256": "b77c18f9034c1f4208fa67ad8a927091f7482bf439261db3c4ea8360a0f557b2",
+        "bytes": 12544
+      },
+      {
+        "path": "examples/run_qstab_oneparameter.m",
+        "sha256": "539f42a8096fc22fdd829ac4ecc047092d5471e95bc903a340abd93c97925f08",
+        "bytes": 30527
+      },
+      {
+        "path": "examples/run_qstab_paper_extensions.m",
+        "sha256": "5914a91c945efa35113202354bbec859973cad78b47e4630a3139fc8c7b6e85f",
+        "bytes": 5663
+      },
+      {
+        "path": "examples/run_qstab_papers.m",
+        "sha256": "06b2cb4c167b4c94b2aa13a0500644848b8d620587361b66f8abbec930ed58b1",
+        "bytes": 5732
+      },
+      {
+        "path": "examples/verify_qstab_interval_certificates.m",
+        "sha256": "0ecfd4fdcd23bef7b4a7867d0f6579c6834e63732755a16c35e4405917deb4ae",
+        "bytes": 18016
+      },
+      {
+        "path": "examples/verify_qstab_oneparameter_identities.m",
+        "sha256": "b5af0a1f8c398318f8eb594493c4f83da6834cd3c3df067ffdf4390ae3bc9e66",
+        "bytes": 7016
+      },
+      {
+        "path": "private/qstab_public_figures.m",
+        "sha256": "1dc9f0ee525a55f5b536f871c2c3b0abfae400c2d4d0eaa2bf5c84126e666ee0",
+        "bytes": 3193
+      },
+      {
+        "path": "private/qstab_public_manifest.m",
+        "sha256": "24ca513ae183877ac36fd2d2a2e331cf0d2c009b7d7f622f81b56faebf749342",
+        "bytes": 3454
+      },
+      {
+        "path": "private/qstab_public_path_plan.m",
+        "sha256": "167fac6b5ce82cf63cfcd62d11ebfe517ebb0406008fbc1f44b0c895db1eb8e5",
+        "bytes": 2138
+      },
+      {
+        "path": "private/qstab_public_session.m",
+        "sha256": "112d0771afa4b041bd7ae4672e267b6f9f6d1d694784ce34aaf7cc7c0923cb60",
+        "bytes": 1097
+      },
+      {
+        "path": "private/qstab_source_manifest.m",
+        "sha256": "b7fdd0ab67e21bcb442fd6021c0ea01b5f5f0fd068ba25d646ade8c9fc69954d",
+        "bytes": 2442
+      },
+      {
+        "path": "private/qstab_wrapper_conflicts.m",
+        "sha256": "434b2df03a88b0fee6d46a0abd38dff75d55cbb2ca46961bac516a9273f45560",
+        "bytes": 1504
+      },
+      {
+        "path": "private/qstab_write_test_report.m",
+        "sha256": "01fb705ca32cabe7804fae47a455996dbf1b16e1e0a1885f656e922618dd9738",
+        "bytes": 5930
+      },
+      {
+        "path": "qstab_check_installation.m",
+        "sha256": "9bb99ba68b5b51786c9080b69e2ef5abce4ca7a8f53ad6e867a8e26e9f6f7f9d",
+        "bytes": 7389
+      },
+      {
+        "path": "qstab_setup.m",
+        "sha256": "3a121461bffb53ab1db8bf7a38b583fe22d114e0dfb2ac25df757f482a21970a",
+        "bytes": 2861
+      },
+      {
+        "path": "run_qstab_intervals.m",
+        "sha256": "40f9808052dcbc86058869c7e0999f8a94c42211ff7401d8094cad75c7d7b0e3",
+        "bytes": 9561
+      },
+      {
+        "path": "run_qstab_public.m",
+        "sha256": "e5ffbb72c81fa293a71f7291322df44c0038dfbda4a6fc042332dca2864e56be",
+        "bytes": 8041
+      },
+      {
+        "path": "src/+qstab/+internal/affinezeroexclude.m",
+        "sha256": "b5712c19dbd548452b1eb3877f25504bb0fc729c600b8c46b178d76f23ffaf5d",
+        "bytes": 9167
+      },
+      {
+        "path": "src/+qstab/+internal/ballmodel.m",
+        "sha256": "dea656d17c47f6dc9f4a78ed5b848ebfd8b70cd3208edf104ad8a4b8c790dd9d",
+        "bytes": 1473
+      },
+      {
+        "path": "src/+qstab/+internal/ballnorm.m",
+        "sha256": "4e643e70222b70182225bf37dcafdbc6896dcdbaaaa04d02f919ec9a5fddbe87",
+        "bytes": 227
+      },
+      {
+        "path": "src/+qstab/+internal/ballpoint.m",
+        "sha256": "a883462f9e36da20a7513e942ed682ca49b2a36d8ca482b30dd4dc9f77b221ae",
+        "bytes": 6367
+      },
+      {
+        "path": "src/+qstab/+internal/ballpositivity.m",
+        "sha256": "c2b71248828457cd3e14248eb7413f049490ea199c19f5254cab786f99857f03",
+        "bytes": 3756
+      },
+      {
+        "path": "src/+qstab/+internal/ballradiusReport.m",
+        "sha256": "549d0a2161b53eb8deff6752f91a6624408a133d11b53dd4dd9c8071272b9164",
+        "bytes": 15622
+      },
+      {
+        "path": "src/+qstab/+internal/ballsetReport.m",
+        "sha256": "887390c656c618e0842c55c56dbc1e6ae80633c5f368bf7e94a111a43964510c",
+        "bytes": 793
+      },
+      {
+        "path": "src/+qstab/+internal/ballstableReport.m",
+        "sha256": "3ebaf2d8b8cc043f98f9e4e30888da1e45ea0e14e9b9d911f8b1f1ce7b71c490",
+        "bytes": 4133
+      },
+      {
+        "path": "src/+qstab/+internal/boxcandidate.m",
+        "sha256": "42256a84db67e9bad3dbbb4671e0880c896a5d1c84a5f0c51bac070f6e16703f",
+        "bytes": 5369
+      },
+      {
+        "path": "src/+qstab/+internal/boxdegree.m",
+        "sha256": "3804e1ef1b28d11bad0fbb6529df9b1d8046495ece23afff0d4c9f88791480df",
+        "bytes": 777
+      },
+      {
+        "path": "src/+qstab/+internal/boxmodel.m",
+        "sha256": "aadc1f4637bc19be3c47c19b82b53fc8c90995270367b1521ea9597fdb55aa73",
+        "bytes": 1161
+      },
+      {
+        "path": "src/+qstab/+internal/boxpoint.m",
+        "sha256": "743adb0be8a5e97a374f6f7e3cf26941271882b12f175f254d0ee93196cdab11",
+        "bytes": 6080
+      },
+      {
+        "path": "src/+qstab/+internal/boxradiusReport.m",
+        "sha256": "54409ddfba7f5f9c8573bf99be5e7f41b8144b27313be6281cd0e5a094925a5a",
+        "bytes": 8297
+      },
+      {
+        "path": "src/+qstab/+internal/boxstableReport.m",
+        "sha256": "846ff3b989d2da306c93068d9363e3373213d437109d25bbc8637a4c14c2ac8f",
+        "bytes": 3455
+      },
+      {
+        "path": "src/+qstab/+internal/boxtrial.m",
+        "sha256": "e7f1bad696a47c93120f968bbff11fe7593fffba2e44379963618e1c5a91c957",
+        "bytes": 5282
+      },
+      {
+        "path": "src/+qstab/+internal/certificateDataReport.m",
+        "sha256": "42b5aba31c8bbac1916aec12f5a1af96562c83e193dd200638e7a4cfa6ea2c81",
+        "bytes": 5208
+      },
+      {
+        "path": "src/+qstab/+internal/certificateEnclosureReport.m",
+        "sha256": "0e3194e9ad1258e982d834341f0e1dc013806fb8cec189409ce030cfdf53997f",
+        "bytes": 4961
+      },
+      {
+        "path": "src/+qstab/+internal/cubefamily.m",
+        "sha256": "b5b634924bb584cf5e19d7867a7b898cdc827696e41acebbf074229221954858",
+        "bytes": 1710
+      },
+      {
+        "path": "src/+qstab/+internal/diagnosticAxes.m",
+        "sha256": "1956660d04158ad31066e1f23cf38a9a319af382fc2a4e154ac66beaa2c2dc3e",
+        "bytes": 791
+      },
+      {
+        "path": "src/+qstab/+internal/diagnosticGeometry.m",
+        "sha256": "d19eb5e7670c4a532e0c056be8fbb63eee4f7151448500ab4db6dbdc8639be4b",
+        "bytes": 3181
+      },
+      {
+        "path": "src/+qstab/+internal/discretepair.m",
+        "sha256": "f593faa01a18fe45b428261bffe6c512af450ffdbd9a2d0a2eea84756e7e9f8b",
+        "bytes": 1433
+      },
+      {
+        "path": "src/+qstab/+internal/discreteradius.m",
+        "sha256": "f1e325d0f4a563e1231e44fd72e1feb9d4b170356f69e5ed031f6a2dcf1276fc",
+        "bytes": 9648
+      },
+      {
+        "path": "src/+qstab/+internal/discreteray.m",
+        "sha256": "e3c46a22c63166cdc0bdd1a2077937738a50457175497d1aad8250deea9497bc",
+        "bytes": 19119
+      },
+      {
+        "path": "src/+qstab/+internal/drawSampledFamily.m",
+        "sha256": "a9bd64beebd6e7c83053a6f76eee4851c47d4c5271f68c653a8d1f8a88bc10bc",
+        "bytes": 5111
+      },
+      {
+        "path": "src/+qstab/+internal/exactBoundary.m",
+        "sha256": "9623269eb5576c2ce4a6d183ec02aceb53952fec964c65905e59449e4206d988",
+        "bytes": 4854
+      },
+      {
+        "path": "src/+qstab/+internal/exactOneParameter.m",
+        "sha256": "8ec739b51b53ff58ed7c0bfaba77282eb9af4d2c11a8c00027f520aedd5cf153",
+        "bytes": 13976
+      },
+      {
+        "path": "src/+qstab/+internal/exactOneParameterLifting.m",
+        "sha256": "f667bfc1047c0fd149888800525fd36e167a9c3c4fe2b9a79b5f60e1da9f6e59",
+        "bytes": 11678
+      },
+      {
+        "path": "src/+qstab/+internal/familyDefinition.m",
+        "sha256": "431a802e29f2f1059a6d172143d0331b343877dcbd6f986e0c26d9aba7c0b055",
+        "bytes": 2820
+      },
+      {
+        "path": "src/+qstab/+internal/familyMargin.m",
+        "sha256": "a1f973303468357e964b2586ca2f93dabaeb6fac74f485d1aaf09affb60da701",
+        "bytes": 1468
+      },
+      {
+        "path": "src/+qstab/+internal/familyOptions.m",
+        "sha256": "8b7b57269e266a0b19cf961f67f12cb14041a55b56d9d9669796b8cb12d8d02f",
+        "bytes": 1065
+      },
+      {
+        "path": "src/+qstab/+internal/familyPlotModel.m",
+        "sha256": "c043e9d3157c49ecb6a9993ee4efa7f0649eabe3cf11ee9fd10040af0830c58a",
+        "bytes": 4514
+      },
+      {
+        "path": "src/+qstab/+internal/familyPlotOptions.m",
+        "sha256": "bec3f567e83dc074a3d338c8090bb6849f838f15f0162fd579f5aa23cd54907b",
+        "bytes": 5085
+      },
+      {
+        "path": "src/+qstab/+internal/fourgenerator.m",
+        "sha256": "ce52ed5f96084fcd086acc3fea7e8d16aca9a9259ca6061b119403030a1c024a",
+        "bytes": 11906
+      },
+      {
+        "path": "src/+qstab/+internal/intervalfaceplan.m",
+        "sha256": "2194001556a5e41f1f9ff93b9a786a0b383644a03f8ef7cbc30f34c9a3ddc00f",
+        "bytes": 4849
+      },
+      {
+        "path": "src/+qstab/+internal/intervalreduce.m",
+        "sha256": "81a06ba061d8257c7ee20978fd334d81d192fe46427b8a300e2be1044e5ff0e6",
+        "bytes": 11064
+      },
+      {
+        "path": "src/+qstab/+internal/isFamilyDefinition.m",
+        "sha256": "daa57ba5e12500668ca00b3fec93afd5165a6755d2f6f8fa50da5be798600b2a",
+        "bytes": 200
+      },
+      {
+        "path": "src/+qstab/+internal/isUserInputError.m",
+        "sha256": "ea1d422378e3221f9d21662d1d432e22e3b871907bd56483d882148aa7f3c802",
+        "bytes": 7069
+      },
+      {
+        "path": "src/+qstab/+internal/isstableReport.m",
+        "sha256": "8eb16d1fb680808d493aaceb142756167d2d9b26accd5ade56a6f2d68833dad8",
+        "bytes": 22904
+      },
+      {
+        "path": "src/+qstab/+internal/leadbound.m",
+        "sha256": "05adc0fb2c7c2522a803f00a0b5556409895393ee4a57f1c0f12da6aef3abaff",
+        "bytes": 6587
+      },
+      {
+        "path": "src/+qstab/+internal/leadingboundReport.m",
+        "sha256": "e9b76b2538b4789f938158adf53e95c6dd6c95e27a6b1408f9989acd6f7ccb5f",
+        "bytes": 1189
+      },
+      {
+        "path": "src/+qstab/+internal/oneParameterScaling.m",
+        "sha256": "afadcdcb5ba45625161dad94ca14982f829d8c744ca8a4f1ec856426274cf6b9",
+        "bytes": 3238
+      },
+      {
+        "path": "src/+qstab/+internal/parameterRay.m",
+        "sha256": "540ad56172bae29362fb04878cb823f010d1d6397a732f17e5ef7cfd82185aa6",
+        "bytes": 747
+      },
+      {
+        "path": "src/+qstab/+internal/plotCertificateReport.m",
+        "sha256": "dd1f2b7158b7817b0558830271244784d679c8de26089510879812cbc45bc164",
+        "bytes": 4547
+      },
+      {
+        "path": "src/+qstab/+internal/plotEnclosureReport.m",
+        "sha256": "3d4da17d9969a37906eb24b22f1e44f975aa9e04ce11af5b322ca9e965e82189",
+        "bytes": 4812
+      },
+      {
+        "path": "src/+qstab/+internal/plotSpectrumReport.m",
+        "sha256": "993d091dcba08827a6e4113ac02f00997348258cb4f69ad92566ecb7419bf343",
+        "bytes": 9496
+      },
+      {
+        "path": "src/+qstab/+internal/plotValueSetReport.m",
+        "sha256": "04076c04cb1727abc3410b0d3ca106eaf4ce1cfb4e57eaf111b5d5f6cba2579e",
+        "bytes": 4114
+      },
+      {
+        "path": "src/+qstab/+internal/plotWitnessReport.m",
+        "sha256": "3ad4c7360b02db29e908892c02f04f118de4fe3e14082f657238e8fd7b103860",
+        "bytes": 1867
+      },
+      {
+        "path": "src/+qstab/+internal/randomFamilyCoefficients.m",
+        "sha256": "f0fa2d677eab3b29eab8033f66526984fe596b96a89f6cf41dc0d6ea43143fc4",
+        "bytes": 4598
+      },
+      {
+        "path": "src/+qstab/+internal/raymarginReport.m",
+        "sha256": "bc30b139788cb06da88d6e3984053812a7ddd0bbd5530b5cd598b0ac07949224",
+        "bytes": 14132
+      },
+      {
+        "path": "src/+qstab/+internal/rightpairs.m",
+        "sha256": "db3370dc91c8c306ff7e1e240349950ee26966c317cc5e5cd87319eda446bd55",
+        "bytes": 7385
+      },
+      {
+        "path": "src/+qstab/+internal/robuststableReport.m",
+        "sha256": "e6fa2d51e147e3a1c912410b0e79fb3d36127be02f2a537738f51e1f16df2f82",
+        "bytes": 20775
+      },
+      {
+        "path": "src/+qstab/+internal/sampleFamily.m",
+        "sha256": "0be7272fde3050e87ee2838e2e8094ec3040c2d8e057430bcefc133996008547",
+        "bytes": 8014
+      },
+      {
+        "path": "src/+qstab/+internal/stabilityradiusReport.m",
+        "sha256": "b6036af893b7ff9cdd05d1275272828ec847c4cdf8e284c02c39e94df1f2feca",
+        "bytes": 14792
+      },
+      {
+        "path": "src/+qstab/+internal/steinpencil.m",
+        "sha256": "cfe2d3c080d4c73fdd5f90570258d1b888497075ed9ed1cec144eccbad0ddd2e",
+        "bytes": 1812
+      },
+      {
+        "path": "src/+qstab/+internal/strictStabilityDecision.m",
+        "sha256": "8bb51114e395c218663e78373b82d02811a0ffade81e3e02cebe88a8b46bae02",
+        "bytes": 498
+      },
+      {
+        "path": "src/+qstab/+internal/unitfrequency.m",
+        "sha256": "a80c6bbefc37022c038c43c774fcb86d969a3c410acadb59ccbc06db7e5cda48",
+        "bytes": 2100
+      },
+      {
+        "path": "src/+qstab/+internal/unitpositivity.m",
+        "sha256": "592ba3ea3e02a3953afdac1de7c180dc75f84f9bde76865461c2ef687f77fe98",
+        "bytes": 3948
+      },
+      {
+        "path": "src/+qstab/+internal/unitquotient.m",
+        "sha256": "a989509e3dcb81c46146156debda3b1735d6f1a33b1c4fbf143c83912b6c5e19",
+        "bytes": 5483
+      },
+      {
+        "path": "src/+qstab/+internal/valueenclosureReport.m",
+        "sha256": "b81cde2bbea21edb45548c18007eb3bb1c39caeae739c9779ac545e3999421b0",
+        "bytes": 6652
+      },
+      {
+        "path": "src/+qstab/+internal/valuesetReport.m",
+        "sha256": "95ef36e674a3406f3905a0bbb7762e0585f0c78e3bd4e1e169ff0b309636e6c0",
+        "bytes": 4196
+      },
+      {
+        "path": "src/+qstab/+internal/witnessDataReport.m",
+        "sha256": "11e00ab7f8a1c3fd6d0521d26f37f4783a371e5142a2b95f4a30d0e8e9432dd2",
+        "bytes": 5879
+      },
+      {
+        "path": "src/+qstab/+internal/zeroexcludeReport.m",
+        "sha256": "db45f1d6fef9e2713738d4d0b73e932262b440e9837525a71a7951576d78e3e6",
+        "bytes": 17837
+      },
+      {
+        "path": "src/+qstab/+internal/zonotopegauge.m",
+        "sha256": "afe8ead45a787708932c4001e637ca8c4b24fd4cb9ede2448857444b280ff189",
+        "bytes": 5619
+      },
+      {
+        "path": "src/+qstab/Contents.m",
+        "sha256": "a3cb83d09074bf33a7f1cdf363cfcc01d1a182215ad33d2a0ebd36bb6e57a37d",
+        "bytes": 6268
+      },
+      {
+        "path": "src/+qstab/about.m",
+        "sha256": "e7c51de3016e0c91b1bccb5bd9d35715c876c6921661b02944c66ef5654b08c7",
+        "bytes": 4849
+      },
+      {
+        "path": "src/+qstab/ballradius.m",
+        "sha256": "71e74ddbb34fb0273a4c6ece95909115de682afd3c0b6c9f444d06a663003374",
+        "bytes": 2538
+      },
+      {
+        "path": "src/+qstab/ballset.m",
+        "sha256": "4de16d5a35e10f718b64341e00d2664aaa102de4812fc4efa5a4da6424c40184",
+        "bytes": 1627
+      },
+      {
+        "path": "src/+qstab/ballstable.m",
+        "sha256": "9b633543f402891a3358fc8e0909a99302c3cb5f47ca103a175d983073eac4cf",
+        "bytes": 1744
+      },
+      {
+        "path": "src/+qstab/ballvalue.m",
+        "sha256": "574f4e7b5f7d4323c003896aca70eda2b5d92c731f3e24fe55513479164ffa92",
+        "bytes": 3401
+      },
+      {
+        "path": "src/+qstab/boxfreqmargin.m",
+        "sha256": "1304e6b8a29d3cacce81ca5ee501e4c5bea235f5b762c044d05493dc49ace6d6",
+        "bytes": 14366
+      },
+      {
+        "path": "src/+qstab/boxradius.m",
+        "sha256": "0b9771db5352eaa3eee3d966a085e570dd5022c2ff63a513b00cac956c879a24",
+        "bytes": 2815
+      },
+      {
+        "path": "src/+qstab/boxstable.m",
+        "sha256": "4075e99000a2002f11f564008ba831d503c3b7d39bc6a242bcdec3d3e5882578",
+        "bytes": 2324
+      },
+      {
+        "path": "src/+qstab/boxvalue.m",
+        "sha256": "bacb299e79562f5ee4175b59e399b24db0dc534e2983bd33c74270ab3869299d",
+        "bytes": 3530
+      },
+      {
+        "path": "src/+qstab/certificateData.m",
+        "sha256": "a2e9a5231384213d9ec594e3d2bfac500b0217e5554340ae348541d1f69cd4a6",
+        "bytes": 1749
+      },
+      {
+        "path": "src/+qstab/certificateEnclosure.m",
+        "sha256": "69de9cabac806ef7457d62c570af77dff004740ac6a5be5fa4429384557524ee",
+        "bytes": 2606
+      },
+      {
+        "path": "src/+qstab/chi.m",
+        "sha256": "365f427f3be9454532cf245b4e6d60307cd4626ee41e7a5bbbacc73ab23a9709",
+        "bytes": 1154
+      },
+      {
+        "path": "src/+qstab/companion.m",
+        "sha256": "4fcb2100cdae566b5cdb9d9a25959cdeace032874cd17ac59cef1e2ea0148678",
+        "bytes": 5020
+      },
+      {
+        "path": "src/+qstab/components.m",
+        "sha256": "8505d0b3a28064eede26c8745903e3628098708eba4d39fbe4a939a00daf4506",
+        "bytes": 2052
+      },
+      {
+        "path": "src/+qstab/eig.m",
+        "sha256": "8843946e1ae27600dfd9ea4f430b2dc66150e0112a51278b47db012564a80c0d",
+        "bytes": 5313
+      },
+      {
+        "path": "src/+qstab/eigpairs.m",
+        "sha256": "efc9c0ef8282b2ff3c57821ca1b1704f06a323581f806dcfa513eab371f78120",
+        "bytes": 4326
+      },
+      {
+        "path": "src/+qstab/family.m",
+        "sha256": "60b2ce67eaaf29dfb49557c8bf42bdee57a38fe875e5c9c723cb5edc42937d50",
+        "bytes": 4459
+      },
+      {
+        "path": "src/+qstab/familycomponents.m",
+        "sha256": "628ecf7ce0caf1fd0da60133a6a15f3961900882b4f95f65f79ee2eb1c93a727",
+        "bytes": 11385
+      },
+      {
+        "path": "src/+qstab/freqmargin.m",
+        "sha256": "15a1bf728b301d6b7622b8f9a6bd3841fac616d6e03a9f35e225cdbb02a26bca",
+        "bytes": 20699
+      },
+      {
+        "path": "src/+qstab/intervalfaces.m",
+        "sha256": "4c85d5cdbdd5eceab49d708866c286cff87a5a5ad70c1ef1dfb389ed647d878d",
+        "bytes": 4701
+      },
+      {
+        "path": "src/+qstab/isstable.m",
+        "sha256": "5989430dc63aadf4d4f840d982d22253660b3eba13d67f61b5d1e8f49cb94515",
+        "bytes": 2860
+      },
+      {
+        "path": "src/+qstab/kharitonovcube.m",
+        "sha256": "9691629bafad5e97eee9da3d838ed8d521cd0d08e6b65e31b3b9f8fc4a137b91",
+        "bytes": 2864
+      },
+      {
+        "path": "src/+qstab/leadingbound.m",
+        "sha256": "ff55716723b284d59366a16e2461b33db77285f5f09f5b8373fe67b3a08357b6",
+        "bytes": 1992
+      },
+      {
+        "path": "src/+qstab/lyapoperator.m",
+        "sha256": "75861a509f266faaa912b016113074b348b8d811df47f2b86958a6ab499303c8",
+        "bytes": 2735
+      },
+      {
+        "path": "src/+qstab/normpoly.m",
+        "sha256": "64b6d0e1d7b6ec3db46fda451b032d7583cf136d2e75be6d139d3d3b8541ed91",
+        "bytes": 1570
+      },
+      {
+        "path": "src/+qstab/plotCertificate.m",
+        "sha256": "59574b412bcc79d870d9ead4c828928aeda0407e339a985f03bea8fdf7e2d36f",
+        "bytes": 1657
+      },
+      {
+        "path": "src/+qstab/plotEnclosure.m",
+        "sha256": "eb536291458448407c7a43734bd8daadf4769adbb2be9bc1d8b01d8874e3d387",
+        "bytes": 1713
+      },
+      {
+        "path": "src/+qstab/plotFamilyValues.m",
+        "sha256": "c537c0a28e4e9219d43e349555fd79d2001162621139d64fb5010e19dfca8ef5",
+        "bytes": 8501
+      },
+      {
+        "path": "src/+qstab/plotFamilyZeros.m",
+        "sha256": "bf15ef5a84bd8532154cdfbc6b60ddc5f3c686a520094825e9bff0f76d9f903c",
+        "bytes": 5122
+      },
+      {
+        "path": "src/+qstab/plotSpectrum.m",
+        "sha256": "33e42f83b5f453442833e88c3469b6492f1df7aafe95c7101acbe4f31445b303",
+        "bytes": 2952
+      },
+      {
+        "path": "src/+qstab/plotValueSet.m",
+        "sha256": "f8e89f4722673e7877a41f7d0b2b26fa773b0361aab59e997d323e3c1cc58a07",
+        "bytes": 1843
+      },
+      {
+        "path": "src/+qstab/plotWitness.m",
+        "sha256": "bdaf71513168024a8e8f684cf9f84cc0780771dea1abcd6ba282c76bf05da0e1",
+        "bytes": 1472
+      },
+      {
+        "path": "src/+qstab/polycomponents.m",
+        "sha256": "b464f67463aac30546ffbab1c395c00b85ea36282b0b37e08b40c3cc45daa6e1",
+        "bytes": 3141
+      },
+      {
+        "path": "src/+qstab/radiuscertificate.m",
+        "sha256": "753dba55a9e118555d06e31aeac52c27d6f290de29d71b5b42fb342c4619f6ea",
+        "bytes": 10094
+      },
+      {
+        "path": "src/+qstab/randfamily.m",
+        "sha256": "e34b0ec6f27c8fccbddc9eb4fdb2e9bd1d7a5504b333fdf1b01072bfe2a2c9a2",
+        "bytes": 10507
+      },
+      {
+        "path": "src/+qstab/raycertificate.m",
+        "sha256": "f8d98263fa67db2f35506b022605e0e7f7ac400352088bfff6048d37ccb3fd97",
+        "bytes": 9428
+      },
+      {
+        "path": "src/+qstab/raymargin.m",
+        "sha256": "7b59446d623223b0617ff6b88f9cd3a9cd1ae780b3fc3ecc19e601224e47c801",
+        "bytes": 5596
+      },
+      {
+        "path": "src/+qstab/robuststable.m",
+        "sha256": "b0dddda0561c17daf7354038cb4ed01b645a689c3816e0d4df09d8b94e3b88c7",
+        "bytes": 6252
+      },
+      {
+        "path": "src/+qstab/rootmotion.m",
+        "sha256": "605bac27ffadceadcb005f267deff4d200dc3e4f35768ad0150bf360e655f6b7",
+        "bytes": 5475
+      },
+      {
+        "path": "src/+qstab/roots.m",
+        "sha256": "c0a6c2364a4b30c9539c663ffb18879553a97557bf7dc9bf63ab2a3b5950dac0",
+        "bytes": 7704
+      },
+      {
+        "path": "src/+qstab/stabilityradius.m",
+        "sha256": "c77ba74681b48b7dec73268168b21363ab20a9cf33365228bda34d8bf73fd377",
+        "bytes": 3484
+      },
+      {
+        "path": "src/+qstab/valueenclosure.m",
+        "sha256": "106493323a5677c394c5492339db7cae061320ba08f613c377375dfaf4028fff",
+        "bytes": 2612
+      },
+      {
+        "path": "src/+qstab/valueset.m",
+        "sha256": "637e1519690bce86d593cd79fc17e8cf6be5461f8c03b690c46eea1f5417f10c",
+        "bytes": 3568
+      },
+      {
+        "path": "src/+qstab/witnessData.m",
+        "sha256": "453e20b251edbe8a3b8b5a83f81b4e65ccd3419977cc0160623b91031639bc83",
+        "bytes": 2316
+      },
+      {
+        "path": "src/+qstab/zeroexclude.m",
+        "sha256": "93ab3aea2b969e6e2adfba138ad586f10bd2d2135d1578b0cb2e4830c84f83a3",
+        "bytes": 5605
+      },
+      {
+        "path": "test_qstab.m",
+        "sha256": "49de014f2e870ed87af279f8d52a864a8bf3181022373c2178f6f2c460442b73",
+        "bytes": 25699
+      },
+      {
+        "path": "test_qstab_oneparameter.m",
+        "sha256": "93b370a6cf8189bef9c2df966c0f0e8184077d5d2298dc54f0af92c269dc99e1",
+        "bytes": 6832
+      },
+      {
+        "path": "tests/qstab_cases_affinezero.m",
+        "sha256": "f966f95fff63a15f3de38a18919780c99b81d7f7d0f2fa5c6798c6d39c3570d2",
+        "bytes": 5196
+      },
+      {
+        "path": "tests/qstab_cases_ballfix.m",
+        "sha256": "9c26f0ddba34935230f3e9a3e12f13990805fd4229036699d66a0a8d4d2af347",
+        "bytes": 6394
+      },
+      {
+        "path": "tests/qstab_cases_ballfix_native.m",
+        "sha256": "dbc90cfc423ca5d26baff88d6953f29afc4f870b0f95d994f9a1f4f104cb5e5d",
+        "bytes": 1403
+      },
+      {
+        "path": "tests/qstab_cases_balls.m",
+        "sha256": "cfb9eeea64a720ec2bba4dfb46be57d8ff5a707149fa0d645e9a95d42662d5c7",
+        "bytes": 17487
+      },
+      {
+        "path": "tests/qstab_cases_balls_native.m",
+        "sha256": "a2aae068f3069510e759a6a4e9fc537dc4ceef40d4c93cadc7e82a503d0bf09d",
+        "bytes": 2045
+      },
+      {
+        "path": "tests/qstab_cases_benchmarks.m",
+        "sha256": "0e92add28076a85ed84434ec4479a929ca58675cf6dc038bc75b57bbb4eecca3",
+        "bytes": 12236
+      },
+      {
+        "path": "tests/qstab_cases_boxes.m",
+        "sha256": "2c2cecace7c627fa98e3baa9574c1c3ca887cedfb6303cac3348f7541d206642",
+        "bytes": 17086
+      },
+      {
+        "path": "tests/qstab_cases_boxes_native.m",
+        "sha256": "b94b42d34a8b3b5c89b783eb8d5f20d62be12d3b493f876ebd4abef151f77836",
+        "bytes": 1895
+      },
+      {
+        "path": "tests/qstab_cases_boxfix.m",
+        "sha256": "24b5c87574d819864c38531091b2eb20c152ef45c311a219e87f00cd9cbd2381",
+        "bytes": 6628
+      },
+      {
+        "path": "tests/qstab_cases_boxfix_native.m",
+        "sha256": "fd65dfa4b25b7ad8eae0ce16583fd3788c07079c2e7a0a6949efea1c0d2e354c",
+        "bytes": 1101
+      },
+      {
+        "path": "tests/qstab_cases_boxfreqmargin.m",
+        "sha256": "2d61f5ada9b51c82954708eec6d648f4052bd0927c693e6ea44d2a6b922500af",
+        "bytes": 6786
+      },
+      {
+        "path": "tests/qstab_cases_diagnostic_graphics.m",
+        "sha256": "75bd7d16dd329d0340e5f849709e8fce57196bd3615a60827d51aee8f13b8069",
+        "bytes": 4692
+      },
+      {
+        "path": "tests/qstab_cases_diagnostics.m",
+        "sha256": "d2c7de5468dfc7f2ff614266a1ba8d5bec74d25955123eed61c7c4717cf9d674",
+        "bytes": 14817
+      },
+      {
+        "path": "tests/qstab_cases_diagnostics_native.m",
+        "sha256": "1ae2c2151a20f8836243079817eef7ef5f064ae8270bd206f9292ec117b138ef",
+        "bytes": 1354
+      },
+      {
+        "path": "tests/qstab_cases_discrete.m",
+        "sha256": "0c9cd96284b0c61c94bce4b5a7d22f7fafbbd8763ab56c52c00c18c7b7168af7",
+        "bytes": 18358
+      },
+      {
+        "path": "tests/qstab_cases_discrete_native.m",
+        "sha256": "e1756e17d862955ed38631d0300bb706ee74a49621fbe6d16967e33305dc3d2f",
+        "bytes": 2696
+      },
+      {
+        "path": "tests/qstab_cases_eigencomparison.m",
+        "sha256": "d4c7c285443d8549ff4e04fec9b27cfcc0bc9254186cad81be4a0f5590753051",
+        "bytes": 11281
+      },
+      {
+        "path": "tests/qstab_cases_eigencomparison_native.m",
+        "sha256": "a900087797c86173ed6eba13037cba10bbcdea00072285c04ce02a0504a22ac1",
+        "bytes": 1743
+      },
+      {
+        "path": "tests/qstab_cases_eigenfix.m",
+        "sha256": "4c73b96f825c0a9f9f55183d17173568da6bc13350911119a77f75444a0d9b19",
+        "bytes": 6911
+      },
+      {
+        "path": "tests/qstab_cases_eigenfix_native.m",
+        "sha256": "8f0d8d7e4aa9c97da2618f4d28ae39f3f02359d655ce4a8971852bdba9fcbd9c",
+        "bytes": 1695
+      },
+      {
+        "path": "tests/qstab_cases_fourgenerator.m",
+        "sha256": "9e545784bd62903fcf091d4b10d8cf26e292dc71e11941b67f05e17b07cc6e8e",
+        "bytes": 15497
+      },
+      {
+        "path": "tests/qstab_cases_friendly.m",
+        "sha256": "763b781471455d1cf8892b764b27323abd0763f4c1b736104ba3fe10cb197e05",
+        "bytes": 3951
+      },
+      {
+        "path": "tests/qstab_cases_graphics.m",
+        "sha256": "441ba4778ef0508096304deeecec88587a4ed237e55af9598780e1867c6549ca",
+        "bytes": 3405
+      },
+      {
+        "path": "tests/qstab_cases_intervalgraphics.m",
+        "sha256": "5e2e5626951d15d24e0e4b6ead1c7b4e5734ec9b316514982ed55e5821348dbc",
+        "bytes": 4110
+      },
+      {
+        "path": "tests/qstab_cases_intervalnew.m",
+        "sha256": "417a45e4b72e58c048701cc50ee10b7c05a06af822f8e6bcfdeb4f0ba0391aa3",
+        "bytes": 8956
+      },
+      {
+        "path": "tests/qstab_cases_intervalreductions.m",
+        "sha256": "289a0df0ada167e8535d11c28b4733f88229133e310a5904408769a1b6df06e6",
+        "bytes": 8584
+      },
+      {
+        "path": "tests/qstab_cases_intervals_native.m",
+        "sha256": "26fa55cbc35b68d5cafdf1304250763e9f5718134ab5dfb3ecd5a27feb2ad7b9",
+        "bytes": 794
+      },
+      {
+        "path": "tests/qstab_cases_intervalstudy.m",
+        "sha256": "b184ce0fb22a4c6517c5624c436bf6ef0abe3e9f3d8dd7f1287f9f6e7c2c9326",
+        "bytes": 1169
+      },
+      {
+        "path": "tests/qstab_cases_leading.m",
+        "sha256": "2d880b6b5a09f0ad0752e5372bcfc8e2de03a0ca9cb409a0a9e28b3e217080dd",
+        "bytes": 4440
+      },
+      {
+        "path": "tests/qstab_cases_manifestfix.m",
+        "sha256": "b55e414ad8ca089c7e3c69714d96969e8a9aee1bdf0bab612e96bcdd3f7dd347",
+        "bytes": 3657
+      },
+      {
+        "path": "tests/qstab_cases_namespace.m",
+        "sha256": "7449826567c693e38242f8ef10ee4104a76eb01d2a04474c5cfa189cd69d078f",
+        "bytes": 2427
+      },
+      {
+        "path": "tests/qstab_cases_native.m",
+        "sha256": "db5c6f2a6786c67c713649a3166a57026f88f487f363cf0accc5f0d5242ad737",
+        "bytes": 5022
+      },
+      {
+        "path": "tests/qstab_cases_nominal.m",
+        "sha256": "06295e301c9900cb3f068f6a844f117160454d6ef6abeaf171d5dafb328d3381",
+        "bytes": 15321
+      },
+      {
+        "path": "tests/qstab_cases_oneparameter_exact.m",
+        "sha256": "319c93cce74751c6dc6813c2406eca5450a0990a7582469d503ce0679ce64c9b",
+        "bytes": 12196
+      },
+      {
+        "path": "tests/qstab_cases_oneparameter_examples.m",
+        "sha256": "0bc9b279a8e14b51e7590e9e7b64e63ff4a10b2881a8028184117b7f42d53de1",
+        "bytes": 2560
+      },
+      {
+        "path": "tests/qstab_cases_oneparameter_numeric.m",
+        "sha256": "0e77cf6c8ede242d0e33ebaedc322f3158e36acc9abb4618e91c5fa143495f1a",
+        "bytes": 8464
+      },
+      {
+        "path": "tests/qstab_cases_paperextensions.m",
+        "sha256": "c7298f866ac5e84982238d8eae456215bd783211c0dc709300d28606d69a5a92",
+        "bytes": 10940
+      },
+      {
+        "path": "tests/qstab_cases_paperextensions_native.m",
+        "sha256": "b4d7fd93031d0ee5dcdbdc39a380a2b6b633f0cfbd954ae2888e43e0ab387af4",
+        "bytes": 1512
+      },
+      {
+        "path": "tests/qstab_cases_paperfigure_graphics.m",
+        "sha256": "1f5bf50e76eeaca1ea67d4e1963c1ad68f96245e1f8b18937bea78d3fdc32163",
+        "bytes": 3306
+      },
+      {
+        "path": "tests/qstab_cases_paperfix.m",
+        "sha256": "6f8c8f95efd473b7e42ae7d5279498b1bccdc21df1f2c25a8b0050c52bd5d884",
+        "bytes": 7049
+      },
+      {
+        "path": "tests/qstab_cases_paperfix_native.m",
+        "sha256": "c4e5767ed35d2b08b8b6e13eff9513ea0c4655e06ae32114ec6de14c43e5a255",
+        "bytes": 1583
+      },
+      {
+        "path": "tests/qstab_cases_papers.m",
+        "sha256": "add08adfd16ea01b1f86693ce5d91c9b7201c086711b506ff136f0cdc99c4498",
+        "bytes": 8208
+      },
+      {
+        "path": "tests/qstab_cases_papers_native.m",
+        "sha256": "29ae360aa3f789c06b991651948ff454c4dcffdc0e734a66bc2d934a96d6accb",
+        "bytes": 1215
+      },
+      {
+        "path": "tests/qstab_cases_provenance.m",
+        "sha256": "e57aaf51ac86176d7eabc051452fe69305a6d72970ced4943131f1c7a6226d8b",
+        "bytes": 1862
+      },
+      {
+        "path": "tests/qstab_cases_public.m",
+        "sha256": "20b72e418c7afa6090e2c405aa24ef9cb073b94b8306eaaea652d7c20ae0ef4b",
+        "bytes": 9560
+      },
+      {
+        "path": "tests/qstab_cases_public_artifacts.m",
+        "sha256": "205e158a50f9d33289a58a244bb3c9c8b93aa95f627a0e524e287a88335e9714",
+        "bytes": 3408
+      },
+      {
+        "path": "tests/qstab_cases_radius.m",
+        "sha256": "b172768413ed80c8a5cf9fdb785a2e6ccdfe60ccebf714930f85e32704a5e470",
+        "bytes": 4954
+      },
+      {
+        "path": "tests/qstab_cases_rays.m",
+        "sha256": "f9c967c8285dbc96eb888a9452ba9a426cb66629b98f695fc8b7cba12f6fd405",
+        "bytes": 8780
+      },
+      {
+        "path": "tests/qstab_cases_reporting.m",
+        "sha256": "8ab879ce780b70998c6fdc053ce24b7092d884dbdff2fb9d9503ed6716a2f834",
+        "bytes": 6449
+      },
+      {
+        "path": "tests/qstab_cases_resultfirst.m",
+        "sha256": "64fe191aa3a128fde762c440441d1c4d6470a6febfdfde7e699ce714ba92e22c",
+        "bytes": 3248
+      },
+      {
+        "path": "tests/qstab_cases_rightpairs.m",
+        "sha256": "4e120baf6f73e5b6c5eaad92b41c06cb9e88265615714ceda37e4770064f28d0",
+        "bytes": 9917
+      },
+      {
+        "path": "tests/qstab_cases_rightpairs_native.m",
+        "sha256": "ef02420c94e19fbba6fb8ee5255c2a49a207304e99b74a51199d54fb35d823a1",
+        "bytes": 2561
+      },
+      {
+        "path": "tests/qstab_cases_robust.m",
+        "sha256": "313abcf9ab3e86585a58d7a7927be1289dc55b70f59db349b0f3339f11f67dab",
+        "bytes": 13023
+      },
+      {
+        "path": "tests/qstab_cases_rootmotion.m",
+        "sha256": "f5aa6ca8bf75858560251a217db464dcfe604ce8f350ece3882dabe6a6f6621b",
+        "bytes": 2349
+      },
+      {
+        "path": "tests/qstab_cases_routhsingular.m",
+        "sha256": "b775842f2f349f030f0d8b41dd353610d21061fd60ad3ee9bf085b894fea6137",
+        "bytes": 6218
+      },
+      {
+        "path": "tests/qstab_cases_values.m",
+        "sha256": "b5c1b273f83fad8fb4a901928347f6039b77c6335fb5ad9f2add9c829c36d960",
+        "bytes": 6013
+      },
+      {
+        "path": "tests/qstab_cases_zeroexclude.m",
+        "sha256": "ef20beca85ced41fad5368807da7e27eea0e0824f964131b0cbf99c289dc8fe0",
+        "bytes": 9680
+      },
+      {
+        "path": "tests/test_qstab_exploration_public.m",
+        "sha256": "4bca462f8c51c9710545a51c808c6ea9974c12e0271a33d8ee0f415b20b9dfd0",
+        "bytes": 10571
+      },
+      {
+        "path": "tests/test_qstab_families_public.m",
+        "sha256": "ee38e3dc672e10a25f39725d78669a062d716d09128ac7838dafb3dd0b613d05",
+        "bytes": 7201
+      }
+    ],
+    "scopeNote": "All 221 package MATLAB source files match the article report hashes. This establishes file consistency with the supplied rc.2 package; it is not evidence that every source file or code branch was exercised, and the unsigned hashes do not authenticate publisher identity."
+  },
+  "historicalRc1": {
+    "recordFile": "verification/native-transcript-0.20.0-rc.1.json",
+    "recordSha256": "47a1116ac6d8c826cd3fb115bf8dbe3adf44f23e7ea455fff48ae2cfc56b1c29",
+    "softwareVersion": "0.20.0-rc.1",
+    "evidenceType": "user-supplied-command-window-transcript",
+    "transcriptSha256": "6ade35b29fe652aaa3ef939d4d0553f9f2f1194ce16e73f4fa3d7580cc9c5f0d",
+    "public": {
+      "status": "OVERALL_OK",
+      "acceptance": "PASSED",
+      "passed": 748,
+      "failed": 0,
+      "skipped": 0,
+      "elapsedSecondsAsPrinted": 64.19,
+      "callerPathAndFolderRestored": true
+    },
+    "targeted": {
+      "status": "REVIEW_REQUIRED",
+      "passed": 27,
+      "failed": 1,
+      "skipped": 0,
+      "failedName": "Exact radius bounds cover all frequencies and reject false certificates"
+    },
+    "matReportReceived": false,
+    "installedSourceFingerprintsVerified": false,
+    "fullPublicSuiteRerunOnRc2Documented": false,
+    "note": "The archived rc.1 transcript summary records 748/748 public checks and a separate targeted result of 27 passed and 1 failed. These historical results are not relabeled as rc.2 or as a final 0.20.0 rerun."
+  },
+  "limits": [
+    "The original reports identify 0.20.0-rc.2, not a completed MATLAB run of a final 0.20.0 package.",
+    "The full 748-check public suite is evidenced for rc.1 only; no complete rerun on rc.2 is claimed.",
+    "The article checks cover the recorded selected examples, rather than every result or figure in the manuscript.",
+    "Archived reference certificates and auxiliary Python outputs are distinct from the exact certificates computed in the recorded MATLAB article run.",
+    "Report archive SHA-256 values identify the supplied input bytes. Summarizing and checking them is not a new numerical or symbolic computation."
+  ],
+  "sanitization": "Only package-relative paths are retained. Local absolute paths, output directories, resolved installation paths, and user-specific environment details have been omitted."
+}

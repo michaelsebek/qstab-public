@@ -1,0 +1,29 @@
+{
+  "schema": "qstab.native-transcript-summary.1",
+  "receivedDate": "2026-11-27",
+  "softwareVersion": "0.20.0-rc.1",
+  "evidenceType": "user-supplied-command-window-transcript",
+  "sourceSha256": "6ade35b29fe652aaa3ef939d4d0553f9f2f1194ce16e73f4fa3d7580cc9c5f0d",
+  "sourceBytes": 170696,
+  "public": {
+    "status": "OVERALL_OK",
+    "acceptance": "PASSED",
+    "passed": 748,
+    "failed": 0,
+    "skipped": 0,
+    "elapsedSecondsAsPrinted": 64.19,
+    "callerPathAndFolderRestored": true
+  },
+  "targeted": {
+    "status": "REVIEW_REQUIRED",
+    "passed": 27,
+    "failed": 1,
+    "skipped": 0,
+    "failedName": "Exact radius bounds cover all frequencies and reject false certificates"
+  },
+  "warningCount": 144,
+  "articleExecutionObserved": false,
+  "matReportReceived": false,
+  "installedSourceFingerprintsVerified": false,
+  "notes": "The rc.1 failed exact run remains failed. No rc.2 native execution is inferred."
+}

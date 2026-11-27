@@ -1,0 +1,2899 @@
+{
+  "status": "OK",
+  "arithmetic": "exact rational/algebraic SymPy; no floating point acceptance",
+  "python_version": "3.12.14",
+  "sympy_version": "1.14.0",
+  "number_cases": 13,
+  "number_checks": 376,
+  "checks": [
+    {
+      "name": "side_separation_left: rational direction",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 1: zero frequency original polynomial",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: exact even root",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left candidate 2: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: expected first root",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "side_separation_left: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: rational direction",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: exact even root",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 1: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: exact even root",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right candidate 2: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: expected first root",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "side_separation_right: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: rational direction",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: exact even root",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 1: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: exact even root",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak candidate 2: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: expected first root",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "rank_one_frequency_peak: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: rational direction",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: exact even root",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray candidate 1: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: expected first root",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "repeated_singular_value_rational_ray: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: rational direction",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: exact even root",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray candidate 1: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: expected first root",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: rational direction",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: exact even root",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray candidate 1: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: expected first root",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: rational direction",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 1: zero frequency original polynomial",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: exact even root",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency candidate 2: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: expected first root",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "quaternion_zero_tangency: expected multiplicity",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: rational direction",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 1: zero frequency original polynomial",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: exact even root",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left candidate 2: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: expected first root",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: rational direction",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: exact even root",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 1: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: exact even root",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "nonzero quaternion inversion",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right candidate 2: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: expected first root",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: rational direction",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: exact even root",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: spherical remainder",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency candidate 1: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: expected first root",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "cubic_nonzero_tangency: expected multiplicity",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: rational direction",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "infinite_ray_margin: expected infinite ray margin",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: rational direction",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later candidate 1: zero frequency original polynomial",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later candidate 2: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: expected first root",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "guardian_extraneous_later: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: rational direction",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: nonzero direction",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: strict degree gap",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: product is real norm",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: constant positive leading coefficient",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: exact nominal Hurwitz",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: reduced determinant match",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: nonzero guardian",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: multiplicities preserved",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: square-free locations preserved",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: candidate cardinality bound",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: original norm identity after specialization",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: exact even root",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: exact odd root",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: remainder norm relation",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: remainder orthogonality",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: spherical remainder",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: right witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: left witness pure imaginary",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: right witness norm",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: left witness norm",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: original RIGHT evaluation",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero candidate 1: original LEFT evaluation",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: expected first root",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: first root has original contact",
+      "passed": true
+    },
+    {
+      "name": "spherical_contact_odd_part_zero: exact stable point before first",
+      "passed": true
+    },
+    {
+      "name": "later opposite real roots are rejected",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: exact unchanged ray margin",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_left: exact guardian scaling",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: exact unchanged ray margin",
+      "passed": true
+    },
+    {
+      "name": "scaled_side_separation_right: exact guardian scaling",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "name": "side_separation_left",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "direction_norm": "sqrt(2)",
+      "p0_components": [
+        "(s + 1)**2",
+        "0",
+        "1",
+        "0"
+      ],
+      "p1_components": [
+        "0",
+        "s",
+        "0",
+        "1"
+      ],
+      "norm_polynomial": "2*gamma**2*s**2 + 2*gamma**2 - 2*gamma*s**3 - 6*gamma*s**2 - 4*gamma*s - 4*gamma + s**4 + 4*s**3 + 6*s**2 + 4*s + 2",
+      "norm_degree": 4,
+      "guardian": "8*(gamma - 3)*(gamma - 1)*(gamma**2 - 2*gamma + 2)",
+      "guardian_degree": 4,
+      "square_free_guardian": "(gamma - 3)*(gamma - 1)*(gamma**2 - 2*gamma + 2)",
+      "square_free_factors_with_multiplicities": [
+        [
+          "(gamma - 3)*(gamma - 1)*(gamma**2 - 2*gamma + 2)",
+          1
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "1",
+          "upper": "1",
+          "multiplicity": 1
+        },
+        {
+          "lower": "3",
+          "upper": "3",
+          "multiplicity": 1
+        }
+      ],
+      "first_gamma": "1",
+      "first_quaternion_norm": "sqrt(2)",
+      "first_guardian_multiplicity": 1,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "1",
+          "original_norm": "s**2*(s**2 + 2*s + 2)",
+          "even_polynomial": "x*(x - 2)",
+          "odd_polynomial": "-2*x",
+          "even_odd_gcd": "x",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "0",
+              "kind": "zero frequency",
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        },
+        {
+          "gamma": "3",
+          "original_norm": "(s**2 + 4)*(s**2 - 2*s + 2)",
+          "even_polynomial": "(x - 4)*(x - 2)",
+          "odd_polynomial": "2*(x - 4)",
+          "even_odd_gcd": "x - 4",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "4",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "-1",
+                "0",
+                "3",
+                "0"
+              ],
+              "remainder_A": [
+                "-6",
+                "0",
+                "-2",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "-2",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "-2",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.11661125099999481,
+      "benchmark_case": "S",
+      "same_input_source": "/workspace/scratch/1a566f332b01/qb01_work/deliverable/benchmark/benchmark_inputs.json"
+    },
+    {
+      "name": "side_separation_right",
+      "side": "R",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "direction_norm": "sqrt(2)",
+      "p0_components": [
+        "(s + 1)**2",
+        "0",
+        "1",
+        "0"
+      ],
+      "p1_components": [
+        "0",
+        "s",
+        "0",
+        "1"
+      ],
+      "norm_polynomial": "2*gamma**2*s**2 + 2*gamma**2 - 2*gamma*s**3 - 6*gamma*s**2 - 8*gamma*s + s**4 + 4*s**3 + 6*s**2 + 4*s + 2",
+      "norm_degree": 4,
+      "guardian": "24*(gamma**2 - 4*gamma + 1)*(gamma**2 - 2*gamma + 2)",
+      "guardian_degree": 4,
+      "square_free_guardian": "(gamma**2 - 4*gamma + 1)*(gamma**2 - 2*gamma + 2)",
+      "square_free_factors_with_multiplicities": [
+        [
+          "(gamma**2 - 4*gamma + 1)*(gamma**2 - 2*gamma + 2)",
+          1
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "296011017105/1104728155436",
+          "upper": "512706121226/1913445293767",
+          "multiplicity": 1
+        },
+        {
+          "lower": "7141075053842/1913445293767",
+          "upper": "4122901604639/1104728155436",
+          "multiplicity": 1
+        }
+      ],
+      "first_gamma": "2 - sqrt(3)",
+      "first_quaternion_norm": "-sqrt(2)*(-2 + sqrt(3))",
+      "first_guardian_multiplicity": 1,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "2 - sqrt(3)",
+          "original_norm": "s**4 + 2*sqrt(3)*s**3 - 2*sqrt(3)*s**2 + 8*s**2 - 12*s + 8*sqrt(3)*s - 8*sqrt(3) + 16",
+          "even_polynomial": "(x - 4)*(x - 4 + 2*sqrt(3))",
+          "odd_polynomial": "-2*(sqrt(3)*x - 4*sqrt(3) + 6)",
+          "even_odd_gcd": "x - 4 + 2*sqrt(3)",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "-2*(-2 + sqrt(3))",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "sqrt(3)",
+                "0",
+                "-2 + sqrt(3)",
+                "0"
+              ],
+              "remainder_A": [
+                "-5 + 3*sqrt(3)",
+                "0",
+                "3 - sqrt(3)",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "1 - sqrt(3)",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "1 - sqrt(3)",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        },
+        {
+          "gamma": "sqrt(3) + 2",
+          "original_norm": "s**4 - 2*sqrt(3)*s**3 + 2*sqrt(3)*s**2 + 8*s**2 - 8*sqrt(3)*s - 12*s + 8*sqrt(3) + 16",
+          "even_polynomial": "(x - 4)*(x - 4 - 2*sqrt(3))",
+          "odd_polynomial": "2*(sqrt(3)*x - 4*sqrt(3) - 6)",
+          "even_odd_gcd": "x - 4 - 2*sqrt(3)",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "2*(sqrt(3) + 2)",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "-sqrt(3)",
+                "0",
+                "-2 - sqrt(3)",
+                "0"
+              ],
+              "remainder_A": [
+                "-3*sqrt(3) - 5",
+                "0",
+                "sqrt(3) + 3",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "1 + sqrt(3)",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "1 + sqrt(3)",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.3283903340015968,
+      "benchmark_case": "S",
+      "same_input_source": "/workspace/scratch/1a566f332b01/qb01_work/deliverable/benchmark/benchmark_inputs.json"
+    },
+    {
+      "name": "rank_one_frequency_peak",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "-3",
+        "1",
+        "0",
+        "0"
+      ],
+      "direction_norm": "sqrt(10)",
+      "p0_components": [
+        "(2*s**2 + 3*s + 3)/2",
+        "0",
+        "0",
+        "0"
+      ],
+      "p1_components": [
+        "s",
+        "1",
+        "0",
+        "0"
+      ],
+      "norm_polynomial": "(40*gamma**2*s**2 + 40*gamma**2 - 24*gamma*s**3 - 44*gamma*s**2 - 48*gamma*s - 12*gamma + 4*s**4 + 12*s**3 + 21*s**2 + 18*s + 9)/4",
+      "norm_degree": 4,
+      "guardian": "9*(2*gamma - 3)*(4*gamma - 1)*(40*gamma**2 - 36*gamma + 9)/8",
+      "guardian_degree": 4,
+      "square_free_guardian": "(2*gamma - 3)*(4*gamma - 1)*(40*gamma**2 - 36*gamma + 9)/320",
+      "square_free_factors_with_multiplicities": [
+        [
+          "(2*gamma - 3)*(4*gamma - 1)*(40*gamma**2 - 36*gamma + 9)/320",
+          1
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "1/4",
+          "upper": "1/4",
+          "multiplicity": 1
+        },
+        {
+          "lower": "3/2",
+          "upper": "3/2",
+          "multiplicity": 1
+        }
+      ],
+      "first_gamma": "1/4",
+      "first_quaternion_norm": "sqrt(10)/4",
+      "first_guardian_multiplicity": 1,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "1/4",
+          "original_norm": "(s**2 + 1)*(8*s**2 + 12*s + 17)/8",
+          "even_polynomial": "(x - 1)*(8*x - 17)/8",
+          "odd_polynomial": "-3*(x - 1)/2",
+          "even_odd_gcd": "x - 1",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "1",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "3/4",
+                "1/4",
+                "0",
+                "0"
+              ],
+              "remainder_A": [
+                "1/4",
+                "-3/4",
+                "0",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "1",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        },
+        {
+          "gamma": "3/2",
+          "original_norm": "(s - 3)**2*(4*s**2 + 9)/4",
+          "even_polynomial": "(x - 9)*(4*x - 9)/4",
+          "odd_polynomial": "3*(4*x - 9)/2",
+          "even_odd_gcd": "(4*x - 9)/4",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "9/4",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "-3",
+                "3/2",
+                "0",
+                "0"
+              ],
+              "remainder_A": [
+                "-9/4",
+                "-9/2",
+                "0",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "-3/2",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "-3/2",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.12556499500169593,
+      "benchmark_case": "R",
+      "same_input_source": "/workspace/scratch/1a566f332b01/qb01_work/deliverable/benchmark/benchmark_inputs.json"
+    },
+    {
+      "name": "repeated_singular_value_rational_ray",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "-1",
+        "-1",
+        "0",
+        "0"
+      ],
+      "direction_norm": "sqrt(2)",
+      "p0_components": [
+        "s**2 + s + 1",
+        "0",
+        "0",
+        "0"
+      ],
+      "p1_components": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "norm_polynomial": "2*gamma**2 - 2*gamma*s**2 - 2*gamma*s - 2*gamma + s**4 + 2*s**3 + 3*s**2 + 2*s + 1",
+      "norm_degree": 4,
+      "guardian": "-4*(gamma**2 + gamma - 1)",
+      "guardian_degree": 2,
+      "square_free_guardian": "gamma**2 + gamma - 1",
+      "square_free_factors_with_multiplicities": [
+        [
+          "gamma**2 + gamma - 1",
+          1
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "-2504730781961/1548008755920",
+          "upper": "-1548008755920/956722026041",
+          "multiplicity": 1
+        },
+        {
+          "lower": "591286729879/956722026041",
+          "upper": "956722026041/1548008755920",
+          "multiplicity": 1
+        }
+      ],
+      "first_gamma": "(-1 + sqrt(5))/2",
+      "first_quaternion_norm": "sqrt(2)*(-1 + sqrt(5))/2",
+      "first_guardian_multiplicity": 1,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "(-1 + sqrt(5))/2",
+          "original_norm": "s**4 + 2*s**3 - sqrt(5)*s**2 + 4*s**2 - sqrt(5)*s + 3*s - 2*sqrt(5) + 5",
+          "even_polynomial": "x**2 - 4*x + sqrt(5)*x - 2*sqrt(5) + 5",
+          "odd_polynomial": "-2*x - sqrt(5) + 3",
+          "even_odd_gcd": "(2*x - 3 + sqrt(5))/2",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "-(-3 + sqrt(5))/2",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              "remainder_A": [
+                "0",
+                "-(-1 + sqrt(5))/2",
+                "0",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "(-1 + sqrt(5))/2",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "(-1 + sqrt(5))/2",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.13025623499925132,
+      "benchmark_case": "D",
+      "same_input_source": "/workspace/scratch/1a566f332b01/qb01_work/deliverable/benchmark/benchmark_inputs.json"
+    },
+    {
+      "name": "near_repeated_singular_value_real_ray",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      "direction_norm": "1",
+      "p0_components": [
+        "s**2 + s + 1",
+        "0",
+        "1/10000000000",
+        "0"
+      ],
+      "p1_components": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "norm_polynomial": "(100000000000000000000*gamma**2 - 200000000000000000000*gamma*s**2 - 200000000000000000000*gamma*s - 200000000000000000000*gamma + 100000000000000000000*s**4 + 200000000000000000000*s**3 + 300000000000000000000*s**2 + 200000000000000000000*s + 100000000000000000001)/100000000000000000000",
+      "norm_degree": 4,
+      "guardian": "-(100000000000000000000*gamma - 99999999999999999999)/25000000000000000000",
+      "guardian_degree": 1,
+      "square_free_guardian": "(100000000000000000000*gamma - 99999999999999999999)/100000000000000000000",
+      "square_free_factors_with_multiplicities": [
+        [
+          "(100000000000000000000*gamma - 99999999999999999999)/100000000000000000000",
+          1
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "99999999999999999999/100000000000000000000",
+          "upper": "99999999999999999999/100000000000000000000",
+          "multiplicity": 1
+        }
+      ],
+      "first_gamma": "99999999999999999999/100000000000000000000",
+      "first_quaternion_norm": "99999999999999999999/100000000000000000000",
+      "first_guardian_multiplicity": 1,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "99999999999999999999/100000000000000000000",
+          "original_norm": "(100000000000000000000*s**2 + 1)*(100000000000000000000*s**2 + 200000000000000000000*s + 100000000000000000001)/10000000000000000000000000000000000000000",
+          "even_polynomial": "(100000000000000000000*x - 100000000000000000001)*(100000000000000000000*x - 1)/10000000000000000000000000000000000000000",
+          "odd_polynomial": "-(100000000000000000000*x - 1)/50000000000000000000",
+          "even_odd_gcd": "(100000000000000000000*x - 1)/100000000000000000000",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "1/100000000000000000000",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              "remainder_A": [
+                "0",
+                "0",
+                "1/10000000000",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "-1/10000000000",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "-1/10000000000",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.042081891999259824,
+      "benchmark_case": "N",
+      "same_input_source": "/workspace/scratch/1a566f332b01/qb01_work/deliverable/benchmark/benchmark_inputs.json"
+    },
+    {
+      "name": "nearly_flat_peak_exact_critical_ray",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "-2",
+        "-1/5000",
+        "0",
+        "0"
+      ],
+      "direction_norm": "sqrt(100000001)/5000",
+      "p0_components": [
+        "(100000000*s**2 + 200000000*s + 200000001)/100000000",
+        "0",
+        "0",
+        "0"
+      ],
+      "p1_components": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "norm_polynomial": "(40000000400000000*gamma**2 - 40000000000000000*gamma*s**2 - 80000000000000000*gamma*s - 80000000400000000*gamma + 10000000000000000*s**4 + 40000000000000000*s**3 + 80000000200000000*s**2 + 80000000400000000*s + 40000000400000001)/10000000000000000",
+      "norm_degree": 4,
+      "guardian": "-(gamma - 1)*(gamma + 200000001)/1562500",
+      "guardian_degree": 2,
+      "square_free_guardian": "(gamma - 1)*(gamma + 200000001)",
+      "square_free_factors_with_multiplicities": [
+        [
+          "(gamma - 1)*(gamma + 200000001)",
+          1
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "-200000001",
+          "upper": "-200000001",
+          "multiplicity": 1
+        },
+        {
+          "lower": "1",
+          "upper": "1",
+          "multiplicity": 1
+        }
+      ],
+      "first_gamma": "1",
+      "first_quaternion_norm": "sqrt(100000001)/5000",
+      "first_guardian_multiplicity": 1,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "1",
+          "original_norm": "(100000000*s**2 + 1)*(100000000*s**2 + 400000000*s + 400000001)/10000000000000000",
+          "even_polynomial": "(100000000*x - 400000001)*(100000000*x - 1)/10000000000000000",
+          "odd_polynomial": "-(100000000*x - 1)/25000000",
+          "even_odd_gcd": "(100000000*x - 1)/100000000",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "1/100000000",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "2",
+                "0",
+                "0",
+                "0"
+              ],
+              "remainder_A": [
+                "0",
+                "-1/5000",
+                "0",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "1/10000",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "1/10000",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.04943379399992409,
+      "benchmark_case": "F",
+      "same_input_source": "/workspace/scratch/1a566f332b01/qb01_work/deliverable/benchmark/benchmark_inputs.json"
+    },
+    {
+      "name": "quaternion_zero_tangency",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "direction_norm": "1",
+      "p0_components": [
+        "(s + 1)**2",
+        "0",
+        "1",
+        "0"
+      ],
+      "p1_components": [
+        "-s - 1",
+        "0",
+        "-s - 1",
+        "0"
+      ],
+      "norm_polynomial": "2*gamma**2*s**2 + 4*gamma**2*s + 2*gamma**2 - 2*gamma*s**3 - 6*gamma*s**2 - 8*gamma*s - 4*gamma + s**4 + 4*s**3 + 6*s**2 + 4*s + 2",
+      "norm_degree": 4,
+      "guardian": "-8*(gamma - 1)**2*(2*gamma - 3)*(gamma**2 - 2*gamma + 2)",
+      "guardian_degree": 5,
+      "square_free_guardian": "(gamma - 1)*(2*gamma - 3)*(gamma**2 - 2*gamma + 2)/2",
+      "square_free_factors_with_multiplicities": [
+        [
+          "(2*gamma - 3)*(gamma**2 - 2*gamma + 2)/2",
+          1
+        ],
+        [
+          "gamma - 1",
+          2
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "1",
+          "upper": "1",
+          "multiplicity": 2
+        },
+        {
+          "lower": "3/2",
+          "upper": "3/2",
+          "multiplicity": 1
+        }
+      ],
+      "first_gamma": "1",
+      "first_quaternion_norm": "1",
+      "first_guardian_multiplicity": 2,
+      "stable_in_interval_immediately_after_first": true,
+      "candidates": [
+        {
+          "gamma": "1",
+          "original_norm": "s**2*(s**2 + 2*s + 2)",
+          "even_polynomial": "x*(x - 2)",
+          "odd_polynomial": "-2*x",
+          "even_odd_gcd": "x",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "0",
+              "kind": "zero frequency",
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 2
+        },
+        {
+          "gamma": "3/2",
+          "original_norm": "(s**2 + 1)*(2*s**2 + 2*s + 1)/2",
+          "even_polynomial": "(x - 1)*(2*x - 1)/2",
+          "odd_polynomial": "1 - x",
+          "even_odd_gcd": "x - 1",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "1",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "1/2",
+                "0",
+                "-3/2",
+                "0"
+              ],
+              "remainder_A": [
+                "-3/2",
+                "0",
+                "-1/2",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "1",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.07110631599971384,
+      "benchmark_case": "T",
+      "same_input_source": "/workspace/scratch/1a566f332b01/qb01_work/deliverable/benchmark/benchmark_inputs.json"
+    },
+    {
+      "name": "scaled_side_separation_left",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "direction_norm": "sqrt(2)",
+      "p0_components": [
+        "100000000000000000000000000000000000000000000000000000000000000000000*(s + 1000000)**2",
+        "0",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "0"
+      ],
+      "p1_components": [
+        "0",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000*s",
+        "0",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "norm_polynomial": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(2000000000000*gamma**2*s**2 + 2000000000000000000000000*gamma**2 - 2000000*gamma*s**3 - 6000000000000*gamma*s**2 - 4000000000000000000*gamma*s - 4000000000000000000000000*gamma + s**4 + 4000000*s**3 + 6000000000000*s**2 + 4000000000000000000*s + 2000000000000000000000000)",
+      "norm_degree": 4,
+      "guardian": "8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(gamma - 3)*(gamma - 1)*(gamma**2 - 2*gamma + 2)",
+      "guardian_degree": 4,
+      "square_free_guardian": "(gamma - 3)*(gamma - 1)*(gamma**2 - 2*gamma + 2)",
+      "square_free_factors_with_multiplicities": [
+        [
+          "(gamma - 3)*(gamma - 1)*(gamma**2 - 2*gamma + 2)",
+          1
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "1",
+          "upper": "1",
+          "multiplicity": 1
+        },
+        {
+          "lower": "3",
+          "upper": "3",
+          "multiplicity": 1
+        }
+      ],
+      "first_gamma": "1",
+      "first_quaternion_norm": "sqrt(2)",
+      "first_guardian_multiplicity": 1,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "1",
+          "original_norm": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*s**2*(s**2 + 2000000*s + 2000000000000)",
+          "even_polynomial": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*x*(x - 2000000000000)",
+          "odd_polynomial": "-20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*x",
+          "even_odd_gcd": "x",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "0",
+              "kind": "zero frequency",
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        },
+        {
+          "gamma": "3",
+          "original_norm": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(s**2 + 4000000000000)*(s**2 - 2000000*s + 2000000000000)",
+          "even_polynomial": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(x - 4000000000000)*(x - 2000000000000)",
+          "odd_polynomial": "20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(x - 4000000000000)",
+          "even_odd_gcd": "x - 4000000000000",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "4000000000000",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "-100000000000000000000000000000000000000000000000000000000000000000000000000",
+                "0",
+                "300000000000000000000000000000000000000000000000000000000000000000000000000",
+                "0"
+              ],
+              "remainder_A": [
+                "-600000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                "0",
+                "-200000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "-2000000",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "-2000000",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.07876942300026712,
+      "benchmark_case": "K",
+      "same_input_source": "/workspace/scratch/1a566f332b01/qb01_work/deliverable/benchmark/benchmark_inputs.json"
+    },
+    {
+      "name": "scaled_side_separation_right",
+      "side": "R",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "direction_norm": "sqrt(2)",
+      "p0_components": [
+        "100000000000000000000000000000000000000000000000000000000000000000000*(s + 1000000)**2",
+        "0",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "0"
+      ],
+      "p1_components": [
+        "0",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000*s",
+        "0",
+        "100000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "norm_polynomial": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(2000000000000*gamma**2*s**2 + 2000000000000000000000000*gamma**2 - 2000000*gamma*s**3 - 6000000000000*gamma*s**2 - 8000000000000000000*gamma*s + s**4 + 4000000*s**3 + 6000000000000*s**2 + 4000000000000000000*s + 2000000000000000000000000)",
+      "norm_degree": 4,
+      "guardian": "24000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(gamma**2 - 4*gamma + 1)*(gamma**2 - 2*gamma + 2)",
+      "guardian_degree": 4,
+      "square_free_guardian": "(gamma**2 - 4*gamma + 1)*(gamma**2 - 2*gamma + 2)",
+      "square_free_factors_with_multiplicities": [
+        [
+          "(gamma**2 - 4*gamma + 1)*(gamma**2 - 2*gamma + 2)",
+          1
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "296011017105/1104728155436",
+          "upper": "512706121226/1913445293767",
+          "multiplicity": 1
+        },
+        {
+          "lower": "7141075053842/1913445293767",
+          "upper": "4122901604639/1104728155436",
+          "multiplicity": 1
+        }
+      ],
+      "first_gamma": "2 - sqrt(3)",
+      "first_quaternion_norm": "-sqrt(2)*(-2 + sqrt(3))",
+      "first_guardian_multiplicity": 1,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "2 - sqrt(3)",
+          "original_norm": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(s**4 + 2000000*sqrt(3)*s**3 - 2000000000000*sqrt(3)*s**2 + 8000000000000*s**2 - 12000000000000000000*s + 8000000000000000000*sqrt(3)*s - 8000000000000000000000000*sqrt(3) + 16000000000000000000000000)",
+          "even_polynomial": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(x - 4000000000000)*(x - 4000000000000 + 2000000000000*sqrt(3))",
+          "odd_polynomial": "-20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(sqrt(3)*x - 4000000000000*sqrt(3) + 6000000000000)",
+          "even_odd_gcd": "x - 4000000000000 + 2000000000000*sqrt(3)",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "-2000000000000*(-2 + sqrt(3))",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "100000000000000000000000000000000000000000000000000000000000000000000000000*sqrt(3)",
+                "0",
+                "100000000000000000000000000000000000000000000000000000000000000000000000000*(-2 + sqrt(3))",
+                "0"
+              ],
+              "remainder_A": [
+                "100000000000000000000000000000000000000000000000000000000000000000000000000000000*(-5 + 3*sqrt(3))",
+                "0",
+                "-100000000000000000000000000000000000000000000000000000000000000000000000000000000*(-3 + sqrt(3))",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "-1000000*(-1 + sqrt(3))",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "-1000000*(-1 + sqrt(3))",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        },
+        {
+          "gamma": "sqrt(3) + 2",
+          "original_norm": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(s**4 - 2000000*sqrt(3)*s**3 + 2000000000000*sqrt(3)*s**2 + 8000000000000*s**2 - 8000000000000000000*sqrt(3)*s - 12000000000000000000*s + 8000000000000000000000000*sqrt(3) + 16000000000000000000000000)",
+          "even_polynomial": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(x - 4000000000000)*(x - 4000000000000 - 2000000000000*sqrt(3))",
+          "odd_polynomial": "20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*(sqrt(3)*x - 4000000000000*sqrt(3) - 6000000000000)",
+          "even_odd_gcd": "x - 4000000000000 - 2000000000000*sqrt(3)",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "2000000000000*(sqrt(3) + 2)",
+              "gcd_multiplicity": 1,
+              "kind": "unique zero per evaluation convention on this sphere",
+              "remainder_B": [
+                "-100000000000000000000000000000000000000000000000000000000000000000000000000*sqrt(3)",
+                "0",
+                "-100000000000000000000000000000000000000000000000000000000000000000000000000*(sqrt(3) + 2)",
+                "0"
+              ],
+              "remainder_A": [
+                "-100000000000000000000000000000000000000000000000000000000000000000000000000000000*(5 + 3*sqrt(3))",
+                "0",
+                "100000000000000000000000000000000000000000000000000000000000000000000000000000000*(sqrt(3) + 3)",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "1000000*(1 + sqrt(3))",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "1000000*(1 + sqrt(3))",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.383003260998521,
+      "benchmark_case": "K",
+      "same_input_source": "/workspace/scratch/1a566f332b01/qb01_work/deliverable/benchmark/benchmark_inputs.json"
+    },
+    {
+      "name": "cubic_nonzero_tangency",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "direction_norm": "1",
+      "p0_components": [
+        "s**3 + 2*s**2 + 2*s + 3",
+        "0",
+        "0",
+        "0"
+      ],
+      "p1_components": [
+        "s**2 + s + 6",
+        "0",
+        "0",
+        "0"
+      ],
+      "norm_polynomial": "(gamma*s**2 + gamma*s + 6*gamma + s**3 + 2*s**2 + 2*s + 3)**2",
+      "norm_degree": 6,
+      "guardian": "24*(gamma - 1)**8*(2*gamma + 1)",
+      "guardian_degree": 9,
+      "square_free_guardian": "(gamma - 1)*(2*gamma + 1)/2",
+      "square_free_factors_with_multiplicities": [
+        [
+          "(2*gamma + 1)/2",
+          1
+        ],
+        [
+          "gamma - 1",
+          8
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "-1/2",
+          "upper": "-1/2",
+          "multiplicity": 1
+        },
+        {
+          "lower": "1",
+          "upper": "1",
+          "multiplicity": 8
+        }
+      ],
+      "first_gamma": "1",
+      "first_quaternion_norm": "1",
+      "first_guardian_multiplicity": 8,
+      "stable_in_interval_immediately_after_first": true,
+      "candidates": [
+        {
+          "gamma": "1",
+          "original_norm": "(s + 3)**2*(s**2 + 3)**2",
+          "even_polynomial": "-(x - 9)*(x - 3)**2",
+          "odd_polynomial": "6*(x - 3)**2",
+          "even_odd_gcd": "(x - 3)**2",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "3",
+              "gcd_multiplicity": 2,
+              "kind": "full imaginary sphere (remainder identically zero)",
+              "remainder_B": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "remainder_A": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "sqrt(3)",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "sqrt(3)",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 8
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.3224731049995171
+    },
+    {
+      "name": "infinite_ray_margin",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "direction_norm": "1",
+      "p0_components": [
+        "s + 1",
+        "0",
+        "0",
+        "0"
+      ],
+      "p1_components": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "norm_polynomial": "gamma**2 + s**2 + 2*s + 1",
+      "norm_degree": 2,
+      "guardian": "2",
+      "guardian_degree": 0,
+      "square_free_guardian": "1",
+      "square_free_factors_with_multiplicities": [],
+      "real_root_isolating_intervals": [],
+      "first_gamma": "oo",
+      "first_quaternion_norm": "oo",
+      "first_guardian_multiplicity": null,
+      "stable_in_interval_immediately_after_first": null,
+      "candidates": [],
+      "elapsed_seconds_symbolic_run": 0.004821465001441538
+    },
+    {
+      "name": "guardian_extraneous_later",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "direction_norm": "1",
+      "p0_components": [
+        "(s + 1)*(s + 2)",
+        "0",
+        "0",
+        "0"
+      ],
+      "p1_components": [
+        "-s - 1",
+        "0",
+        "0",
+        "0"
+      ],
+      "norm_polynomial": "(s + 1)**2*(-gamma + s + 2)**2",
+      "norm_degree": 4,
+      "guardian": "-4*(gamma - 3)**4*(gamma - 2)",
+      "guardian_degree": 5,
+      "square_free_guardian": "(gamma - 3)*(gamma - 2)",
+      "square_free_factors_with_multiplicities": [
+        [
+          "gamma - 2",
+          1
+        ],
+        [
+          "gamma - 3",
+          4
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "2",
+          "upper": "2",
+          "multiplicity": 1
+        },
+        {
+          "lower": "3",
+          "upper": "3",
+          "multiplicity": 4
+        }
+      ],
+      "first_gamma": "2",
+      "first_quaternion_norm": "2",
+      "first_guardian_multiplicity": 1,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "2",
+          "original_norm": "s**2*(s + 1)**2",
+          "even_polynomial": "x*(x - 1)",
+          "odd_polynomial": "-2*x",
+          "even_odd_gcd": "x",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "0",
+              "kind": "zero frequency",
+              "right_evaluation_zero": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 1
+        },
+        {
+          "gamma": "3",
+          "original_norm": "(s - 1)**2*(s + 1)**2",
+          "even_polynomial": "(x + 1)**2",
+          "odd_polynomial": "0",
+          "even_odd_gcd": "(x + 1)**2",
+          "imaginary_contact": false,
+          "witnesses": [],
+          "guardian_multiplicity": 4
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.05324935600037861
+    },
+    {
+      "name": "spherical_contact_odd_part_zero",
+      "side": "L",
+      "parameterization": "t=gamma*d, gamma>=0",
+      "direction_d": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "direction_norm": "1",
+      "p0_components": [
+        "(s + 1)**2",
+        "0",
+        "0",
+        "0"
+      ],
+      "p1_components": [
+        "-2*s",
+        "0",
+        "0",
+        "0"
+      ],
+      "norm_polynomial": "(-2*gamma*s + s**2 + 2*s + 1)**2",
+      "norm_degree": 4,
+      "guardian": "64*(gamma - 1)**4",
+      "guardian_degree": 4,
+      "square_free_guardian": "gamma - 1",
+      "square_free_factors_with_multiplicities": [
+        [
+          "gamma - 1",
+          4
+        ]
+      ],
+      "real_root_isolating_intervals": [
+        {
+          "lower": "1",
+          "upper": "1",
+          "multiplicity": 4
+        }
+      ],
+      "first_gamma": "1",
+      "first_quaternion_norm": "1",
+      "first_guardian_multiplicity": 4,
+      "stable_in_interval_immediately_after_first": false,
+      "candidates": [
+        {
+          "gamma": "1",
+          "original_norm": "(s**2 + 1)**2",
+          "even_polynomial": "(x - 1)**2",
+          "odd_polynomial": "0",
+          "even_odd_gcd": "(x - 1)**2",
+          "imaginary_contact": true,
+          "witnesses": [
+            {
+              "omega_squared": "1",
+              "gcd_multiplicity": 2,
+              "kind": "full imaginary sphere (remainder identically zero)",
+              "remainder_B": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "remainder_A": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "right_evaluation_zero": [
+                "0",
+                "1",
+                "0",
+                "0"
+              ],
+              "left_evaluation_zero": [
+                "0",
+                "0",
+                "1",
+                "0"
+              ]
+            }
+          ],
+          "guardian_multiplicity": 4
+        }
+      ],
+      "elapsed_seconds_symbolic_run": 0.06340166900008626
+    }
+  ]
+}

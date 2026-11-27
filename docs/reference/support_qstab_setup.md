@@ -1,6 +1,6 @@
-# qstab_setup
+# support_qstab_setup
 
-[Function index](../api_index.md) · [Manual](../qstab_manual.pdf) · [MATLAB source](../../qstab_setup.m)
+[Function index](../api_index.md) · [Manual](../qstab_manual.pdf)
 
 ## Help and calling sequences
 

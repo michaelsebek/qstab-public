@@ -1,0 +1,49 @@
+<h1 id="qstab-0.20.0-veřejná-instalace-a-ověření">qstab 0.20.0 — veřejná
+instalace a ověření</h1>
+<p>Rozbalte distribuci do prázdné zapisovatelné složky. V MATLABu
+přejděte do obsažené složky qstab_public, v níž leží qstab_setup.m. Při
+nahrazování již používané instalace nejprve zachovejte své výsledky a
+potom restartujte MATLAB.</p>
+<h2 id="ověření-verze">Ověření verze</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">qstab_setup</span>(<span class="ss">&#39;Examples&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">I</span> <span class="op">=</span> <span class="va">qstab</span>.<span class="va">about</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">strcmp</span>(<span class="va">I</span>.<span class="va">version</span><span class="op">,</span><span class="ss">&#39;0.20.0&#39;</span>)<span class="op">,</span><span class="ss">&#39;Aktivni je jina verze qstab.&#39;</span>)</span></code></pre></div>
+<h2 id="úplný-veřejný-test">Úplný veřejný test</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">R</span> <span class="op">=</span> <span class="va">run_qstab_public</span>(<span class="ss">&#39;Figures&#39;</span><span class="op">,</span><span class="va">false</span>)<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">R</span>.<span class="va">archiveFile</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">R</span>.<span class="va">ok</span> <span class="op">&amp;&amp;</span> <span class="va">R</span>.<span class="va">publicAcceptance</span>.<span class="va">ok</span><span class="op">,</span><span class="ss">&#39;Viz report: %s&#39;</span><span class="op">,</span><span class="va">R</span>.<span class="va">archiveFile</span>)</span></code></pre></div>
+<p>Runner dočasně omezuje MATLAB path na veřejný balík a instalaci
+MATLABu, po skončení obnovuje cestu i pracovní složku. Úplný test
+zahrnuje nativní quaternion vstupy a grafiku. Výsledek ukládá do
+qstab_test_results.zip.</p>
+<h2 id="přesná-jednoparametrická-větev">Přesná jednoparametrická
+větev</h2>
+<p>Následující příkazy vyžadují Symbolic Math Toolbox.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">T</span> <span class="op">=</span> <span class="va">test_qstab_oneparameter</span>(<span class="ss">&#39;ExactCertificates&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">T</span>.<span class="va">archiveFile</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">T</span>.<span class="va">ok</span> <span class="op">&amp;&amp;</span> <span class="va">T</span>.<span class="va">complete</span><span class="op">,</span><span class="ss">&#39;Viz presne testy: %s&#39;</span><span class="op">,</span><span class="va">T</span>.<span class="va">archiveFile</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> <span class="va">run_qstab_oneparameter</span>(<span class="ss">&#39;all&#39;</span><span class="op">,</span><span class="ss">&#39;Plots&#39;</span><span class="op">,</span><span class="va">true</span><span class="op">,</span><span class="ss">&#39;ExactCertificates&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="va">A</span>.<span class="va">archiveFile</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">A</span>.<span class="va">ok</span> <span class="op">&amp;&amp;</span> <span class="va">A</span>.<span class="va">articleComplete</span><span class="op">,</span><span class="ss">&#39;Viz priklady: %s&#39;</span><span class="op">,</span><span class="va">A</span>.<span class="va">archiveFile</span>)</span></code></pre></div>
+<p>Cílená sada obsahuje 32 kontrol. Úplná studie obsahuje 13 skupin a
+139 porovnání, 9 globálních certifikátů poloměru, 14 prvních paprskových
+kontaktů, 13 konečných ověření na původním polynomu a 42 identit.
+Numerická metoda může ponechat dotyk jako nerozhodnutý, zatímco
+samostatný přesný důkaz uspěje.</p>
+<p>Aktuální archivy jsou qstab_oneparameter_test_results.zip a
+qstab_oneparameter_results.zip. Nový běh přepisuje pevný název archivu;
+potřebné předchozí výsledky si nejprve uchovejte. Přesná část může být
+vynechána při volbě ‘auto’, nikoli při true. T.ok samo o sobě
+nenahrazuje T.complete; obdobně A.ok nenahrazuje A.articleComplete.</p>
+<h2 id="doložená-validace-této-distribuce">Doložená validace této
+distribuce</h2>
+<p>Nativní běh 748/748 patří kandidátu rc.1. Opravená rc.2 již nativně
+prošla 32/32 cílenými kontrolami a 13 skupinami / 139 porovnáními včetně
+přesných důkazů. Finální 0.20.0 zachovává její algoritmy, příklady a
+testy; změny se týkají verzovacích a popisných textů, dokumentace a
+metadat. Nový nativní běh finálního označení nebyl proveden.
+Podrobnosti: verification/VALIDATION.md.</p>

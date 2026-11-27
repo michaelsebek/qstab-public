@@ -1,5 +1,37 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab 0.19.0 · 20 November 2026</title><link rel="stylesheet" href="docs/style.css"></head><body><main><h1 id="qstab-0.19.0-20-november-2026">qstab 0.19.0 · 20 November
+<h1 id="qstab-0.20.0">qstab 0.20.0</h1>
+<p>Adds the scalar one-quaternion study, exact first-positive-ray
+certificates (<code>qstab.raycertificate</code>) and verification of
+supplied global-radius bounds (<code>qstab.radiuscertificate</code>).
+Extends fixed-frequency gain geometry, ordered SVD diagnostics,
+original-polynomial evaluation witnesses and frequency scaling.
+Decimal/scientific text and polynomial zero identities now remain exact
+throughout the symbolic branch. See <a
+href="docs/oneparameter_article.md">the one-parameter guide</a>.</p>
+<p>Native MATLAB R2024b Update 2 evidence is attributed to the actual
+versions: the rc.1 transcript reports 748/748 ordinary public checks;
+rc.2 passed 32/32 targeted checks and 13/13 article groups with 139/139
+comparisons, including 9 radius certificates, 14 ray certificates (13
+finite contacts and one unbounded ray), 13 finite original-polynomial
+liftings and 42 exact identities. The 221 installed MATLAB source hashes
+in the article report match the delivered rc.2. Numerical tangencies can
+remain unresolved while exact first-contact proofs succeed; the report
+retains both outcomes.</p>
+<p>Relative to the tested rc.2, finalization changes four MATLAB files
+only in version/descriptive strings, plus documentation and publication
+metadata. The other 217 MATLAB files, all numerical and symbolic
+algorithms, all examples and all test implementations are
+byte-identical. The complete 748-check suite was not rerun on rc.2; no
+new native execution of the renamed final distribution is claimed. <a
+href="verification/VALIDATION.md">Validation</a> records the earlier
+failed exact rc.1 run and the successful rc.2 replacement
+separately.</p>
+<p>Exact proofs require optional Symbolic Math Toolbox and apply to
+continuous-time scalar polynomial families with rational component data
+and fixed leading coefficient. The global-radius API verifies
+user-supplied bounds. It does not claim a general exact radius algorithm
+for uncertain quaternion matrices.</p>
+<hr />
+<h1 id="qstab-0.19.0-20-november-2026">qstab 0.19.0 · 20 November
 2026</h1>
 <p>Adds a reproducible study of the interval manuscript v7 and
 supplement v5, with 24 source-linked example groups, independent
@@ -40,8 +72,8 @@ not claim another native execution after the final text edits.</p>
 <p>The optional native MATLAB Symbolic replay was not requested by the
 numerical acceptance runs. Its complete native execution remains
 unverified; the independent Python/SymPy exact replay has its own
-recorded evidence. See <a href="verification/VALIDATION.html">the
-validation ledger</a> and <a href="docs/interval_article.html">interval
+recorded evidence. See <a href="verification/VALIDATION.md">the
+validation ledger</a> and <a href="docs/interval_article.md">interval
 reproduction instructions</a>.</p>
 <h2 id="qstab-0.18.0-9-november-2026">qstab 0.18.0 · 9 November
 2026</h2>
@@ -56,7 +88,7 @@ fixed list of 11 executable keys.</p>
 <p>The companion manuscript concerns polytopes. Other implemented
 methods are available in the same package; a software release does not
 assert that each method has been published. Future paper references can
-be added to CITATION.cff and <a href="docs/papers.html">the reading
+be added to CITATION.cff and <a href="docs/papers.md">the reading
 notes</a>. The optional article replay is separate from the MATLAB
 solvers.</p>
 <p>Native public acceptance for 0.18.0-rc.1 passed on MATLAB R2024b
@@ -66,7 +98,6 @@ candidate archive. Between that archive and 0.18.0 only the version
 displays, the reporting text, a help heading and distribution
 documentation/metadata changed. All numerical routines, all examples and
 all tests retain their tested contents.</p>
-<p><a href="verification/VALIDATION.html">Validation record</a> · <a
-href="docs/installation.html">Installation</a> · <a
+<p><a href="verification/VALIDATION.md">Validation record</a> · <a
+href="docs/installation.md">Installation</a> · <a
 href="LICENSE">License</a>.</p>
-</main></body></html>

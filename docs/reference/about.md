@@ -1,6 +1,6 @@
 # qstab.about
 
-[Function index](../api_index.md) · [Manual](../qstab_manual.pdf) · [MATLAB source](../../src/+qstab/about.m)
+[Function index](../api_index.md) · [Manual](../qstab_manual.pdf)
 
 ## Help and calling sequences
 
@@ -14,5 +14,6 @@ ABOUT Version, scope and dependency information for qstab.
   Interpretation:
   Version, numerical scope, dependency declarations and historical validation text; this is not a fresh validation run.
 
+  Reference: docs/reference/about.html.
   See also qstab.about.
 ```

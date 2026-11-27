@@ -1,0 +1,58 @@
+# qstab 0.20.0 — veřejná instalace a ověření
+
+Rozbalte distribuci do prázdné zapisovatelné složky. V MATLABu přejděte do
+obsažené složky qstab_public, v níž leží qstab_setup.m. Při nahrazování již
+používané instalace nejprve zachovejte své výsledky a potom restartujte MATLAB.
+
+## Ověření verze
+
+```matlab
+qstab_setup('Examples',true);
+I = qstab.about;
+assert(strcmp(I.version,'0.20.0'),'Aktivni je jina verze qstab.')
+```
+
+## Úplný veřejný test
+
+```matlab
+R = run_qstab_public('Figures',false);
+R.archiveFile
+assert(R.ok && R.publicAcceptance.ok,'Viz report: %s',R.archiveFile)
+```
+
+Runner dočasně omezuje MATLAB path na veřejný balík a instalaci MATLABu,
+po skončení obnovuje cestu i pracovní složku. Úplný test zahrnuje nativní
+quaternion vstupy a grafiku. Výsledek ukládá do qstab_test_results.zip.
+
+## Přesná jednoparametrická větev
+
+Následující příkazy vyžadují Symbolic Math Toolbox.
+
+```matlab
+T = test_qstab_oneparameter('ExactCertificates',true);
+T.archiveFile
+assert(T.ok && T.complete,'Viz presne testy: %s',T.archiveFile)
+
+A = run_qstab_oneparameter('all','Plots',true,'ExactCertificates',true);
+A.archiveFile
+assert(A.ok && A.articleComplete,'Viz priklady: %s',A.archiveFile)
+```
+
+Cílená sada obsahuje 32 kontrol. Úplná studie obsahuje 13 skupin a 139 porovnání,
+9 globálních certifikátů poloměru, 14 prvních paprskových kontaktů,
+13 konečných ověření na původním polynomu a 42 identit. Numerická metoda může
+ponechat dotyk jako nerozhodnutý, zatímco samostatný přesný důkaz uspěje.
+
+Aktuální archivy jsou qstab_oneparameter_test_results.zip a
+qstab_oneparameter_results.zip. Nový běh přepisuje pevný název archivu;
+potřebné předchozí výsledky si nejprve uchovejte. Přesná část může být vynechána
+při volbě 'auto', nikoli při true. T.ok samo o sobě nenahrazuje T.complete;
+obdobně A.ok nenahrazuje A.articleComplete.
+
+## Doložená validace této distribuce
+
+Nativní běh 748/748 patří kandidátu rc.1. Opravená rc.2 již nativně prošla
+32/32 cílenými kontrolami a 13 skupinami / 139 porovnáními včetně přesných důkazů.
+Finální 0.20.0 zachovává její algoritmy, příklady a testy; změny se týkají
+verzovacích a popisných textů, dokumentace a metadat. Nový nativní běh finálního
+označení nebyl proveden. Podrobnosti: verification/VALIDATION.md.

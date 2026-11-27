@@ -1,0 +1,48 @@
+{
+  "schema": "qstab.oneparameter.source.1",
+  "sourceRevision": "qB01 polynomial article revision 7, 26 November 2026",
+  "note": "The manuscript PDF is not redistributed. Original independent Python exact-verification files and recorded outputs are retained under source; their presence is not evidence of a fresh MATLAB run.",
+  "files": [
+    {
+      "sourcePath": "qB01_polynomial_article_rev7.pdf",
+      "sha256": "bab92bbeb152557ba94ca399c8421fd7a5276c48c4ad6247f5a01df0683ad44c"
+    },
+    {
+      "sourcePath": "qB01_polynomial_article_rev7.tex",
+      "sha256": "eae39bd617fe35ee6d3fa8b650790d39703e7bb644de8099e7e508059a49b539"
+    },
+    {
+      "sourcePath": "reproducibility/benchmark/benchmark_inputs.json",
+      "sha256": "aeed1fbfbc79c14f7e0427c5ec2e0f57a4b350480cbae2e4817ed214d504e0c1"
+    },
+    {
+      "sourcePath": "reproducibility/benchmark/benchmark_results.json",
+      "sha256": "eb705b4d08065e803d6ee447114be163c6404d66d170bb0093484d854956b485"
+    },
+    {
+      "sourcePath": "reproducibility/directional/exact_directional.py",
+      "sha256": "d9f0ebbec215b83989707d6e2925034d179674965c0ffffbc9fac464ede7a8ed"
+    },
+    {
+      "sourcePath": "reproducibility/directional/exact_directional_checks.json",
+      "sha256": "bb729b8549722a03ef6107d230ec3ad3dce424127c60741ab84ed8d24e52f7c0"
+    },
+    {
+      "sourcePath": "reproducibility/certify_global.py",
+      "sha256": "b5ff0e4ef0d3e11a4aa06be5a2ec44f4da3d68269871e7351e64af4a162ac512"
+    },
+    {
+      "sourcePath": "reproducibility/global_certificates.json",
+      "sha256": "09c6bf008615b795514811e0b5af4b9fb3bc177ef20a2aaaf008638223e1d5f1"
+    },
+    {
+      "sourcePath": "reproducibility/verify_rev6.py",
+      "sha256": "6353d1915885270946c4b9489ffd9fb5d1b244d328c11cbca19391baf0ec47e2"
+    },
+    {
+      "sourcePath": "reproducibility/rev6_exact_checks.json",
+      "sha256": "7df937414f2ff4be1890972b16d592f226f9b20402300f9037a66059b97d3b9b"
+    }
+  ],
+  "fixtureSha256": "6a859e81dfd1e3b59cdec9352b5048a15f325a3b96b4cc3356d5653c88baa478"
+}

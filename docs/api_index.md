@@ -45,6 +45,8 @@ Use qualified names, e.g. `help qstab.raymargin`. These entries show the source 
 | [qstab.raymargin](reference/raymargin.md) | First loss of strict stability along one quaternion direction. |
 | [qstab.freqmargin](reference/freqmargin.md) | Smallest /t/ producing a boundary zero at a specified frequency. |
 | [qstab.stabilityradius](reference/stabilityradius.md) | Bound the first loss over all directions of one quaternion t. |
+| [qstab.raycertificate](reference/raycertificate.md) | Prove the first positive scalar CT ray contact, including tangencies (optional symbolic arithmetic). |
+| [qstab.radiuscertificate](reference/radiuscertificate.md) | Verify rational lower and upper bounds of the scalar CT all-direction radius. |
 | [qstab.lyapoperator](reference/lyapoperator.md) | Real matrix of X -> A*X + X*A' on quaternion Hermitian X. |
 
 ## Coefficient balls and component boxes
@@ -78,6 +80,11 @@ Use qualified names, e.g. `help qstab.raymargin`. These entries show the source 
 | [qstab.plotWitness](reference/plotWitness.md) | Draw a previously reconstructed member's algebraic zero classes. |
 
 ## Setup, checks and worked examples
+
+- [run_qstab_oneparameter](oneparameter_article.md): Recompute scalar one-parameter article examples and optional exact proofs, with a fresh result ZIP.
+- [test_qstab_oneparameter](reference/support_test_qstab_oneparameter.md): Run numerical, article integration and optional exact regression groups.
+- [plot_qstab_oneparameter](reference/example_plot_qstab_oneparameter.md): Plot saved one-parameter results without rerunning their solvers.
+- [verify_qstab_oneparameter_identities](reference/example_verify_qstab_oneparameter_identities.md): Recompute the 42 exact manuscript identities in MATLAB.
 
 - [run_qstab_intervals](interval_article.md): Compute all 24 groups of the interval article and supplement, compare references, and save a current-run ZIP.
 - [plot_qstab_intervals](interval_article.md#figures-and-saved-data): Replot the saved interval data without rerunning solvers.

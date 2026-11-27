@@ -1,0 +1,107 @@
+{
+  "schema": "qstab.symbolic-fix.1",
+  "candidate": "0.20.0-rc.2",
+  "date": "2026-11-27",
+  "baseline": "0.20.0-rc.1",
+  "baselineArchiveSha256": "60f71e78fe0894d592383829483b72cc740406c20fcd2208f843c5e0d7dd9f99",
+  "nativeRetestPending": true,
+  "nativePriorTranscript": "native-transcript-0.20.0-rc.1.json",
+  "auxiliaryEnvironment": "Octave 10.3.0; symbolic 3.2.2 / SymPy 1.14.0; external nondistributed quorem shim",
+  "targeted": {
+    "auxiliaryOnly": true,
+    "runtime": "10.3.0",
+    "status": "AUXILIARY_OK_NATIVE_PENDING",
+    "passed": 32,
+    "failed": 0,
+    "skipped": 0,
+    "ok": true,
+    "complete": true,
+    "elapsedSeconds": 272.55421686172485,
+    "callerStatePreserved": true,
+    "nativeMatlabValidated": false,
+    "archiveVerified": true,
+    "archiveSha256": "4d3dfe9aba666edbb9692ed01a464901ae10a4f5968229cb83b52dfe99e5f0a9"
+  },
+  "article": {
+    "auxiliaryOnly": true,
+    "runtime": "10.3.0",
+    "version": "0.20.0-rc.2",
+    "status": "ARTICLE_CHECKS_AND_EXACT_PROOFS_PASSED",
+    "passed": 13,
+    "failed": 0,
+    "checksPassed": 139,
+    "checksFailed": 0,
+    "ok": true,
+    "articleComplete": true,
+    "radiusCertificates": 9,
+    "rayCertificates": 14,
+    "rayLiftingCertificates": 13,
+    "identityChecks": 42,
+    "elapsedSeconds": 457.46230912208557,
+    "callerStatePreserved": true,
+    "sourceIntegrityOK": false,
+    "nativeMatlabValidated": false,
+    "auxiliaryWrapperExitCode": 1,
+    "postRunSourceIntegrityAssertionPassed": false,
+    "sourceIntegrityLimitation": "This Octave build has no Java support; the MATLAB SHA-256 backend could not run. Mathematical report and proofs completed successfully before this separate post-run assertion.",
+    "independentSourceVerification": "source_verification.json"
+  },
+  "auxiliaryHashPostcheck": "The wrapper exited at its final Java-dependent source-integrity assertion. The article calculation itself passed; independent Python verified the frozen manifest and MATLAB source bytes. See the preserved auxiliary report and source verification.",
+  "matlabFiles": 221,
+  "changedMatlabFiles": [
+    {
+      "path": "qstab_setup.m",
+      "before": "e2047aff33a7dc0d519849f4dab97ad217ad51e1b3b047222d34883ceac79425",
+      "after": "3a121461bffb53ab1db8bf7a38b583fe22d114e0dfb2ac25df757f482a21970a"
+    },
+    {
+      "path": "run_qstab_public.m",
+      "before": "7d722a58d288bf8a3d191333d8f8647c2e571628a37ca795201ddf4a3179de1d",
+      "after": "e5ffbb72c81fa293a71f7291322df44c0038dfbda4a6fc042332dca2864e56be"
+    },
+    {
+      "path": "src/+qstab/+internal/exactOneParameter.m",
+      "before": "b4e97de175e92bb063ffd3b90d6889455cd1832ed9ae28f4440f7f7114a690f3",
+      "after": "8ec739b51b53ff58ed7c0bfaba77282eb9af4d2c11a8c00027f520aedd5cf153"
+    },
+    {
+      "path": "src/+qstab/+internal/exactOneParameterLifting.m",
+      "before": "97296b0238d4c759863ad2d159c4303ac7cc370c1105286911293a37dc1e5d2e",
+      "after": "f667bfc1047c0fd149888800525fd36e167a9c3c4fe2b9a79b5f60e1da9f6e59"
+    },
+    {
+      "path": "src/+qstab/Contents.m",
+      "before": "cc68860e62b39199fe9438c8bfd4e8c83c65be7a502ab8b67c706e8f35f8ba8c",
+      "after": "a3cb83d09074bf33a7f1cdf363cfcc01d1a182215ad33d2a0ebd36bb6e57a37d"
+    },
+    {
+      "path": "src/+qstab/about.m",
+      "before": "6f19db298f03b23aa6c2f8c15de0009d2f95a7f1201f49c1e4b9f42f3be84fa5",
+      "after": "e7c51de3016e0c91b1bccb5bd9d35715c876c6921661b02944c66ef5654b08c7"
+    },
+    {
+      "path": "src/+qstab/radiuscertificate.m",
+      "before": "cd477e6c28bf5902d692f4f50032effdc005076dd0b006e493fdc65d11b0047a",
+      "after": "753dba55a9e118555d06e31aeac52c27d6f290de29d71b5b42fb342c4619f6ea"
+    },
+    {
+      "path": "src/+qstab/raycertificate.m",
+      "before": "2084fbe64af0206274a89ed049cde2f379e38cf3aa2f8ad70a0132ea870f27d0",
+      "after": "f8d98263fa67db2f35506b022605e0e7f7ac400352088bfff6048d37ccb3fd97"
+    },
+    {
+      "path": "test_qstab_oneparameter.m",
+      "before": "2fabfd76f13c9f573e94eacca627cb4ddad045b62685b7ff4648cdff071970c1",
+      "after": "93b370a6cf8189bef9c2df966c0f0e8184077d5d2298dc54f0af92c269dc99e1"
+    },
+    {
+      "path": "tests/qstab_cases_oneparameter_exact.m",
+      "before": "7c1e587c10fe0630f2adfe4cb67267017ef84da8a4962071f466435f6651e089",
+      "after": "319c93cce74751c6dc6813c2406eca5450a0990a7582469d503ce0679ce64c9b"
+    }
+  ],
+  "articleSourceMatlabFilesIdenticalToCandidate": true,
+  "ordinaryNumericalAlgorithmsUnchanged": true,
+  "privateIntegration": "0.20.0-private-rc.1 uses the same public functions; no private replacement needed",
+  "assurance": "Auxiliary runs are not native MATLAB Symbolic validation. No warning was globally disabled and no tolerance was used to erase polynomial remainders."
+}

@@ -61,4 +61,4 @@ EIGPAIRS Right quaternion eigenvectors, diagonal representatives and checks.
 
 | Option | Default | Meaning |
 |---|---|---|
-| `Output` | `'like'` | eigpairs: like, components or quaternion. Object adapter always returns mquaternion V,D; use the native q alias for component output. |
+| `Output` | `'like'` | eigpairs: like, components or quaternion. The default follows a native quaternion input; component inputs return ordinary component structs. |

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab.radiuscertificate</title><link rel="stylesheet" href="../style.css"></head><body><main><h1 id="qstab.radiuscertificate">qstab.radiuscertificate</h1>
+<p><a href="../api_index.html">Function index</a> · <a
+href="../qstab_manual.pdf">Manual</a></p>
+<h2 id="help-and-calling-sequences">Help and calling sequences</h2>
+<pre class="text"><code>RADIUSCERTIFICATE Verify rational lower/upper bounds for a quaternion radius.
+  [bounds,Info] = qstab.radiuscertificate(F,rBounds)
+  [bounds,Info] = qstab.radiuscertificate(P0,P1,rBounds)
+  [bounds,Info] = qstab.radiuscertificate(P0,P1,rBounds,&#39;Side&#39;,&#39;right&#39;)
+
+  F is an unrestricted qstab.family(&#39;oneparameter&#39;,...) definition. P0 is
+  a Hurwitz scalar polynomial and degree(P1)&lt;degree(P0). One constant
+  quaternion t forms P0+t*P1 for Side=&#39;left&#39;, or P0+P1*t for Side=&#39;right&#39;.
+  Coefficient vectors are ascending. Native quaternion values, numeric
+  coefficients and ordinary component structs a,b,c,d are accepted.
+
+  rBounds is [lower upper], or a two-element cell array of exact rational
+  text, for example {&#39;378937381963/1000000000000&#39;, ...
+  &#39;378937381964/1000000000000&#39;}. The lower endpoint may be zero. Otherwise
+  both endpoints must be finite, rational and 0&lt;=lower&lt;upper.
+
+  bounds is the verified 1-by-2 enclosure, or [NaN NaN] if a requested
+  proof fails. Inf Inf is returned for P1=0. Double endpoints are rounded
+  outwards; Info.exactBounds contains the authoritative rational strings.
+  Info.certified and Info.ok are true only when the nominal assumptions
+  and BOTH bounds were proved in this invocation. Failed certificates
+  are not instability decisions. No numerical search is silently used.
+
+  The proof covers ALL frequencies, using x=omega^2 and exact rational
+  Sturm root counts of Q_r=delta0-2*r^2*delta01+r^4*delta1. A positive lower
+  endpoint is accepted if Q_lower has no nonnegative real root. For the
+  upper endpoint, a root of Q_upper proves that a critical gain of norm
+  no greater than upper exists. Alternatively UpperX supplies one exact
+  nonnegative rational x at which Q_upper&lt;=0 or T_upper=n0-upper^2*n1&lt;=0.
+  Repeated roots and flat extrema are included by square-free reduction.
+
+  Options:
+    Side            &#39;left&#39; (default) or &#39;right&#39;.
+    RationalData    [] (default), or struct(&#39;P0&#39;,C0,&#39;P1&#39;,C1), where C0,C1
+                    are 4-by-N ascending real rational component matrices.
+                    Entries may be numeric, symbolic rational, or fraction
+                    strings in cells. Explicit data must round to the
+                    supplied input coefficients, without shape changes.
+    UpperX          []: count roots of Q_upper. Otherwise certify the
+                    supplied x=omega^2 directly; it is NOT omega.
+    Variable        &#39;s&#39; only. Grade must be [].
+    ExtendParameter false. A finite family domain requires explicit true;
+                    the result then concerns its law on all quaternion t.
+
+  Exact numeric semantics: a supplied double denotes its exact binary
+  value (sym(value,&#39;f&#39;)); no rational approximation is guessed. Use
+  fraction text in RationalData when the intended source is, for example,
+  exactly 1/10 rather than its stored binary approximation. Symbolic input
+  coefficients must be rational. Returned reports contain no sym objects.
+
+  Example (requires Symbolic Math Toolbox):
+    [b,I] = qstab.radiuscertificate([1 1 1],1,{&#39;0.8660&#39;,&#39;0.8661&#39;});
+    assert(I.certified); b
+
+  Requirement: optional Symbolic Math Toolbox. Ordinary numerical calls
+  to qstab.stabilityradius/freqmargin remain independent of that toolbox.
+  This function does not modify files, paths, symbolic assumptions or RNG.
+  See also qstab.raycertificate, qstab.stabilityradius, qstab.freqmargin.</code></pre>
+</main></body></html>

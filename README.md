@@ -1,10 +1,25 @@
 # qstab · Quaternion Stability Toolbox for MATLAB
 
-**Version 0.19.0** · [Read the illustrated guide](docs/qstab_manual.pdf) · [Function reference](docs/api_index.md) · [Interval article: reproduce all examples](docs/interval_article.md) · [Installation and dependencies](docs/installation.md)
+**Version 0.20.0** · [Read the illustrated guide](docs/qstab_manual.pdf) · [Function reference](docs/api_index.md) · [Scalar one-parameter article](docs/oneparameter_article.md) · [Interval article](docs/interval_article.md) · [Installation and dependencies](docs/installation.md)
 
 Test nominal and robust strict stability for scalar quaternionic polynomials; compute right spectra of quaternion state matrices and representatives of algebraic zero classes. Families may be polytopes, independent coefficient intervals, real affine families, or one constant quaternion acting from a specified side. Coefficient balls and component boxes, continuous and discrete tests, radii, witnesses, and sampled plots are included in this release. Robust polynomial matrices are outside the supported scope; the square polynomial-matrix companion is a nominal experimental feature.
 
-**Validation:** the 0.19.0-rc.1 sources passed **731 native MATLAB regression checks**, with no failures or skips, on R2024b Update 2. The separate interval study matched **all 24 example groups and 110 comparisons** and exported eight figures. The final 0.19.0 changes only version/documentation text and two plot labels; numerical routines and tests retain their validated contents. Optional exact-rational replay has a separate scope and evidence record. [What was verified](verification/VALIDATION.md).
+**Validation:** native MATLAB R2024b Update 2 records identify the tested sources separately: the rc.1 transcript reports **748/748 ordinary public checks**; the corrected rc.2 reports show **32/32 targeted checks** and **13/13 article groups with 139/139 comparisons**, including fresh exact proofs. All **221 recorded MATLAB source hashes** match the delivered rc.2. The final 0.20.0 changes version/descriptive text, documentation and metadata; algorithms, examples and tests retain their rc.2 contents. A new native run of the renamed final distribution is not claimed. [Validation and scope](verification/VALIDATION.md).
+
+### Reproduce the scalar one-parameter article
+
+```matlab
+qstab_setup('Examples',true);
+R = run_qstab_oneparameter('all','Plots',true,'ExactCertificates','auto');
+R.status
+R.articleComplete
+R.archiveFile
+assert(R.ok,'Inspect the saved report: %s',R.archiveFile)
+```
+
+This calculates E1–E7, the two additional tangency variants and directional diagnostics from manuscript revision 7. `run_qstab_oneparameter('list')` lists the keys; use `'E1'` for one case. The automatic ZIP is `qstab_oneparameter_results.zip` at the package root. Optional Symbolic Math Toolbox enables fresh `qstab.raycertificate` and `qstab.radiuscertificate` proofs plus the 42 algebraic identities. An absent or skipped exact engine is explicit: `R.ok` can be true while `R.articleComplete` is false. No Python process is launched by MATLAB. See [all commands, output locations and assumptions](docs/oneparameter_article.md).
+
+`qstab.freqmargin` now also describes the nearest-gain geometry and both evaluation-side zero witnesses. CT scalar margin calls record automatic or explicit frequency scaling; E7 can be supplied in its original units. The new exact ray enclosure is the first **positive** contact, including tangencies; the existing numerical ray output remains a **signed stable interval**.
 
 ### Reproduce the interval article and supplement
 

@@ -10,4 +10,8 @@ qstab_paper_figures/
 *.out
 interval_results/
 qstab_interval_results.zip
+oneparameter_results/
+oneparameter_test_results/
+qstab_oneparameter_results.zip
+qstab_oneparameter_test_results.zip
 /docs/manual/qstab_manual.pdf

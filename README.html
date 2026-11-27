@@ -1,12 +1,11 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qstab · Quaternion Stability Toolbox for MATLAB</title><link rel="stylesheet" href="docs/style.css"></head><body><main><h1 id="qstab-quaternion-stability-toolbox-for-matlab">qstab ·
+<h1 id="qstab-quaternion-stability-toolbox-for-matlab">qstab ·
 Quaternion Stability Toolbox for MATLAB</h1>
-<p><strong>Version 0.19.0</strong> · <a
+<p><strong>Version 0.20.0</strong> · <a
 href="docs/qstab_manual.pdf">Read the illustrated guide</a> · <a
-href="docs/api_index.html">Function reference</a> · <a
-href="docs/interval_article.html">Interval article: reproduce all
-examples</a> · <a href="docs/installation.html">Installation and
-dependencies</a></p>
+href="docs/api_index.md">Function reference</a> · <a
+href="docs/oneparameter_article.md">Scalar one-parameter article</a> ·
+<a href="docs/interval_article.md">Interval article</a> · <a
+href="docs/installation.md">Installation and dependencies</a></p>
 <p>Test nominal and robust strict stability for scalar quaternionic
 polynomials; compute right spectra of quaternion state matrices and
 representatives of algebraic zero classes. Families may be polytopes,
@@ -16,22 +15,53 @@ boxes, continuous and discrete tests, radii, witnesses, and sampled
 plots are included in this release. Robust polynomial matrices are
 outside the supported scope; the square polynomial-matrix companion is a
 nominal experimental feature.</p>
-<p><strong>Validation:</strong> the 0.19.0-rc.1 sources passed
-<strong>731 native MATLAB regression checks</strong>, with no failures
-or skips, on R2024b Update 2. The separate interval study matched
-<strong>all 24 example groups and 110 comparisons</strong> and exported
-eight figures. The final 0.19.0 changes only version/documentation text
-and two plot labels; numerical routines and tests retain their validated
-contents. Optional exact-rational replay has a separate scope and
-evidence record. <a href="verification/VALIDATION.html">What was
-verified</a>.</p>
-<h3 id="reproduce-the-interval-article-and-supplement">Reproduce the
-interval article and supplement</h3>
+<p><strong>Validation:</strong> native MATLAB R2024b Update 2 records
+identify the tested sources separately: the rc.1 transcript reports
+<strong>748/748 ordinary public checks</strong>; the corrected rc.2
+reports show <strong>32/32 targeted checks</strong> and <strong>13/13
+article groups with 139/139 comparisons</strong>, including fresh exact
+proofs. All <strong>221 recorded MATLAB source hashes</strong> match the
+delivered rc.2. The final 0.20.0 changes version/descriptive text,
+documentation and metadata; algorithms, examples and tests retain their
+rc.2 contents. A new native run of the renamed final distribution is not
+claimed. <a href="verification/VALIDATION.md">Validation and
+scope</a>.</p>
+<h3 id="reproduce-the-scalar-one-parameter-article">Reproduce the scalar
+one-parameter article</h3>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">qstab_setup</span>(<span class="ss">&#39;Examples&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">R</span> <span class="op">=</span> <span class="va">run_qstab_intervals</span>(<span class="ss">&#39;all&#39;</span><span class="op">,</span><span class="ss">&#39;Plots&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">R</span>.<span class="va">archiveFile</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">R</span>.<span class="va">ok</span><span class="op">,</span><span class="ss">&#39;Inspect the saved interval report: %s&#39;</span><span class="op">,</span><span class="va">R</span>.<span class="va">archiveFile</span>)</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">R</span> <span class="op">=</span> <span class="va">run_qstab_oneparameter</span>(<span class="ss">&#39;all&#39;</span><span class="op">,</span><span class="ss">&#39;Plots&#39;</span><span class="op">,</span><span class="va">true</span><span class="op">,</span><span class="ss">&#39;ExactCertificates&#39;</span><span class="op">,</span><span class="ss">&#39;auto&#39;</span>)<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">R</span>.<span class="va">status</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">R</span>.<span class="va">articleComplete</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="va">R</span>.<span class="va">archiveFile</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">R</span>.<span class="va">ok</span><span class="op">,</span><span class="ss">&#39;Inspect the saved report: %s&#39;</span><span class="op">,</span><span class="va">R</span>.<span class="va">archiveFile</span>)</span></code></pre></div>
+<p>This calculates E1–E7, the two additional tangency variants and
+directional diagnostics from manuscript revision 7.
+<code>run_qstab_oneparameter('list')</code> lists the keys; use
+<code>'E1'</code> for one case. The automatic ZIP is
+<code>qstab_oneparameter_results.zip</code> at the package root.
+Optional Symbolic Math Toolbox enables fresh
+<code>qstab.raycertificate</code> and
+<code>qstab.radiuscertificate</code> proofs plus the 42 algebraic
+identities. An absent or skipped exact engine is explicit:
+<code>R.ok</code> can be true while <code>R.articleComplete</code> is
+false. No Python process is launched by MATLAB. See <a
+href="docs/oneparameter_article.md">all commands, output locations and
+assumptions</a>.</p>
+<p><code>qstab.freqmargin</code> now also describes the nearest-gain
+geometry and both evaluation-side zero witnesses. CT scalar margin calls
+record automatic or explicit frequency scaling; E7 can be supplied in
+its original units. The new exact ray enclosure is the first
+<strong>positive</strong> contact, including tangencies; the existing
+numerical ray output remains a <strong>signed stable
+interval</strong>.</p>
+<h3 id="reproduce-the-interval-article-and-supplement">Reproduce the
+interval article and supplement</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">qstab_setup</span>(<span class="ss">&#39;Examples&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">R</span> <span class="op">=</span> <span class="va">run_qstab_intervals</span>(<span class="ss">&#39;all&#39;</span><span class="op">,</span><span class="ss">&#39;Plots&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">R</span>.<span class="va">archiveFile</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">assert</span>(<span class="va">R</span>.<span class="va">ok</span><span class="op">,</span><span class="ss">&#39;Inspect the saved interval report: %s&#39;</span><span class="op">,</span><span class="va">R</span>.<span class="va">archiveFile</span>)</span></code></pre></div>
 <p>This runs the 24 source-linked groups from
 <code>IJRCN_manuscript_v7</code> and
 <code>IJRCN_Zenodo-supplement_v5</code>. Use
@@ -43,17 +73,17 @@ comparison checks and diagnostics. The current-run ZIP is
 quaternion is the default; <code>UseQuaternion=false</code> explicitly
 selects ordinary component structs. The optional exact certificate
 replay is separate from numerical root checks; see <a
-href="docs/interval_article.html">instructions and scope</a>.</p>
+href="docs/interval_article.md">instructions and scope</a>.</p>
 <h3 id="first-minute">First minute</h3>
 <p>Unzip to a new folder. Change the MATLAB current folder to the
 directory containing <code>qstab_setup.m</code>. Run:</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">qstab_setup</span>(<span class="ss">&#39;Examples&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">F</span> <span class="op">=</span> <span class="va">qstab</span>.<span class="va">family</span>(<span class="ss">&#39;polytope&#39;</span><span class="op">,</span>{[<span class="fl">1</span> <span class="fl">1</span>]<span class="op">,</span>[<span class="fl">2</span> <span class="fl">1</span>]})<span class="op">;</span>    <span class="co">% p(s)=s+a, 1 &lt;= a &lt;= 2</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>[<span class="va">tf</span><span class="op">,</span><span class="va">info</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">robuststable</span>(<span class="va">F</span>)<span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">tf</span>                                             <span class="co">% 1</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="va">info</span>.<span class="va">status</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="va">R</span> <span class="op">=</span> <span class="va">qstab_guide_example</span>(<span class="ss">&#39;G06&#39;</span>)<span class="op">;</span>                <span class="co">% one checked, headless example</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">qstab_setup</span>(<span class="ss">&#39;Examples&#39;</span><span class="op">,</span><span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">F</span> <span class="op">=</span> <span class="va">qstab</span>.<span class="va">family</span>(<span class="ss">&#39;polytope&#39;</span><span class="op">,</span>{[<span class="fl">1</span> <span class="fl">1</span>]<span class="op">,</span>[<span class="fl">2</span> <span class="fl">1</span>]})<span class="op">;</span>    <span class="co">% p(s)=s+a, 1 &lt;= a &lt;= 2</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>[<span class="va">tf</span><span class="op">,</span><span class="va">info</span>] <span class="op">=</span> <span class="va">qstab</span>.<span class="va">robuststable</span>(<span class="va">F</span>)<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="va">tf</span>                                             <span class="co">% 1</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="va">info</span>.<span class="va">status</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="va">R</span> <span class="op">=</span> <span class="va">qstab_guide_example</span>(<span class="ss">&#39;G06&#39;</span>)<span class="op">;</span>                <span class="co">% one checked, headless example</span></span></code></pre></div>
 <p>Use <code>tf==1</code>, <code>tf==0</code>, and
 <code>isnan(tf)</code>: the three results are strictly stable,
 demonstrably not strictly stable, and undecided or unmet assumptions.
@@ -98,7 +128,7 @@ parameters?</td>
 <tr class="odd">
 <td>How can a local enclosure exclude zero when the global one
 cannot?</td>
-<td>G06 and G07 · <a href="docs/papers.html">polytope article and exact
+<td>G06 and G07 · <a href="docs/papers.md">polytope article and exact
 checks</a></td>
 </tr>
 <tr class="even">
@@ -126,7 +156,7 @@ guide. To validate a full <strong>native</strong> installation
 separately, use <code>report=run_qstab_public('Figures',false)</code>.
 That acceptance run writes <code>qstab_test_results.zip</code> beside
 the runner; it checks basic graphics even when optional figure export is
-disabled. <a href="verification/VALIDATION.html">Read the validation
+disabled. <a href="verification/VALIDATION.md">Read the validation
 record</a>.</p>
 <h3 id="article-citation-and-license">Article, citation and license</h3>
 <p>The companion texts include M. Šebek’s preprint <a
@@ -140,11 +170,10 @@ Polynomials: Worked Examples and Verification Guide</em></a> supplies
 worked examples and verification guidance. The software version and the
 mathematical texts have separate citation records. The package also
 includes methods outside those texts’ scope. <a
-href="docs/papers.html">Polytope research notes</a> · <a
-href="docs/interval_article.html">Interval study and references</a> · <a
+href="docs/papers.md">Polytope research notes</a> · <a
+href="docs/interval_article.md">Interval study and references</a> · <a
 href="CITATION.cff">Cite this version</a> · <a href="LICENSE">MIT
-license</a> · <a href="RELEASE_NOTES.html">Release notes</a>.</p>
+license</a> · <a href="RELEASE_NOTES.md">Release notes</a>.</p>
 <p>For optional integrations and MathWorks product checks, see <a
-href="docs/installation.html">installation</a>. There is no mandatory
+href="docs/installation.md">installation</a>. There is no mandatory
 third-party GitHub download.</p>
-</main></body></html>

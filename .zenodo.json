@@ -7,7 +7,7 @@
       "affiliation": "Czech Technical University in Prague, Faculty of Electrical Engineering, Department of Control Engineering"
     }
   ],
-  "version": "0.19.0",
+  "version": "0.20.0",
   "upload_type": "software",
   "access_right": "open",
   "license": "mit",
@@ -29,13 +29,15 @@
   "keywords": [
     "quaternionic polynomials",
     "robust stability",
+    "stability radius",
+    "quaternion parameter",
+    "exact certificates",
     "polynomial polytopes",
     "interval polynomials",
-    "parametric uncertainty",
     "algebraic zeros",
     "right eigenvalues",
     "control systems",
     "MATLAB"
   ],
-  "description": "<p>qstab is a MATLAB toolbox for nominal and robust strict stability of scalar quaternionic polynomials, right spectra of quaternion state matrices, stability margins, witnesses and sampled family plots. Version 0.19.0 adds degree/parity Hurwitz face enumeration, single-component interval frequency margins, analytic simple norm-root derivatives, 24 interval-article example groups and optional exact rational certificate replay.</p><p>The 0.19.0-rc.1 sources passed 731 native MATLAB R2024b Update 2 regression checks with no failures or skips. A separate native interval study matched all 24 groups and 110 comparisons. The final release changes version/documentation text and two plot labels; numerical algorithms and tests are unchanged. The numerical checks, independent Python/SymPy proof replay and optional MATLAB Symbolic replay have distinct assurance scopes documented in the validation record.</p>"
+  "description": "<p>qstab is a MATLAB toolbox for nominal and robust strict stability of scalar quaternionic polynomials, right spectra of quaternion state matrices, stability margins, witnesses and sampled family plots. Supported scalar families include polytopes, independent coefficient intervals, correlated real-affine families and one shared constant quaternion parameter.</p><p>Version 0.20.0 extends the scalar one-parameter analysis while preserving the distinct multiplication orders p0 + t*p1 and p0 + p1*t. It adds exact first-positive-ray-contact certificates, verification of supplied rational global-radius bounds over all frequencies, nearest-gain point/sphere diagnostics, original-polynomial evaluation witnesses, frequency scaling and a reproducible one-parameter article study. Exact decimal parsing and symbolic polynomial-zero handling are corrected. The exact certificate APIs apply to continuous-time scalar polynomial families with rational component data and fixed leading coefficient; they require optional Symbolic Math Toolbox. Ordinary numerical calls retain their separate floating-point scope.</p><p>Native MATLAB R2024b Update 2 validation is recorded for the actual tested candidates: the 0.20.0-rc.1 transcript reports 748/748 ordinary public regression checks; the corrected 0.20.0-rc.2 reports show 32/32 targeted checks and 13/13 article groups with 139/139 comparisons, including fresh exact proofs. All 221 MATLAB source fingerprints in the article report match the delivered rc.2 source. The final 0.20.0 distribution changes version/descriptive text, documentation and publication metadata; numerical and symbolic algorithms, examples and tests retain their rc.2 contents. No additional native run of the renamed final distribution is claimed. See verification/VALIDATION.md for the scope and provenance of each result.</p>"
 }

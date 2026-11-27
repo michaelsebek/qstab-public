@@ -46,7 +46,8 @@ function files=localWalk(root,relative)
 files={};entries=dir(fullfile(root,relative));
 for j=1:numel(entries)
     name=entries(j).name;
-    if ismember(name,{'.','..','.git','.svn','qstab_test_results'}),continue;end
+    if ismember(name,{'.','..','.git','.svn','qstab_test_results', ...
+            'interval_results','oneparameter_results','oneparameter_test_results'}),continue;end
     rel=fullfile(relative,name);
     if entries(j).isdir
         files=[files,localWalk(root,rel)]; %#ok<AGROW>

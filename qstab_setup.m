@@ -43,9 +43,9 @@ if ispc,present=any(strcmpi(dirs,wrapperDir));else,present=any(strcmp(dirs,wrapp
 if present,rmpath(wrapperDir);end
 info=struct('root',root,'namespaceParent',fullfile(root,'src'), ...
     'wrappersEnabled',false,'examplesEnabled',ip.Results.Examples, ...
-    'version','0.19.0','wrapperPolicy','private adapters are distributed separately; public namespace only');
+    'version','0.20.0','wrapperPolicy','private adapters are distributed separately; public namespace only');
 if nargout==0
-    fprintf('qstab 0.19.0 ready: %s\n',root);
+    fprintf('qstab 0.20.0 ready: %s\n',root);
     fprintf('Next: report = run_qstab_public;\n');
     fprintf('Result ZIP (always): %s\n',fullfile(root,'qstab_test_results.zip'));
 end

@@ -1,6 +1,6 @@
 # qstab.stabilityradius
 
-[Function index](../api_index.md) · [Manual](../qstab_manual.pdf) · [MATLAB source](../../src/+qstab/stabilityradius.m)
+[Function index](../api_index.md) · [Manual](../qstab_manual.pdf)
 
 ## Help and calling sequences
 
@@ -35,6 +35,12 @@ STABILITYRADIUS  Bound the first loss over all directions of one quaternion t.
     AbsTol      1e-6; absolute contribution to the target bracket width.
     RelTol      1e-5; relative contribution (target AbsTol+RelTol*upper).
     Tolerance   1e-10; internal numerical checks.
+    FrequencyScale 'auto' (default), or a positive tau for Variable='s'.
+                The working variable is sigma=s/tau. Both polynomials
+                receive the same positive coefficient scale; the radius
+                and critical quaternion parameter keep their units.
+                Info.frequency and boundaryComponents are returned in
+                ORIGINAL s units; Info.scaling records the transformation.
     MaxCells    4096; search/subdivision budget.
     MaxTime     30 seconds; computational time budget.
     MaxDepth    40; discrete subdivision depth limit.
@@ -45,5 +51,6 @@ STABILITYRADIUS  Bound the first loss over all directions of one quaternion t.
     disp(bounds); disp(I.status);  % the bracket contains 2
 
   These are floating-point bounds, not outward-rounded proof intervals.
+  Use qstab.radiuscertificate for separate exact rational certificates.
   See also qstab.freqmargin, qstab.raymargin, qstab.ballradius.
 ```

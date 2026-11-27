@@ -1,4 +1,4 @@
-% qstab - Quaternion Stability Toolbox, version 0.19.0.
+% qstab - Quaternion Stability Toolbox, version 0.20.0.
 %
 % Family definitions and exploration (standard MATLAB structs)
 %   family           - Define interval, polytope, affine or one-quaternion uncertainty.
@@ -97,3 +97,10 @@
 %   rootmotion      - First and second derivatives of a simple norm zero.
 %   run_qstab_intervals - All 24 source-linked example groups with saved comparison ZIP.
 %   verify_qstab_interval_certificates - Optional exact Symbolic Math Toolbox replay.
+
+% Scalar one-parameter article (0.20 candidate):
+%   raycertificate    - Exact first-positive ray-contact enclosure, including tangencies.
+%   radiuscertificate - Exact verification of global all-direction radius bounds.
+%   run_qstab_oneparameter - Current manuscript examples, comparisons and result ZIP.
+%   plot_qstab_oneparameter - Regenerate article illustrations from saved run data.
+%   verify_qstab_oneparameter_identities - Optional symbolic model/identity checks.
